@@ -684,7 +684,11 @@ footer {
         border-radius: 0 0 12px 12px;
     }
     .logo img { height: 70px; }
-    .hero-section { padding-top: 85px; }
+    .hero-section        { padding-top: 85px; }
+    .catalog-hero        { margin-top: 85px; }
+    .subcat-hero         { margin-top: 85px; }
+    .guide-filters-bar   { top: 85px; }
+    .pindex-wrap         { top: 85px; }
 }
 
 /* Animations */
@@ -1620,7 +1624,7 @@ footer {
     padding: 1.2rem 2rem 1rem;
     border-bottom: 3px solid #e2e8f0;
     position: sticky;
-    top: 70px;
+    top: 100px;
     z-index: 90;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
