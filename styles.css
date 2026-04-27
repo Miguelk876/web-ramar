@@ -650,7 +650,11 @@ footer {
 .hamburger .line { width: 30px; height: 4px; background-color: var(--color-blue); margin: 6px; border-radius: 2px; }
 
 @media (max-width: 900px) {
-    .navbar { padding: 0 1.5rem; height: 70px; }
+    .navbar {
+        padding: 0 1.2rem;
+        height: 70px;
+        justify-content: space-between;
+    }
     .nav-links {
         display: none;
         flex-direction: column;
@@ -671,12 +675,13 @@ footer {
     .about-grid { grid-template-columns: 1fr; }
     .logo {
         position: relative;
-        left: 0;
-        padding: 4px 8px 10px;
-        box-shadow: none;
-        border-radius: 0 0 10px 10px;
+        left: auto;
+        top: auto;
+        padding: 6px 10px 12px;
+        box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+        border-radius: 0 0 12px 12px;
     }
-    .logo img { height: 58px; }
+    .logo img { height: 52px; }
     .hero-section { padding-top: 70px; }
 }
 
@@ -1577,7 +1582,7 @@ footer {
     .footer-brand h2 { font-size: 1.6rem; }
     .footer-container { gap: 1.5rem; }
     footer { padding: 2.5rem 1rem 1.5rem; }
-    .logo img { height: 46px; }
+    .logo img { height: 48px; }
     .whatsapp-float { bottom: 1.2rem; right: 1.2rem; width: 52px; height: 52px; }
     .whatsapp-float i { font-size: 1.8rem; }
 }
