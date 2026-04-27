@@ -652,14 +652,14 @@ footer {
 @media (max-width: 900px) {
     .navbar {
         padding: 0 1.2rem;
-        height: 70px;
+        height: 85px;
         justify-content: space-between;
     }
     .nav-links {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 70px;
+        top: 85px;
         left: 0;
         width: 100%;
         background-color: rgba(255, 255, 255, 0.98);
@@ -681,8 +681,8 @@ footer {
         box-shadow: 0 6px 16px rgba(0,0,0,0.12);
         border-radius: 0 0 12px 12px;
     }
-    .logo img { height: 52px; }
-    .hero-section { padding-top: 70px; }
+    .logo img { height: 70px; }
+    .hero-section { padding-top: 85px; }
 }
 
 /* Animations */
@@ -1582,7 +1582,7 @@ footer {
     .footer-brand h2 { font-size: 1.6rem; }
     .footer-container { gap: 1.5rem; }
     footer { padding: 2.5rem 1rem 1.5rem; }
-    .logo img { height: 48px; }
+    .logo img { height: 64px; }
     .whatsapp-float { bottom: 1.2rem; right: 1.2rem; width: 52px; height: 52px; }
     .whatsapp-float i { font-size: 1.8rem; }
 }
