@@ -377,15 +377,135 @@
 .btn-modal-wa   { background: #25D366; color: #fff; }
 .btn-modal-full:hover, .btn-modal-wa:hover { opacity: .88; transform: translateY(-1px); }
 
+/* ── bottom sheet filtros (móvil) ── */
+.filter-fab {
+    display: none;
+    position: fixed;
+    bottom: 5.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 500;
+    background: var(--color-blue);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: .75rem 1.8rem;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: .5px;
+    cursor: pointer;
+    box-shadow: 0 6px 24px rgba(28,43,84,.35);
+    align-items: center;
+    gap: .6rem;
+    transition: background .2s, transform .2s;
+    white-space: nowrap;
+}
+.filter-fab:active { transform: translateX(-50%) scale(.96); }
+.filter-fab .fab-badge {
+    background: var(--color-yellow);
+    color: #fff;
+    font-size: .72rem;
+    padding: .1rem .5rem;
+    border-radius: 999px;
+    font-weight: 800;
+    display: none;
+}
+.filter-fab .fab-badge.visible { display: inline; }
+
+.bs-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.45);
+    z-index: 600;
+    opacity: 0;
+    transition: opacity .25s;
+}
+.bs-overlay.open { display: block; opacity: 1; }
+
+.bottom-sheet {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: #fff;
+    border-radius: 20px 20px 0 0;
+    z-index: 700;
+    padding: 1.25rem 1.25rem 2.5rem;
+    transform: translateY(100%);
+    transition: transform .3s cubic-bezier(.32,1.01,.6,1);
+    box-shadow: 0 -8px 40px rgba(0,0,0,.18);
+}
+.bottom-sheet.open { transform: translateY(0); }
+.bs-handle {
+    width: 40px; height: 5px;
+    background: #cbd5e1;
+    border-radius: 999px;
+    margin: 0 auto 1.2rem;
+}
+.bs-title {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--color-blue);
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    margin-bottom: 1.1rem;
+    text-align: center;
+}
+.bs-cats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .75rem;
+}
+.bs-cat-btn {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    padding: 1rem 1.1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 14px;
+    background: #f8fafc;
+    font-family: var(--font-body);
+    font-size: .97rem;
+    font-weight: 600;
+    color: #334155;
+    cursor: pointer;
+    transition: all .18s;
+    text-align: left;
+}
+.bs-cat-btn i { font-size: 1.3rem; width: 1.5rem; text-align: center; }
+.bs-cat-btn[data-cat="all"]          { grid-column: 1 / -1; justify-content: center; font-size: 1.05rem; }
+.bs-cat-btn[data-cat="all"] i        { color: var(--color-blue); }
+.bs-cat-btn[data-cat="estructural"] i{ color: #1e40af; }
+.bs-cat-btn[data-cat="comercial"] i  { color: #15803d; }
+.bs-cat-btn[data-cat="especializado"] i{ color: #7e22ce; }
+.bs-cat-btn[data-cat="pintura"] i    { color: #c2410c; }
+.bs-cat-btn[data-cat="herramienta"] i{ color: #b45309; }
+.bs-cat-btn.active {
+    border-color: var(--color-blue);
+    background: #eff6ff;
+    color: var(--color-blue);
+}
+.bs-cat-btn[data-cat="estructural"].active  { border-color:#1e40af; background:#eff6ff; color:#1e40af; }
+.bs-cat-btn[data-cat="comercial"].active    { border-color:#15803d; background:#f0fdf4; color:#15803d; }
+.bs-cat-btn[data-cat="especializado"].active{ border-color:#7e22ce; background:#faf5ff; color:#7e22ce; }
+.bs-cat-btn[data-cat="pintura"].active      { border-color:#c2410c; background:#fff7ed; color:#c2410c; }
+.bs-cat-btn[data-cat="herramienta"].active  { border-color:#b45309; background:#fffbeb; color:#b45309; }
+
 /* ── responsive ── */
 @media (max-width: 1100px) { .product-grid-explorer { grid-template-columns: repeat(3,1fr); } }
+@media (max-width: 900px)  {
+    .cat-filters { top: 70px; }
+}
 @media (max-width: 780px)  {
     .product-grid-explorer { grid-template-columns: repeat(2,1fr); gap: .9rem; }
     .pmodal-inner { grid-template-columns: 1fr; }
     .pmodal-left  { border-right: none; border-bottom: 1px solid #e2e8f0; padding: 1.5rem; }
     .pmodal-specs { grid-template-columns: 1fr; }
-    .cat-filters .container { gap: .6rem; }
-    .cat-search-box { max-width: 100%; }
+    /* Ocultar tabs, mostrar FAB */
+    .cat-tab-bar { display: none; }
+    .filter-fab  { display: inline-flex; }
+    .cat-filters .container { padding: 0 1rem; }
+    .cat-search-box { max-width: 100%; flex: 1; }
 }
 @media (max-width: 480px)  {
     .product-grid-explorer { grid-template-columns: 1fr; }
@@ -459,6 +579,26 @@
         </section>
 
     </main>
+
+    <!-- ══ FILTER FAB + BOTTOM SHEET (móvil) ══ -->
+    <button class="filter-fab" id="filter-fab" aria-label="Filtrar por categoría">
+        <i class="fa-solid fa-sliders"></i> Categoría
+        <span class="fab-badge" id="fab-badge">Todos</span>
+    </button>
+
+    <div class="bs-overlay" id="bs-overlay"></div>
+    <div class="bottom-sheet" id="bottom-sheet" role="dialog" aria-modal="true" aria-label="Filtrar por categoría">
+        <div class="bs-handle"></div>
+        <div class="bs-title"><i class="fa-solid fa-sliders"></i> Selecciona una categoría</div>
+        <div class="bs-cats">
+            <button class="bs-cat-btn active" data-cat="all"><i class="fa-solid fa-border-all"></i> Todos los productos</button>
+            <button class="bs-cat-btn" data-cat="estructural"><i class="fa-solid fa-building-columns"></i> Estructural</button>
+            <button class="bs-cat-btn" data-cat="comercial"><i class="fa-solid fa-helmet-safety"></i> Comercial</button>
+            <button class="bs-cat-btn" data-cat="especializado"><i class="fa-solid fa-gear"></i> Especializado</button>
+            <button class="bs-cat-btn" data-cat="pintura"><i class="fa-solid fa-fill-drip"></i> Pintura</button>
+            <button class="bs-cat-btn" data-cat="herramienta"><i class="fa-solid fa-screwdriver-wrench"></i> Herramienta</button>
+        </div>
+    </div>
 
     <!-- ══ MODAL ══ -->
     <div class="pmodal-overlay" id="pmodal-overlay">
@@ -1157,6 +1297,49 @@ document.getElementById('cat-search').addEventListener('input', e => {
 });
 
 render();
+
+/* ── Bottom Sheet (móvil) ── */
+const fab       = document.getElementById('filter-fab');
+const fabBadge  = document.getElementById('fab-badge');
+const bsOverlay = document.getElementById('bs-overlay');
+const bsSheet   = document.getElementById('bottom-sheet');
+
+function openBS() {
+  bsOverlay.classList.add('open');
+  bsSheet.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeBS() {
+  bsOverlay.classList.remove('open');
+  bsSheet.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+fab.addEventListener('click', openBS);
+bsOverlay.addEventListener('click', closeBS);
+
+const CAT_LABELS = {
+  all:'Todos', estructural:'Estructural', comercial:'Comercial',
+  especializado:'Especializado', pintura:'Pintura', herramienta:'Herramienta'
+};
+
+document.querySelectorAll('.bs-cat-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.bs-cat-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.cat-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cat = btn.dataset.cat;
+    activeCat = cat;
+    // sincronizar tab de escritorio
+    const desktopTab = document.querySelector(`.cat-tab[data-cat="${cat}"]`);
+    if(desktopTab) desktopTab.classList.add('active');
+    // actualizar badge del FAB
+    fabBadge.textContent = CAT_LABELS[cat] || cat;
+    fabBadge.classList.toggle('visible', cat !== 'all');
+    render(document.getElementById('cat-search').value);
+    closeBS();
+  });
+});
     </script>
 </body>
 </html>
