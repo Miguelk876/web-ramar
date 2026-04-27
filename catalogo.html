@@ -788,7 +788,7 @@ const PRODUCTS = [
       {i:'fa-lightbulb',  l:'Tip',       v:'Para malla electrosoldada se requiere alambrón calibre fino'}
     ], page:'catalogo-comercial.html', wa:'Alambr%C3%B3n%20TYASA', photo:'https://images.pexels.com/photos/36398139/pexels-photo-36398139.jpeg?auto=compress&cs=tinysrgb&w=800' },
 
-  { id:'lamina-acanalada', cat:'comercial',
+  { id:'lamina-acanalada', cat:'comercial', provider:'Ternium',
     name:'Lámina Acanalada — Zintro',
     tagline:'Cubierta galvanizada acanalada para techos, bardas y cubiertas de bajo costo.',
     svg:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 140"><path d="M8,65 C24,65 28,26 44,26 C60,26 64,65 80,65 C96,65 100,26 116,26 C132,26 136,65 152,65 C168,65 172,26 188,26 C204,26 208,65 224,65 L224,73 C208,73 204,34 188,34 C172,34 168,73 152,73 C136,73 132,34 116,34 C100,34 96,73 80,73 C64,73 60,34 44,34 C28,34 24,73 8,73 Z" fill="#1C2B54"/><text x="120" y="105" text-anchor="middle" fill="#F08018" font-family="Oswald,sans-serif" font-size="12" font-weight="600">LÁMINA ACANALADA</text><text x="120" y="120" text-anchor="middle" fill="#64748B" font-family="Inter,sans-serif" font-size="8">Cal. 22–30 · Zintro / Pintro · 3 y 4 pies</text></svg>`,
@@ -1127,6 +1127,42 @@ const PRODUCTS = [
       {i:'fa-certificate',l:'Marcas', v:'Makita DTD/BTD · DeWalt DCF series'},
       {i:'fa-lightbulb', l:'Tip',     v:'Para tornillería estructural usar punta de impacto; no estándar'}
     ], page:'catalogo.html', wa:'Atornillador%20Impacto%20Makita%20DeWalt', photo:'https://images.pexels.com/photos/3877525/pexels-photo-3877525.jpeg?auto=compress&cs=tinysrgb&w=800' },
+
+  { id:'lamina-zintro-plus', cat:'comercial', provider:'Ternium',
+    name:'Lámina Zintro Plus G-90',
+    tagline:'Galvanizado reforzado G-90 para cubiertas de larga duración y mayor resistencia a la corrosión.',
+    svg:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 140"><path d="M8,55 C24,55 28,16 44,16 C60,16 64,55 80,55 C96,55 100,16 116,16 C132,16 136,55 152,55 C168,55 172,16 188,16 C204,16 208,55 224,55 L224,65 C208,65 204,26 188,26 C172,26 168,65 152,65 C136,65 132,26 116,26 C100,26 96,65 80,65 C64,65 60,26 44,26 C28,26 24,65 8,65 Z" fill="#0f4c81"/><rect x="8" y="65" width="216" height="4" fill="#1e6bb8" rx="1"/><text x="120" y="98" text-anchor="middle" fill="#F08018" font-family="Oswald,sans-serif" font-size="12" font-weight="600">ZINTRO PLUS G-90</text><text x="120" y="113" text-anchor="middle" fill="#64748B" font-family="Inter,sans-serif" font-size="8">Cal. 22–28 · Recubrimiento G-90 · 3 y 4 pies</text><text x="120" y="128" text-anchor="middle" fill="#15803d" font-family="Inter,sans-serif" font-size="8" font-weight="700">50% más zinc que G-60</text></svg>`,
+    svgNote:'Cal. 22–28 · Recubrimiento G-90 · Ancho 3 y 4 pies · Largos 7, 8, 10, 12 pies',
+    specs:[
+      {i:'fa-shield',      l:'Recubrimiento', v:'G-90 · 275 g/m² de zinc total (50% más que G-60)'},
+      {i:'fa-ruler',       l:'Calibres',      v:'Cal. 22 · 24 · 26 · 28'},
+      {i:'fa-arrows-left-right',l:'Anchos',   v:'3 pies (914 mm) · 4 pies (1,220 mm)'},
+      {i:'fa-lightbulb',   l:'Tip',           v:'Ideal para zonas costeras o húmedas; mayor vida útil'}
+    ], page:'catalogo-comercial.html', wa:'L%C3%A1mina%20Zintro%20Plus', photo:'https://images.pexels.com/photos/10443918/pexels-photo-10443918.jpeg?auto=compress&cs=tinysrgb&w=800' },
+
+  { id:'lamina-teja', cat:'comercial', provider:'Ternium',
+    name:'Lámina Teja — Perfil Colonial',
+    tagline:'Lámina con perfil tipo teja para cubiertas de aspecto residencial y naves industriales.',
+    svg:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 140"><path d="M8,70 Q20,35 44,35 Q68,35 80,70 Q92,35 116,35 Q140,35 152,70 Q164,35 188,35 Q212,35 224,70 L224,82 Q212,47 188,47 Q164,47 152,82 Q140,47 116,47 Q92,47 80,82 Q68,47 44,47 Q20,47 8,82 Z" fill="#c2410c"/><text x="120" y="105" text-anchor="middle" fill="#F08018" font-family="Oswald,sans-serif" font-size="12" font-weight="600">LÁMINA TEJA</text><text x="120" y="120" text-anchor="middle" fill="#64748B" font-family="Inter,sans-serif" font-size="8">Perfil Colonial · Zintro / Pintro · Cal. 26–30</text></svg>`,
+    svgNote:'Perfil Colonial · Zintro o Pintro · Cal. 26–30 · Ancho cubierta 840 mm',
+    specs:[
+      {i:'fa-house-chimney',l:'Perfil',       v:'Colonial · Paso 200 mm · Alto 35 mm'},
+      {i:'fa-paint-brush',  l:'Acabados',     v:'Zintro (galvanizado) · Pintro (prepintado)'},
+      {i:'fa-ruler',        l:'Calibres',     v:'Cal. 26 · 28 · 30'},
+      {i:'fa-lightbulb',    l:'Tip',          v:'Estética residencial con durabilidad industrial; fácil instalación'}
+    ], page:'catalogo-comercial.html', wa:'L%C3%A1mina%20Teja', photo:'https://images.pexels.com/photos/35539402/pexels-photo-35539402.jpeg?auto=compress&cs=tinysrgb&w=800' },
+
+  { id:'lamina-hr', cat:'comercial', provider:'Ternium',
+    name:'Lámina Rolada en Caliente (HR)',
+    tagline:'Acero laminado en caliente para estructuras, placas base, refuerzos y manufactura en general.',
+    svg:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 150"><rect x="18" y="30" width="224" height="60" fill="#374151" rx="3"/><line x1="18" y1="50" x2="242" y2="50" stroke="#4B5563" stroke-width="1.5"/><line x1="18" y1="70" x2="242" y2="70" stroke="#4B5563" stroke-width="1.5"/><text x="130" y="67" text-anchor="middle" fill="#94A3B8" font-family="Inter,sans-serif" font-size="9" font-weight="600">LÁMINA NEGRA · HOT ROLLED</text><text x="130" y="108" text-anchor="middle" fill="#F08018" font-family="Oswald,sans-serif" font-size="12" font-weight="600">ROLADA EN CALIENTE HR</text><text x="130" y="123" text-anchor="middle" fill="#64748B" font-family="Inter,sans-serif" font-size="8">Cal. 10–14 · Formatos 4'×8' · A-36 / Grado 50</text></svg>`,
+    svgNote:'Calibres 10–14 · Formatos 4\'×8\' y 4\'×10\' · Grados A-36 y ASTM A572 Gr-50',
+    specs:[
+      {i:'fa-layer-group',  l:'Calibres',     v:'Cal. 10 (3.4 mm) · 11 (3.0 mm) · 12 (2.7 mm) · 14 (1.9 mm)'},
+      {i:'fa-expand',       l:'Formatos',     v:'4\'×8\' (1.22×2.44 m) · 4\'×10\' (1.22×3.05 m)'},
+      {i:'fa-certificate',  l:'Grado',        v:'A-36 (Fy=36 ksi) · ASTM A572 Grado 50'},
+      {i:'fa-lightbulb',    l:'Tip',          v:'Base para placas, refuerzos y corte con plasma; no requiere imprimante inmediato'}
+    ], page:'catalogo-comercial.html', wa:'L%C3%A1mina%20HR', photo:'https://images.pexels.com/photos/36003974/pexels-photo-36003974.jpeg?auto=compress&cs=tinysrgb&w=800' },
 
   { id:'herramienta-manual', cat:'herramienta', provider:'Truper',
     name:'Herramienta Manual Truper',
