@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:tyasa.com.mx)",
+      "WebFetch(domain:www.tyasa.com.mx)"
+    ]
+  }
+}
