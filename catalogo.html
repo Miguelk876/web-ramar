@@ -701,7 +701,7 @@ const PRODUCTS = [
       {i:'fa-layer-group',l:'Calibres', v:'10 al 20 · Largo 6.10 m'},
       {i:'fa-building',   l:'Usos',     v:'Marcos de puertas y ventanas, divisiones'},
       {i:'fa-lightbulb',  l:'Tip',      v:'R-200 y R-300 los más versátiles para herrería'}
-    ], page:'catalogo-estructural.html', wa:'PTR%20Rectangular%20Serie%20R', photo:'https://aceroscrea.com/wp-content/uploads/2025/02/acercamiento-a-piezas-de-ptr-rectangular.jpg' },
+    ], page:'catalogo-estructural.html', wa:'PTR%20Rectangular%20Serie%20R', photo:'https://aceroscrea.com/wp-content/uploads/2025/02/pieza-de-ptr-rectangular.jpg', photoPos:'center 40%' },
 
   { id:'polin-c', cat:'estructural', provider:'PROLAMSA',
     name:'Polín C — Correa Estructural',
@@ -1247,7 +1247,8 @@ function render(query = ''){
     const catBadge = `<span class="pcard-badge badge-cat-${p.cat}">${CAT_NAMES[p.cat]}</span>`;
     const provBadge = p.provider ? `<span class="pcard-badge badge-prov">${p.provider}</span>` : '';
     const thumbClass = p.photo ? 'pcard-thumb pcard-thumb--photo' : 'pcard-thumb';
-    const thumbContent = p.photo ? `<img src="${p.photo}" alt="${p.name}" class="pcard-photo" loading="lazy" onerror="this.onerror=null;this.src='assets/images/placeholder-industrial.jpg'">` : p.svg;
+    const pos = p.photoPos || 'center center';
+    const thumbContent = p.photo ? `<img src="${p.photo}" alt="${p.name}" class="pcard-photo" loading="lazy" style="object-position:${pos}" onerror="this.onerror=null;this.src='assets/images/placeholder-industrial.jpg'">` : p.svg;
     return `<div class="pcard" data-cat="${p.cat}" onclick="openModal('${p.id}')">
       <div class="pcard-accent"></div>
       <div class="${thumbClass}">${thumbContent}</div>
@@ -1278,7 +1279,7 @@ function openModal(id){
     <div class="pmodal-accent ${p.cat}"></div>
     <div class="pmodal-inner">
       <div class="pmodal-left">
-        ${p.photo ? `<img src="${p.photo}" alt="${p.name}" class="pmodal-photo" loading="lazy" onerror="this.onerror=null;this.src='assets/images/placeholder-industrial.jpg'">` : p.svg}
+        ${p.photo ? `<img src="${p.photo}" alt="${p.name}" class="pmodal-photo" loading="lazy" style="object-position:${p.photoPos||'center center'}" onerror="this.onerror=null;this.src='assets/images/placeholder-industrial.jpg'">` : p.svg}
         <p class="pmodal-svg-note">${p.svgNote}</p>
       </div>
       <div class="pmodal-right">
