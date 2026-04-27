@@ -66,7 +66,7 @@ h1, h2, h3, h4 {
 
 /* Fix Global de Main para que el Navbar Gigante no lo tape */
 .main-content {
-    padding-top: 150px !important;
+    padding-top: 100px;
     min-height: 80vh;
     background-color: var(--color-bg);
 }
@@ -357,7 +357,8 @@ h1, h2, h3, h4 {
 .catalog-hero {
     background: linear-gradient(135deg, rgba(28,43,84,0.88) 0%, rgba(45,74,138,0.88) 100%),
                 url('https://images.pexels.com/photos/12771407/pexels-photo-12771407.jpeg?auto=compress&cs=tinysrgb&w=1400') center/cover no-repeat;
-    padding: 5rem 2rem 4rem;
+    padding: 6.5rem 2rem 4rem;
+    margin-top: 100px;
     text-align: center;
     color: var(--color-white);
 }
@@ -367,7 +368,8 @@ h1, h2, h3, h4 {
 
 /* Banner hero de sub-páginas de catálogo */
 .subcat-hero {
-    padding: 4.5rem 2rem 3.5rem;
+    padding: 6rem 2rem 3.5rem;
+    margin-top: 100px;
     text-align: center;
     color: var(--color-white);
 }
@@ -1555,6 +1557,12 @@ footer {
     footer { padding: 3rem 1.5rem 2rem; }
     .footer-container { gap: 2rem; }
     .why-grid { gap: 1.5rem; }
+    .catalog-hero h1 { font-size: 2.4rem; }
+    .catalog-hero p { font-size: 1rem; }
+    .subcat-hero h1 { font-size: 2.2rem; }
+    .about-grid { gap: 3rem; }
+    .locations-grid, .catalog-grid { gap: 1.5rem; }
+    .catalog-card, .location-card { padding: 2rem 1.5rem; }
 }
 
 /* ============================================
@@ -1585,6 +1593,23 @@ footer {
     .logo img { height: 64px; }
     .whatsapp-float { bottom: 1.2rem; right: 1.2rem; width: 52px; height: 52px; }
     .whatsapp-float i { font-size: 1.8rem; }
+    /* Hero mobile */
+    .catalog-hero { margin-top: 85px; padding: 3.5rem 1.2rem 2.5rem; }
+    .catalog-hero h1 { font-size: 1.9rem; }
+    .catalog-hero p { font-size: 0.95rem; }
+    .subcat-hero { margin-top: 85px; padding: 3rem 1.2rem 2.5rem; }
+    .subcat-hero h1 { font-size: 1.8rem; }
+    /* Cards mobile */
+    .catalog-card, .location-card { padding: 1.5rem 1rem; }
+    .catalog-card h3, .location-card h3 { font-size: 1.4rem; margin-bottom: 1rem; }
+    /* main-content mobile */
+    .main-content { padding-top: 85px; }
+    /* History section mobile */
+    .history-section { padding: 3rem 0 !important; }
+    /* Locations */
+    .locations-grid { grid-template-columns: 1fr !important; gap: 1rem; }
+    /* Contact grid */
+    .contact-grid { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
 }
 
 /* ============================================
