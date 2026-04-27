@@ -14,6 +14,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .ubicaciones-hero {
+            margin-top: 100px;
+            background: linear-gradient(135deg, rgba(28,43,84,0.88), rgba(28,43,84,0.70)), url('assets/images/hero_steel_1774502974788.png') center/cover no-repeat;
+            padding: 6.5rem 2rem 4rem;
+            text-align: center;
+            color: #fff;
+        }
+        .ubicaciones-hero h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.4rem, 6vw, 4rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+            margin-bottom: .85rem;
+            line-height: 1.1;
+        }
+        .ubicaciones-hero h1 span {
+            color: var(--color-yellow);
+        }
+        .ubicaciones-hero p {
+            font-size: 1.15rem;
+            opacity: .88;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        .badge-matriz {
+            background: var(--color-red);
+            color: #fff;
+            font-size: .72rem;
+            font-weight: 700;
+            padding: .2rem .75rem;
+            border-radius: 999px;
+            text-transform: uppercase;
+            letter-spacing: .05em;
+            margin-left: .5rem;
+            vertical-align: middle;
+        }
+    </style>
 </head>
 <body>
     <header class="navbar" style="background: var(--color-white); box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
@@ -39,8 +79,14 @@
         </div>
     </header>
 
-    <main class="main-content">
-        <section class="locations-section">
+    <!-- Hero -->
+    <section class="ubicaciones-hero fade-in">
+        <h1>Nuestras <span>Sucursales</span></h1>
+        <p>8 puntos de distribución en las regiones de Oaxaca.</p>
+    </section>
+
+    <main class="main-content" style="padding-top:0;">
+        <section class="locations-section" style="padding: 4rem 0;">
             <div class="container">
                 <h2 class="section-title text-center">Nuestras <span class="text-red">Ubicaciones</span></h2>
                 <p class="section-subtitle text-center">Encuentra tu sucursal Construaceros RAMAR más cercana en Oaxaca.</p>
@@ -53,7 +99,7 @@
                     <!-- Matriz Principal -->
                     <div class="location-card premium-card matriz-card" style="border-top: 4px solid var(--color-red);">
                         <i class="fa-solid fa-location-dot bg-icon text-red" style="font-size: 3rem; margin-bottom: 1rem; color: var(--color-red);"></i>
-                        <h3>Matriz Ex-Garita</h3>
+                        <h3>Matriz Ex-Garita <span class="badge-matriz">Matriz Principal</span></h3>
                         <p class="subtitle" style="font-weight: 600; color: var(--color-blue);">Santa Cruz Xoxocotlán, Oax.</p>
                         <hr style="margin: 1rem 0; border: 1px solid rgba(0,0,0,0.05);">
                         <div class="card-details" style="text-align: left;">
@@ -172,7 +218,7 @@
                         </a>
                     </div>
 
-                    <!-- Dicvicion Aceros y Metales Especializados -->
+                    <!-- División Aceros y Metales Especializados -->
                     <div class="location-card premium-card" style="border-top: 4px solid #7e22ce;">
                         <i class="fa-solid fa-gear" style="font-size: 2rem; color: #7e22ce; margin-bottom: 1rem;"></i>
                         <h3>División — Aceros y Metales Especializados</h3>
@@ -214,7 +260,7 @@
                     <li><a href="nosotros.html">Nosotros</a></li>
                     <li><a href="catalogo.html">Catálogo</a></li>
                     <li><a href="guia.html">Guía</a></li>
-                <li><a href="ubicaciones.html">Ubicaciones</a></li>
+                    <li><a href="ubicaciones.html">Ubicaciones</a></li>
                 </ul>
             </div>
             <div class="footer-contact">

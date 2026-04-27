@@ -14,6 +14,114 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .nosotros-hero {
+            margin-top: 100px;
+            background: linear-gradient(135deg, rgba(28,43,84,0.92), rgba(221,59,46,0.48)), url('assets/images/hero_steel_1774502974788.png') center/cover no-repeat;
+            padding: 6.5rem 2rem 4rem;
+            text-align: center;
+            color: #fff;
+        }
+        .nosotros-hero h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.4rem, 6vw, 4rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+            margin-bottom: .85rem;
+            line-height: 1.1;
+        }
+        .nosotros-hero h1 span {
+            color: var(--color-yellow);
+        }
+        .nosotros-hero p {
+            font-size: 1.15rem;
+            opacity: .88;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        /* Milestones timeline */
+        .milestone-row {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 0;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        /* connecting line on desktop */
+        @media (min-width: 700px) {
+            .milestone-row::before {
+                content: '';
+                position: absolute;
+                top: 2.6rem;
+                left: 10%;
+                right: 10%;
+                height: 3px;
+                background: rgba(255,255,255,0.2);
+                border-radius: 2px;
+                z-index: 0;
+            }
+        }
+
+        .milestone-item {
+            flex: 1 1 180px;
+            max-width: 220px;
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.13);
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            margin: 0 .5rem 1.5rem;
+            transition: background .25s, transform .25s;
+        }
+        .milestone-item:hover {
+            background: rgba(255,255,255,0.13);
+            transform: translateY(-5px);
+        }
+
+        .milestone-year {
+            font-family: var(--font-heading);
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: var(--color-yellow);
+            line-height: 1;
+            margin-bottom: .6rem;
+            display: block;
+        }
+
+        .milestone-label {
+            font-size: .97rem;
+            color: rgba(255,255,255,0.9);
+            line-height: 1.45;
+        }
+
+        .milestone-dot {
+            width: 14px;
+            height: 14px;
+            background: var(--color-yellow);
+            border-radius: 50%;
+            margin: 0 auto .75rem;
+            box-shadow: 0 0 0 4px rgba(240,128,24,0.3);
+        }
+
+        @media (max-width: 699px) {
+            .milestone-row {
+                flex-direction: column;
+                align-items: center;
+            }
+            .milestone-item {
+                max-width: 340px;
+                width: 100%;
+                margin: 0 0 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="navbar" style="background: var(--color-white); box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
@@ -39,7 +147,14 @@
         </div>
     </header>
 
-    <main class="main-content">
+    <!-- Hero -->
+    <section class="nosotros-hero fade-in">
+        <h1>Nuestra <span>Historia</span></h1>
+        <p>25 años forjando el futuro estructural de Oaxaca.</p>
+    </section>
+
+    <main class="main-content" style="padding-top:0;">
+
         <!-- About Section -->
         <section class="about-section fade-in">
             <div class="container about-grid">
@@ -74,11 +189,11 @@
                 <div style="text-align: center; max-width: 800px; margin: 0 auto;">
                     <h2 class="section-title">Nuestra <span class="text-yellow">Historia</span></h2>
                     <h3 style="font-family: var(--font-heading); font-size: 1.8rem; color: var(--color-blue); margin-bottom: 2rem;">Forjando el futuro estructural de Oaxaca</h3>
-                    
+
                     <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text); margin-bottom: 1.5rem; text-align: justify;">
                         Nuestra trayectoria comenzó un <strong>8 de agosto del año 2000</strong>, impulsada por la visión y tenacidad de nuestro fundador, <strong>Félix Martínez Lázaro</strong>. Desde ese primer día, nos propusimos ser mucho más que una distribuidora: nacimos para ser verdaderos aliados del desarrollo estructural de nuestro estado, brindando el soporte de acero necesario para dar forma a incontables edificaciones.
                     </p>
-                    
+
                     <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text); margin-bottom: 1.5rem; text-align: justify;">
                         Desde aquel entonces, nos hemos mantenido firmes, trabajando hombro a hombro con los verdaderos artífices de las estructuras. Nuestro compromiso permanente es con los <strong>balconeros, hojalateros, herreros, mofleros, carpinteros</strong> y, en general, con toda la gente trabajadora que ocupa materiales de alta calidad para sus proyectos. Entendemos sus necesidades y por eso adecuamos constantemente nuestro servicio a su favor, garantizando excelencia para que sus obras y acabados trasciendan generaciones.
                     </p>
@@ -93,6 +208,69 @@
                 </div>
             </div>
         </section>
+
+        <!-- Milestones / Trayectoria -->
+        <section class="fade-in" style="padding:4rem 2rem; background: var(--color-blue);">
+            <div class="container" style="text-align:center;">
+                <h2 class="section-title" style="color:#fff;">Nuestra <span class="text-yellow">Trayectoria</span></h2>
+                <p style="color:rgba(255,255,255,.75); max-width:520px; margin:.5rem auto 0; font-size:1.05rem;">Cuatro décadas de crecimiento, un solo compromiso.</p>
+
+                <div class="milestone-row">
+
+                    <div class="milestone-item">
+                        <div class="milestone-dot"></div>
+                        <span class="milestone-year">2000</span>
+                        <p class="milestone-label">
+                            <strong style="display:block; color:#fff; margin-bottom:.3rem;">Fundación</strong>
+                            Félix Martínez Lázaro abre la primera sede en Ex Garita, Xoxocotlán.
+                        </p>
+                    </div>
+
+                    <div class="milestone-item">
+                        <div class="milestone-dot"></div>
+                        <span class="milestone-year">2010</span>
+                        <p class="milestone-label">
+                            <strong style="display:block; color:#fff; margin-bottom:.3rem;">Expansión</strong>
+                            Crecemos a 4 sucursales, consolidando presencia en el Valle Central.
+                        </p>
+                    </div>
+
+                    <div class="milestone-item">
+                        <div class="milestone-dot"></div>
+                        <span class="milestone-year">2020</span>
+                        <p class="milestone-label">
+                            <strong style="display:block; color:#fff; margin-bottom:.3rem;">Resiliencia</strong>
+                            En pandemia fortalecimos la cadena logística y ampliamos capacidad operativa.
+                        </p>
+                    </div>
+
+                    <div class="milestone-item">
+                        <div class="milestone-dot"></div>
+                        <span class="milestone-year">2025</span>
+                        <p class="milestone-label">
+                            <strong style="display:block; color:#fff; margin-bottom:.3rem;">Liderazgo Regional</strong>
+                            8 Sucursales · +5,000 productos · las 8 regiones de Oaxaca cubiertas.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="fade-in" style="padding:4rem 2rem; background:#f8fafc; text-align:center;">
+            <div class="container">
+                <h2 class="section-title">¿Listo para tu <span class="text-yellow">próxima obra?</span></h2>
+                <p style="color:#475569; max-width:480px; margin:.5rem auto 2rem; font-size:1.05rem;">Cotiza con nosotros y recibe atención personalizada de nuestro equipo.</p>
+                <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+                    <a href="contacto.html" class="btn-primary">Contáctanos <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="https://wa.me/5219512283263" target="_blank" class="btn-primary" style="background:#25D366; border-color:#25D366;">
+                        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <footer id="footer-section">
@@ -108,7 +286,7 @@
                     <li><a href="nosotros.html">Nosotros</a></li>
                     <li><a href="catalogo.html">Catálogo</a></li>
                     <li><a href="guia.html">Guía</a></li>
-                <li><a href="ubicaciones.html">Ubicaciones</a></li>
+                    <li><a href="ubicaciones.html">Ubicaciones</a></li>
                 </ul>
             </div>
             <div class="footer-contact">

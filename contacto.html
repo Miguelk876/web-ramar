@@ -14,6 +14,215 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .contact-hero {
+            margin-top: 100px;
+            background: linear-gradient(135deg, rgba(28,43,84,0.9), rgba(221,59,46,0.5)), url('assets/images/hero_steel_1774502974788.png') center/cover no-repeat;
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+            color: #fff;
+        }
+        .contact-hero h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.4rem, 6vw, 4rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+            margin-bottom: .75rem;
+            line-height: 1.1;
+        }
+        .contact-hero h1 span {
+            color: var(--color-yellow);
+        }
+        .contact-hero p {
+            font-size: 1.15rem;
+            opacity: .88;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info-card {
+            background: #fff;
+            border-left: 5px solid var(--color-yellow);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 24px rgba(28,43,84,0.10);
+        }
+
+        .contact-info-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--color-blue);
+        }
+
+        .contact-info-item {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-info-icon {
+            width: 50px;
+            height: 50px;
+            background: #f8fafc;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.06);
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+
+        .contact-info-icon.red { color: var(--color-red); }
+        .contact-info-icon.blue { color: var(--color-blue); }
+
+        .contact-info-item strong {
+            display: block;
+            color: var(--color-blue);
+            font-size: .9rem;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+            margin-bottom: .2rem;
+        }
+        .contact-info-item span,
+        .contact-info-item a {
+            color: #475569;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        .contact-info-item a:hover { color: var(--color-blue); }
+
+        .contact-social-title {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--color-blue);
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: .05em;
+        }
+        .contact-social-links {
+            display: flex;
+            flex-direction: column;
+            gap: .85rem;
+        }
+        .contact-social-links a {
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: .97rem;
+            transition: opacity .2s;
+        }
+        .contact-social-links a:hover { opacity: .75; }
+        .contact-social-links a i { font-size: 1.4rem; }
+        .contact-social-links .fb { color: #1877F2; }
+        .contact-social-links .ig { color: #E4405F; }
+        .contact-social-links .tk { color: #000; }
+
+        .contact-form-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 24px rgba(28,43,84,0.10);
+            border-top: 4px solid var(--color-blue);
+        }
+
+        .contact-form-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--color-blue);
+        }
+
+        .contact-form-card form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-form-card label {
+            display: block;
+            margin-bottom: .5rem;
+            font-weight: 600;
+            font-size: .9rem;
+            color: #334155;
+            text-transform: uppercase;
+            letter-spacing: .03em;
+        }
+
+        .contact-form-card input,
+        .contact-form-card textarea {
+            width: 100%;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            padding: .85rem 1rem;
+            font-size: 1rem;
+            font-family: var(--font-body);
+            transition: border-color .2s;
+            box-sizing: border-box;
+        }
+
+        .contact-form-card input:focus,
+        .contact-form-card textarea:focus {
+            outline: none;
+            border-color: var(--color-blue);
+        }
+
+        .contact-form-card textarea {
+            resize: vertical;
+        }
+
+        .btn-wa-contact {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: .6rem;
+            width: 100%;
+            padding: 15px;
+            background: #25D366;
+            color: #fff;
+            font-size: 1.05rem;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: background .2s, transform .15s;
+            box-sizing: border-box;
+        }
+        .btn-wa-contact:hover {
+            background: #1ebe5a;
+            transform: translateY(-2px);
+        }
+        .btn-wa-contact i { font-size: 1.3rem; }
+
+        @media (max-width: 600px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .contact-info-card,
+            .contact-form-card {
+                padding: 1.75rem 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="navbar" style="background: var(--color-white); box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
@@ -39,65 +248,73 @@
         </div>
     </header>
 
-    <main class="main-content">
-        <section class="container fade-in" style="padding: 4rem 2rem;">
-            <h2 class="section-title text-center">Conéctate con <span class="text-blue">Nosotros</span></h2>
-            <p class="section-subtitle text-center">Estamos listos para surtir el acero de tu próxima construcción.</p>
+    <!-- Hero -->
+    <section class="contact-hero fade-in">
+        <h1>Contáctanos <span>Hoy Mismo</span></h1>
+        <p>Estamos listos para surtir el acero de tu próxima construcción.</p>
+    </section>
 
-            <div class="contact-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; margin-top: 3rem;">
-                
+    <main class="main-content" style="padding-top:0;">
+        <section class="container fade-in" style="padding: 4rem 2rem;">
+
+            <div class="contact-grid">
+
                 <!-- Info de Contacto -->
-                <div style="background: var(--color-bg); padding: 3rem; border-radius: 8px; border-left: 5px solid var(--color-yellow);">
-                    <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 2rem; color: var(--color-blue);">Datos de Contacto</h3>
-                    
-                    <div style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;">
-                        <div style="width: 50px; height: 50px; background: var(--color-white); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); color: var(--color-red); font-size: 1.5rem;">
+                <div class="contact-info-card">
+                    <h3>Datos de Contacto</h3>
+
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon red">
                             <i class="fa-solid fa-map-location-dot"></i>
                         </div>
                         <div>
-                            <strong style="display: block; color: var(--color-blue);">Matriz Principal</strong>
-                            <span style="color: var(--color-text-light);">Ex Garita, Santa Cruz Xoxocotlán</span>
+                            <strong>Matriz Principal</strong>
+                            <span>Ex Garita, Santa Cruz Xoxocotlán</span>
                         </div>
                     </div>
 
-                    <div style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;">
-                        <div style="width: 50px; height: 50px; background: var(--color-white); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); color: var(--color-blue); font-size: 1.5rem;">
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon blue">
                             <i class="fa-solid fa-phone"></i>
                         </div>
                         <div>
-                            <strong style="display: block; color: var(--color-blue);">Teléfono / WhatsApp</strong>
-                            <a href="tel:9515173157" style="color: var(--color-text-light); text-decoration: none; font-size: 1.1rem; font-weight: 600;">951 517 3157</a> &nbsp;·&nbsp; <a href="tel:9515336831" style="color: var(--color-text-light); text-decoration: none; font-size: 1.1rem; font-weight: 600;">951 533 6831</a>
+                            <strong>Teléfono / WhatsApp</strong>
+                            <span>
+                                <a href="tel:9515173157">951 517 3157</a>
+                                &nbsp;·&nbsp;
+                                <a href="tel:9515336831">951 533 6831</a>
+                            </span>
                         </div>
                     </div>
 
-                    <div style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;">
-                        <div style="width: 50px; height: 50px; background: var(--color-white); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); color: var(--color-blue); font-size: 1.5rem;">
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon blue">
                             <i class="fa-solid fa-envelope"></i>
                         </div>
                         <div>
-                            <strong style="display: block; color: var(--color-blue);">Correo Electrónico</strong>
-                            <span style="color: var(--color-text-light);">ramar.matriz@gmail.com</span>
+                            <strong>Correo Electrónico</strong>
+                            <span>ramar.matriz@gmail.com</span>
                         </div>
                     </div>
 
-                    <h4 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--color-blue);">Síguenos en las Redes</h4>
-                    <div style="display: flex; flex-direction: column; gap: 1rem;">
-                        <a href="https://facebook.com/construacerosramar.oficial" target="_blank" style="text-decoration: none; color: #1877F2; font-weight: 600; display: flex; align-items: center; gap: 10px;">
-                            <i class="fa-brands fa-facebook" style="font-size: 1.5rem;"></i> construacerosramar.oficial
+                    <p class="contact-social-title">Síguenos en las Redes</p>
+                    <div class="contact-social-links">
+                        <a href="https://facebook.com/construacerosramar.oficial" target="_blank" class="fb">
+                            <i class="fa-brands fa-facebook"></i> construacerosramar.oficial
                         </a>
-                        <a href="https://instagram.com/ramar.oficial" target="_blank" style="text-decoration: none; color: #E4405F; font-weight: 600; display: flex; align-items: center; gap: 10px;">
-                            <i class="fa-brands fa-instagram" style="font-size: 1.5rem;"></i> @ramar.oficial
+                        <a href="https://instagram.com/ramar.oficial" target="_blank" class="ig">
+                            <i class="fa-brands fa-instagram"></i> @ramar.oficial
                         </a>
-                        <a href="https://tiktok.com/@ramar.oficial" target="_blank" style="text-decoration: none; color: #000000; font-weight: 600; display: flex; align-items: center; gap: 10px;">
-                            <i class="fa-brands fa-tiktok" style="font-size: 1.5rem;"></i> @ramar.oficial
+                        <a href="https://tiktok.com/@ramar.oficial" target="_blank" class="tk">
+                            <i class="fa-brands fa-tiktok"></i> @ramar.oficial
                         </a>
                     </div>
                 </div>
 
                 <!-- Formulario -->
-                <div style="padding: 2rem; border: 1px solid rgba(0,0,0,0.1); border-radius: 8px;">
-                    <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 2rem; color: var(--color-blue);">Envíanos un Mensaje</h3>
-                    <form action="https://formsubmit.co/ramar.matriz@gmail.com" method="POST" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <div class="contact-form-card">
+                    <h3>Envíanos un Mensaje</h3>
+                    <form action="https://formsubmit.co/ramar.matriz@gmail.com" method="POST">
                         <!-- Configuración FormSubmit -->
                         <input type="hidden" name="_subject" value="Nueva cotización desde construacerosramar.com">
                         <input type="hidden" name="_next" value="gracias.html">
@@ -106,20 +323,26 @@
                         <input type="text" name="_honey" style="display:none">
 
                         <div>
-                            <label for="nombre" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Nombre Completo</label>
-                            <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez" required style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 4px; font-family: var(--font-body);">
+                            <label for="nombre">Nombre Completo</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez" required>
                         </div>
                         <div>
-                            <label for="telefono" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Teléfono o WhatsApp</label>
-                            <input type="tel" id="telefono" name="telefono" placeholder="951 000 0000" required style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 4px; font-family: var(--font-body);">
+                            <label for="telefono">Teléfono o WhatsApp</label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="951 000 0000" required>
                         </div>
                         <div>
-                            <label for="mensaje" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Mensaje / Material Buscado</label>
-                            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Requiero cotizar vigas IPR..." required style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 4px; font-family: var(--font-body); resize: vertical;"></textarea>
+                            <label for="mensaje">Mensaje / Material Buscado</label>
+                            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Requiero cotizar vigas IPR..." required></textarea>
                         </div>
-                        <button type="submit" class="btn-primary" style="width: 100%; padding: 15px; font-size: 1.1rem; border: none; cursor: pointer;">Enviar Mensaje <i class="fa-solid fa-paper-plane"></i></button>
+                        <button type="submit" class="btn-primary" style="width:100%; padding:15px; font-size:1.1rem; border:none; cursor:pointer;">
+                            Enviar Mensaje <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                        <a href="https://wa.me/5219512283263" class="btn-wa-contact" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp
+                        </a>
                     </form>
                 </div>
+
             </div>
         </section>
     </main>
@@ -137,7 +360,7 @@
                     <li><a href="nosotros.html">Nosotros</a></li>
                     <li><a href="catalogo.html">Catálogo</a></li>
                     <li><a href="guia.html">Guía</a></li>
-                <li><a href="ubicaciones.html">Ubicaciones</a></li>
+                    <li><a href="ubicaciones.html">Ubicaciones</a></li>
                 </ul>
             </div>
             <div class="footer-contact">
