@@ -377,6 +377,87 @@
 .btn-modal-wa   { background: #25D366; color: #fff; }
 .btn-modal-full:hover, .btn-modal-wa:hover { opacity: .88; transform: translateY(-1px); }
 
+/* ── category hub ── */
+.cat-hub-section {
+    background: #fff;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 2rem 0;
+}
+.cat-hub-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+}
+.cat-hub-card {
+    display: flex;
+    align-items: center;
+    gap: .9rem;
+    padding: 1rem 1.2rem;
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    cursor: pointer;
+    text-align: left;
+    transition: border-color .2s, box-shadow .2s, transform .15s;
+    font-family: var(--font-body);
+}
+.cat-hub-card:hover {
+    border-color: var(--color-blue);
+    box-shadow: 0 4px 16px rgba(28,43,84,.12);
+    transform: translateY(-2px);
+}
+.cat-hub-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+.cat-hub-info {
+    flex: 1;
+    min-width: 0;
+}
+.cat-hub-info strong {
+    display: block;
+    font-size: .95rem;
+    color: var(--color-blue);
+    font-weight: 700;
+    line-height: 1.2;
+}
+.cat-hub-info span {
+    display: block;
+    font-size: .78rem;
+    color: #64748b;
+    margin-top: .2rem;
+    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.cat-hub-arrow {
+    color: #94a3b8;
+    font-size: .9rem;
+    flex-shrink: 0;
+}
+.cat-hub-card.active {
+    border-color: var(--color-blue);
+    background: #eff6ff;
+}
+@media (max-width: 1100px) {
+    .cat-hub-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 700px) {
+    .cat-hub-grid { grid-template-columns: 1fr 1fr; }
+    .cat-hub-card { padding: .8rem 1rem; }
+    .cat-hub-info span { display: none; }
+}
+@media (max-width: 420px) {
+    .cat-hub-grid { grid-template-columns: 1fr; }
+}
+
 /* ── bottom sheet filtros (móvil) ── */
 .filter-fab {
     display: none;
@@ -535,7 +616,65 @@
 
     <section class="catalog-hero">
         <h1>Nuestro <span>Catálogo</span></h1>
-        <p>Más de 25 años surtiendo a la construcción en Oaxaca. Haz clic en cualquier producto para ver todos los detalles.</p>
+        <p>Más de 25 años surtiendo a la construcción en Oaxaca. Elige una categoría o busca directamente.</p>
+    </section>
+
+    <!-- ── CATEGORY HUB ── -->
+    <section class="cat-hub-section" id="cat-hub">
+        <div class="container">
+            <div class="cat-hub-grid">
+                <button class="cat-hub-card" data-cat="estructural">
+                    <div class="cat-hub-icon" style="background:#1e40af22;color:#1e40af">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+                    <div class="cat-hub-info">
+                        <strong>Acero Estructural</strong>
+                        <span>Vigas IPR, PTR, Polín C/Z, HSS, Rejilla</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right cat-hub-arrow"></i>
+                </button>
+                <button class="cat-hub-card" data-cat="comercial">
+                    <div class="cat-hub-icon" style="background:#15803d22;color:#15803d">
+                        <i class="fa-solid fa-helmet-safety"></i>
+                    </div>
+                    <div class="cat-hub-info">
+                        <strong>Acero Comercial</strong>
+                        <span>Varilla, Láminas Ternium, Malla, Soleras</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right cat-hub-arrow"></i>
+                </button>
+                <button class="cat-hub-card" data-cat="especializado">
+                    <div class="cat-hub-icon" style="background:#7e22ce22;color:#7e22ce">
+                        <i class="fa-solid fa-gear"></i>
+                    </div>
+                    <div class="cat-hub-info">
+                        <strong>Acero Especializado</strong>
+                        <span>Nylamid, Grado Maquinaria, Tubería Cédula</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right cat-hub-arrow"></i>
+                </button>
+                <button class="cat-hub-card" data-cat="pintura">
+                    <div class="cat-hub-icon" style="background:#c2410c22;color:#c2410c">
+                        <i class="fa-solid fa-fill-drip"></i>
+                    </div>
+                    <div class="cat-hub-info">
+                        <strong>Pinturas PintuMex</strong>
+                        <span>Vinílicas, Esmaltes, Primarios, Impermeabilizantes</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right cat-hub-arrow"></i>
+                </button>
+                <button class="cat-hub-card" data-cat="herramienta">
+                    <div class="cat-hub-icon" style="background:#b4530922;color:#b45309">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+                    <div class="cat-hub-info">
+                        <strong>Herramienta</strong>
+                        <span>Makita, DeWalt, Truper — eléctrica y manual</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right cat-hub-arrow"></i>
+                </button>
+            </div>
+        </div>
     </section>
 
     <main class="main-content" style="padding-top:0;">
@@ -665,7 +804,7 @@ const PRODUCTS = [
       {i:'fa-arrows-up-down',l:'Longitud', v:'6 metros estándar'},
       {i:'fa-building',    l:'Usos',        v:'Naves industriales, puentes, mezzanines'},
       {i:'fa-lightbulb',   l:'Tip RAMAR',   v:'Reforzar juntas con placas; soldadura MIG'}
-    ], page:'catalogo-estructural.html', wa:'Vigas%20IPR%2FIPS', photo:'https://images.pexels.com/photos/36003984/pexels-photo-36003984.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo-estructural.html', wa:'Vigas%20IPR%2FIPS', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Viga-IPR-scaled.jpg' },
 
   { id:'canal-angulo', cat:'estructural', provider:'Fortacero',
     name:'Canal U y Ángulo L',
@@ -677,7 +816,7 @@ const PRODUCTS = [
       {i:'fa-ruler',     l:'Ángulo L',v:'1"×⅛" hasta 4"×¼" · Largo 6 m'},
       {i:'fa-building',  l:'Usos',    v:'Chasis, rieles industriales, refuerzos'},
       {i:'fa-lightbulb', l:'Tip',     v:'Para rieles de alta flexión usar 3/16" o más'}
-    ], page:'catalogo-estructural.html', wa:'Canal%20U%20y%20%C3%81ngulo%20L', photo:'https://images.pexels.com/photos/5661674/pexels-photo-5661674.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo-estructural.html', wa:'Canal%20U%20y%20%C3%81ngulo%20L', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Canal-U-scaled.jpg' },
 
   { id:'ptr-c', cat:'estructural', provider:'PROLAMSA',
     name:'PTR Cuadrado — Serie C',
@@ -689,7 +828,7 @@ const PRODUCTS = [
       {i:'fa-layer-group',l:'Calibres',v:'9 al 22 según tamaño · Largo 6.10 m'},
       {i:'fa-building',  l:'Usos',     v:'Portones, marcos, columnas, muebles metálicos'},
       {i:'fa-lightbulb', l:'Tip',      v:'C-150 y C-200 los más populares en herrería residencial'}
-    ], page:'catalogo-estructural.html', wa:'PTR%20Cuadrado%20Serie%20C', photo:'https://www.infrabuild.com/wp-content/uploads/sites/8/2021/02/DuraGalPlus-Galvanized-Steel-SHS-Structural-Tube-2-square-3.jpg' },
+    ], page:'catalogo-estructural.html', wa:'PTR%20Cuadrado%20Serie%20C', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/PTR-Cuadrado-scaled.jpg' },
 
   { id:'ptr-r', cat:'estructural', provider:'PROLAMSA',
     name:'PTR Rectangular — Serie R',
@@ -713,7 +852,7 @@ const PRODUCTS = [
       {i:'fa-layer-group',l:'Calibres', v:'10 a 16 · Largo 6 m estándar'},
       {i:'fa-building',  l:'Usos',      v:'Correas de techo en naves y bodegas'},
       {i:'fa-lightbulb', l:'Tip',       v:'Para vanos >8 m entre marcos, usar Polín Z'}
-    ], page:'catalogo-estructural.html', wa:'Pol%C3%ADn%20C%20EPC', photo:'https://images.pexels.com/photos/10682522/pexels-photo-10682522.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo-estructural.html', wa:'Pol%C3%ADn%20C%20EPC', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Polin-C-Serviacero-Comercial.jpg' },
 
   { id:'polin-z', cat:'estructural', provider:'PROLAMSA',
     name:'Polín Z — Alta Rigidez',
@@ -725,7 +864,7 @@ const PRODUCTS = [
       {i:'fa-layer-group',l:'Calibres', v:'10 a 16 · Largo 6 m estándar'},
       {i:'fa-building',  l:'Usos',      v:'Vanos >6 m, naves continuas con traslape'},
       {i:'fa-lightbulb', l:'Tip',       v:'Rojo AR para carga pesada; Gris CC para estándar'}
-    ], page:'catalogo-estructural.html', wa:'Pol%C3%ADn%20Z%20EPZ', photo:'https://images.pexels.com/photos/8056367/pexels-photo-8056367.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo-estructural.html', wa:'Pol%C3%ADn%20Z%20EPZ', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Polin-Z.jpg' },
 
   { id:'polin-avicola', cat:'estructural', provider:'PROLAMSA',
     name:'Polín Avícola Galvanizado',
@@ -737,7 +876,7 @@ const PRODUCTS = [
       {i:'fa-shield',  l:'Acabado',   v:'Galvanizado de origen · Cal. 14 MSG (1.90 mm)'},
       {i:'fa-building',l:'Usos',      v:'Naves avícolas, cuartos fríos, estructuras ligeras'},
       {i:'fa-lightbulb',l:'Tip',      v:'No requiere pintura; galvanizado de origen'}
-    ], page:'catalogo-estructural.html', wa:'Pol%C3%ADn%20Av%C3%ADcola', photo:'https://images.pexels.com/photos/3330639/pexels-photo-3330639.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo-estructural.html', wa:'Pol%C3%ADn%20Av%C3%ADcola', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Polin-Avicola-scaled.jpg' },
 
   { id:'hss', cat:'estructural', provider:'Fortacero',
     name:'HSS — Gran Sección',
@@ -749,7 +888,7 @@ const PRODUCTS = [
       {i:'fa-layer-group',l:'Espesor', v:'0.187" a 0.750" · Largo 12.20 m'},
       {i:'fa-building',   l:'Usos',   v:'Columnas estructurales de gran sección'},
       {i:'fa-lightbulb',  l:'Tip',    v:'Especificar espesor según carga axial; norma A500-B'}
-    ], page:'catalogo-estructural.html', wa:'HSS%20Gran%20Secci%C3%B3n', photo:'https://images.pexels.com/photos/33791802/pexels-photo-33791802.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo-estructural.html', wa:'HSS%20Gran%20Secci%C3%B3n', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/HSS-scaled.jpg' },
 
   { id:'rejilla', cat:'estructural', provider:'Fortacero',
     name:'Rejilla Electroforjada',
@@ -761,7 +900,7 @@ const PRODUCTS = [
       {i:'fa-expand',   l:'Paneles', v:'1 m × 6 m estándar'},
       {i:'fa-building', l:'Usos',    v:'Pisos industriales, plataformas, rejillas de drenaje'},
       {i:'fa-lightbulb',l:'Tip',     v:'Recortar con disco abrasivo; soldar perímetro'}
-    ], page:'catalogo-estructural.html', wa:'Rejilla%20Electroforjada', photo:'https://images.pexels.com/photos/37075326/pexels-photo-37075326.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo-estructural.html', wa:'Rejilla%20Electroforjada', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Rejilla-Electroforjada-de-Trafico-Ligero_Serviacero-Electroforjados-scaled.jpg' },
 
   /* ── COMERCIAL ────────────────────────────────── */
   { id:'varilla', cat:'comercial', provider:'TYASA',
@@ -774,7 +913,7 @@ const PRODUCTS = [
       {i:'fa-certificate',l:'Grado',     v:'TA42 · TA52 · ASTM A-615 · NMX-B-506-CANACERO'},
       {i:'fa-building',   l:'Usos',      v:'Zapatas, castillos, losas, columnas'},
       {i:'fa-lightbulb',  l:'Tip',       v:'Empalmes mínimo 40 diámetros; óxido rojizo no es crítico'}
-    ], page:'catalogo-comercial.html', wa:'Varilla%20Corrugada', photo:'https://images.pexels.com/photos/36050289/pexels-photo-36050289.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo-comercial.html', wa:'Varilla%20Corrugada', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Varilla-Corrugada-R-42-scaled.jpg' },
 
   { id:'alambron', cat:'comercial', provider:'TYASA',
     name:'Alambrón TYASA',
@@ -786,7 +925,7 @@ const PRODUCTS = [
       {i:'fa-certificate',l:'Norma',     v:'NMX-B-302-CANACERO · Acero de bajo carbono'},
       {i:'fa-building',   l:'Usos',      v:'Alambre recocido, clavos, mallas, trefilado'},
       {i:'fa-lightbulb',  l:'Tip',       v:'Para malla electrosoldada se requiere alambrón calibre fino'}
-    ], page:'catalogo-comercial.html', wa:'Alambr%C3%B3n%20TYASA', photo:'https://images.pexels.com/photos/36397792/pexels-photo-36397792.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo-comercial.html', wa:'Alambr%C3%B3n%20TYASA', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Alambron-Serviacero-Comercial.jpg' },
 
   { id:'lamina-acanalada', cat:'comercial', provider:'Ternium',
     name:'Lámina Acanalada — Zintro',
@@ -798,7 +937,7 @@ const PRODUCTS = [
       {i:'fa-expand',   l:'Formatos', v:'3 y 4 pies · Largo 6–20 pies'},
       {i:'fa-building', l:'Usos',     v:'Techos de bodega, nave avícola, bardas'},
       {i:'fa-lightbulb',l:'Tip',      v:'Cal. 24 para usos generales; cal. 22 en zonas de viento'}
-    ], page:'catalogo-comercial.html', wa:'L%C3%A1mina%20Acanalada', photo:'https://images.pexels.com/photos/48882/pexels-photo-48882.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo-comercial.html', wa:'L%C3%A1mina%20Acanalada', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Lamina-Acanalada.jpg' },
 
   { id:'lamina-zintro-plus', cat:'comercial', provider:'Ternium',
     name:'Lámina Zintro Plus G-90',
@@ -810,7 +949,7 @@ const PRODUCTS = [
       {i:'fa-ruler',       l:'Calibres',      v:'Cal. 22 · 24 · 26 · 28'},
       {i:'fa-arrows-left-right',l:'Anchos',   v:'3 pies (914 mm) · 4 pies (1,220 mm)'},
       {i:'fa-lightbulb',   l:'Tip',           v:'Ideal para zonas costeras o húmedas; mayor vida útil'}
-    ], page:'catalogo-comercial.html', wa:'L%C3%A1mina%20Zintro%20Plus', photo:'https://images.pexels.com/photos/34597567/pexels-photo-34597567.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo-comercial.html', wa:'L%C3%A1mina%20Zintro%20Plus', photo:'https://www.innovacero.com/wp-content/uploads/2016/05/Lamina-Acanalada-TO-30-FH-Galvanizada-Zintro-Ternium.jpg' },
 
   { id:'lamina-zintro', cat:'comercial', provider:'Ternium',
     name:'Lámina Zintro Alum',
@@ -822,7 +961,7 @@ const PRODUCTS = [
       {i:'fa-shield',   l:'Recubrimiento',v:'ZA-30 y ZA-55 (zinc-aluminio 55%)'},
       {i:'fa-building', l:'Usos',        v:'Techos, bardas y fachadas en zonas húmedas'},
       {i:'fa-lightbulb',l:'Tip',         v:'3× más vida útil que lámina galvanizada convencional'}
-    ], page:'catalogo-comercial.html', wa:'L%C3%A1mina%20Zintro%20Alum%20Ternium', photo:'https://images.pexels.com/photos/11557060/pexels-photo-11557060.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo-comercial.html', wa:'L%C3%A1mina%20Zintro%20Alum%20Ternium', photo:'https://www.innovacero.com/wp-content/uploads/2016/05/Lamina-Acanalada-TO-30-FH-Galvanizada-Zintro-Ternium.jpg' },
 
   { id:'lamina-pintro', cat:'comercial', provider:'Ternium',
     name:'Lámina Pintro — Prepintada',
@@ -834,7 +973,7 @@ const PRODUCTS = [
       {i:'fa-ruler',    l:'Calibres',  v:'24 al 30 MSG · Ancho 3 y 4 pies'},
       {i:'fa-building', l:'Usos',      v:'Techos visibles, fachadas, canchas, naves'},
       {i:'fa-lightbulb',l:'Tip',       v:'No requiere pintura adicional; base de resina poliéster'}
-    ], page:'catalogo-comercial.html', wa:'L%C3%A1mina%20Pintro%20Prepintada', photo:'https://images.pexels.com/photos/35539402/pexels-photo-35539402.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo-comercial.html', wa:'L%C3%A1mina%20Pintro%20Prepintada', photo:'https://www.monten.mx/wp-content/uploads/2020/12/Productos-Pintro.png' },
 
   { id:'lamina-teja', cat:'comercial', provider:'Ternium',
     name:'Lámina Teja — Perfil Colonial',
@@ -846,7 +985,7 @@ const PRODUCTS = [
       {i:'fa-paint-brush',  l:'Acabados',     v:'Zintro (galvanizado) · Pintro (prepintado)'},
       {i:'fa-ruler',        l:'Calibres',     v:'Cal. 26 · 28 · 30'},
       {i:'fa-lightbulb',    l:'Tip',          v:'Estética residencial con durabilidad industrial; fácil instalación'}
-    ], page:'catalogo-comercial.html', wa:'L%C3%A1mina%20Teja', photo:'https://images.pexels.com/photos/5924009/pexels-photo-5924009.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo-comercial.html', wa:'L%C3%A1mina%20Teja', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Teja-de-Acero-Serviacero-Comercial.jpg' },
 
   { id:'lamina-hr', cat:'comercial', provider:'Ternium',
     name:'Lámina Rolada en Caliente (HR)',
@@ -858,7 +997,7 @@ const PRODUCTS = [
       {i:'fa-expand',       l:'Formatos',     v:'4\'×8\' (1.22×2.44 m) · 4\'×10\' (1.22×3.05 m)'},
       {i:'fa-certificate',  l:'Grado',        v:'A-36 (Fy=36 ksi) · ASTM A572 Grado 50'},
       {i:'fa-lightbulb',    l:'Tip',          v:'Base para placas, refuerzos y corte con plasma; no requiere imprimante inmediato'}
-    ], page:'catalogo-comercial.html', wa:'L%C3%A1mina%20HR', photo:'https://images.pexels.com/photos/48895/pexels-photo-48895.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo-comercial.html', wa:'L%C3%A1mina%20HR', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Lamina-Caliente-scaled.jpg' },
 
   { id:'malla', cat:'comercial', provider:'TYASA',
     name:'Malla Electrosoldada',
@@ -870,7 +1009,7 @@ const PRODUCTS = [
       {i:'fa-expand',   l:'Formatos',   v:'Hojas 2.35×6 m · Rollos 100 m²'},
       {i:'fa-building', l:'Usos',       v:'Losas delgadas, banquetas, firmes industriales'},
       {i:'fa-lightbulb',l:'Tip',        v:'Verificar que las cruces no tengan fracturas antes de colocar'}
-    ], page:'catalogo-comercial.html', wa:'Malla%20Electrosoldada', photo:'https://images.pexels.com/photos/36398160/pexels-photo-36398160.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo-comercial.html', wa:'Malla%20Electrosoldada', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Malla-scaled.jpg' },
 
   { id:'lamina-antiderrapante', cat:'comercial', provider:'Fortacero',
     name:'Lámina Antiderrapante',
@@ -882,7 +1021,7 @@ const PRODUCTS = [
       {i:'fa-expand',   l:'Formatos', v:'3′×10′, 4′×10′, 5′×10′, 5′×20′'},
       {i:'fa-building', l:'Usos',     v:'Rampas vehiculares, pisos industriales, escaleras'},
       {i:'fa-lightbulb',l:'Tip',      v:'3/16" o 1/4" para rampas vehiculares; cal.14 para pasillos'}
-    ], page:'catalogo-comercial.html', wa:'L%C3%A1mina%20Antiderrapante', photo:'https://images.pexels.com/photos/31413499/pexels-photo-31413499.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo-comercial.html', wa:'L%C3%A1mina%20Antiderrapante', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Lamina-Antiderrapante-Serviacero-Comercial.jpg' },
 
   { id:'lamina-galvanizada', cat:'comercial', provider:'Fortacero',
     name:'Lámina Galvanizada Lisa G-60',
@@ -894,7 +1033,7 @@ const PRODUCTS = [
       {i:'fa-expand',   l:'Formatos', v:'3′×8′, 3′×10′, 4′×8′, 4′×10′'},
       {i:'fa-building', l:'Usos',     v:'Muebles metálicos, estantería, HVAC, canalones'},
       {i:'fa-lightbulb',l:'Tip',      v:'G-60 resiste corrosión sin pintura; supera a la lámina fría en exteriores'}
-    ], page:'catalogo-comercial.html', wa:'L%C3%A1mina%20Galvanizada', photo:'https://images.pexels.com/photos/36346066/pexels-photo-36346066.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo-comercial.html', wa:'L%C3%A1mina%20Galvanizada', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Lamina-Galvanizada-Lisa-Serviacero-Comercial.jpg' },
 
   { id:'lamina-fria', cat:'comercial', provider:'Fortacero',
     name:'Lámina Fría (Cold Rolled)',
@@ -906,7 +1045,7 @@ const PRODUCTS = [
       {i:'fa-expand',   l:'Formatos', v:'3′×8′, 3′×10′, 4′×8′, 4′×10′'},
       {i:'fa-building', l:'Usos',     v:'Gabinetes, estantería, carcasas, electrodomésticos'},
       {i:'fa-lightbulb',l:'Tip',      v:'Mejores tolerancias que lámina caliente; imprimante para exteriores'}
-    ], page:'catalogo-comercial.html', wa:'L%C3%A1mina%20Fr%C3%ADa', photo:'https://images.pexels.com/photos/8113070/pexels-photo-8113070.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo-comercial.html', wa:'L%C3%A1mina%20Fr%C3%ADa', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Lamina-Fria-Serviacero-Comercial.jpg' },
 
   { id:'losacero', cat:'comercial', provider:'Fortacero',
     name:'Losacero — FortaDeck',
@@ -918,7 +1057,7 @@ const PRODUCTS = [
       {i:'fa-layer-group',l:'Calibres',v:'18 al 24 · Peso 6.72–13.68 kg/m²'},
       {i:'fa-building',  l:'Usos',     v:'Entrepiso, mezzanines, losas industriales'},
       {i:'fa-lightbulb', l:'Tip',      v:'FD25 el más usado en entrepisos residenciales y comerciales'}
-    ], page:'catalogo-comercial.html', wa:'Losacero%20FortaDeck', photo:'https://upload.wikimedia.org/wikipedia/commons/a/ad/Ternium_Losacero_30.jpg' },
+    ], page:'catalogo-comercial.html', wa:'Losacero%20FortaDeck', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Losacero-30-Serviacero-Comercial.jpg' },
 
   { id:'soleras', cat:'comercial', provider:'Fortacero',
     name:'Soleras — Pletinas A-36',
@@ -930,7 +1069,7 @@ const PRODUCTS = [
       {i:'fa-arrows-left-right',l:'Ancho',v:'1/2" a 12" (12.7 a 304.8 mm)'},
       {i:'fa-building', l:'Usos',    v:'Carrocerías, marcos, refuerzos estructurales'},
       {i:'fa-lightbulb',l:'Tip',     v:'3/16"×1" la más usada en barrotes decorativos de reja'}
-    ], page:'catalogo-comercial.html', wa:'Soleras%20A-36', photo:'https://images.pexels.com/photos/36003989/pexels-photo-36003989.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo-comercial.html', wa:'Soleras%20A-36', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Solera-de-Acero-scaled.jpg' },
 
   { id:'barras', cat:'comercial', provider:'Fortacero',
     name:'Barras Redondas y Cuadradas A-36',
@@ -942,7 +1081,7 @@ const PRODUCTS = [
       {i:'fa-square',   l:'Cuadradas',  v:'3/8" a 2" · incl. retorcidas 3/8"–5/8"'},
       {i:'fa-building', l:'Usos',       v:'Ejes, pasadores, balaustradas, herrería ornamental'},
       {i:'fa-lightbulb',l:'Tip',        v:'Retorcidas para trabajos decorativos en portones y rejas'}
-    ], page:'catalogo-comercial.html', wa:'Barras%20A-36', photo:'https://images.pexels.com/photos/46167/pexels-photo-46167.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo-comercial.html', wa:'Barras%20A-36', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Redondo-de-Acero-scaled.jpg' },
 
   { id:'tablero-portones', cat:'comercial', provider:'Fortacero',
     name:'Tablero para Portones',
@@ -954,7 +1093,7 @@ const PRODUCTS = [
       {i:'fa-layer-group',l:'Calibre',v:'20 y 22 · Pintado (PR) o Galvanizado (GV)'},
       {i:'fa-building', l:'Usos',     v:'Portones residenciales e industriales, canceles'},
       {i:'fa-lightbulb',l:'Tip',      v:'Cal. 20 más resistente al impacto; cal. 22 más económico'}
-    ], page:'catalogo-comercial.html', wa:'Tablero%20para%20Portones', photo:'https://images.pexels.com/photos/5312996/pexels-photo-5312996.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo-comercial.html', wa:'Tablero%20para%20Portones', photo:'https://www.fortacero.com/wp-content/uploads/2021/02/Tablero-1.png' },
 
   { id:'marco-puerta', cat:'comercial', provider:'Fortacero',
     name:'Marco y Batiente de Puerta',
@@ -966,7 +1105,7 @@ const PRODUCTS = [
       {i:'fa-ruler',    l:'Batientes',v:'P100, P200, P300 · Cal. 18–20'},
       {i:'fa-building', l:'Usos',     v:'Marcos de puertas de acero interiores y exteriores'},
       {i:'fa-lightbulb',l:'Tip',      v:'Combinar perfil M (marco) con P (batiente) del mismo número'}
-    ], page:'catalogo-comercial.html', wa:'Marco%20de%20Puerta', photo:'https://images.pexels.com/photos/34583809/pexels-photo-34583809.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo-comercial.html', wa:'Marco%20de%20Puerta', photo:'https://www.fortacero.com/wp-content/uploads/2024/12/PMP_M_225.jpeg' },
 
   { id:'perfiles-ventana', cat:'comercial', provider:'Fortacero',
     name:'Perfiles para Ventana',
@@ -978,7 +1117,7 @@ const PRODUCTS = [
       {i:'fa-layer-group',l:'Calibre',v:'18 y 20 · Largo 6 m'},
       {i:'fa-building', l:'Usos',     v:'Ventanas corredizas, abatibles y chambranas'},
       {i:'fa-lightbulb',l:'Tip',      v:'Perfil 121 como chambrana/cenefa para sellado de orillas'}
-    ], page:'catalogo-comercial.html', wa:'Perfiles%20para%20Ventana', photo:'https://images.pexels.com/photos/9540448/pexels-photo-9540448.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo-comercial.html', wa:'Perfiles%20para%20Ventana', photo:'https://www.fortacero.com/wp-content/uploads/2024/12/PV_Media.jpeg' },
 
   { id:'cortina-metalica', cat:'comercial', provider:'Fortacero',
     name:'Cortina Metálica Europea',
@@ -990,7 +1129,7 @@ const PRODUCTS = [
       {i:'fa-arrows-up-down',l:'Largos',v:'3.05 / 4.05 / 5.05 / 6.10 m · Paq. 50 pzas'},
       {i:'fa-building', l:'Usos',    v:'Cortinas enrollables para locales y almacenes'},
       {i:'fa-lightbulb',l:'Tip',     v:'Requiere guías y tambor; calcular peso para dimensionar resorte'}
-    ], page:'catalogo-comercial.html', wa:'Cortina%20Met%C3%A1lica', photo:'https://images.pexels.com/photos/7108777/pexels-photo-7108777.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo-comercial.html', wa:'Cortina%20Met%C3%A1lica', photo:'https://www.fortacero.com/wp-content/uploads/2024/12/TiraCortina1.jpeg' },
 
   { id:'placa-acero', cat:'comercial', provider:'Fortacero',
     name:'Placa de Acero A-36',
@@ -1002,7 +1141,7 @@ const PRODUCTS = [
       {i:'fa-expand',   l:'Formatos',  v:'4′×8′, 4′×10′, 4′×20′, 5′×10′, 5′×20′'},
       {i:'fa-building', l:'Usos',      v:'Bases de maquinaria, refuerzos, chasis pesados'},
       {i:'fa-lightbulb',l:'Tip',       v:'Espesores ≥3/8" requieren oxicorte; usar plantilla'}
-    ], page:'catalogo-comercial.html', wa:'Placa%20de%20Acero%20A-36', photo:'https://images.pexels.com/photos/36522023/pexels-photo-36522023.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo-comercial.html', wa:'Placa%20de%20Acero%20A-36', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Placa-de-Acero-scaled.jpg' },
 
   /* ── ESPECIALIZADO ───────────────────────────── */
   { id:'barra-hueca', cat:'especializado',
@@ -1015,7 +1154,7 @@ const PRODUCTS = [
       {i:'fa-layer-group',l:'Espesores',v:'Múltiples cédulas para torneado'},
       {i:'fa-building', l:'Usos',      v:'Bujes, rodillos, pernos huecos, camisas hidráulicas'},
       {i:'fa-lightbulb',l:'Tip',       v:'Para presión hidráulica, preferir aleaciones tratadas (ST-52)'}
-    ], page:'catalogo-especializado.html', wa:'Barra%20Hueca', photo:'https://images.pexels.com/photos/12951634/pexels-photo-12951634.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo-especializado.html', wa:'Barra%20Hueca', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Tubo-Mecanico_Serviacero-Comercial.jpg' },
 
   { id:'nylamid', cat:'especializado',
     name:'Nylamid — Plástico de Ingeniería',
@@ -1027,7 +1166,7 @@ const PRODUCTS = [
       {i:'fa-expand',   l:'Placas',  v:'¼" a más de 3" de espesor'},
       {i:'fa-building', l:'Usos',    v:'Poleas, rodillos, engranajes silenciosos, guías'},
       {i:'fa-lightbulb',l:'Tip',     v:'Fricción sin grasa: pedir Nylamid autolubricado (G)'}
-    ], page:'catalogo-especializado.html', wa:'Nylamid', photo:'https://images.pexels.com/photos/26619428/pexels-photo-26619428.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo-especializado.html', wa:'Nylamid', photo:'https://acerosymetalescuautitlan.com.mx/wp-content/uploads/2021/03/Barra_redonda_nylamid_hueca.jpg' },
 
   { id:'acero-maquinaria', cat:'especializado',
     name:'Acero Grado Maquinaria',
@@ -1039,7 +1178,7 @@ const PRODUCTS = [
       {i:'fa-certificate',l:'Grados',     v:'1018 soldable · 1045 templable · 4140 alta tensión'},
       {i:'fa-building',   l:'Usos',       v:'Flechas, cigüeñales, brocas, tornillería especial'},
       {i:'fa-lightbulb',  l:'Tip',        v:'Para soldar usar 1018; para templar usar 1045'}
-    ], page:'catalogo-especializado.html', wa:'Acero%20Grado%20Maquinaria', photo:'https://images.pexels.com/photos/5845951/pexels-photo-5845951.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo-especializado.html', wa:'Acero%20Grado%20Maquinaria', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Cuadrado-de-Acero-scaled.jpg' },
 
   { id:'tuberia-cedula', cat:'especializado',
     name:'Tubería por Cédula (Schedule)',
@@ -1051,7 +1190,7 @@ const PRODUCTS = [
       {i:'fa-arrows-up-down',l:'Diámetros',v:'¼" a 6" NPS · Largo 6.10 m'},
       {i:'fa-building', l:'Usos',      v:'Gas LP, hidráulica, neumática, proceso industrial'},
       {i:'fa-lightbulb',l:'Tip',       v:'Gas LP residencial: Ced.40; presión >250 PSI: Ced.80'}
-    ], page:'catalogo-especializado.html', wa:'Tuber%C3%ADa%20por%20C%C3%A9dula', photo:'https://images.pexels.com/photos/8581897/pexels-photo-8581897.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo-especializado.html', wa:'Tuber%C3%ADa%20por%20C%C3%A9dula', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Tubo-Esctructural-scaled.jpg' },
 
   /* ── PINTURA ─────────────────────────────────── */
   { id:'pintura-vinil', cat:'pintura', provider:'PintuMex',
@@ -1064,7 +1203,7 @@ const PRODUCTS = [
       {i:'fa-paint-brush',l:'Tipos',          v:'Vinílica · Acrílica · Lavable'},
       {i:'fa-building',   l:'Usos',           v:'Muros, plafones, tablaroca, fachadas'},
       {i:'fa-lightbulb',  l:'Tip',            v:'Diluir máx. 10–15%; usar sellador vinílico primero'}
-    ], page:'catalogo-pintura.html', wa:'Pinturas%20Vin%C3%ADlicas%20y%20Acr%C3%ADlicas', photo:'https://images.pexels.com/photos/1887946/pexels-photo-1887946.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo-pintura.html', wa:'Pinturas%20Vin%C3%ADlicas%20y%20Acr%C3%ADlicas', photo:'https://pintumex.com.mx/wp-content/uploads/Mock-Up-2025-Supervin-Frente-19-L.png' },
 
   { id:'esmalte', cat:'pintura', provider:'PintuMex',
     name:'Esmaltes Alquidálicos',
@@ -1076,7 +1215,7 @@ const PRODUCTS = [
       {i:'fa-shield',   l:'Protección',     v:'Anticorrosivo · Base aceite alquidálico'},
       {i:'fa-building', l:'Usos',           v:'Cortinas de acero, herrería, estructuras, PTR'},
       {i:'fa-lightbulb',l:'Tip',            v:'Aplicar primario anticorrosivo primero; duplica la vida útil'}
-    ], page:'catalogo-pintura.html', wa:'Esmaltes%20Alquid%C3%A1licos', photo:'https://images.pexels.com/photos/7896642/pexels-photo-7896642.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo-pintura.html', wa:'Esmaltes%20Alquid%C3%A1licos', photo:'https://pintumex.com.mx/wp-content/uploads/Mock-Up-2025-Esmalux-SR-Frente-19-L.png' },
 
   { id:'primario-anticorrosivo', cat:'pintura', provider:'PintuMex',
     name:'Primarios Anticorrosivos',
@@ -1088,7 +1227,7 @@ const PRODUCTS = [
       {i:'fa-shield-halved',l:'Protección',   v:'Adherencia anticorrosiva sobre metal limpio'},
       {i:'fa-building',   l:'Usos',           v:'PTR, rejas, portones, puertas, estructuras'},
       {i:'fa-lightbulb',  l:'Tip',            v:'Usar primario compatible con el esmalte de acabado'}
-    ], page:'catalogo-pintura.html', wa:'Primarios%20Anticorrosivos', photo:'https://images.pexels.com/photos/15013713/pexels-photo-15013713.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo-pintura.html', wa:'Primarios%20Anticorrosivos', photo:'https://pintumex.com.mx/wp-content/uploads/Mock-Up-2025-Esmaflex-Frente-19-L.png' },
 
   { id:'impermeabilizante', cat:'pintura', provider:'PintuMex',
     name:'Impermeabilizantes',
@@ -1100,7 +1239,7 @@ const PRODUCTS = [
       {i:'fa-certificate',l:'Garantías',      v:'3, 5, 7 y 10 años según producto'},
       {i:'fa-building',   l:'Usos',           v:'Azoteas, losas planas, terrazas, cisternas'},
       {i:'fa-lightbulb',  l:'Tip',            v:'Resanar grietas antes de aplicar; 2 manos cruzadas'}
-    ], page:'catalogo-pintura.html', wa:'Impermeabilizantes%20PintuMex', photo:'https://images.pexels.com/photos/12534266/pexels-photo-12534266.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo-pintura.html', wa:'Impermeabilizantes%20PintuMex', photo:'https://pintumex.com.mx/wp-content/uploads/Mock-Up-2025-Imperfibra-18-L-Frente.png' },
 
   { id:'selladores', cat:'pintura', provider:'PintuMex',
     name:'Selladores y Preparación',
@@ -1112,7 +1251,7 @@ const PRODUCTS = [
       {i:'fa-droplet',    l:'Función',        v:'Fijar polvo de yeso y preparar metal oxidado'},
       {i:'fa-building',   l:'Usos',           v:'Yeso, tablaroca, block, metal oxidado'},
       {i:'fa-lightbulb',  l:'Tip',            v:'1 L de sellador 5×1 rinde como 5 L de pintura directa'}
-    ], page:'catalogo-pintura.html', wa:'Selladores%20PintuMex', photo:'https://images.pexels.com/photos/9222200/pexels-photo-9222200.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo-pintura.html', wa:'Selladores%20PintuMex', photo:'https://pintumex.com.mx/wp-content/uploads/Mock-Up-2024-Sellavin-19-L.png' },
 
   /* ── HERRAMIENTA ────────────────────────────── */
   { id:'amoladora', cat:'herramienta', provider:'Makita · DeWalt',
@@ -1125,7 +1264,7 @@ const PRODUCTS = [
       {i:'fa-bolt',      l:'Potencia', v:'750W a 2,200W · Corte, desbaste y pulido'},
       {i:'fa-certificate',l:'Marcas',  v:'Makita GA series · DeWalt DWE/DCG series'},
       {i:'fa-lightbulb', l:'Tip',      v:'4½" para corte fino; 7" para desbaste en obra pesada'}
-    ], page:'catalogo.html', wa:'Amoladora%20Angular%20Makita%20DeWalt', photo:'https://images.pexels.com/photos/977526/pexels-photo-977526.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo.html', wa:'Amoladora%20Angular%20Makita%20DeWalt', photo:'https://www.makita.com.mx/wp-content/uploads/2018/03/GA7030_Esmeriladora_angular.jpg' },
 
   { id:'taladro', cat:'herramienta', provider:'Makita · DeWalt',
     name:'Taladros y Rotomartillos',
@@ -1137,7 +1276,7 @@ const PRODUCTS = [
       {i:'fa-bolt',      l:'Potencia',  v:'710W–900W eléctrico · 18V/20V inalámbrico'},
       {i:'fa-certificate',l:'Marcas',   v:'Makita HP/HR series · DeWalt DWD/D25 series'},
       {i:'fa-lightbulb', l:'Tip',       v:'SDS-Plus para concreto; mandril 13mm para metal'}
-    ], page:'catalogo.html', wa:'Taladro%20Rotomartillo%20Makita%20DeWalt', photo:'https://images.pexels.com/photos/8811529/pexels-photo-8811529.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo.html', wa:'Taladro%20Rotomartillo%20Makita%20DeWalt', photo:'https://www.makita.com.mx/wp-content/uploads/2023/03/HR2475_Rotomartillo-electro-neumatico.png' },
 
   { id:'cortadora-metal', cat:'herramienta', provider:'Makita · DeWalt',
     name:'Cortadoras y Sierras',
@@ -1149,7 +1288,7 @@ const PRODUCTS = [
       {i:'fa-bolt',      l:'Potencia',v:'1,200W–2,000W · Hojas bimetálicas incluidas'},
       {i:'fa-certificate',l:'Marcas', v:'Makita LC/JR · DeWalt DW/DCS series'},
       {i:'fa-lightbulb', l:'Tip',     v:'Usar lubricante de corte en PTR y HSS para mayor vida de hoja'}
-    ], page:'catalogo.html', wa:'Cortadora%20Sierra%20Metal%20Makita%20DeWalt', photo:'https://images.pexels.com/photos/29386087/pexels-photo-29386087.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo.html', wa:'Cortadora%20Sierra%20Metal%20Makita%20DeWalt', photo:'https://www.makita.com.mx/wp-content/uploads/2018/03/4131_Cortadora-circular-de-metal.jpg' },
 
   { id:'atornillador', cat:'herramienta', provider:'Makita · DeWalt',
     name:'Atornilladores de Impacto',
@@ -1161,7 +1300,7 @@ const PRODUCTS = [
       {i:'fa-battery-full',l:'Batería',v:'18V/20V Li-Ion · Carga en 30–60 min'},
       {i:'fa-certificate',l:'Marcas', v:'Makita DTD/BTD · DeWalt DCF series'},
       {i:'fa-lightbulb', l:'Tip',     v:'Para tornillería estructural usar punta de impacto; no estándar'}
-    ], page:'catalogo.html', wa:'Atornillador%20Impacto%20Makita%20DeWalt', photo:'https://images.pexels.com/photos/6790937/pexels-photo-6790937.jpeg?auto=compress&cs=tinysrgb&w=800' },
+    ], page:'catalogo.html', wa:'Atornillador%20Impacto%20Makita%20DeWalt', photo:'https://www.makita.com.mx/wp-content/uploads/2023/03/DTD157_-Atornillador-de-impacto-inalambrico-3.png' },
 
   { id:'herramienta-manual', cat:'herramienta', provider:'Truper',
     name:'Herramienta Manual Truper',
@@ -1173,7 +1312,7 @@ const PRODUCTS = [
       {i:'fa-cart-flatbed',l:'Transporte',v:'Carretillas de 6 ft³ · Diablitos · Paletas'},
       {i:'fa-wrench',    l:'Taller',      v:'Llaves ajustables · Pinzas · Martillos · Seguetas'},
       {i:'fa-lightbulb', l:'Tip',         v:'Truper fabricación mexicana, alta disponibilidad en stock'}
-    ], page:'catalogo.html', wa:'Herramienta%20Manual%20Truper', photo:'https://images.pexels.com/photos/34852719/pexels-photo-34852719.jpeg?auto=compress&cs=tinysrgb&w=800' }
+    ], page:'catalogo.html', wa:'Herramienta%20Manual%20Truper', photo:'https://catalogovigente.truper.com/CatVigente/modulos/28201.jpg' }
 ];
 
 /* ════════════════════════════════════════
@@ -1324,7 +1463,24 @@ document.querySelectorAll('.cat-tab').forEach(btn => {
     document.querySelectorAll('.cat-tab').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     activeCat = btn.dataset.cat;
+    document.querySelectorAll('.cat-hub-card').forEach(b => b.classList.remove('active'));
+    const hubCard = document.querySelector(`.cat-hub-card[data-cat="${activeCat}"]`);
+    if(hubCard) hubCard.classList.add('active');
     render(document.getElementById('cat-search').value);
+  });
+});
+
+document.querySelectorAll('.cat-hub-card').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const cat = btn.dataset.cat;
+    document.querySelectorAll('.cat-hub-card').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.cat-tab').forEach(b => b.classList.remove('active'));
+    const desktopTab = document.querySelector(`.cat-tab[data-cat="${cat}"]`);
+    if(desktopTab) desktopTab.classList.add('active');
+    activeCat = cat;
+    render(document.getElementById('cat-search').value);
+    document.getElementById('product-grid').scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
 
