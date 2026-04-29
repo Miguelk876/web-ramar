@@ -422,12 +422,25 @@
     transform: translateY(-4px);
 }
 .cat-menu-top {
-    height: 120px;
+    height: 160px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 3rem;
-    color: rgba(255,255,255,.9);
+    gap: .5rem;
+    font-size: 2.5rem;
+    color: #fff;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.cat-menu-top span {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    text-shadow: 0 2px 6px rgba(0,0,0,.4);
 }
 .cat-menu-body {
     padding: 1.4rem 1.6rem 1.8rem;
@@ -501,7 +514,7 @@
 @media (max-width: 500px) {
     .cat-menu-grid { grid-template-columns: 1fr; }
     .cat-menu-section { padding: 2rem 0 3rem; }
-    .cat-menu-top { height: 90px; font-size: 2.2rem; }
+    .cat-menu-top { height: 130px; font-size: 2rem; }
 }
 
 /* ── bottom sheet filtros (móvil) ── */
@@ -669,51 +682,51 @@
             </div>
             <div class="cat-menu-grid">
                 <button class="cat-menu-card" data-cat="estructural">
-                    <div class="cat-menu-top" style="background:linear-gradient(135deg,#1e3a8a,#1e40af)">
+                    <div class="cat-menu-top" style="background-image:linear-gradient(rgba(30,58,138,.55),rgba(30,64,175,.7)),url('https://www.serviacero.com/wp-content/uploads/2025/12/Viga-IPR-scaled.jpg')">
                         <i class="fa-solid fa-building-columns"></i>
+                        <span>Acero Estructural</span>
                     </div>
                     <div class="cat-menu-body">
-                        <h3>Acero Estructural</h3>
                         <p>Vigas IPR/IPS, PTR Cuadrado y Rectangular, Polín C/Z, HSS, Canal U, Ángulo L, Rejilla</p>
                         <span class="cat-menu-count" id="cnt-estructural">— productos</span>
                     </div>
                 </button>
                 <button class="cat-menu-card" data-cat="comercial">
-                    <div class="cat-menu-top" style="background:linear-gradient(135deg,#14532d,#15803d)">
+                    <div class="cat-menu-top" style="background-image:linear-gradient(rgba(20,83,45,.55),rgba(21,128,61,.7)),url('https://www.serviacero.com/wp-content/uploads/2025/12/Lamina-Acanalada.jpg')">
                         <i class="fa-solid fa-helmet-safety"></i>
+                        <span>Acero Comercial</span>
                     </div>
                     <div class="cat-menu-body">
-                        <h3>Acero Comercial</h3>
-                        <p>Varilla corrugada, Alambrón, Láminas Ternium, Malla, Tablero, Soleras, Cortinas</p>
+                        <p>Varilla, Láminas Ternium, Malla, Tablero, Soleras, Cortinas, Duelas Lámitec</p>
                         <span class="cat-menu-count" id="cnt-comercial">— productos</span>
                     </div>
                 </button>
                 <button class="cat-menu-card" data-cat="especializado">
-                    <div class="cat-menu-top" style="background:linear-gradient(135deg,#581c87,#7e22ce)">
+                    <div class="cat-menu-top" style="background-image:linear-gradient(rgba(88,28,135,.55),rgba(126,34,206,.7)),url('https://www.serviacero.com/wp-content/uploads/2025/12/Tubo-Mecanico_Serviacero-Comercial.jpg')">
                         <i class="fa-solid fa-gear"></i>
+                        <span>Acero Especializado</span>
                     </div>
                     <div class="cat-menu-body">
-                        <h3>Acero Especializado</h3>
                         <p>Barra Hueca, Nylamid, Acero Grado Maquinaria, Tubería por Cédula</p>
                         <span class="cat-menu-count" id="cnt-especializado">— productos</span>
                     </div>
                 </button>
                 <button class="cat-menu-card" data-cat="pintura">
-                    <div class="cat-menu-top" style="background:linear-gradient(135deg,#9a3412,#c2410c)">
+                    <div class="cat-menu-top" style="background-image:linear-gradient(rgba(154,52,18,.55),rgba(194,65,12,.7)),url('https://pintumex.com.mx/wp-content/uploads/Mock-Up-2025-Supervin-Frente-19-L.png');background-color:#c2410c">
                         <i class="fa-solid fa-fill-drip"></i>
+                        <span>Pinturas PintuMex</span>
                     </div>
                     <div class="cat-menu-body">
-                        <h3>Pinturas PintuMex</h3>
                         <p>Vinílicas, Esmaltes Alquidálicos, Primarios Anticorrosivos, Impermeabilizantes, Selladores</p>
                         <span class="cat-menu-count" id="cnt-pintura">— productos</span>
                     </div>
                 </button>
                 <button class="cat-menu-card" data-cat="herramienta">
-                    <div class="cat-menu-top" style="background:linear-gradient(135deg,#92400e,#b45309)">
+                    <div class="cat-menu-top" style="background-image:linear-gradient(rgba(146,64,14,.55),rgba(180,83,9,.7)),url('https://www.makita.com.mx/wp-content/uploads/2018/03/GA7030_Esmeriladora_angular.jpg')">
                         <i class="fa-solid fa-screwdriver-wrench"></i>
+                        <span>Herramienta</span>
                     </div>
                     <div class="cat-menu-body">
-                        <h3>Herramienta</h3>
                         <p>Makita y DeWalt (amoladora, rotomartillo, sierra, atornillador) · Truper herramienta manual</p>
                         <span class="cat-menu-count" id="cnt-herramienta">— productos</span>
                     </div>
@@ -1161,6 +1174,45 @@ const PRODUCTS = [
       {i:'fa-building', l:'Usos',      v:'Bases de maquinaria, refuerzos, chasis pesados'},
       {i:'fa-lightbulb',l:'Tip',       v:'Espesores ≥3/8" requieren oxicorte; usar plantilla'}
     ], page:'catalogo-comercial.html', wa:'Placa%20de%20Acero%20A-36', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Placa-de-Acero-scaled.jpg' },
+
+  { id:'lamitec-duela-c', cat:'comercial', provider:'Lámitec',
+    name:'Duela C — Panel de Acero con Textura',
+    tagline:'Panel de acero galvanizado cal. 22 con textura madera para paredes, techos y fachadas.',
+    svg:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 180"><rect x="20" y="30" width="220" height="35" fill="#1C2B54" rx="3"/><rect x="20" y="70" width="220" height="35" fill="#2A3C72" rx="3"/><rect x="20" y="110" width="220" height="35" fill="#1C2B54" rx="3"/><rect x="20" y="150" width="220" height="16" fill="#2A3C72" rx="3"/><line x1="20" y1="65" x2="240" y2="65" stroke="#F08018" stroke-width="2"/><line x1="20" y1="105" x2="240" y2="105" stroke="#F08018" stroke-width="2"/><line x1="20" y1="145" x2="240" y2="145" stroke="#F08018" stroke-width="2"/><text x="130" y="175" text-anchor="middle" fill="#F08018" font-family="Oswald,sans-serif" font-size="11" font-weight="600">DUELA C · LÁMITEC</text></svg>`,
+    svgNote:'Calibre 22 · Texturas: Roble, Nogal, Roble Blanco · 1, 2, 3 m',
+    specs:[
+      {i:'fa-ruler',      l:'Calibre',   v:'Galvanizado Cal. 22'},
+      {i:'fa-palette',    l:'Texturas',  v:'Roble · Nogal · Roble Blanco · Liso'},
+      {i:'fa-palette',    l:'Colores',   v:'Blanco · Chocolate'},
+      {i:'fa-building',   l:'Usos',      v:'Paredes, techos, fachadas interiores y exteriores'},
+      {i:'fa-lightbulb',  l:'Tip',       v:'Sistema LamiClick: ensamble sin soldadura'}
+    ], page:'catalogo-comercial.html', wa:'Duela%20C%20L%C3%A1mitec', photo:'https://lamitectienda.com/cdn/shop/products/DUELA_20C_20080-100TR_700x700.jpg?v=1650405478' },
+
+  { id:'lamitec-elegance', cat:'comercial', provider:'Lámitec',
+    name:'Panel Elegance — Estampado Portones',
+    tagline:'Panel de acero estampado cal. 22 con diseños tipo americano para portones y accesos.',
+    svg:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 180"><rect x="20" y="20" width="100" height="70" fill="none" stroke="#1C2B54" stroke-width="4" rx="4"/><rect x="30" y="30" width="80" height="50" fill="none" stroke="#1C2B54" stroke-width="2.5" rx="3"/><rect x="140" y="20" width="100" height="70" fill="none" stroke="#1C2B54" stroke-width="4" rx="4"/><rect x="150" y="30" width="80" height="50" fill="none" stroke="#1C2B54" stroke-width="2.5" rx="3"/><rect x="20" y="105" width="100" height="60" fill="none" stroke="#1C2B54" stroke-width="4" rx="4"/><rect x="30" y="115" width="80" height="40" fill="none" stroke="#1C2B54" stroke-width="2.5" rx="3"/><rect x="140" y="105" width="100" height="60" fill="none" stroke="#1C2B54" stroke-width="4" rx="4"/><rect x="150" y="115" width="80" height="40" fill="none" stroke="#1C2B54" stroke-width="2.5" rx="3"/><text x="130" y="178" text-anchor="middle" fill="#F08018" font-family="Oswald,sans-serif" font-size="11" font-weight="600">PANEL ELEGANCE · LÁMITEC</text></svg>`,
+    svgNote:'Cal. 22 · Diseños: Rectángulo, Cuadro · Textura madera y liso',
+    specs:[
+      {i:'fa-ruler',      l:'Calibre',   v:'Acero galvanizado Cal. 22'},
+      {i:'fa-shapes',     l:'Diseños',   v:'Rectángulo · Cuadro · Diseños personalizados'},
+      {i:'fa-palette',    l:'Texturas',  v:'Nogal · Roble · Blanco'},
+      {i:'fa-door-open',  l:'Usos',      v:'Portones residenciales, accesos, cercas, divisiones'},
+      {i:'fa-lightbulb',  l:'Tip',       v:'5 capas de recubrimiento; autolimpiable con lluvia'}
+    ], page:'catalogo-comercial.html', wa:'Panel%20Elegance%20L%C3%A1mitec', photo:'https://lamitectienda.com/cdn/shop/products/LAMITEC-ELEGANCE-13CB_700x700.jpg?v=1579278305' },
+
+  { id:'lamitec-perfotec', cat:'comercial', provider:'Lámitec',
+    name:'Perfotec — Panel Perforado',
+    tagline:'Panel de acero perforado cal. 22 para ventilación, ornamentación y bardas decorativas.',
+    svg:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 180"><rect x="20" y="20" width="220" height="145" fill="none" stroke="#1C2B54" stroke-width="4" rx="4"/><circle cx="60" cy="60" r="10" fill="#1C2B54"/><circle cx="100" cy="60" r="10" fill="#1C2B54"/><circle cx="140" cy="60" r="10" fill="#1C2B54"/><circle cx="180" cy="60" r="10" fill="#1C2B54"/><circle cx="80" cy="95" r="10" fill="#1C2B54"/><circle cx="120" cy="95" r="10" fill="#1C2B54"/><circle cx="160" cy="95" r="10" fill="#1C2B54"/><circle cx="60" cy="130" r="10" fill="#1C2B54"/><circle cx="100" cy="130" r="10" fill="#1C2B54"/><circle cx="140" cy="130" r="10" fill="#1C2B54"/><circle cx="180" cy="130" r="10" fill="#1C2B54"/><text x="130" y="176" text-anchor="middle" fill="#F08018" font-family="Oswald,sans-serif" font-size="11" font-weight="600">PERFOTEC · LÁMITEC</text></svg>`,
+    svgNote:'Cal. 22 · Modelos: España, Marruecos · Negro / Verde',
+    specs:[
+      {i:'fa-ruler',      l:'Calibre',   v:'Acero galvanizado Cal. 22'},
+      {i:'fa-shapes',     l:'Modelos',   v:'España · Marruecos'},
+      {i:'fa-palette',    l:'Colores',   v:'Negro · Verde'},
+      {i:'fa-building',   l:'Usos',      v:'Portones, bardas decorativas, cercas con ventilación'},
+      {i:'fa-lightbulb',  l:'Tip',       v:'Combina privacidad y ventilación; no requiere soldadura'}
+    ], page:'catalogo-comercial.html', wa:'Perfotec%20L%C3%A1mitec', photo:'https://lamitectienda.com/cdn/shop/products/PERFOTEC-N13E_700x700.jpg?v=1581368939' },
 
   /* ── ESPECIALIZADO ───────────────────────────── */
   { id:'barra-hueca', cat:'especializado',
