@@ -2125,6 +2125,16 @@ footer {
 .brand-card--dark .brand-type {
     color: #aaa;
 }
+.brand-card--text {
+    background: var(--color-blue);
+}
+.brand-text-logo {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #fff;
+}
 .brand-logo {
     max-width: 140px;
     max-height: 60px;
