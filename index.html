@@ -43,6 +43,11 @@
     <main>
         <!-- Home Section -->
         <section class="hero-section">
+            <div class="carousel-slides">
+                <div class="carousel-slide active" style="background-image:url('assets/images/hero_steel_1774502974788.png')"></div>
+                <div class="carousel-slide" style="background-image:url('assets/images/steel_beams_1774503028306.png')"></div>
+            </div>
+            <div class="hero-overlay"></div>
             <div class="hero-content">
                 <h1>Fuerza que <span class="text-yellow">Construye</span> el Futuro</h1>
                 <p>El mejor acero para tus proyectos en Oaxaca. Calidad, durabilidad y confianza en cada obra.</p>
@@ -51,7 +56,12 @@
                     <a href="ubicaciones.html" class="btn-secondary">Nuestras Sucursales</a>
                 </div>
             </div>
-            <div class="hero-overlay"></div>
+            <button class="carousel-prev" aria-label="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="carousel-next" aria-label="Siguiente"><i class="fa-solid fa-chevron-right"></i></button>
+            <div class="carousel-dots">
+                <span class="carousel-dot active" data-idx="0"></span>
+                <span class="carousel-dot" data-idx="1"></span>
+            </div>
         </section>
 
         <!-- Estadísticas -->

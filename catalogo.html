@@ -24,7 +24,7 @@
     background:#fff;
     border-bottom: 2px solid #e2e8f0;
     position: sticky;
-    top: 100px;
+    top: 72px;
     z-index: 90;
     padding: .85rem 0;
 }
@@ -89,6 +89,8 @@
 .cat-tab[data-cat="pintura"].active     { background:#c2410c; border-color:#c2410c; }
 .cat-tab[data-cat="herramienta"].active { background:#b45309; border-color:#b45309; }
 .cat-tab[data-cat="herrajes"].active   { background:#0f766e; border-color:#0f766e; }
+.cat-tab[data-cat="cerraduras"].active { background:#be185d; border-color:#be185d; }
+.cat-tab[data-cat="consumibles"].active{ background:#dc2626; border-color:#dc2626; }
 .cat-count { font-size:.75rem; background:rgba(255,255,255,.25); padding:.1rem .4rem; border-radius:999px; font-weight:700; }
 
 /* ── results count ── */
@@ -133,7 +135,9 @@
 .pcard[data-cat="especializado"] .pcard-accent { background: #7e22ce; }
 .pcard[data-cat="pintura"]     .pcard-accent { background: #c2410c; }
 .pcard[data-cat="herramienta"] .pcard-accent { background: #b45309; }
-.pcard[data-cat="herrajes"]   .pcard-accent { background: #0f766e; }
+.pcard[data-cat="herrajes"]    .pcard-accent { background: #0f766e; }
+.pcard[data-cat="cerraduras"]  .pcard-accent { background: #be185d; }
+.pcard[data-cat="consumibles"] .pcard-accent { background: #dc2626; }
 
 .pcard-thumb {
     background: #f8fafc;
@@ -192,6 +196,8 @@
 .badge-cat-pintura      { background:#fff7ed; color:#c2410c; }
 .badge-cat-herramienta  { background:#fef3c7; color:#b45309; }
 .badge-cat-herrajes     { background:#ccfbf1; color:#0f766e; }
+.badge-cat-cerraduras   { background:#fce7f3; color:#be185d; }
+.badge-cat-consumibles  { background:#fee2e2; color:#dc2626; }
 .badge-prov             { background:#f1f5f9; color:#475569; }
 
 .pcard-arrow {
@@ -382,9 +388,9 @@
 
 /* ── NIVEL 1: menú de categorías ── */
 .cat-menu-section {
-    background: linear-gradient(135deg, rgba(28,43,84,0.91), rgba(28,43,84,0.75)), url('assets/images/hero_steel_1774502974788.png') center/cover no-repeat;
+    background: var(--color-blue);
     padding: 3rem 0 4rem;
-    margin-top: 100px;
+    margin-top: 72px;
     min-height: calc(100vh - 100px);
 }
 .cat-menu-header {
@@ -399,10 +405,9 @@
     text-transform: uppercase;
     letter-spacing: .03em;
     margin-bottom: .5rem;
-    text-shadow: 0 2px 8px rgba(0,0,0,.35);
 }
 .cat-menu-header p {
-    color: rgba(255,255,255,.82);
+    color: rgba(255,255,255,.75);
     font-size: 1.05rem;
 }
 .cat-menu-grid {
@@ -480,7 +485,7 @@
     border-bottom: 1px solid #e2e8f0;
     padding: .85rem 0;
     position: sticky;
-    top: 100px;
+    top: 72px;
     z-index: 90;
 }
 .cat-back-btn {
@@ -636,6 +641,10 @@
 .bs-cat-btn[data-cat="pintura"].active      { border-color:#c2410c; background:#fff7ed; color:#c2410c; }
 .bs-cat-btn[data-cat="herramienta"].active  { border-color:#b45309; background:#fffbeb; color:#b45309; }
 .bs-cat-btn[data-cat="herrajes"].active     { border-color:#0f766e; background:#f0fdfa; color:#0f766e; }
+.bs-cat-btn[data-cat="cerraduras"] i        { color: #be185d; }
+.bs-cat-btn[data-cat="cerraduras"].active   { border-color:#be185d; background:#fdf2f8; color:#be185d; }
+.bs-cat-btn[data-cat="consumibles"] i       { color: #dc2626; }
+.bs-cat-btn[data-cat="consumibles"].active  { border-color:#dc2626; background:#fef2f2; color:#dc2626; }
 
 /* ── responsive ── */
 @media (max-width: 1100px) { .product-grid-explorer { grid-template-columns: repeat(3,1fr); } }
@@ -734,18 +743,38 @@
                         <span>Herramienta</span>
                     </div>
                     <div class="cat-menu-body">
-                        <p>Makita · DeWalt · Oakland · AXTech · Lincoln Electric · Goni · Austromex · Truper</p>
+                        <p>Makita · DeWalt · Oakland · AXTech · Lincoln Electric · Goni · Truper</p>
                         <span class="cat-menu-count" id="cnt-herramienta">— productos</span>
                     </div>
                 </button>
-                <button class="cat-menu-card" data-cat="herrajes">
-                    <div class="cat-menu-top" style="background-image:linear-gradient(rgba(15,76,117,.55),rgba(27,100,149,.7)),url('https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:7221a5f1-d8fd-420f-83e0-6729446abfbe/as/candado_TSA_Dorado_R.jpg')">
-                        <i class="fa-solid fa-lock"></i>
-                        <span>Herrajes y Cerraduras</span>
+                <button class="cat-menu-card" data-cat="consumibles">
+                    <div class="cat-menu-top" style="background-image:linear-gradient(rgba(185,28,28,.55),rgba(220,38,38,.7)),url('https://www.austromex.com.mx/austromex/media/images/product/1/3/1316.png');background-color:#dc2626">
+                        <i class="fa-solid fa-circle-half-stroke"></i>
+                        <span>Consumibles</span>
                     </div>
                     <div class="cat-menu-body">
-                        <p>Phillips cerraduras y candados · Eleva Herrajes · bisagras, topes, jaladores y más</p>
+                        <p>Discos de corte · Electrodos 6013/7018 · Alambre MIG · Fundentes PHV · Austromex</p>
+                        <span class="cat-menu-count" id="cnt-consumibles">— productos</span>
+                    </div>
+                </button>
+                <button class="cat-menu-card" data-cat="herrajes">
+                    <div class="cat-menu-top" style="background-image:linear-gradient(rgba(4,120,87,.55),rgba(15,118,110,.7)),url('https://www.phv.com.mx/images/hd/MED-FLO1.jpg');background-color:#0f766e">
+                        <i class="fa-solid fa-shapes"></i>
+                        <span>Herrajes</span>
+                    </div>
+                    <div class="cat-menu-body">
+                        <p>Forja artística · Hojas y flores · Medallones · Puntas · Bisagras · Pasadores PHV</p>
                         <span class="cat-menu-count" id="cnt-herrajes">— productos</span>
+                    </div>
+                </button>
+                <button class="cat-menu-card" data-cat="cerraduras">
+                    <div class="cat-menu-top" style="background-image:linear-gradient(rgba(157,23,77,.55),rgba(190,24,93,.7)),url('https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:4c2aeabb-77eb-4f38-b635-b3b1d0f61fc6/as/L%C3%ADnea%20residencial%202.jpg');background-color:#be185d">
+                        <i class="fa-solid fa-lock"></i>
+                        <span>Cerraduras y Candados</span>
+                    </div>
+                    <div class="cat-menu-body">
+                        <p>Phillips: residencial · sobreponer · embutir · aluminio · mueble · digital · candados</p>
+                        <span class="cat-menu-count" id="cnt-cerraduras">— productos</span>
                     </div>
                 </button>
             </div>
@@ -1462,7 +1491,7 @@ const PRODUCTS = [
       {i:'fa-lightbulb', l:'Tip',         v:'Truper fabricación mexicana, alta disponibilidad en stock'}
     ], page:'catalogo.html', wa:'Herramienta%20Manual%20Truper', photo:'https://catalogovigente.truper.com/CatVigente/modulos/28201.jpg' },
 
-  { id:'discos-corte-metal', cat:'herramienta', provider:'Austromex',
+  { id:'discos-corte-metal', cat:'consumibles', provider:'Austromex',
     name:'Discos de Corte para Metal',
     tagline:'Discos abrasivos para corte de acero al carbón, lámina y alambre. Acabado limpio y rápido.',
     specs:[
@@ -1474,7 +1503,7 @@ const PRODUCTS = [
       {i:'fa-lightbulb',    l:'Tip',       v:'Para corte limpio usar el disco al 90° — nunca de lado'}
     ], page:'catalogo.html', wa:'Discos%20de%20Corte%20Metal%20Austromex', photo:'https://www.austromex.com.mx/austromex/media/images/product/1/3/1316.png' },
 
-  { id:'discos-corte-inox', cat:'herramienta', provider:'Austromex',
+  { id:'discos-corte-inox', cat:'consumibles', provider:'Austromex',
     name:'Discos de Corte para Inoxidable',
     tagline:'Discos especiales libre de hierro y azufre para corte preciso de acero inoxidable.',
     specs:[
@@ -1546,103 +1575,606 @@ const PRODUCTS = [
       {i:'fa-lightbulb',    l:'Tip',       v:'Drenar el tanque diariamente para evitar corrosión interna'}
     ], page:'catalogo.html', wa:'Compresor%20Goni', photo:'https://cms.grupoferrepat.net/assets/img/productos/P977.webp' },
 
-  { id:'candados-phillips', cat:'herrajes', provider:'Phillips',
-    name:'Candados Phillips',
-    tagline:'Candados de acero endurecido y latón para bodegas, portones, lockers y equipo industrial.',
-    specs:[
-      {i:'fa-lock',         l:'Tipos',     v:'Candado de arco corto · Arco largo · TSA aprobado'},
-      {i:'fa-shield-halved',l:'Material',  v:'Cuerpo de acero endurecido o latón sólido'},
-      {i:'fa-ruler',        l:'Anchos',    v:'25mm · 40mm · 50mm · 63mm'},
-      {i:'fa-key',          l:'Sistemas',  v:'Llave individual · Llave maestra · TSA (viajes)'},
-      {i:'fa-building',     l:'Usos',      v:'Portones, bodegas, lockers, herramienta'},
-      {i:'fa-lightbulb',    l:'Tip',       v:'Para exteriores usar candado con arco de acero inox'}
-    ], page:'catalogo.html', wa:'Candados%20Phillips', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:5ba6996d-bf52-4103-a176-c96bde085c71/as/Candados_4.jpg' },
+  /* ── CANDADOS PHILLIPS ── */
+  { id:'candado-as114pw', cat:'cerraduras', provider:'Phillips',
+    name:'Candado Phillips AS 114-PW', tagline:'Candado latonado de alta seguridad con arco de acero endurecido.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'AS 114-PW'},{i:'fa-atom',l:'Cuerpo',v:'Latón sólido'},{i:'fa-key',l:'Llaves',v:'2 llaves incluidas'},{i:'fa-shield-halved',l:'Arco',v:'Acero endurecido'},{i:'fa-building',l:'Usos',v:'Bodegas · portones · lockers'},{i:'fa-lightbulb',l:'Tip',v:'Ideal para interiores y exteriores cubiertos'}],
+    page:'catalogo.html', wa:'Candado%20Phillips%20AS%20114-PW', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:a3888e72-d5d2-4f55-9756-2262249d9612/as/as-114pweb.jpg' },
 
-  { id:'cerradura-residencial-phillips', cat:'herrajes', provider:'Phillips',
-    name:'Cerraduras Residenciales Phillips',
-    tagline:'Cerraduras de parche y perilla para puertas de madera interior y exterior con cilindro de alta seguridad.',
-    specs:[
-      {i:'fa-lock',         l:'Tipos',     v:'Cerradura parche · Perilla · Manija tubular'},
-      {i:'fa-key',          l:'Cilindro',  v:'Doble función llave-llave o llave-botón'},
-      {i:'fa-shield-halved',l:'Grupo',     v:'ASSA ABLOY — líder mundial en cerraduras'},
-      {i:'fa-screwdriver',  l:'Instalación',v:'Para puertas de 35–45mm de espesor'},
-      {i:'fa-building',     l:'Usos',      v:'Habitaciones, closets, accesos principales, recámaras'},
-      {i:'fa-lightbulb',    l:'Tip',       v:'Lubricar cilindro con grafito cada 6 meses, nunca con aceite'}
-    ], page:'catalogo.html', wa:'Cerraduras%20Residenciales%20Phillips', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:4c2aeabb-77eb-4f38-b635-b3b1d0f61fc6/as/L%C3%ADnea%20residencial%202.jpg' },
+  { id:'candado-290hd', cat:'cerraduras', provider:'Phillips',
+    name:'Candado Phillips 290-HD', tagline:'Candado de alta resistencia con cuerpo de acero y grapa de acero endurecido.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'290-HD'},{i:'fa-atom',l:'Cuerpo',v:'Acero cromado'},{i:'fa-key',l:'Llaves',v:'2 llaves'},{i:'fa-shield-halved',l:'Resistencia',v:'Alta — acero endurecido'},{i:'fa-building',l:'Usos',v:'Portones · bodegas · cadenas'},{i:'fa-lightbulb',l:'Tip',v:'Usar con cadena de acero para máxima seguridad'}],
+    page:'catalogo.html', wa:'Candado%20Phillips%20290-HD', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:f8222109-5158-4528-80fc-cb9016092fcb/as/290-hd-web.jpg' },
 
-  { id:'cerradura-digital-phillips', cat:'herrajes', provider:'Phillips',
-    name:'Cerraduras Digitales Phillips (PCD)',
-    tagline:'Cerradura digital con perilla o manija, código PIN y sin llave para accesos modernos.',
-    specs:[
-      {i:'fa-hashtag',      l:'Acceso',    v:'Código PIN de 4–8 dígitos · Sin llave física'},
-      {i:'fa-battery-full', l:'Batería',   v:'4 pilas AA · Indicador de batería baja'},
-      {i:'fa-rotate',       l:'Modos',     v:'Solo código · Código + llave de emergencia'},
-      {i:'fa-shield-halved',l:'Seguridad', v:'Bloqueo automático tras 5 intentos fallidos'},
-      {i:'fa-building',     l:'Usos',      v:'Oficinas, rentas vacacionales, locales, bodegas'},
-      {i:'fa-lightbulb',    l:'Tip',       v:'Guardar llave de emergencia fuera del inmueble'}
-    ], page:'catalogo.html', wa:'Cerradura%20Digital%20Phillips%20PCD', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:ba16c5fc-eb11-4caf-9139-ff19b40e552e/as/PERILLA%20PCD275%20AMBIENTADO.jpg' },
+  { id:'candado-65hd', cat:'cerraduras', provider:'Phillips',
+    name:'Candado Phillips 65-HD', tagline:'Candado de uso exterior con grapa larga de acero endurecido anticorrosión.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'65-HD'},{i:'fa-ruler',l:'Ancho',v:'65 mm'},{i:'fa-shield-halved',l:'Arco',v:'Largo — para cadenas gruesas'},{i:'fa-cloud-rain',l:'Acabado',v:'Anticorrosión'},{i:'fa-building',l:'Usos',v:'Portones exteriores · bodegas'},{i:'fa-lightbulb',l:'Tip',v:'Grapa larga permite asegurar portones de tubo grueso'}],
+    page:'catalogo.html', wa:'Candado%20Phillips%2065-HD', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:f6c1b918-d1e3-473f-ba13-d42514ed9d1f/as/65-hd-web.jpg' },
 
-  { id:'cerradura-electromecanica-phillips', cat:'herrajes', provider:'Phillips',
-    name:'Cerraduras Electromecánicas Phillips',
-    tagline:'Cerradura con apertura eléctrica para control de acceso en empresas, hoteles y edificios.',
-    specs:[
-      {i:'fa-bolt',         l:'Apertura',  v:'Eléctrica 12V/24V DC · Compatible con control de acceso'},
-      {i:'fa-wifi',         l:'Integración',v:'Tarjeta RFID · Teclado · Biométrico (según modelo)'},
-      {i:'fa-rotate',       l:'Falla',     v:'Fail-safe (abierta en fallo) o Fail-secure (cerrada)'},
-      {i:'fa-shield-halved',l:'Grupo',     v:'ASSA ABLOY — tecnología de control de acceso'},
-      {i:'fa-building',     l:'Usos',      v:'Hoteles, corporativos, hospitales, bodegas seguras'},
-      {i:'fa-lightbulb',    l:'Tip',       v:'Fail-secure para bóvedas; fail-safe para salidas de emergencia'}
-    ], page:'catalogo.html', wa:'Cerradura%20Electromecanica%20Phillips', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:54545e85-4bc5-43a2-8697-e804c4b9634d/as/Cerraduras%20electromecan%C3%ADcas.jpg' },
+  { id:'candado-90hd', cat:'cerraduras', provider:'Phillips',
+    name:'Candado Phillips 90-HD', tagline:'Candado mediano de acero endurecido para equipaje, casilleros y herramienta.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'90-HD'},{i:'fa-ruler',l:'Ancho',v:'90 mm'},{i:'fa-atom',l:'Material',v:'Acero endurecido'},{i:'fa-key',l:'Llaves',v:'2 llaves'},{i:'fa-building',l:'Usos',v:'Lockers · herramienta · equipaje'},{i:'fa-lightbulb',l:'Tip',v:'Tamaño versátil para uso diario'}],
+    page:'catalogo.html', wa:'Candado%20Phillips%2090-HD', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:c0247fc2-7bb7-4440-aa94-3383f8a1b455/as/90-hd-.jpg' },
 
-  { id:'cerradura-embutir-phillips', cat:'herrajes', provider:'Phillips',
-    name:'Cerraduras de Embutir Phillips',
-    tagline:'Cerradura empotrada en la hoja de la puerta para acabado limpio sin mecanismo visible exterior.',
-    specs:[
-      {i:'fa-lock',         l:'Tipo',      v:'Embutir — cuerpo oculto dentro de la puerta'},
-      {i:'fa-key',          l:'Llaves',    v:'2 llaves incluidas · Cilindro extraíble'},
-      {i:'fa-ruler',        l:'Instalación',v:'Requiere fresado en canto de puerta'},
-      {i:'fa-atom',         l:'Material',  v:'Cuerpo de acero · Frente de acero inox'},
-      {i:'fa-building',     l:'Usos',      v:'Puertas de madera, MDF, aluminio y PVC'},
-      {i:'fa-lightbulb',    l:'Tip',       v:'Combinar con cerrojo de embutir para doble seguridad'}
-    ], page:'catalogo.html', wa:'Cerradura%20Embutir%20Phillips', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:89069c35-adfe-4f22-b8a2-ee8df79c7960/as/Embutir.jpg' },
+  { id:'candado-730hd', cat:'cerraduras', provider:'Phillips',
+    name:'Candado Phillips 730-HD', tagline:'Candado anti-gancho con grapa angular de alta seguridad.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'730-HD'},{i:'fa-shield-halved',l:'Protección',v:'Anti-gancho · Anti-sierra'},{i:'fa-atom',l:'Cuerpo',v:'Acero endurecido'},{i:'fa-key',l:'Llaves',v:'2 llaves de seguridad'},{i:'fa-building',l:'Usos',v:'Portones principales · bodegas'},{i:'fa-lightbulb',l:'Tip',v:'Grapa angular dificulta el uso de pinzas o sierras'}],
+    page:'catalogo.html', wa:'Candado%20Phillips%20730-HD', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:6e8a995d-5833-433d-ba8a-58f1cf0b2f41/as/730-hd-web.jpg' },
 
-  { id:'cerradura-sobreponer-phillips', cat:'herrajes', provider:'Phillips',
-    name:'Cerraduras de Sobreponer Phillips',
-    tagline:'Cerradura que se instala sobre la superficie de la puerta, sin necesidad de fresar ni embutir.',
-    specs:[
-      {i:'fa-lock',         l:'Tipo',      v:'Sobreponer — se atornilla en la cara de la puerta'},
-      {i:'fa-key',          l:'Llaves',    v:'2–3 llaves · Cilindro de alta seguridad'},
-      {i:'fa-screwdriver',  l:'Instalación',v:'Solo tornillos, sin carpintería especial'},
-      {i:'fa-atom',         l:'Material',  v:'Cuerpo de acero cromado o pintado'},
-      {i:'fa-building',     l:'Usos',      v:'Puertas de madera y metal · Bodegas · Cuartos de servicio'},
-      {i:'fa-lightbulb',    l:'Tip',       v:'Ideal para instalación rápida sin herramienta especializada'}
-    ], page:'catalogo.html', wa:'Cerradura%20Sobreponer%20Phillips', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:e22ca4ec-e3dc-45c5-b248-6b942f8b2d27/as/Sobreponer%202.jpg' },
+  { id:'candado-rst50', cat:'cerraduras', provider:'Phillips',
+    name:'Candado Phillips RST-50', tagline:'Candado anti-óxido con tratamiento especial para exteriores húmedos y costeros.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'RST-50'},{i:'fa-cloud-rain',l:'Acabado',v:'Resistente a óxido y corrosión'},{i:'fa-ruler',l:'Ancho',v:'50 mm'},{i:'fa-key',l:'Llaves',v:'2 llaves'},{i:'fa-building',l:'Usos',v:'Exterior · zonas húmedas · costeras'},{i:'fa-lightbulb',l:'Tip',v:'El tratamiento RST es específico para ambientes con humedad alta'}],
+    page:'catalogo.html', wa:'Candado%20Phillips%20RST-50', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:d4aa48b5-fe50-4894-b356-bb999ad0429a/as/rst-50web.jpg' },
 
-  { id:'cerradura-mueble-phillips', cat:'herrajes', provider:'Phillips',
-    name:'Cerraduras para Mueble y Gabinete Phillips',
-    tagline:'Cerraduras compactas para cajones, gabinetes, archiveros y lockers de oficina.',
-    specs:[
-      {i:'fa-lock',         l:'Tipos',     v:'Cerradura de cajón · Cerradura de gabinete · Llave tubular'},
-      {i:'fa-ruler',        l:'Diámetro',  v:'16mm · 19mm · 22mm según modelo'},
-      {i:'fa-key',          l:'Llaves',    v:'2 llaves · Cilindro de disco o leva'},
-      {i:'fa-atom',         l:'Material',  v:'Zamak cromado o niquelado'},
-      {i:'fa-building',     l:'Usos',      v:'Archiveros, mesas de trabajo, cajones de mostrador, lockers'},
-      {i:'fa-lightbulb',    l:'Tip',       v:'Anotar número de llave para duplicados futuros'}
-    ], page:'catalogo.html', wa:'Cerradura%20Mueble%20Phillips', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:a3bf5073-482e-4cce-9606-d81da5494d7c/as/Cerraduras%20para%20mueble.jpg' },
+  { id:'candado-1414gl', cat:'cerraduras', provider:'Phillips',
+    name:'Candado Phillips 14-14GL', tagline:'Candado laminado galvanizado de alta resistencia a impactos y corte.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'14-14GL'},{i:'fa-layer-group',l:'Tipo',v:'Laminado — capas de acero prensado'},{i:'fa-shield-halved',l:'Resistencia',v:'Alta a impacto y corte'},{i:'fa-key',l:'Llaves',v:'2 llaves'},{i:'fa-building',l:'Usos',v:'Portones · bodegas · contenedores'},{i:'fa-lightbulb',l:'Tip',v:'El diseño laminado es más resistente al martillo que el sólido'}],
+    page:'catalogo.html', wa:'Candado%20Phillips%2014-14GL', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:e0d30abf-21a7-4274-aad7-bf381aa8644e/as/candado-14-14gl-frente-fondo-blanco.jpg' },
 
-  { id:'cerradura-aluminio-phillips', cat:'herrajes', provider:'Phillips',
-    name:'Cerraduras para Perfiles de Aluminio Phillips',
-    tagline:'Cerraduras especiales para cancelería, ventanas y puertas de perfiles de aluminio.',
-    specs:[
-      {i:'fa-lock',         l:'Tipo',      v:'Cerradura para cancel · Cerrojo lateral · Manija con llave'},
-      {i:'fa-atom',         l:'Perfil',    v:'Compatible con perfiles de aluminio estándar mexicano'},
-      {i:'fa-key',          l:'Llaves',    v:'2 llaves · Cilindro de alta seguridad'},
-      {i:'fa-screwdriver',  l:'Instalación',v:'Fija en canal del perfil de aluminio'},
-      {i:'fa-building',     l:'Usos',      v:'Cancelería, ventanas corredizas, baños de vidrio, mamparas'},
-      {i:'fa-lightbulb',    l:'Tip',       v:'Verificar medida del canal antes de pedir: 6mm, 8mm o 10mm'}
-    ], page:'catalogo.html', wa:'Cerradura%20Perfil%20Aluminio%20Phillips', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:b54c6263-e799-4a4b-947f-4eabc612ed66/as/Cerraduras%20perfiles%20de%20aluminio%202.jpg' },
+  { id:'candado-118', cat:'cerraduras', provider:'Phillips',
+    name:'Candado Phillips 11-8', tagline:'Candado latonado estándar económico para uso general en interiores.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'11-8'},{i:'fa-atom',l:'Cuerpo',v:'Latón'},{i:'fa-ruler',l:'Ancho',v:'~38 mm'},{i:'fa-key',l:'Llaves',v:'2 llaves'},{i:'fa-building',l:'Usos',v:'Cajones · maletas · casilleros'},{i:'fa-lightbulb',l:'Tip',v:'Uso interior o en espacios cubiertos'}],
+    page:'catalogo.html', wa:'Candado%20Phillips%2011-8', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:977b966f-9a6a-4885-9580-7381e87a89dd/as/candado-11-8-frente-fondo-blanco.jpg' },
 
-  { id:'bisagras-phillips', cat:'herrajes', provider:'Phillips',
+  { id:'candado-5050gl', cat:'cerraduras', provider:'Phillips',
+    name:'Candado Phillips 50-50GL', tagline:'Candado galvanizado 50mm para exterior con acabado resistente a intemperie.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'50-50GL'},{i:'fa-ruler',l:'Ancho',v:'50 mm'},{i:'fa-shield-halved',l:'Acabado',v:'Galvanizado — resistente a la intemperie'},{i:'fa-key',l:'Llaves',v:'2 llaves'},{i:'fa-building',l:'Usos',v:'Exteriores · portones · rejas'},{i:'fa-lightbulb',l:'Tip',v:'El galvanizado protege contra óxido en zonas con lluvia frecuente'}],
+    page:'catalogo.html', wa:'Candado%20Phillips%2050-50GL', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:30d7b1b9-a22d-4b3f-a30d-3aa94a77a4e8/as/candado-50-50gl-frente-fondo-blanco.jpg' },
+
+  /* ── CERRADURAS RESIDENCIALES PHILLIPS ── */
+  { id:'phillips-gamma-cil', cat:'cerraduras', provider:'Phillips',
+    name:'Phillips Perilla GAMMA Cilíndrica', tagline:'Perilla con cilindro de alta seguridad, acabado latón. Para puertas de madera 35–45 mm.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'GAMMA Cilíndrica'},{i:'fa-palette',l:'Acabado',v:'Latón · Cromo mate'},{i:'fa-key',l:'Función',v:'Llave-botón o llave-llave'},{i:'fa-screwdriver',l:'Instalación',v:'Puerta 35–45 mm de espesor'},{i:'fa-building',l:'Usos',v:'Acceso principal · recámaras'},{i:'fa-lightbulb',l:'Tip',v:'Cilindro intercambiable para reposición rápida'}],
+    page:'catalogo.html', wa:'Phillips%20GAMMA%20Cil%C3%ADndrica', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:859a4774-ecf3-4ad9-8dad-1332d814ae86/as/perilla-gamma-cilindrica-laton-frente-fondo-blanco.jpg' },
+
+  { id:'phillips-brandywine-cil', cat:'cerraduras', provider:'Phillips',
+    name:'Phillips Perilla BRANDY WINE Cilíndrica', tagline:'Perilla cilíndrica estilo clásico con acabado cromo mate o latón.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'BRANDY WINE Cilíndrica'},{i:'fa-palette',l:'Acabado',v:'Cromo mate · Latón'},{i:'fa-key',l:'Función',v:'Llave-botón o llave-llave'},{i:'fa-screwdriver',l:'Instalación',v:'Puerta 35–45 mm'},{i:'fa-building',l:'Usos',v:'Recámaras · baños · closets'},{i:'fa-lightbulb',l:'Tip',v:'Diseño clásico que combina con herrería tradicional'}],
+    page:'catalogo.html', wa:'Phillips%20BRANDY%20WINE%20Cil%C3%ADndrica', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:cd69c666-22fc-467f-be11-0a722cd19da7/as/perilla-brandy-wine-cilindrica-cm-frente-fondo-blanco.jpg' },
+
+  { id:'phillips-brandywine-tub', cat:'cerraduras', provider:'Phillips',
+    name:'Phillips Perilla BRANDY WINE Tubular', tagline:'Perilla tubular estilo BRANDY WINE con acabado latón para puertas interiores.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'BRANDY WINE Tubular'},{i:'fa-palette',l:'Acabado',v:'Latón'},{i:'fa-key',l:'Función',v:'Botón interior · llave exterior'},{i:'fa-screwdriver',l:'Instalación',v:'Puerta 35–45 mm'},{i:'fa-building',l:'Usos',v:'Baños · cuartos de servicio · interiores'},{i:'fa-lightbulb',l:'Tip',v:'Tubular es más económica que cilíndrica — ideal para interiores'}],
+    page:'catalogo.html', wa:'Phillips%20BRANDY%20WINE%20Tubular', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:ad47ba5a-1357-4e7f-ad86-f66de4a20f02/as/perilla-brandy-wine-tubular-laton-b-fondo-blanco.jpg' },
+
+  { id:'phillips-boli-tub', cat:'cerraduras', provider:'Phillips',
+    name:'Phillips Perilla BOLI Tubular', tagline:'Perilla tubular económica BOLI con acabado latón para interiores.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'BOLI Tubular'},{i:'fa-palette',l:'Acabado',v:'Latón'},{i:'fa-key',l:'Función',v:'Botón interior · llave exterior'},{i:'fa-tag',l:'Segmento',v:'Económica — para uso interior'},{i:'fa-building',l:'Usos',v:'Baños · closets · cuartos de servicio'},{i:'fa-lightbulb',l:'Tip',v:'Ideal donde no se requiere alta seguridad'}],
+    page:'catalogo.html', wa:'Phillips%20BOLI%20Tubular', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:c99b1d73-3b9f-4dea-85f0-34c3af353bb5/as/perilla-boli-tubular-laton-b-fondo-blanco.jpg' },
+
+  { id:'phillips-nogal', cat:'cerraduras', provider:'Phillips',
+    name:'Phillips Manija NOGAL', tagline:'Manija con llave de diseño recto, acabado cromo mate para puertas principales.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'NOGAL'},{i:'fa-palette',l:'Acabado',v:'Cromo mate'},{i:'fa-key',l:'Función',v:'Llave-botón'},{i:'fa-screwdriver',l:'Instalación',v:'Puerta 35–45 mm'},{i:'fa-building',l:'Usos',v:'Accesos principales · recámaras'},{i:'fa-lightbulb',l:'Tip',v:'Manija tipo palanca facilita apertura con manos ocupadas'}],
+    page:'catalogo.html', wa:'Phillips%20Manija%20NOGAL', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:be8c3774-3325-43a3-834f-0657d74a433f/as/manija-nogal-cromo-mate-fondo-blanco.jpg' },
+
+  { id:'phillips-roble', cat:'cerraduras', provider:'Phillips',
+    name:'Phillips Manija ROBLE', tagline:'Manija con llave de diseño contemporáneo, acabado cromo mate.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'ROBLE'},{i:'fa-palette',l:'Acabado',v:'Cromo mate'},{i:'fa-key',l:'Función',v:'Llave-botón'},{i:'fa-screwdriver',l:'Instalación',v:'Puerta 35–45 mm'},{i:'fa-building',l:'Usos',v:'Accesos principales · oficinas'},{i:'fa-lightbulb',l:'Tip',v:'Línea ROBLE con perfil más delgado que NOGAL'}],
+    page:'catalogo.html', wa:'Phillips%20Manija%20ROBLE', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:775faba8-3b3b-40b5-9e6e-1daa078b7dc3/as/manija-roble-cromo-mate-fondo-blanco.jpg' },
+
+  { id:'phillips-saura', cat:'cerraduras', provider:'Phillips',
+    name:'Phillips Manija SAURA', tagline:'Manija con llave de perfil fino y acabado cromo mate para puertas de interior.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'SAURA'},{i:'fa-palette',l:'Acabado',v:'Cromo mate'},{i:'fa-key',l:'Función',v:'Llave-botón'},{i:'fa-screwdriver',l:'Instalación',v:'Puerta 35–45 mm'},{i:'fa-building',l:'Usos',v:'Recámaras · baños · oficinas'},{i:'fa-lightbulb',l:'Tip',v:'Perfil fino SAURA apto para puertas delgadas tipo HDF'}],
+    page:'catalogo.html', wa:'Phillips%20Manija%20SAURA', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:a35a1c6d-72e7-49f5-a70a-383d93761970/as/manija-saura-cromo-m-fondo-blanco.jpg' },
+
+  { id:'phillips-b260p', cat:'cerraduras', provider:'Phillips',
+    name:'Phillips Cerrojo B 260 P', tagline:'Cerrojo de parche solo (sin perilla) cromo mate para refuerzo de seguridad.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'B 260 P'},{i:'fa-palette',l:'Acabado',v:'Cromo mate'},{i:'fa-key',l:'Tipo',v:'Cerrojo solo — sin perilla'},{i:'fa-screwdriver',l:'Instalación',v:'Se combina con perilla existente'},{i:'fa-building',l:'Usos',v:'Refuerzo adicional en accesos principales'},{i:'fa-lightbulb',l:'Tip',v:'Combinar con perilla GAMMA para set completo'}],
+    page:'catalogo.html', wa:'Phillips%20Cerrojo%20B%20260%20P', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:263fb432-46c4-44f3-959c-69435fd0a175/as/cerrojo-b-260-p-cromo-m-fondo-blanco.jpg' },
+
+  { id:'phillips-b262p', cat:'cerraduras', provider:'Phillips',
+    name:'Phillips Cerrojo B 262 P', tagline:'Cerrojo con manija integrada cromo mate para puertas que requieren doble seguro.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'B 262 P'},{i:'fa-palette',l:'Acabado',v:'Cromo mate'},{i:'fa-key',l:'Tipo',v:'Cerrojo con manija'},{i:'fa-screwdriver',l:'Instalación',v:'Puerta 35–45 mm'},{i:'fa-building',l:'Usos',v:'Puertas principales con doble cierre'},{i:'fa-lightbulb',l:'Tip',v:'Manija integrada hace más cómodo el bloqueo diario'}],
+    page:'catalogo.html', wa:'Phillips%20Cerrojo%20B%20262%20P', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:b6342ef9-2d1d-4d44-b5ae-519642ceba04/as/cerrojo-b-262-p-cromo-m-fondo-blanco.jpg' },
+
+  { id:'phillips-combo-gamma-tub', cat:'cerraduras', provider:'Phillips',
+    name:'Phillips Combo GAMMA Tubular', tagline:'Set completo perilla tubular + cerrojo GAMMA en cromo mate.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'Combo GAMMA Tubular'},{i:'fa-palette',l:'Acabado',v:'Cromo mate'},{i:'fa-box',l:'Incluye',v:'Perilla tubular + cerrojo'},{i:'fa-screwdriver',l:'Instalación',v:'Puerta 35–45 mm'},{i:'fa-building',l:'Usos',v:'Set completo para accesos principales'},{i:'fa-lightbulb',l:'Tip',v:'Comprar en combo garantiza acabado y llave igual para ambas piezas'}],
+    page:'catalogo.html', wa:'Phillips%20Combo%20GAMMA%20Tubular', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:5fa56bc3-57e5-40ed-8ede-d4cff5a0a517/as/combo-gamma-tubular-cromo-m-fondo-blanco.jpg' },
+
+  { id:'phillips-combo-gamma-cil', cat:'cerraduras', provider:'Phillips',
+    name:'Phillips Combo GAMMA Cilíndrica', tagline:'Set completo perilla cilíndrica + cerrojo GAMMA en cromo mate, mayor seguridad.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'Combo GAMMA Cilíndrica'},{i:'fa-palette',l:'Acabado',v:'Cromo mate'},{i:'fa-box',l:'Incluye',v:'Perilla cilíndrica + cerrojo'},{i:'fa-shield-halved',l:'Seguridad',v:'Mayor que tubular — cilindro de alta seguridad'},{i:'fa-building',l:'Usos',v:'Accesos principales de mayor seguridad'},{i:'fa-lightbulb',l:'Tip',v:'Recomendado para entrada principal de casas'}],
+    page:'catalogo.html', wa:'Phillips%20Combo%20GAMMA%20Cil%C3%ADndrica', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:9d70ddbb-d665-42ba-a31c-952ca9af8f85/as/combo-gamma-cilindrica-cromo-m-fondo-blanco.jpg' },
+
+  /* ── CERRADURAS DIGITALES PHILLIPS ── */
+  { id:'phillips-pcd275', cat:'cerraduras', provider:'Phillips',
+    name:'Phillips Perilla Digital PCD275', tagline:'Perilla digital con código PIN de 4–8 dígitos, sin llave. Batería 4xAA.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-hashtag',l:'Modelo',v:'PCD275'},{i:'fa-key',l:'Acceso',v:'Código PIN 4–8 dígitos'},{i:'fa-battery-full',l:'Batería',v:'4 pilas AA'},{i:'fa-shield-halved',l:'Seguridad',v:'Bloqueo tras 5 intentos fallidos'},{i:'fa-building',l:'Usos',v:'Oficinas · rentas vacacionales · locales'},{i:'fa-lightbulb',l:'Tip',v:'Guardar llave de emergencia fuera del inmueble'}],
+    page:'catalogo.html', wa:'Phillips%20PCD275', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:ba16c5fc-eb11-4caf-9139-ff19b40e552e/as/PERILLA%20PCD275%20AMBIENTADO.jpg' },
+
+  { id:'phillips-pcd265', cat:'cerraduras', provider:'Phillips',
+    name:'Phillips Cerrojo Digital PCD265', tagline:'Cerrojo digital con código PIN, sin perilla. Para refuerzo de acceso con llave numérica.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-hashtag',l:'Modelo',v:'PCD265'},{i:'fa-key',l:'Acceso',v:'Código PIN 4–8 dígitos'},{i:'fa-battery-full',l:'Batería',v:'4 pilas AA'},{i:'fa-lock',l:'Tipo',v:'Cerrojo solo — sin perilla'},{i:'fa-building',l:'Usos',v:'Puertas secundarias · bodegas · interiores'},{i:'fa-lightbulb',l:'Tip',v:'Combinar con perilla estándar para acceso completo'}],
+    page:'catalogo.html', wa:'Phillips%20PCD265', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:d35923f9-4d8b-4efb-8b15-774cfb83fe8b/as/CERROJO%20PCD265%20AMBIENTADO.jpg' },
+
+  { id:'phillips-pcd285', cat:'cerraduras', provider:'Phillips',
+    name:'Phillips Manija Digital PCD285', tagline:'Manija digital con código PIN y diseño tipo palanca para oficinas y locales.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-hashtag',l:'Modelo',v:'PCD285'},{i:'fa-key',l:'Acceso',v:'Código PIN 4–8 dígitos'},{i:'fa-battery-full',l:'Batería',v:'4 pilas AA'},{i:'fa-shield-halved',l:'Seguridad',v:'Bloqueo tras 5 intentos fallidos'},{i:'fa-building',l:'Usos',v:'Oficinas · despachos · locales comerciales'},{i:'fa-lightbulb',l:'Tip',v:'Palanca más cómoda que perilla en accesos de alto tráfico'}],
+    page:'catalogo.html', wa:'Phillips%20PCD285', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:98cb6a22-05ea-4671-bdd8-0c06272d7ef0/as/MANIJA%20PCD285%20AMBIENTADO.jpg' },
+
+  /* ── CERRADURAS ELECTROMECÁNICAS PHILLIPS ── */
+  { id:'phillips-electromecanica', cat:'cerraduras', provider:'Phillips',
+    name:'Cerraduras Electromecánicas Phillips', tagline:'Apertura eléctrica 12V/24V para control de acceso en empresas, hoteles y edificios.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-bolt',l:'Apertura',v:'Eléctrica 12V/24V DC'},{i:'fa-wifi',l:'Integración',v:'RFID · teclado · biométrico'},{i:'fa-rotate',l:'Falla',v:'Fail-safe o Fail-secure según modelo'},{i:'fa-shield-halved',l:'Grupo',v:'ASSA ABLOY'},{i:'fa-building',l:'Usos',v:'Hoteles · corporativos · hospitales'},{i:'fa-lightbulb',l:'Tip',v:'Fail-secure para bóvedas; fail-safe para salidas de emergencia'}],
+    page:'catalogo.html', wa:'Phillips%20Electromecanica', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:54545e85-4bc5-43a2-8697-e804c4b9634d/as/Cerraduras%20electromecan%C3%ADcas.jpg' },
+
+  /* ── CERRADURAS DE EMBUTIR PHILLIPS ── */
+  { id:'phillips-x1000', cat:'cerraduras', provider:'Phillips',
+    name:'Phillips Cerradura Embutir X-1000', tagline:'Cerradura de embutir de alta seguridad con cuerpo oculto dentro de la puerta.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'X-1000'},{i:'fa-key',l:'Llaves',v:'2 llaves · cilindro extraíble'},{i:'fa-ruler',l:'Instalación',v:'Requiere fresado en canto'},{i:'fa-atom',l:'Material',v:'Cuerpo acero · frente inox'},{i:'fa-building',l:'Usos',v:'Puertas madera · MDF · aluminio · PVC'},{i:'fa-lightbulb',l:'Tip',v:'Combinar con cerrojo embutir para doble seguridad'}],
+    page:'catalogo.html', wa:'Phillips%20X-1000', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:2f1309a4-d519-4f3b-b2c8-ab04fb7fe60d/as/x-1000-fondo-blanco.jpg' },
+
+  { id:'phillips-x1000bolt', cat:'cerraduras', provider:'Phillips',
+    name:'Phillips Cerrojo Embutir X-1000 Bolt', tagline:'Cerrojo de embutir solo (sin perilla) para refuerzo de seguridad en puertas.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'X-1000 Bolt'},{i:'fa-key',l:'Tipo',v:'Cerrojo solo embutido'},{i:'fa-ruler',l:'Instalación',v:'Fresado en canto de puerta'},{i:'fa-atom',l:'Material',v:'Acero con frente inoxidable'},{i:'fa-building',l:'Usos',v:'Refuerzo adicional en puertas principales'},{i:'fa-lightbulb',l:'Tip',v:'Usar en complemento a cerradura principal X-1000'}],
+    page:'catalogo.html', wa:'Phillips%20X-1000%20Bolt', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:2fcf627f-224c-4d48-9c1f-47216b17d9aa/as/x-1000-bolt-fondo-blanco.jpg' },
+
+  { id:'phillips-x1100', cat:'cerraduras', provider:'Phillips',
+    name:'Phillips Cerradura Embutir X-1100', tagline:'Cerradura de embutir premium X-1100 con mayor número de pestillos.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'X-1100'},{i:'fa-key',l:'Llaves',v:'2 llaves · cilindro de alta seguridad'},{i:'fa-shield-halved',l:'Nivel',v:'Premium — más pestillos que X-1000'},{i:'fa-atom',l:'Material',v:'Cuerpo acero · frente inox'},{i:'fa-building',l:'Usos',v:'Accesos principales de mayor seguridad'},{i:'fa-lightbulb',l:'Tip',v:'Elegir X-1100 cuando se requiere mayor resistencia a palanca'}],
+    page:'catalogo.html', wa:'Phillips%20X-1100', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:6dea3e21-1dda-4437-8204-8c4895920ddc/as/x-1100-fondo-blanco.jpg' },
+
+  /* ── CERRADURAS DE SOBREPONER PHILLIPS ── */
+  { id:'phillips-715as', cat:'cerraduras', provider:'Phillips', name:'Phillips 715 AS', tagline:'Cerradura de sobreponer básica para puertas de madera o metálicas.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'715 AS'},{i:'fa-key',l:'Llaves',v:'2 llaves'},{i:'fa-screwdriver',l:'Instalación',v:'Sobreponer — solo tornillos'},{i:'fa-atom',l:'Material',v:'Acero cromado'},{i:'fa-building',l:'Usos',v:'Puertas madera · metal · bodegas'},{i:'fa-lightbulb',l:'Tip',v:'La más popular en obra — instalación rápida y económica'}],
+    page:'catalogo.html', wa:'Phillips%20715%20AS', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:4f24a18e-94fa-45bb-b974-ad3759574dbb/as/715-as-web.jpg' },
+
+  { id:'phillips-715cl', cat:'cerraduras', provider:'Phillips', name:'Phillips 715 CL', tagline:'Cerradura sobreponer con cilindro ajustable para distintos espesores de puerta.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'715 CL'},{i:'fa-adjust',l:'Cilindro',v:'Ajustable para diferentes espesores'},{i:'fa-key',l:'Llaves',v:'2 llaves'},{i:'fa-screwdriver',l:'Instalación',v:'Sobreponer'},{i:'fa-building',l:'Usos',v:'Puertas de distintos espesores'},{i:'fa-lightbulb',l:'Tip',v:'Ideal cuando el grosor de la puerta varía'}],
+    page:'catalogo.html', wa:'Phillips%20715%20CL', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:4a12855a-fc43-4226-9196-282d702c41fd/as/715-cl-frente-fondo-blanco.jpg' },
+
+  { id:'phillips-715if', cat:'cerraduras', provider:'Phillips', name:'Phillips 715 IF', tagline:'Cerradura sobreponer con función específica izquierda/frontal.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'715 IF'},{i:'fa-key',l:'Llaves',v:'2 llaves'},{i:'fa-arrows-left-right',l:'Función',v:'Izquierda / frontal'},{i:'fa-screwdriver',l:'Instalación',v:'Sobreponer'},{i:'fa-building',l:'Usos',v:'Puertas de apertura izquierda'},{i:'fa-lightbulb',l:'Tip',v:'Verificar sentido de apertura antes de instalar'}],
+    page:'catalogo.html', wa:'Phillips%20715%20IF', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:ed9e1ac0-fa1b-48bf-83dd-11eb67742ba9/as/715-if-frente-fondo-blanco.jpg' },
+
+  { id:'phillips-700dc', cat:'cerraduras', provider:'Phillips', name:'Phillips 700 DC', tagline:'Cerradura sobreponer doble cilindro — llave por ambos lados.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'700 DC'},{i:'fa-key',l:'Función',v:'Doble cilindro — llave-llave'},{i:'fa-shield-halved',l:'Seguridad',v:'Mayor — no abre desde adentro sin llave'},{i:'fa-screwdriver',l:'Instalación',v:'Sobreponer'},{i:'fa-building',l:'Usos',v:'Puertas con vidrio · bodegas'},{i:'fa-lightbulb',l:'Tip',v:'Doble cilindro impide abrir por vidrio roto — requiere llave siempre'}],
+    page:'catalogo.html', wa:'Phillips%20700%20DC', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:1b43a2d0-41b1-4c91-8187-5d67b53490e9/as/700-dc-frente-fondo-blanco.jpg' },
+
+  { id:'phillips-715mc', cat:'cerraduras', provider:'Phillips', name:'Phillips 715 MC', tagline:'Cerradura sobreponer multifunción con manija integrada.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'715 MC'},{i:'fa-hand-pointer',l:'Manija',v:'Integrada — sin perilla aparte'},{i:'fa-key',l:'Llaves',v:'2 llaves'},{i:'fa-screwdriver',l:'Instalación',v:'Sobreponer'},{i:'fa-building',l:'Usos',v:'Puertas de servicio · bodegas · cuartos'},{i:'fa-lightbulb',l:'Tip',v:'Manija integrada facilita uso diario'}],
+    page:'catalogo.html', wa:'Phillips%20715%20MC', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:67287e97-85d8-4041-a94a-809a3692c080/as/715-mc-frente-fondo-blanco.jpg' },
+
+  { id:'phillips-x720', cat:'cerraduras', provider:'Phillips', name:'Phillips X-720', tagline:'Cerradura sobreponer serie X con mayor resistencia al arranque.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'X-720'},{i:'fa-shield-halved',l:'Serie',v:'X — mayor resistencia al arranque'},{i:'fa-key',l:'Llaves',v:'2 llaves de seguridad'},{i:'fa-screwdriver',l:'Instalación',v:'Sobreponer'},{i:'fa-building',l:'Usos',v:'Puertas principales · locales comerciales'},{i:'fa-lightbulb',l:'Tip',v:'Serie X tiene tornillos internos con mayor resistencia a palanca'}],
+    page:'catalogo.html', wa:'Phillips%20X-720', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:b4cace00-4951-4472-b7e8-518693e610d4/as/x-720--frente-fondo-blanco.jpg' },
+
+  { id:'phillips-as725', cat:'cerraduras', provider:'Phillips', name:'Phillips AS-725', tagline:'Cerradura sobreponer de alta seguridad 725 con cerrojo reforzado.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'AS-725'},{i:'fa-shield-halved',l:'Seguridad',v:'Alta — cerrojo reforzado'},{i:'fa-key',l:'Llaves',v:'2–3 llaves de seguridad'},{i:'fa-screwdriver',l:'Instalación',v:'Sobreponer'},{i:'fa-building',l:'Usos',v:'Accesos principales · locales'},{i:'fa-lightbulb',l:'Tip',v:'La AS-725 tiene mayor resistencia a impacto que la 715'}],
+    page:'catalogo.html', wa:'Phillips%20AS-725', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:c0400445-f14f-4a3c-b452-2aace67c6d92/as/as-725--frente-fondo-blanco.jpg' },
+
+  { id:'phillips-625dc', cat:'cerraduras', provider:'Phillips', name:'Phillips 625 DC', tagline:'Cerradura sobreponer doble cilindro modelo 625.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'625 DC'},{i:'fa-key',l:'Función',v:'Doble cilindro — llave-llave'},{i:'fa-shield-halved',l:'Seguridad',v:'Media-alta'},{i:'fa-screwdriver',l:'Instalación',v:'Sobreponer'},{i:'fa-building',l:'Usos',v:'Puertas con vidrio · bodegas'},{i:'fa-lightbulb',l:'Tip',v:'DC recomendado en puertas donde pueden romper vidrio'}],
+    page:'catalogo.html', wa:'Phillips%20625%20DC', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:307a026b-0e06-4e69-a3d0-fe2e80f00620/as/625-dc--frente-fondo-blanco.jpg' },
+
+  { id:'phillips-620', cat:'cerraduras', provider:'Phillips', name:'Phillips 620', tagline:'Cerradura sobreponer estándar económica para uso general.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'620'},{i:'fa-key',l:'Llaves',v:'2 llaves'},{i:'fa-tag',l:'Segmento',v:'Económica'},{i:'fa-screwdriver',l:'Instalación',v:'Sobreponer'},{i:'fa-building',l:'Usos',v:'Cuartos de servicio · bodegas'},{i:'fa-lightbulb',l:'Tip',v:'Opción de bajo costo donde no se requiere alta seguridad'}],
+    page:'catalogo.html', wa:'Phillips%20620', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:060dedb5-4bd2-4e54-baf1-9191d4185706/as/620-frente-fondo-blanco.jpg' },
+
+  { id:'phillips-715ll', cat:'cerraduras', provider:'Phillips', name:'Phillips 715 LL', tagline:'Cerradura sobreponer llave-llave de uso general.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'715 LL'},{i:'fa-key',l:'Función',v:'Llave-llave ambos lados'},{i:'fa-screwdriver',l:'Instalación',v:'Sobreponer'},{i:'fa-atom',l:'Material',v:'Acero cromado'},{i:'fa-building',l:'Usos',v:'Puertas exteriores de metal o madera'},{i:'fa-lightbulb',l:'Tip',v:'Llave-llave más seguro que llave-botón en exteriores'}],
+    page:'catalogo.html', wa:'Phillips%20715%20LL', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:9950f6e5-8d90-4138-bbab-c304b251aa29/as/715-ll-frente-fondo-blanco.jpg' },
+
+  { id:'phillips-675', cat:'cerraduras', provider:'Phillips', name:'Phillips 675', tagline:'Cerradura sobreponer de media seguridad con cuerpo cromado.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'675'},{i:'fa-key',l:'Llaves',v:'2 llaves'},{i:'fa-shield-halved',l:'Seguridad',v:'Media'},{i:'fa-screwdriver',l:'Instalación',v:'Sobreponer'},{i:'fa-building',l:'Usos',v:'Puertas interiores y exteriores'},{i:'fa-lightbulb',l:'Tip',v:'Buen equilibrio precio/seguridad para uso residencial'}],
+    page:'catalogo.html', wa:'Phillips%20675', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:850b320e-f1ce-47a8-b604-892356e820d1/as/675-frente-fondo-blanco.jpg' },
+
+  { id:'phillips-as625', cat:'cerraduras', provider:'Phillips', name:'Phillips AS 625', tagline:'Cerradura sobreponer de alta seguridad modelo 625.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'AS 625'},{i:'fa-shield-halved',l:'Seguridad',v:'Alta'},{i:'fa-key',l:'Llaves',v:'2–3 llaves de seguridad'},{i:'fa-screwdriver',l:'Instalación',v:'Sobreponer'},{i:'fa-building',l:'Usos',v:'Accesos principales · locales comerciales'},{i:'fa-lightbulb',l:'Tip',v:'AS = Alta Seguridad — cilindro más difícil de duplicar'}],
+    page:'catalogo.html', wa:'Phillips%20AS%20625', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:c610dc7e-4d3a-4439-aeb3-5ecd5a3af0f6/as/as-625-frente-fondo-blanco.jpg' },
+
+  { id:'phillips-as2000', cat:'cerraduras', provider:'Phillips', name:'Phillips AS 2000', tagline:'Cerradura sobreponer alta seguridad con alarma integrada AS 2000.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'AS 2000'},{i:'fa-bell',l:'Alarma',v:'Integrada — sueña si intentan forzar'},{i:'fa-shield-halved',l:'Seguridad',v:'Alta'},{i:'fa-key',l:'Llaves',v:'2 llaves de seguridad'},{i:'fa-building',l:'Usos',v:'Locales · bodegas · accesos nocturnos'},{i:'fa-lightbulb',l:'Tip',v:'Alarma disuade intentos de robo en tiempo real'}],
+    page:'catalogo.html', wa:'Phillips%20AS%202000', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:c443bf94-55a4-4be7-83a3-d2d84b1280f2/as/as-2000-beige-frente-fondo-blanco.jpg' },
+
+  { id:'phillips-as3000', cat:'cerraduras', provider:'Phillips', name:'Phillips AS 3000', tagline:'Cerradura sobreponer alta seguridad con alarma mejorada AS 3000.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'AS 3000'},{i:'fa-bell',l:'Alarma',v:'Mejorada — mayor volumen que AS 2000'},{i:'fa-shield-halved',l:'Seguridad',v:'Alta'},{i:'fa-key',l:'Llaves',v:'2 llaves de seguridad'},{i:'fa-building',l:'Usos',v:'Locales · bodegas · accesos importantes'},{i:'fa-lightbulb',l:'Tip',v:'AS 3000 con alarma más potente que AS 2000'}],
+    page:'catalogo.html', wa:'Phillips%20AS%203000', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:78fc5df8-8049-4540-8edf-6b6e3c4fabf0/as/as-3000-beige-frente-fondo-blanco.jpg' },
+
+  { id:'phillips-hs4000', cat:'cerraduras', provider:'Phillips', name:'Phillips HS-4000-AS 6', tagline:'Cerradura sobreponer alta seguridad premium nivel 6.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'HS-4000-AS 6'},{i:'fa-shield-halved',l:'Nivel',v:'6 — máxima seguridad sobreponer'},{i:'fa-key',l:'Llaves',v:'6 llaves de alta seguridad'},{i:'fa-atom',l:'Material',v:'Acero reforzado'},{i:'fa-building',l:'Usos',v:'Locales comerciales · bodegas críticas'},{i:'fa-lightbulb',l:'Tip',v:'Nivel 6 es el más alto en cerraduras de sobreponer Phillips'}],
+    page:'catalogo.html', wa:'Phillips%20HS-4000-AS%206', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:5b467fa0-5310-4bb0-8b27-e5a869a15122/as/hs-4000-as-6-frente-fondo-blanco.jpg' },
+
+  { id:'phillips-650ps', cat:'cerraduras', provider:'Phillips', name:'Phillips 650 PS', tagline:'Cerradura sobreponer con protección extra anti-sierra en el arco.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'650 PS'},{i:'fa-shield-halved',l:'Protección',v:'Anti-sierra en cerrojo'},{i:'fa-key',l:'Llaves',v:'2 llaves'},{i:'fa-screwdriver',l:'Instalación',v:'Sobreponer'},{i:'fa-building',l:'Usos',v:'Bodegas · locales con historial de robo'},{i:'fa-lightbulb',l:'Tip',v:'PS (Protección Sierra) dificulta corte con herramienta de mano'}],
+    page:'catalogo.html', wa:'Phillips%20650%20PS', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:cbfd8b85-9a5a-4f93-a852-64dc0f5ff4c2/as/650-ps-frente-fondo-blanco.jpg' },
+
+  { id:'phillips-hs4100', cat:'cerraduras', provider:'Phillips', name:'Phillips HS-4100-AS 6', tagline:'Cerradura sobreponer HS-4100 nivel de alta seguridad 6.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'HS-4100-AS 6'},{i:'fa-shield-halved',l:'Nivel',v:'6 — alta seguridad'},{i:'fa-key',l:'Llaves',v:'6 llaves de seguridad'},{i:'fa-atom',l:'Material',v:'Cuerpo acero reforzado'},{i:'fa-building',l:'Usos',v:'Accesos críticos · bodegas'},{i:'fa-lightbulb',l:'Tip',v:'Cilindro de alta seguridad dificulta copia no autorizada de llaves'}],
+    page:'catalogo.html', wa:'Phillips%20HS-4100-AS%206', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:66c43205-25df-422a-b1d1-6c4f31f61914/as/hs-4100-as-6-frente-fondo-blanco.jpg' },
+
+  { id:'phillips-hs4200', cat:'cerraduras', provider:'Phillips', name:'Phillips HS-4200-AS 6', tagline:'Cerradura sobreponer HS-4200 con mayor cantidad de puntos de cierre.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'HS-4200-AS 6'},{i:'fa-shield-halved',l:'Nivel',v:'6 — alta seguridad'},{i:'fa-key',l:'Llaves',v:'6 llaves de seguridad'},{i:'fa-lock',l:'Cierres',v:'Múltiples puntos de cierre'},{i:'fa-building',l:'Usos',v:'Bodegas de alta seguridad'},{i:'fa-lightbulb',l:'Tip',v:'Mayor número de puntos de cierre = más resistencia a palanca'}],
+    page:'catalogo.html', wa:'Phillips%20HS-4200-AS%206', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:0fda3256-f3b3-4a40-a43f-789f5590c09a/as/hs-4200-as-6-frente-fondo-blanco.jpg' },
+
+  { id:'phillips-800', cat:'cerraduras', provider:'Phillips', name:'Phillips 800', tagline:'Cerradura sobreponer premium serie 800 acabado cromo.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'800'},{i:'fa-palette',l:'Acabado',v:'Cromo'},{i:'fa-shield-halved',l:'Seguridad',v:'Alta — serie premium'},{i:'fa-key',l:'Llaves',v:'2–3 llaves'},{i:'fa-building',l:'Usos',v:'Residencias · locales principales'},{i:'fa-lightbulb',l:'Tip',v:'Serie 800 es la gama premium de sobreponer Phillips'}],
+    page:'catalogo.html', wa:'Phillips%20800', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:068e0163-4d2d-4b8c-9251-d72d446d5bb8/as/800-cromo-frente-fondo-blanco.jpg' },
+
+  { id:'phillips-800ch', cat:'cerraduras', provider:'Phillips', name:'Phillips 800 CH', tagline:'Cerradura sobreponer 800 acabado chocolate/bronce.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'800 CH'},{i:'fa-palette',l:'Acabado',v:'Chocolate / bronce'},{i:'fa-shield-halved',l:'Seguridad',v:'Alta — serie premium'},{i:'fa-key',l:'Llaves',v:'2–3 llaves'},{i:'fa-building',l:'Usos',v:'Residencias con herrería café/bronce'},{i:'fa-lightbulb',l:'Tip',v:'Color CH combina con portones y cancelería en tono cobre'}],
+    page:'catalogo.html', wa:'Phillips%20800%20CH', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:54464e6f-e8ee-4c4b-a7a8-a77a6bf4eb33/as/800-ch-frente-fondo-blanco.jpg' },
+
+  { id:'phillips-800max', cat:'cerraduras', provider:'Phillips', name:'Phillips 800 MAX', tagline:'Cerradura sobreponer 800 MAX con máxima resistencia al arranque y a la palanca.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'800 MAX'},{i:'fa-shield-halved',l:'Resistencia',v:'Máxima — anti-arranque y anti-palanca'},{i:'fa-key',l:'Llaves',v:'3 llaves de alta seguridad'},{i:'fa-atom',l:'Material',v:'Acero reforzado'},{i:'fa-building',l:'Usos',v:'Accesos críticos · locales comerciales'},{i:'fa-lightbulb',l:'Tip',v:'MAX es el nivel más alto en la serie 800'}],
+    page:'catalogo.html', wa:'Phillips%20800%20MAX', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:78cf2e0e-2f61-473f-a507-5d45f6705716/as/800-max-frente-fondo-blanco.jpg' },
+
+  { id:'phillips-x900max', cat:'cerraduras', provider:'Phillips', name:'Phillips X-900 MAX', tagline:'Cerradura sobreponer X-900 MAX, la de mayor seguridad de la serie X.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'X-900 MAX'},{i:'fa-shield-halved',l:'Serie',v:'X — resistencia premium'},{i:'fa-key',l:'Llaves',v:'3 llaves de alta seguridad'},{i:'fa-atom',l:'Material',v:'Acero reforzado con tratamiento especial'},{i:'fa-building',l:'Usos',v:'Locales críticos · bodegas de alto valor'},{i:'fa-lightbulb',l:'Tip',v:'X-900 MAX es el tope de gama en sobreponer Phillips'}],
+    page:'catalogo.html', wa:'Phillips%20X-900%20MAX', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:2b7b95fa-560b-4a65-83cd-b5b95574e934/as/x-900-max-frente-fondo-blanco.jpg' },
+
+  { id:'phillips-x900', cat:'cerraduras', provider:'Phillips', name:'Phillips X-900', tagline:'Cerradura sobreponer serie X-900 de alta seguridad.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'X-900'},{i:'fa-shield-halved',l:'Serie',v:'X — alta seguridad'},{i:'fa-key',l:'Llaves',v:'2–3 llaves'},{i:'fa-atom',l:'Material',v:'Acero reforzado'},{i:'fa-building',l:'Usos',v:'Accesos principales · bodegas'},{i:'fa-lightbulb',l:'Tip',v:'Diferencia con X-900 MAX: MAX tiene resistencia adicional a la palanca'}],
+    page:'catalogo.html', wa:'Phillips%20X-900', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:f7b3b0f3-64a7-49b1-b171-56968b780cef/as/x-900-frente-fondo-blanco.jpg' },
+
+  { id:'phillips-775', cat:'cerraduras', provider:'Phillips', name:'Phillips 775', tagline:'Cerradura sobreponer media-alta seguridad modelo 775.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'775'},{i:'fa-key',l:'Llaves',v:'2 llaves'},{i:'fa-shield-halved',l:'Seguridad',v:'Media-alta'},{i:'fa-screwdriver',l:'Instalación',v:'Sobreponer'},{i:'fa-building',l:'Usos',v:'Residencias · locales menores'},{i:'fa-lightbulb',l:'Tip',v:'Buen relación precio/seguridad en accesos secundarios'}],
+    page:'catalogo.html', wa:'Phillips%20775', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:0d9567a6-4fa8-4781-9142-aaae7f04b2a8/as/775-frente-fondo-blanco.jpg' },
+
+  { id:'phillips-875', cat:'cerraduras', provider:'Phillips', name:'Phillips 875', tagline:'Cerradura sobreponer robusta modelo 875.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'875'},{i:'fa-key',l:'Llaves',v:'2–3 llaves'},{i:'fa-shield-halved',l:'Seguridad',v:'Media-alta'},{i:'fa-screwdriver',l:'Instalación',v:'Sobreponer'},{i:'fa-building',l:'Usos',v:'Puertas principales residenciales'},{i:'fa-lightbulb',l:'Tip',v:'Serie 800+ recomendada para accesos principales'}],
+    page:'catalogo.html', wa:'Phillips%20875', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:961e8644-8ce9-4bc3-a889-2a2ebb94e375/as/875-frente-fondo-blanco.jpg' },
+
+  { id:'phillips-825', cat:'cerraduras', provider:'Phillips', name:'Phillips 825', tagline:'Cerradura sobreponer estándar modelo 825.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'825'},{i:'fa-key',l:'Llaves',v:'2 llaves'},{i:'fa-shield-halved',l:'Seguridad',v:'Media'},{i:'fa-screwdriver',l:'Instalación',v:'Sobreponer'},{i:'fa-building',l:'Usos',v:'Uso general residencial y comercial'},{i:'fa-lightbulb',l:'Tip',v:'Buen punto de entrada a la serie 800'}],
+    page:'catalogo.html', wa:'Phillips%20825', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:995bb01c-a454-400f-94bd-eff7d18233df/as/825-frente-fondo-blanco.jpg' },
+
+  { id:'phillips-850', cat:'cerraduras', provider:'Phillips', name:'Phillips 850', tagline:'Cerradura sobreponer premium 850 con acabado de alta calidad.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'850'},{i:'fa-key',l:'Llaves',v:'2–3 llaves'},{i:'fa-shield-halved',l:'Seguridad',v:'Alta — serie premium'},{i:'fa-atom',l:'Material',v:'Acero de alta calidad'},{i:'fa-building',l:'Usos',v:'Residencias · locales comerciales principales'},{i:'fa-lightbulb',l:'Tip',v:'Modelo 850 recomendado para accesos principales en residencias'}],
+    page:'catalogo.html', wa:'Phillips%20850', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:b06607b3-583e-45d6-89f7-d40b65f41f9a/as/850-frente-fondo-blanco.jpg' },
+
+  { id:'phillips-x750', cat:'cerraduras', provider:'Phillips', name:'Phillips X-750', tagline:'Cerradura sobreponer serie X-750 con refuerzo anti-arranque.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'X-750'},{i:'fa-shield-halved',l:'Serie',v:'X — anti-arranque'},{i:'fa-key',l:'Llaves',v:'2 llaves de seguridad'},{i:'fa-screwdriver',l:'Instalación',v:'Sobreponer'},{i:'fa-building',l:'Usos',v:'Puertas principales · locales'},{i:'fa-lightbulb',l:'Tip',v:'Serie X más robusta que serie 700 para exteriores'}],
+    page:'catalogo.html', wa:'Phillips%20X-750', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:ed692d2e-82b2-4e3c-8139-106cef9815f1/as/x-750-frente-fondo-blanco.jpg' },
+
+  { id:'phillips-745', cat:'cerraduras', provider:'Phillips', name:'Phillips 745', tagline:'Cerradura sobreponer modelo 745 para uso general.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'745'},{i:'fa-key',l:'Llaves',v:'2 llaves'},{i:'fa-shield-halved',l:'Seguridad',v:'Media'},{i:'fa-screwdriver',l:'Instalación',v:'Sobreponer'},{i:'fa-building',l:'Usos',v:'Uso general residencial'},{i:'fa-lightbulb',l:'Tip',v:'Buena opción intermedia entre 700 y 800'}],
+    page:'catalogo.html', wa:'Phillips%20745', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:d1cd32e3-1375-4cfa-b248-d97a4036d6e1/as/745-frente-fondo-blanco.jpg' },
+
+  { id:'phillips-740', cat:'cerraduras', provider:'Phillips', name:'Phillips 740', tagline:'Cerradura sobreponer compacta modelo 740.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'740'},{i:'fa-key',l:'Llaves',v:'2 llaves'},{i:'fa-shield-halved',l:'Seguridad',v:'Media'},{i:'fa-screwdriver',l:'Instalación',v:'Sobreponer'},{i:'fa-building',l:'Usos',v:'Puertas interiores y exteriores'},{i:'fa-lightbulb',l:'Tip',v:'Similar al 745 pero con perfil más compacto'}],
+    page:'catalogo.html', wa:'Phillips%20740', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:bfe920a3-dfad-4511-b4a2-ba90678004ec/as/740-frente-fondo-blanco.jpg' },
+
+  { id:'phillips-700', cat:'cerraduras', provider:'Phillips', name:'Phillips 700', tagline:'Cerradura sobreponer básica modelo 700 para uso residencial general.',
+    svgNote:'', svg:'',
+    specs:[{i:'fa-lock',l:'Modelo',v:'700'},{i:'fa-key',l:'Llaves',v:'2 llaves'},{i:'fa-tag',l:'Segmento',v:'Básica — relación precio/funcionalidad'},{i:'fa-screwdriver',l:'Instalación',v:'Sobreponer'},{i:'fa-building',l:'Usos',v:'Cuartos · servicios · bodegas menores'},{i:'fa-lightbulb',l:'Tip',v:'Para mayor seguridad escalar a la serie 800 o X'}],
+    page:'catalogo.html', wa:'Phillips%20700', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:b59dd8bc-59c7-4b60-806f-7a00ead0beda/as/700-frente-fondo-blanco.jpg' },
+
+  { id:'phillips-mueble-21', cat:'cerraduras', provider:'Phillips',
+    name:'Cerradura para Mueble Phillips Mod. 21',
+    tagline:'Cerradura de cajón con leva, cuerpo de zamak cromado, incluye 2 llaves.',
+    specs:[
+      {i:'fa-lock',         l:'Modelo',    v:'Mod. 21'},
+      {i:'fa-ruler',        l:'Diámetro',  v:'16 mm'},
+      {i:'fa-key',          l:'Llaves',    v:'2 llaves incluidas'},
+      {i:'fa-atom',         l:'Material',  v:'Zamak cromado'},
+      {i:'fa-building',     l:'Usos',      v:'Cajones, escritorios, archiveros'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Anota el número de llave grabado en el cilindro para duplicados'}
+    ], page:'catalogo.html', wa:'Cerradura%20Mueble%20Phillips%20Mod%2021', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:ce1dbc0a-861b-4bc1-a5d1-a5bd4f40a0a4/as/21-frente-con-llaves.jpg' },
+
+  { id:'phillips-mueble-24', cat:'cerraduras', provider:'Phillips',
+    name:'Cerradura para Mueble Phillips Mod. 24',
+    tagline:'Cerradura tubular de cajón con cilindro de disco, acabado niquelado.',
+    specs:[
+      {i:'fa-lock',         l:'Modelo',    v:'Mod. 24'},
+      {i:'fa-ruler',        l:'Diámetro',  v:'19 mm'},
+      {i:'fa-key',          l:'Llaves',    v:'2 llaves incluidas'},
+      {i:'fa-atom',         l:'Material',  v:'Zamak niquelado'},
+      {i:'fa-building',     l:'Usos',      v:'Cajones de oficina, mostradores'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Anota el número de llave grabado en el cilindro para duplicados'}
+    ], page:'catalogo.html', wa:'Cerradura%20Mueble%20Phillips%20Mod%2024', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:91e0842b-474d-490c-b625-3f0ba53acc26/as/24-fondo-blanco.jpg' },
+
+  { id:'phillips-mueble-32', cat:'cerraduras', provider:'Phillips',
+    name:'Cerradura para Mueble Phillips Mod. 32',
+    tagline:'Cerradura compacta de cajón con llave plana, zamak cromado.',
+    specs:[
+      {i:'fa-lock',         l:'Modelo',    v:'Mod. 32'},
+      {i:'fa-ruler',        l:'Diámetro',  v:'16 mm'},
+      {i:'fa-key',          l:'Llaves',    v:'2 llaves incluidas'},
+      {i:'fa-atom',         l:'Material',  v:'Zamak cromado'},
+      {i:'fa-building',     l:'Usos',      v:'Cajones, gabinetes ligeros'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Anota el número de llave grabado en el cilindro para duplicados'}
+    ], page:'catalogo.html', wa:'Cerradura%20Mueble%20Phillips%20Mod%2032', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:1cbaef76-6796-4ddb-a3e1-c539bb610b28/as/32-fondo-blanco.jpg' },
+
+  { id:'phillips-mueble-50', cat:'cerraduras', provider:'Phillips',
+    name:'Cerradura para Mueble Phillips Mod. 50',
+    tagline:'Cerradura de media vuelta para gabinete, cuerpo cilíndrico de zamak.',
+    specs:[
+      {i:'fa-lock',         l:'Modelo',    v:'Mod. 50'},
+      {i:'fa-ruler',        l:'Diámetro',  v:'22 mm'},
+      {i:'fa-key',          l:'Llaves',    v:'2 llaves incluidas'},
+      {i:'fa-atom',         l:'Material',  v:'Zamak cromado'},
+      {i:'fa-building',     l:'Usos',      v:'Gabinetes de cocina, armarios'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Anota el número de llave grabado en el cilindro para duplicados'}
+    ], page:'catalogo.html', wa:'Cerradura%20Mueble%20Phillips%20Mod%2050', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:2acc3901-bb62-4f35-a00a-3ff54196ae3d/as/50-fondo-blanco.jpg' },
+
+  { id:'phillips-mueble-60', cat:'cerraduras', provider:'Phillips',
+    name:'Cerradura para Mueble Phillips Mod. 60',
+    tagline:'Cerradura para locker y archivero, cilindro de disco con seguro de leva.',
+    specs:[
+      {i:'fa-lock',         l:'Modelo',    v:'Mod. 60'},
+      {i:'fa-ruler',        l:'Diámetro',  v:'22 mm'},
+      {i:'fa-key',          l:'Llaves',    v:'2 llaves incluidas'},
+      {i:'fa-atom',         l:'Material',  v:'Zamak niquelado'},
+      {i:'fa-building',     l:'Usos',      v:'Lockers, archiveros metálicos'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Anota el número de llave grabado en el cilindro para duplicados'}
+    ], page:'catalogo.html', wa:'Cerradura%20Mueble%20Phillips%20Mod%2060', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:3c41d9c9-2f94-43d6-9930-4fc1605c2074/as/60-fondo-blanco.jpg' },
+
+  { id:'phillips-mueble-55', cat:'cerraduras', provider:'Phillips',
+    name:'Cerradura para Mueble Phillips Mod. 55',
+    tagline:'Cerradura de cajón de perfil bajo, acabado cromado satinado.',
+    specs:[
+      {i:'fa-lock',         l:'Modelo',    v:'Mod. 55'},
+      {i:'fa-ruler',        l:'Diámetro',  v:'19 mm'},
+      {i:'fa-key',          l:'Llaves',    v:'2 llaves incluidas'},
+      {i:'fa-atom',         l:'Material',  v:'Zamak cromado satinado'},
+      {i:'fa-building',     l:'Usos',      v:'Cajones de cocina, closets, muebles modulares'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Anota el número de llave grabado en el cilindro para duplicados'}
+    ], page:'catalogo.html', wa:'Cerradura%20Mueble%20Phillips%20Mod%2055', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:a26b9e05-7184-42da-9288-dc8b1482c021/as/55-fondo-blanco.jpg' },
+
+  { id:'phillips-mueble-53', cat:'cerraduras', provider:'Phillips',
+    name:'Cerradura para Mueble Phillips Mod. 53',
+    tagline:'Cerradura de cajón reforzada con leva larga, zamak cromado.',
+    specs:[
+      {i:'fa-lock',         l:'Modelo',    v:'Mod. 53'},
+      {i:'fa-ruler',        l:'Diámetro',  v:'22 mm'},
+      {i:'fa-key',          l:'Llaves',    v:'2 llaves incluidas'},
+      {i:'fa-atom',         l:'Material',  v:'Zamak cromado'},
+      {i:'fa-building',     l:'Usos',      v:'Cajones y gabinetes de mayor uso'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Anota el número de llave grabado en el cilindro para duplicados'}
+    ], page:'catalogo.html', wa:'Cerradura%20Mueble%20Phillips%20Mod%2053', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:72b6504f-8bdf-4344-80ab-56506e613ce9/as/53-fondo-blanco.jpg' },
+
+  { id:'phillips-mueble-65', cat:'cerraduras', provider:'Phillips',
+    name:'Cerradura para Mueble Phillips Mod. 65',
+    tagline:'Cerradura de media vuelta para puertas de gabinete, zamak niquelado.',
+    specs:[
+      {i:'fa-lock',         l:'Modelo',    v:'Mod. 65'},
+      {i:'fa-ruler',        l:'Diámetro',  v:'22 mm'},
+      {i:'fa-key',          l:'Llaves',    v:'2 llaves incluidas'},
+      {i:'fa-atom',         l:'Material',  v:'Zamak niquelado'},
+      {i:'fa-building',     l:'Usos',      v:'Puertas de gabinete, escaparates'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Anota el número de llave grabado en el cilindro para duplicados'}
+    ], page:'catalogo.html', wa:'Cerradura%20Mueble%20Phillips%20Mod%2065', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:4295551f-dd69-4c4a-82bd-130ba89491a4/as/65-fondo-blanco.jpg' },
+
+  { id:'phillips-mueble-63', cat:'cerraduras', provider:'Phillips',
+    name:'Cerradura para Mueble Phillips Mod. 63',
+    tagline:'Cerradura de cajón con leva ajustable, cuerpo zamak con acabado niquelado.',
+    specs:[
+      {i:'fa-lock',         l:'Modelo',    v:'Mod. 63'},
+      {i:'fa-ruler',        l:'Diámetro',  v:'19 mm'},
+      {i:'fa-key',          l:'Llaves',    v:'2 llaves incluidas'},
+      {i:'fa-atom',         l:'Material',  v:'Zamak niquelado'},
+      {i:'fa-building',     l:'Usos',      v:'Cajones, archiveros, mesas de trabajo'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Anota el número de llave grabado en el cilindro para duplicados'}
+    ], page:'catalogo.html', wa:'Cerradura%20Mueble%20Phillips%20Mod%2063', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:c50ca8e9-3344-4fa0-a645-4615a649b5d2/as/63-fondo-blanco.jpg' },
+
+  { id:'phillips-mueble-72', cat:'cerraduras', provider:'Phillips',
+    name:'Cerradura para Mueble Phillips Mod. 72',
+    tagline:'Cerradura de cajón con cilindro de alta resistencia, acabado cromado.',
+    specs:[
+      {i:'fa-lock',         l:'Modelo',    v:'Mod. 72'},
+      {i:'fa-ruler',        l:'Diámetro',  v:'22 mm'},
+      {i:'fa-key',          l:'Llaves',    v:'2 llaves incluidas'},
+      {i:'fa-atom',         l:'Material',  v:'Zamak cromado'},
+      {i:'fa-building',     l:'Usos',      v:'Muebles de oficina, libreros con cerrojo'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Anota el número de llave grabado en el cilindro para duplicados'}
+    ], page:'catalogo.html', wa:'Cerradura%20Mueble%20Phillips%20Mod%2072', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:fe184147-18c2-4fec-91d8-426e4bba277b/as/72-fondo-blanco.jpg' },
+
+  { id:'phillips-mueble-as250ch', cat:'cerraduras', provider:'Phillips',
+    name:'Cerradura para Mueble Phillips AS-250 CH',
+    tagline:'Cerradura de alta seguridad para gabinetes, cilindro de disco cromado.',
+    specs:[
+      {i:'fa-lock',         l:'Modelo',    v:'AS-250 CH'},
+      {i:'fa-ruler',        l:'Diámetro',  v:'22 mm'},
+      {i:'fa-key',          l:'Llaves',    v:'2 llaves incluidas · Cilindro de disco'},
+      {i:'fa-atom',         l:'Material',  v:'Zamak cromado · Alta seguridad'},
+      {i:'fa-building',     l:'Usos',      v:'Gabinetes de seguridad, archiveros ejecutivos'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Anota el número de llave grabado en el cilindro para duplicados'}
+    ], page:'catalogo.html', wa:'Cerradura%20Mueble%20Phillips%20AS250CH', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:f8a25aa7-bf20-4c9d-902b-b3aa04fb2884/as/as-250-ch.jpg' },
+
+  { id:'phillips-mueble-as250', cat:'cerraduras', provider:'Phillips',
+    name:'Cerradura para Mueble Phillips AS-250',
+    tagline:'Cerradura de alta seguridad para muebles, acabado niquelado con cilindro de disco.',
+    specs:[
+      {i:'fa-lock',         l:'Modelo',    v:'AS-250'},
+      {i:'fa-ruler',        l:'Diámetro',  v:'22 mm'},
+      {i:'fa-key',          l:'Llaves',    v:'2 llaves incluidas · Cilindro de disco'},
+      {i:'fa-atom',         l:'Material',  v:'Zamak niquelado · Alta seguridad'},
+      {i:'fa-building',     l:'Usos',      v:'Gabinetes de seguridad, muebles de alto tráfico'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Anota el número de llave grabado en el cilindro para duplicados'}
+    ], page:'catalogo.html', wa:'Cerradura%20Mueble%20Phillips%20AS250', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:54f11898-7d6c-425b-ba81-c5c06af90a62/as/as-250.jpg' },
+
+  { id:'phillips-alu-575mm', cat:'cerraduras', provider:'Phillips',
+    name:'Cerradura para Aluminio Phillips 575 MM',
+    tagline:'Cerradura para perfil de aluminio corredizo con manija y llave, acabado MM.',
+    specs:[
+      {i:'fa-lock',         l:'Modelo',    v:'575 MM'},
+      {i:'fa-screwdriver',  l:'Tipo',      v:'Cerradura para cancel corredizo'},
+      {i:'fa-key',          l:'Llaves',    v:'2 llaves incluidas'},
+      {i:'fa-atom',         l:'Acabado',   v:'MM (aluminio natural)'},
+      {i:'fa-building',     l:'Usos',      v:'Ventanas y puertas corredizas de aluminio'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Verificar el ancho de canal del perfil antes de pedir'}
+    ], page:'catalogo.html', wa:'Cerradura%20Aluminio%20Phillips%20575MM', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:1f491f20-13cd-4e96-988c-43da6a17b38b/as/575-mm-fondo-blanco.jpg' },
+
+  { id:'phillips-alu-549an', cat:'cerraduras', provider:'Phillips',
+    name:'Cerradura para Aluminio Phillips 549 AN',
+    tagline:'Cerradura con pestillo para perfil de aluminio, acabado anodizado natural.',
+    specs:[
+      {i:'fa-lock',         l:'Modelo',    v:'549 AN'},
+      {i:'fa-screwdriver',  l:'Tipo',      v:'Cerradura con pestillo para aluminio'},
+      {i:'fa-key',          l:'Llaves',    v:'2 llaves incluidas'},
+      {i:'fa-atom',         l:'Acabado',   v:'AN (anodizado natural)'},
+      {i:'fa-building',     l:'Usos',      v:'Cancelería, mamparas de aluminio'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Verificar el ancho de canal del perfil antes de pedir'}
+    ], page:'catalogo.html', wa:'Cerradura%20Aluminio%20Phillips%20549AN', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:32b99850-a7ea-4b59-80e2-eb8dbac5bb7c/as/549-an-fondo-blanco.jpg' },
+
+  { id:'phillips-alu-590', cat:'cerraduras', provider:'Phillips',
+    name:'Cerradura para Aluminio Phillips 590',
+    tagline:'Cerradura de gancho para perfiles de aluminio de alta seguridad.',
+    specs:[
+      {i:'fa-lock',         l:'Modelo',    v:'590'},
+      {i:'fa-screwdriver',  l:'Tipo',      v:'Cerradura de gancho para aluminio'},
+      {i:'fa-key',          l:'Llaves',    v:'2 llaves incluidas · Cilindro reforzado'},
+      {i:'fa-atom',         l:'Material',  v:'Aluminio · Zamak'},
+      {i:'fa-building',     l:'Usos',      v:'Puertas de cancelería con mayor seguridad'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Verificar el ancho de canal del perfil antes de pedir'}
+    ], page:'catalogo.html', wa:'Cerradura%20Aluminio%20Phillips%20590', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:3ea9c22c-abf9-4858-b341-bd9ea5067b12/as/590-fondo-blanco.jpg' },
+
+  { id:'phillips-alu-549asan', cat:'cerraduras', provider:'Phillips',
+    name:'Cerradura para Aluminio Phillips 549 AS AN',
+    tagline:'Cerradura 549 con seguro adicional para cancelería, acabado anodizado natural.',
+    specs:[
+      {i:'fa-lock',         l:'Modelo',    v:'549 AS AN'},
+      {i:'fa-screwdriver',  l:'Tipo',      v:'Cerradura con seguro adicional'},
+      {i:'fa-key',          l:'Llaves',    v:'2 llaves incluidas'},
+      {i:'fa-atom',         l:'Acabado',   v:'AN (anodizado natural)'},
+      {i:'fa-building',     l:'Usos',      v:'Cancelería, baños de vidrio'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Verificar el ancho de canal del perfil antes de pedir'}
+    ], page:'catalogo.html', wa:'Cerradura%20Aluminio%20Phillips%20549ASAN', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:ff736f60-a227-4baa-b47c-5b46fa6f04ce/as/549-as-an-fondo-blanco.jpg' },
+
+  { id:'phillips-alu-549mcan', cat:'cerraduras', provider:'Phillips',
+    name:'Cerradura para Aluminio Phillips 549 MC AN',
+    tagline:'Cerradura 549 con manija y cierre de mariposa, acabado anodizado natural.',
+    specs:[
+      {i:'fa-lock',         l:'Modelo',    v:'549 MC AN'},
+      {i:'fa-screwdriver',  l:'Tipo',      v:'Cerradura con manija y cierre mariposa'},
+      {i:'fa-key',          l:'Llaves',    v:'2 llaves incluidas'},
+      {i:'fa-atom',         l:'Acabado',   v:'AN (anodizado natural)'},
+      {i:'fa-building',     l:'Usos',      v:'Puertas de cancelería corrediza'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Verificar el ancho de canal del perfil antes de pedir'}
+    ], page:'catalogo.html', wa:'Cerradura%20Aluminio%20Phillips%20549MCAN', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:1b889183-afff-4239-8102-f00aeb8d1497/as/549-mc-an-fondo-blanco.jpg' },
+
+  { id:'phillips-alu-549ban', cat:'cerraduras', provider:'Phillips',
+    name:'Cerradura para Aluminio Phillips 549 B AN',
+    tagline:'Cerradura 549 con botón de privacidad interior, acabado anodizado natural.',
+    specs:[
+      {i:'fa-lock',         l:'Modelo',    v:'549 B AN'},
+      {i:'fa-screwdriver',  l:'Tipo',      v:'Cerradura con botón de privacidad'},
+      {i:'fa-key',          l:'Llaves',    v:'2 llaves incluidas'},
+      {i:'fa-atom',         l:'Acabado',   v:'AN (anodizado natural)'},
+      {i:'fa-building',     l:'Usos',      v:'Baños y recámaras con cancelería de aluminio'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'El botón B permite privacidad sin llave desde adentro'}
+    ], page:'catalogo.html', wa:'Cerradura%20Aluminio%20Phillips%20549BAN', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:900e661a-8c8a-4d06-a0ff-7e0d63d3d1ed/as/549-b-an-fondo-blanco.jpg' },
+
+  { id:'phillips-alu-550', cat:'cerraduras', provider:'Phillips',
+    name:'Cerradura para Aluminio Phillips 550',
+    tagline:'Cerradura para perfil de aluminio con llave en ambos lados, acabado aluminio natural.',
+    specs:[
+      {i:'fa-lock',         l:'Modelo',    v:'550'},
+      {i:'fa-screwdriver',  l:'Tipo',      v:'Cerradura doble cilindro para aluminio'},
+      {i:'fa-key',          l:'Llaves',    v:'2 llaves incluidas · Doble cilindro'},
+      {i:'fa-atom',         l:'Acabado',   v:'Aluminio natural'},
+      {i:'fa-building',     l:'Usos',      v:'Cancelería de acceso controlado'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Verificar el ancho de canal del perfil antes de pedir'}
+    ], page:'catalogo.html', wa:'Cerradura%20Aluminio%20Phillips%20550', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:15bc5236-6c36-488e-9f2e-56ab5270f7af/as/550-fondo-blanco.jpg' },
+
+  { id:'phillips-alu-550ch', cat:'cerraduras', provider:'Phillips',
+    name:'Cerradura para Aluminio Phillips 550 CH',
+    tagline:'Cerradura para perfil de aluminio doble cilindro, acabado cromado.',
+    specs:[
+      {i:'fa-lock',         l:'Modelo',    v:'550 CH'},
+      {i:'fa-screwdriver',  l:'Tipo',      v:'Cerradura doble cilindro para aluminio'},
+      {i:'fa-key',          l:'Llaves',    v:'2 llaves incluidas · Doble cilindro'},
+      {i:'fa-atom',         l:'Acabado',   v:'CH (cromado)'},
+      {i:'fa-building',     l:'Usos',      v:'Cancelería residencial y comercial'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Verificar el ancho de canal del perfil antes de pedir'}
+    ], page:'catalogo.html', wa:'Cerradura%20Aluminio%20Phillips%20550CH', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:08738daf-649e-4a53-a8f4-9f3095af5ce8/as/550-ch-fondo-blanco.jpg' },
+
+  { id:'phillips-alu-570mc', cat:'cerraduras', provider:'Phillips',
+    name:'Cerradura para Aluminio Phillips 570 MC',
+    tagline:'Cerradura para aluminio con manija y cierre de mariposa, perfil estándar.',
+    specs:[
+      {i:'fa-lock',         l:'Modelo',    v:'570 MC'},
+      {i:'fa-screwdriver',  l:'Tipo',      v:'Cerradura con manija y cierre mariposa'},
+      {i:'fa-key',          l:'Llaves',    v:'2 llaves incluidas'},
+      {i:'fa-atom',         l:'Material',  v:'Aluminio · Zamak'},
+      {i:'fa-building',     l:'Usos',      v:'Puertas corredizas de aluminio'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Verificar el ancho de canal del perfil antes de pedir'}
+    ], page:'catalogo.html', wa:'Cerradura%20Aluminio%20Phillips%20570MC', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:5980c654-cfe7-434d-b46e-4ce74d0b0dc7/as/570-mc-fondo-blanco.jpg' },
+
+  { id:'phillips-alu-570inox', cat:'cerraduras', provider:'Phillips',
+    name:'Cerradura para Aluminio Phillips 570 Inox',
+    tagline:'Cerradura para aluminio en acero inoxidable, ideal para exteriores y zonas húmedas.',
+    specs:[
+      {i:'fa-lock',         l:'Modelo',    v:'570 Inox'},
+      {i:'fa-screwdriver',  l:'Tipo',      v:'Cerradura para aluminio en inoxidable'},
+      {i:'fa-key',          l:'Llaves',    v:'2 llaves incluidas'},
+      {i:'fa-atom',         l:'Material',  v:'Acero inoxidable'},
+      {i:'fa-building',     l:'Usos',      v:'Cancelería exterior, zonas costeras o húmedas'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'El inoxidable es la mejor opción en ambientes con humedad o sal'}
+    ], page:'catalogo.html', wa:'Cerradura%20Aluminio%20Phillips%20570Inox', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:e65d5033-096f-4ed9-8e0c-ef90312a6fee/as/570-inox-fondo-blanco.jpg' },
+
+  { id:'phillips-alu-570mcinox', cat:'cerraduras', provider:'Phillips',
+    name:'Cerradura para Aluminio Phillips 570 MC Inox',
+    tagline:'Cerradura con manija y mariposa en acero inoxidable para cancelería exterior.',
+    specs:[
+      {i:'fa-lock',         l:'Modelo',    v:'570 MC Inox'},
+      {i:'fa-screwdriver',  l:'Tipo',      v:'Cerradura con manija y mariposa en inoxidable'},
+      {i:'fa-key',          l:'Llaves',    v:'2 llaves incluidas'},
+      {i:'fa-atom',         l:'Material',  v:'Acero inoxidable'},
+      {i:'fa-building',     l:'Usos',      v:'Cancelería exterior, zonas costeras'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'El inoxidable es la mejor opción en ambientes con humedad o sal'}
+    ], page:'catalogo.html', wa:'Cerradura%20Aluminio%20Phillips%20570MCInox', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:848a47c0-73f9-44ed-b40c-705245a8985c/as/570-mc-inox-fondo-blanco.jpg' },
+
+  { id:'bisagras-phillips', cat:'cerraduras', provider:'Phillips',
     name:'Bisagras Phillips',
     tagline:'Bisagras de acero para puertas residenciales y comerciales con acabado cromado o latonado.',
     specs:[
@@ -1654,7 +2186,7 @@ const PRODUCTS = [
       {i:'fa-lightbulb',    l:'Tip',       v:'Para puertas >40 kg usar bisagra 4" con 3 bisagras mínimo'}
     ], page:'catalogo.html', wa:'Bisagras%20Phillips', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:f014cb4d-ba99-488d-a9e8-f197bc0af0cc/as/Bisagras.jpg' },
 
-  { id:'cierrapuertas-phillips', cat:'herrajes', provider:'Phillips',
+  { id:'cierrapuertas-phillips', cat:'cerraduras', provider:'Phillips',
     name:'Cierra Puertas Phillips',
     tagline:'Dispositivo hidráulico para cierre automático y controlado de puertas en edificios y oficinas.',
     specs:[
@@ -1666,7 +2198,7 @@ const PRODUCTS = [
       {i:'fa-lightbulb',    l:'Tip',       v:'Ajustar velocidad de cierre y retención en posición abierta'}
     ], page:'catalogo.html', wa:'Cierra%20Puertas%20Phillips', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:57b2c12a-9a91-4f4d-97ac-6f172b106c17/as/Cierrapuertas.jpg' },
 
-  { id:'topes-phillips', cat:'herrajes', provider:'Phillips',
+  { id:'topes-phillips', cat:'cerraduras', provider:'Phillips',
     name:'Topes de Puerta Phillips',
     tagline:'Topes de piso y pared en acero inoxidable para proteger paredes y evitar daños al abrir puertas.',
     specs:[
@@ -1678,7 +2210,7 @@ const PRODUCTS = [
       {i:'fa-lightbulb',    l:'Tip',       v:'Tope magnético ideal en puertas de alto tráfico — no golpea'}
     ], page:'catalogo.html', wa:'Topes%20Phillips', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:0a7da6b0-c704-434a-bb3a-e5d72b45050c/as/tope.jpg' },
 
-  { id:'accesorios-phillips', cat:'herrajes', provider:'Phillips',
+  { id:'accesorios-phillips', cat:'cerraduras', provider:'Phillips',
     name:'Accesorios de Puerta Phillips',
     tagline:'Jaladores, pasadores, sellos y accesorios complementarios para puertas y cancelería.',
     specs:[
@@ -1833,7 +2365,7 @@ const PRODUCTS = [
     ], page:'catalogo.html', wa:'Puntas%20y%20Lanzas%20PHV', photo:'https://www.phv.com.mx/images/hd/PUN-L12.jpg', photoPos:'center center' },
 
   /* ── CONSUMIBLES DE SOLDADURA — PHV ── */
-  { id:'electrodo-6013-phv', cat:'herramienta', provider:'PHV',
+  { id:'electrodo-6013-phv', cat:'consumibles', provider:'PHV',
     name:'Electrodos 6013 PHV',
     tagline:'Electrodo de soldadura 6013 toda posición, arco estable y baja generación de humos.',
     svgNote:'', svg:'',
@@ -1846,7 +2378,7 @@ const PRODUCTS = [
       {i:'fa-lightbulb',    l:'Tip',       v:'6013 verde especial para vertical descendente — ideal en tubería'}
     ], page:'catalogo.html', wa:'Electrodos%206013%20PHV', photo:'https://www.phv.com.mx/images/so/SOL-S61318.jpg', photoPos:'center center' },
 
-  { id:'electrodo-7018-phv', cat:'herramienta', provider:'PHV',
+  { id:'electrodo-7018-phv', cat:'consumibles', provider:'PHV',
     name:'Electrodos 7018 ESAB PHV',
     tagline:'Electrodo bajo hidrógeno 7018 para aceros al carbono y estructuras con alta resistencia.',
     svgNote:'', svg:'',
@@ -1859,7 +2391,7 @@ const PRODUCTS = [
       {i:'fa-lightbulb',    l:'Tip',       v:'Mantener electrodos secos — almacenar en horno o bolsa sellada'}
     ], page:'catalogo.html', wa:'Electrodos%207018%20ESAB%20PHV', photo:'https://www.phv.com.mx/images/so/SOL-M71818.jpg', photoPos:'center center' },
 
-  { id:'alambre-consumibles-phv', cat:'herramienta', provider:'PHV',
+  { id:'alambre-consumibles-phv', cat:'consumibles', provider:'PHV',
     name:'Alambre MIG y Consumibles PHV',
     tagline:'Micro alambre MIG sin gas, fundente flux y consumibles para soldadura de bronce, cobre e inox.',
     svgNote:'', svg:'',
@@ -1905,12 +2437,14 @@ const TABLE_HTML = {
    EXPLORER LOGIC
 ════════════════════════════════════════ */
 const CAT_NAMES = {
-  estructural:'Acero Estructural',
-  comercial:'Acero Comercial',
+  estructural: 'Acero Estructural',
+  comercial:   'Acero Comercial',
   especializado:'Aceros Especializados',
-  pintura:'Pinturas PintuMex',
-  herramienta:'Herramienta',
-  herrajes:'Herrajes y Cerraduras'
+  pintura:     'Pinturas PintuMex',
+  herramienta: 'Herramienta',
+  consumibles: 'Consumibles',
+  herrajes:    'Herrajes',
+  cerraduras:  'Cerraduras y Candados'
 };
 
 const CAT_LABELS_FULL = {
@@ -1919,7 +2453,9 @@ const CAT_LABELS_FULL = {
   especializado:'Acero Especializado',
   pintura:      'Pinturas PintuMex',
   herramienta:  'Herramienta',
-  herrajes:     'Herrajes y Cerraduras'
+  consumibles:  'Consumibles',
+  herrajes:     'Herrajes',
+  cerraduras:   'Cerraduras y Candados'
 };
 
 let activeCat = 'all';
@@ -2052,7 +2588,7 @@ document.getElementById('cat-back-btn').addEventListener('click', showMenu);
 
 /* Restaurar categoría al recargar usando el hash de la URL */
 (function() {
-  const validCats = ['estructural','comercial','especializado','pintura','herramienta'];
+  const validCats = ['estructural','comercial','especializado','pintura','herramienta','consumibles','herrajes','cerraduras'];
   const hash = location.hash.replace('#', '');
   if (validCats.includes(hash)) openCategory(hash);
 })();
@@ -2062,7 +2598,7 @@ document.getElementById('cat-search').addEventListener('input', e => {
 });
 
 /* Inicializar contadores del menú de categorías */
-['estructural','comercial','especializado','pintura','herramienta','herrajes'].forEach(cat => {
+['estructural','comercial','especializado','pintura','herramienta','consumibles','herrajes','cerraduras'].forEach(cat => {
   const count = PRODUCTS.filter(p => p.cat === cat).length;
   const el = document.getElementById('cnt-' + cat);
   if(el) el.textContent = count + ' producto' + (count !== 1 ? 's' : '');

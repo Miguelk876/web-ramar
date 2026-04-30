@@ -19,17 +19,19 @@ There are no build, lint, or test commands — files are served as-is.
 
 ## Architecture
 
-8 HTML pages linked with standard `<a href="...">` navigation (no SPA router):
+10 HTML pages linked with standard `<a href="...">` navigation (no SPA router):
 
 - `index.html` — homepage with hero section
 - `nosotros.html` — company history and values
 - `catalogo.html` — catalog hub linking to 4 sub-pages
 - `catalogo-comercial.html`, `catalogo-estructural.html`, `catalogo-especializado.html`, `catalogo-pintura.html` — product detail pages
+- `guia.html` — "¿Qué material necesito?" guide with project-type filters
 - `ubicaciones.html` — 8 branch locations with embedded Google Maps
 - `contacto.html` — contact info and social links
+- `gracias.html` — thank-you page after contact form submission (`<meta name="robots" content="noindex">`)
 
 All pages share:
-- A copy-pasted `<header class="navbar">` block (no server-side includes or components)
+- A copy-pasted `<header class="navbar">` block (no server-side includes or components). The navbar contains: logo, nav links (Inicio / Nosotros / Catálogo / Guía / Ubicaciones), a phone link (`tel:9512283263`), a "Contacto" CTA button, and a hamburger for mobile.
 - A copy-pasted `<footer>` block
 - A single `<link rel="stylesheet" href="styles.css">` and `<script src="main.js">` at the bottom
 
@@ -39,13 +41,19 @@ All pages share:
 - `--color-red: #DD3B2E` (secondary accent)
 - `--font-heading: 'Oswald'`, `--font-body: 'Inter'`
 
-**`main.js`** — two behaviors only: mobile hamburger menu toggle and scroll fade-in via `IntersectionObserver`.
+**`main.js`** — two behaviors: mobile hamburger menu toggle and scroll fade-in via `IntersectionObserver`. Includes an 800 ms fallback that forces `.visible` on all `.fade-in` elements in case the observer fires late.
+
+**`assets/images/`** — local images (logo, hero, brand logos). Product photos in catalog pages are sourced from Pexels via external URLs with `loading="lazy"`.
 
 ## Key Patterns
 
 - **Adding a page**: copy the closest existing page, update content, add a nav link to *every* page's header manually (there's no shared include).
-- **Adding a product card**: follow the existing `.product-card` pattern in the catalog pages — inline SVG icon, `.product-specs` `<ul>`, and `.product-tag` badges.
+- **Product block** (catalog detail pages): each product uses `.product-block` with an `accent-*` modifier. Inside: a `.pv-wrap` row with `.pv-svg` (inline SVG technical drawing) and `.pv-photo` (Pexels `<img>`), then a `.product-grid-3` with three `.product-col` columns (Medidas / Usos comunes / Recomendación RAMAR).
 - **Responsive breakpoint**: `@media (max-width: 900px)` is where the hamburger menu activates; match this in any new layout code.
 - **Scroll animations**: add `class="fade-in"` to any element that should animate in on scroll — the `IntersectionObserver` in `main.js` handles it automatically.
 - **Google Maps embeds**: each branch in `ubicaciones.html` uses an `<iframe>` with a Google Maps `src`. Get the embed URL from Google Maps → Share → Embed a map.
 - **External dependencies** (CDN only, no local installs): Google Fonts (Oswald + Inter) and Font Awesome 6.4.0 for icons — both loaded via `<link>` in each page's `<head>`.
+
+## Content Rules
+
+- The catalog (products) lives only in `catalogo.html` and its sub-pages — never add product listings to `index.html`.

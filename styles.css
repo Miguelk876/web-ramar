@@ -13,8 +13,8 @@
     --font-heading: 'Oswald', sans-serif;
     --font-body: 'Inter', sans-serif;
     
-    /* Transición elástica y profunda */
-    --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Transición suave y moderna */
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
@@ -64,48 +64,53 @@ h1, h2, h3, h4 {
     padding: 0 2rem;
 }
 
-/* Fix Global de Main para que el Navbar Gigante no lo tape */
+/* Fix Global de Main para que el Navbar no lo tape */
 .main-content {
-    padding-top: 100px;
+    padding-top: 72px;
     min-height: 80vh;
     background-color: var(--color-bg);
 }
 
-/* Navbar Masivo y Premium */
+/* Navbar */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 100px; /* Navbar delgado para no estorbar a los menús */
-    padding: 0 5rem;
+    height: 72px;
+    padding: 0 4rem;
     display: flex;
-    justify-content: flex-end; /* Mueve los enlaces a la derecha */
+    justify-content: flex-end;
     align-items: center;
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(12px);
     z-index: 1000;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.08); 
+    box-shadow: 0 1px 0 rgba(0,0,0,0.08);
+    transition: box-shadow 0.3s ease;
 }
 
-/* LOGO GIGANTE E IMPACTANTE FLOTANTE */
+.navbar.scrolled {
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+}
+
+/* Logo flotante */
 .logo {
     position: absolute;
-    left: 4rem;
+    left: 3rem;
     top: 0;
-    background: var(--color-white); /* Gafete tipo placa */
-    padding: 10px 15px 20px 15px;
-    border-radius: 0 0 15px 15px; /* Puntas inferiores redondeadas */
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15); /* Sombra que levanta el logo */
-    z-index: 1001; /* Siempre arriba */
+    background: var(--color-white);
+    padding: 8px 12px 16px 12px;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+    z-index: 1001;
 }
 
 .logo img {
-    height: 180px; /* Tamaño COLOSAL DE IMPARTO */
-    border-radius: 6px; 
-    transition: transform 0.4s ease, filter 0.4s ease;
+    height: 110px;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
 }
 .logo img:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .nav-links {
@@ -144,28 +149,28 @@ h1, h2, h3, h4 {
     width: 100%;
 }
 
-/* Botones Chingones */
+/* Botones */
 .btn-primary, .btn-secondary, .btn-outline {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 1.1rem 2.5rem;
+    padding: 0.9rem 2.2rem;
     font-family: var(--font-heading);
     font-weight: 700;
     text-transform: uppercase;
     text-decoration: none;
     border: none;
-    border-radius: 8px;
+    border-radius: 6px;
     cursor: pointer;
     transition: var(--transition);
-    font-size: 1.1rem;
+    font-size: 1rem;
     letter-spacing: 1px;
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--color-yellow) 0%, var(--color-red) 100%);
+    background: var(--color-yellow);
     color: var(--color-white);
-    box-shadow: 0 8px 20px rgba(221, 59, 46, 0.3);
+    box-shadow: 0 2px 10px rgba(240, 128, 24, 0.28);
 }
 
 .contact-btn {
@@ -174,55 +179,133 @@ h1, h2, h3, h4 {
 
 .btn-primary:hover {
     color: var(--color-white);
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(221, 59, 46, 0.5);
+    background: #d97010;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(240, 128, 24, 0.35);
 }
 
 .btn-secondary {
-    background-color: var(--color-blue);
+    background-color: transparent;
     color: var(--color-white);
-    box-shadow: 0 8px 20px rgba(28, 43, 84, 0.3);
+    border: 2px solid rgba(255,255,255,0.7);
 }
 
 .btn-secondary:hover {
-    background-color: var(--color-white);
-    color: var(--color-blue);
+    background-color: rgba(255,255,255,0.15);
+    border-color: var(--color-white);
+    transform: translateY(-2px);
 }
 
 .btn-outline {
     background-color: transparent;
-    border: 3px solid var(--color-blue);
+    border: 2px solid var(--color-blue);
     color: var(--color-blue);
 }
 
 .btn-outline:hover {
     background-color: var(--color-blue);
     color: var(--color-white);
+    transform: translateY(-2px);
 }
 
-/* Hero Section */
+/* Hero Section — Carousel */
 .hero-section {
     height: 100vh;
-    background: url('assets/images/hero_steel_1774502974788.png') no-repeat center center/cover;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding: 0 2rem;
+    overflow: hidden;
+}
+
+/* Carousel slides container */
+.carousel-slides {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.carousel-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-slide.active {
+    opacity: 1;
 }
 
 .hero-overlay {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    /* Gradiente moderno oscuredido usando sus colores */
-    background: linear-gradient(135deg, rgba(28, 43, 84, 0.9) 0%, rgba(221, 59, 46, 0.4) 100%);
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(135deg, rgba(28, 43, 84, 0.88) 0%, rgba(221, 59, 46, 0.38) 100%);
 }
 
 .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     max-width: 900px;
+}
+
+/* Carousel navigation arrows */
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 4;
+    background: rgba(255,255,255,0.15);
+    border: 2px solid rgba(255,255,255,0.4);
+    color: #fff;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.25s, transform 0.25s;
+    backdrop-filter: blur(4px);
+}
+.carousel-prev { left: 1.5rem; }
+.carousel-next { right: 1.5rem; }
+.carousel-prev:hover,
+.carousel-next:hover {
+    background: rgba(255,255,255,0.3);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Carousel dots */
+.carousel-dots {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+    display: flex;
+    gap: 0.6rem;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.45);
+    cursor: pointer;
+    transition: background 0.25s, transform 0.25s;
+    border: none;
+}
+
+.carousel-dot.active {
+    background: #fff;
+    transform: scale(1.3);
 }
 
 .hero-content h1 {
@@ -255,34 +338,35 @@ h1, h2, h3, h4 {
     gap: 3rem;
 }
 
-/* Tarjetas Chingonas */
+/* Tarjetas */
 .catalog-card, .location-card, .about-section .about-text, .info-card {
     background: var(--color-white);
-    border-radius: 12px;
-    padding: 3rem 2.5rem;
+    border-radius: 16px;
+    padding: 2.5rem 2.2rem;
     text-align: center;
     position: relative;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
     transition: var(--transition);
     overflow: hidden;
     z-index: 1;
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
-/* Borde Neón inferior */
+/* Línea de acento inferior */
 .catalog-card::before, .location-card::before, .info-card::before {
     content: '';
     position: absolute;
-    bottom: 0; left: 0; width: 100%; height: 8px;
+    bottom: 0; left: 0; width: 100%; height: 3px;
     background: linear-gradient(90deg, var(--color-yellow), var(--color-red));
     transform: scaleX(0);
-    transform-origin: center;
-    transition: transform 0.4s ease;
+    transform-origin: left;
+    transition: transform 0.35s ease;
     z-index: 2;
 }
 
 .catalog-card:hover, .location-card:hover, .info-card:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 25px 50px rgba(221, 59, 46, 0.15); /* Resplandor rojizo */
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.10);
 }
 
 .catalog-card:hover::before, .location-card:hover::before, .info-card:hover::before {
@@ -358,7 +442,7 @@ h1, h2, h3, h4 {
     background: linear-gradient(135deg, rgba(28,43,84,0.88) 0%, rgba(45,74,138,0.88) 100%),
                 url('https://images.pexels.com/photos/12771407/pexels-photo-12771407.jpeg?auto=compress&cs=tinysrgb&w=1400') center/cover no-repeat;
     padding: 6.5rem 2rem 4rem;
-    margin-top: 100px;
+    margin-top: 72px;
     text-align: center;
     color: var(--color-white);
 }
@@ -369,7 +453,7 @@ h1, h2, h3, h4 {
 /* Banner hero de sub-páginas de catálogo */
 .subcat-hero {
     padding: 6rem 2rem 3.5rem;
-    margin-top: 100px;
+    margin-top: 72px;
     text-align: center;
     color: var(--color-white);
 }
@@ -467,6 +551,61 @@ h1, h2, h3, h4 {
     transition: transform 0.4s ease;
 }
 .catalog-card:hover .catalog-card-img img { transform: scale(1.05); }
+
+/* Certificado de Proveedor callout */
+.cert-callout {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    background: #eff6ff;
+    border-left: 4px solid var(--color-blue);
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+.cert-callout-icon {
+    font-size: 1.8rem;
+    color: var(--color-blue);
+    flex-shrink: 0;
+}
+.cert-callout-text {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+.cert-callout-text strong {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    color: var(--color-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.cert-callout-text span {
+    font-size: 0.92rem;
+    color: var(--color-text-light);
+    line-height: 1.4;
+}
+.cert-callout-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: #25d366;
+    color: #fff;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.55rem 1.1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s;
+    flex-shrink: 0;
+}
+.cert-callout-btn:hover { background: #1da851; }
 
 /* Tarjetas de producto dentro de catálogo */
 .product-block {
@@ -654,20 +793,20 @@ footer {
 @media (max-width: 900px) {
     .navbar {
         padding: 0 1.2rem;
-        height: 85px;
+        height: 68px;
         justify-content: space-between;
     }
     .nav-links {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 85px;
+        top: 68px;
         left: 0;
         width: 100%;
         background-color: rgba(255, 255, 255, 0.98);
         text-align: center;
-        padding: 2rem 0;
-        box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        padding: 1.5rem 0;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.10);
     }
     .nav-links.active { display: flex; }
     .nav-links a::after { display: none; }
@@ -679,16 +818,16 @@ footer {
         position: relative;
         left: auto;
         top: auto;
-        padding: 6px 10px 12px;
-        box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-        border-radius: 0 0 12px 12px;
+        padding: 5px 8px 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+        border-radius: 0 0 10px 10px;
     }
-    .logo img { height: 85px; }
-    .hero-section        { padding-top: 85px; }
-    .catalog-hero        { margin-top: 85px; }
-    .subcat-hero         { margin-top: 85px; }
-    .guide-filters-bar   { top: 85px; }
-    .pindex-wrap         { top: 85px; }
+    .logo img { height: 72px; }
+    .hero-section        { padding-top: 68px; }
+    .catalog-hero        { margin-top: 68px; }
+    .subcat-hero         { margin-top: 68px; }
+    .guide-filters-bar   { top: 68px; }
+    .pindex-wrap         { top: 68px; }
 }
 
 /* Animations */
@@ -766,7 +905,7 @@ footer {
 /* ============================================
    CONSTRUTIPS
    ============================================ */
-.construtips-section { background: #f8fafc; padding: 5rem 0; }
+.construtips-section { background: #f8fafc; padding: 7rem 0; }
 .construtips-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1043,7 +1182,7 @@ footer {
    ============================================ */
 .stats-section {
     background: var(--color-blue);
-    padding: 4rem 2rem;
+    padding: 5.5rem 2rem;
 }
 .stats-grid {
     display: grid;
@@ -1157,8 +1296,8 @@ footer {
    SECCIÓN ¿POR QUÉ RAMAR? (Homepage)
    ============================================ */
 .why-ramar {
-    padding: 6rem 2rem;
-    background: var(--color-bg);
+    padding: 7rem 2rem;
+    background: #fff;
 }
 .why-grid {
     display: grid;
@@ -1171,13 +1310,14 @@ footer {
     text-align: center;
     padding: 3rem 2rem;
     background: var(--color-white);
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.05);
     transition: var(--transition);
 }
 .why-item:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(221, 59, 46, 0.1);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.09);
 }
 .why-item i {
     font-size: 3rem;
@@ -1204,7 +1344,7 @@ footer {
     border-bottom: 2px solid #e2e8f0;
     padding: 1.2rem 0;
     position: sticky;
-    top: 100px;
+    top: 72px;
     z-index: 50;
     box-shadow: 0 4px 12px rgba(0,0,0,0.06);
 }
@@ -1709,7 +1849,7 @@ footer {
     padding: 1.2rem 2rem 1rem;
     border-bottom: 3px solid #e2e8f0;
     position: sticky;
-    top: 100px;
+    top: 72px;
     z-index: 90;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
@@ -1945,8 +2085,8 @@ footer {
    BRANDS SECTION (index.html)
    =========================== */
 .brands-section {
-    padding: 5rem 2rem;
-    background: #f8fafc;
+    padding: 7rem 2rem;
+    background: #fff;
 }
 .brands-grid {
     display: grid;
@@ -1957,8 +2097,8 @@ footer {
 }
 .brand-card {
     background: #fff;
-    border: 1.5px solid #e2e8f0;
-    border-radius: 12px;
+    border: 1px solid #e9edf3;
+    border-radius: 14px;
     padding: 1.5rem 1rem;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
@@ -1968,9 +2108,9 @@ footer {
     gap: 0.75rem;
 }
 .brand-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(28, 43, 84, 0.12);
-    border-color: var(--color-red);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(28, 43, 84, 0.10);
+    border-color: var(--color-yellow);
 }
 .brand-card--dark {
     background: #1a1a1a;
