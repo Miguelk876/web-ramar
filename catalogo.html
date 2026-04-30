@@ -88,6 +88,7 @@
 .cat-tab[data-cat="especializado"].active { background:#7e22ce; border-color:#7e22ce; }
 .cat-tab[data-cat="pintura"].active     { background:#c2410c; border-color:#c2410c; }
 .cat-tab[data-cat="herramienta"].active { background:#b45309; border-color:#b45309; }
+.cat-tab[data-cat="herrajes"].active   { background:#0f766e; border-color:#0f766e; }
 .cat-count { font-size:.75rem; background:rgba(255,255,255,.25); padding:.1rem .4rem; border-radius:999px; font-weight:700; }
 
 /* ── results count ── */
@@ -132,6 +133,7 @@
 .pcard[data-cat="especializado"] .pcard-accent { background: #7e22ce; }
 .pcard[data-cat="pintura"]     .pcard-accent { background: #c2410c; }
 .pcard[data-cat="herramienta"] .pcard-accent { background: #b45309; }
+.pcard[data-cat="herrajes"]   .pcard-accent { background: #0f766e; }
 
 .pcard-thumb {
     background: #f8fafc;
@@ -189,6 +191,7 @@
 .badge-cat-especializado{ background:#f3e8ff; color:#7e22ce; }
 .badge-cat-pintura      { background:#fff7ed; color:#c2410c; }
 .badge-cat-herramienta  { background:#fef3c7; color:#b45309; }
+.badge-cat-herrajes     { background:#ccfbf1; color:#0f766e; }
 .badge-prov             { background:#f1f5f9; color:#475569; }
 
 .pcard-arrow {
@@ -621,6 +624,7 @@
 .bs-cat-btn[data-cat="especializado"] i{ color: #7e22ce; }
 .bs-cat-btn[data-cat="pintura"] i    { color: #c2410c; }
 .bs-cat-btn[data-cat="herramienta"] i{ color: #b45309; }
+.bs-cat-btn[data-cat="herrajes"] i    { color: #0f766e; }
 .bs-cat-btn.active {
     border-color: var(--color-blue);
     background: #eff6ff;
@@ -631,6 +635,7 @@
 .bs-cat-btn[data-cat="especializado"].active{ border-color:#7e22ce; background:#faf5ff; color:#7e22ce; }
 .bs-cat-btn[data-cat="pintura"].active      { border-color:#c2410c; background:#fff7ed; color:#c2410c; }
 .bs-cat-btn[data-cat="herramienta"].active  { border-color:#b45309; background:#fffbeb; color:#b45309; }
+.bs-cat-btn[data-cat="herrajes"].active     { border-color:#0f766e; background:#f0fdfa; color:#0f766e; }
 
 /* ── responsive ── */
 @media (max-width: 1100px) { .product-grid-explorer { grid-template-columns: repeat(3,1fr); } }
@@ -1719,7 +1724,153 @@ const PRODUCTS = [
       {i:'fa-arrows-up-down',l:'Largo',    v:'6.00 m estándar · Corte a medida'},
       {i:'fa-screwdriver',  l:'V.A.',      v:'Punzonado de alma · Doblez · Corte CNC'},
       {i:'fa-lightbulb',    l:'Tip',       v:'Polín Z para traslapes continuos; polín C para tramos simples'}
-    ], page:'catalogo.html', wa:'Pol%C3%ADn%20Regiopytsa', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Polin-C-scaled.jpg' }
+    ], page:'catalogo.html', wa:'Pol%C3%ADn%20Regiopytsa', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Polin-C-scaled.jpg' },
+
+  /* ── HERRAJES DE PROTECCIÓN — PHV ── */
+  { id:'bisagras-phv', cat:'herrajes', provider:'PHV',
+    name:'Bisagras Tubulares PHV',
+    tagline:'Bisagras soldables para ventanas, puertas metálicas y canceles. Negras y pulidas.',
+    svgNote:'', svg:'',
+    specs:[
+      {i:'fa-list',         l:'Modelos',   v:'BIS-T10 Negra · BIS-T12P Pulida · BIS-PRO Proyección'},
+      {i:'fa-ruler',        l:'Diámetros', v:'3/8" · 1/2" · 5/8" · 3/4" · 7/8" · 1"'},
+      {i:'fa-circle-half-stroke',l:'Apertura',v:'BIS-PRO abre más de 180° · T10/T12P hasta 90°'},
+      {i:'fa-fire',         l:'Aplicación',v:'Soldable directo a marco y hoja de acero'},
+      {i:'fa-building',     l:'Usos',      v:'Ventanas metálicas · Puertas · Canceles · Portones'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Usar mínimo 3 bisagras en puertas de más de 1.80 m de alto'}
+    ], page:'catalogo.html', wa:'Bisagras%20Tubulares%20PHV', photo:'https://www.phv.com.mx/images/hp/BIS-T10.jpg', photoPos:'center center' },
+
+  { id:'cerrojos-pasadores-phv', cat:'herrajes', provider:'PHV',
+    name:'Cerrojos y Pasadores PHV',
+    tagline:'Cerrojos macizos y de herrero, pasadores planos y de piso para puertas y portones.',
+    svgNote:'', svg:'',
+    specs:[
+      {i:'fa-list',         l:'Cerrojos',  v:'Macizo negro · Macizo galvanizado · Herrero galvanizado'},
+      {i:'fa-list',         l:'Pasadores', v:'Planos · De piso · Colonial · Corredizo'},
+      {i:'fa-ruler',        l:'Longitud',  v:'33 cm estándar · Tubo 1" cal. 16'},
+      {i:'fa-fire',         l:'Aplicación',v:'Todos soldables al marco o hoja de acero'},
+      {i:'fa-building',     v:'Usos',      l:'Usos', v:'Portones · Puertas dobles · Canceles · Rejas'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Cerrojo galvanizado para exteriores, negro para interiores o pintar'}
+    ], page:'catalogo.html', wa:'Cerrojos%20y%20Pasadores%20PHV', photo:'https://www.phv.com.mx/images/hp/CER-MACN.jpg', photoPos:'center center' },
+
+  { id:'jaladeras-manijas-phv', cat:'herrajes', provider:'PHV',
+    name:'Jaladeras y Manijas PHV',
+    tagline:'Jaladeras y manijas en múltiples estilos para puertas, portones y cancelería.',
+    svgNote:'', svg:'',
+    specs:[
+      {i:'fa-list',         l:'Jaladeras', v:'Chica · Estriada · Trenzada · Colonial · De lujo'},
+      {i:'fa-list',         l:'Manijas',   v:'Tubular · Latonada · Plana · Perico'},
+      {i:'fa-atom',         l:'Material',  v:'Acero negro · Latón · Cromado'},
+      {i:'fa-fire',         l:'Fijación',  v:'Soldable o atornillada según modelo'},
+      {i:'fa-building',     l:'Usos',      v:'Puertas de herrería · Portones · Canceles · Rejas'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Jaladeras coloniales dan acabado más formal a portones residenciales'}
+    ], page:'catalogo.html', wa:'Jaladeras%20y%20Manijas%20PHV', photo:'https://www.phv.com.mx/images/hp/JAL.jpg', photoPos:'center center' },
+
+  { id:'rieles-portones-phv', cat:'herrajes', provider:'PHV',
+    name:'Carretillas y Rieles para Portón Corredizo PHV',
+    tagline:'Sistema completo para portones corredizos: carretillas de carga, rieles y guías a piso.',
+    svgNote:'', svg:'',
+    specs:[
+      {i:'fa-list',         l:'Carretillas',v:'1 rueda · 2 ruedas · 4 ruedas · Cap. 15 kg a 300 kg'},
+      {i:'fa-list',         l:'Rieles',     v:'RMR-300 · GPMR-ULTRA'},
+      {i:'fa-list',         l:'Guías piso', v:'Guía sistema "U" · Guía sistema "V"'},
+      {i:'fa-weight-hanging',l:'Capacidad', v:'Desde 15 kg hasta 300 kg según modelo'},
+      {i:'fa-building',     l:'Usos',       v:'Portones residenciales · Bodegas · Naves industriales'},
+      {i:'fa-lightbulb',    l:'Tip',        v:'Calcular peso real del portón y elegir carretilla con 20% de margen'}
+    ], page:'catalogo.html', wa:'Carretillas%20y%20Rieles%20Portones%20PHV', photo:'https://www.phv.com.mx/images/hp/CAR-350.jpg', photoPos:'center center' },
+
+  /* ── HERRAJES DECORATIVOS — PHV ── */
+  { id:'forja-artistica-phv', cat:'herrajes', provider:'PHV',
+    name:'Forja Artística PHV — Letras y Elementos',
+    tagline:'Piezas de forja artística fundida para decorar portones, canceles y barandales.',
+    svgNote:'', svg:'',
+    specs:[
+      {i:'fa-list',         l:'Modelos',   v:'Tipo A · A1 · B · C · E · G · H · I · Q · S · V'},
+      {i:'fa-atom',         l:'Material',  v:'Hierro fundido · Acabado negro'},
+      {i:'fa-fire',         l:'Fijación',  v:'Soldable o remachable a perfiles de herrería'},
+      {i:'fa-palette',      l:'Acabado',   v:'Pintura negra · Acepta esmalte de cualquier color'},
+      {i:'fa-building',     l:'Usos',      v:'Portones · Barandales · Rejas decorativas · Escaleras'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Combinar 2-3 modelos distintos da mayor riqueza visual al portón'}
+    ], page:'catalogo.html', wa:'Forja%20Art%C3%ADstica%20PHV', photo:'https://www.phv.com.mx/images/hd/FA-A.jpg', photoPos:'center center' },
+
+  { id:'hojas-flores-phv', cat:'herrajes', provider:'PHV',
+    name:'Hojas y Flores Decorativas PHV',
+    tagline:'Elementos vegetales en forja fundida: hojas de maple, eucalipto, lemon, flores y gallos.',
+    svgNote:'', svg:'',
+    specs:[
+      {i:'fa-list',         l:'Hojas',     v:'Maple · Lemon · Eucalipto · San Antonio · Julio · Roble'},
+      {i:'fa-list',         l:'Flores',    v:'Chica · Grande · Mega · Decorativas europeas'},
+      {i:'fa-atom',         l:'Material',  v:'Hierro fundido negro'},
+      {i:'fa-fire',         l:'Fijación',  v:'Soldable o pegado con adhesivo estructural'},
+      {i:'fa-building',     l:'Usos',      v:'Canceles · Portones ornamentales · Barandales · Rejas'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Hojas pequeñas en módulos de 30×30 cm dan relleno económico a cancel'}
+    ], page:'catalogo.html', wa:'Hojas%20y%20Flores%20Decorativas%20PHV', photo:'https://www.phv.com.mx/images/hd/FA-HOAM.jpg', photoPos:'center center' },
+
+  { id:'medallones-nudos-phv', cat:'herrajes', provider:'PHV',
+    name:'Medallones y Nudos Decorativos PHV',
+    tagline:'Medallones florales y nudos ornamentales en hierro fundido para herrería decorativa.',
+    svgNote:'', svg:'',
+    specs:[
+      {i:'fa-list',         l:'Medallones',v:'Floral · Tulipán · Importados (Rincón, Umbela, Capitolio...)'},
+      {i:'fa-list',         l:'Nudos',     v:'Castillo · Señorial · Hindú · Inglés · Feudal · Noble · Barzon'},
+      {i:'fa-atom',         l:'Material',  v:'Hierro fundido · Negro barniz'},
+      {i:'fa-fire',         l:'Fijación',  v:'Soldable directamente al perfil'},
+      {i:'fa-building',     l:'Usos',      v:'Centros de portón · Cruces de cancel · Puntos focales ornamentales'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Un medallón al centro del portón multiplica el valor percibido'}
+    ], page:'catalogo.html', wa:'Medallones%20y%20Nudos%20PHV', photo:'https://www.phv.com.mx/images/hd/MED-FLO1.jpg', photoPos:'center center' },
+
+  { id:'puntas-lanzas-phv', cat:'herrajes', provider:'PHV',
+    name:'Puntas y Lanzas PHV',
+    tagline:'Remates de seguridad y decorativos en hierro fundido: puntas, lanzas y alfanjes para rejas.',
+    svgNote:'', svg:'',
+    specs:[
+      {i:'fa-list',         l:'Puntas',    v:'Lisa 1/2" · Caramelo 1/2" · Curvada 3/8" · Alfanje · Alfanje 2'},
+      {i:'fa-list',         l:'Lanzas',    v:'Caramelo 1/2" · Lisa 1/2" · Con vuelo · Misil · Reina'},
+      {i:'fa-ruler',        l:'Diámetros', v:'Para varilla 3/8", 1/2" y 5/8"'},
+      {i:'fa-atom',         l:'Material',  v:'Hierro fundido · Acabado negro'},
+      {i:'fa-building',     l:'Usos',      v:'Remate de rejas · Portones · Barda · Bardas con chuzos'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Puntas estándar en rejas de seguridad; lanzas ornamentales en portones'}
+    ], page:'catalogo.html', wa:'Puntas%20y%20Lanzas%20PHV', photo:'https://www.phv.com.mx/images/hd/PUN-L12.jpg', photoPos:'center center' },
+
+  /* ── CONSUMIBLES DE SOLDADURA — PHV ── */
+  { id:'electrodo-6013-phv', cat:'herramienta', provider:'PHV',
+    name:'Electrodos 6013 PHV',
+    tagline:'Electrodo de soldadura 6013 toda posición, arco estable y baja generación de humos.',
+    svgNote:'', svg:'',
+    specs:[
+      {i:'fa-list',         l:'Tipos',     v:'6013 Súper · 6013 Verde (vertical descendente)'},
+      {i:'fa-ruler',        l:'Diámetros', v:'1/8" (3.2 mm) · 3/32" (2.4 mm)'},
+      {i:'fa-certificate',  l:'Norma',     v:'AWS E6013 · Toda posición'},
+      {i:'fa-fire',         l:'Aplicación',v:'Soldadura de acero al carbón · Estructuras ligeras · Herrería'},
+      {i:'fa-building',     l:'Usos',      v:'Canceles · Portones · Rejas · Estructuras metálicas en general'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'6013 verde especial para vertical descendente — ideal en tubería'}
+    ], page:'catalogo.html', wa:'Electrodos%206013%20PHV', photo:'https://www.phv.com.mx/images/so/SOL-S61318.jpg', photoPos:'center center' },
+
+  { id:'electrodo-7018-phv', cat:'herramienta', provider:'PHV',
+    name:'Electrodos 7018 ESAB PHV',
+    tagline:'Electrodo bajo hidrógeno 7018 para aceros al carbono y estructuras con alta resistencia.',
+    svgNote:'', svg:'',
+    specs:[
+      {i:'fa-list',         l:'Modelo',    v:'ESAB 7018 · Bajo hidrógeno'},
+      {i:'fa-ruler',        l:'Diámetros', v:'1/8" (3.2 mm) · 3/32" (2.4 mm)'},
+      {i:'fa-certificate',  l:'Norma',     v:'AWS E7018 · Para aceros de alta resistencia'},
+      {i:'fa-fire',         l:'Aplicación',v:'Aceros al carbono · Maquinaria pesada · Estructuras sísmicas'},
+      {i:'fa-building',     l:'Usos',      v:'Columnas · Trabes · Uniones críticas · Naves industriales'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Mantener electrodos secos — almacenar en horno o bolsa sellada'}
+    ], page:'catalogo.html', wa:'Electrodos%207018%20ESAB%20PHV', photo:'https://www.phv.com.mx/images/so/SOL-M71818.jpg', photoPos:'center center' },
+
+  { id:'alambre-consumibles-phv', cat:'herramienta', provider:'PHV',
+    name:'Alambre MIG y Consumibles PHV',
+    tagline:'Micro alambre MIG sin gas, fundente flux y consumibles para soldadura de bronce, cobre e inox.',
+    svgNote:'', svg:'',
+    specs:[
+      {i:'fa-list',         l:'Alambre',   v:'Micro alambre sin gas 0.0325" (15 kg) · Gran elongación'},
+      {i:'fa-list',         l:'Fundentes', v:'Flux Weld bronce/latón · Inoxidable · Aluminio · Alta tensión'},
+      {i:'fa-list',         l:'Electrodos esp.',v:'Hierro colado · Alta tensión · Cobre · Inox · Aluminio'},
+      {i:'fa-fire',         l:'Proceso',   v:'MIG · TIG · Oxicorte · Soldadura manual'},
+      {i:'fa-building',     l:'Usos',      v:'Soldadura de acero, inox, aluminio, cobre y aleaciones especiales'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Para soldar inox usar siempre electrodo específico — el 6013 contamina'}
+    ], page:'catalogo.html', wa:'Alambre%20MIG%20y%20Consumibles%20PHV', photo:'https://www.phv.com.mx/images/so/SOL-MSG0352L.jpg', photoPos:'center center' }
 ];
 
 /* ════════════════════════════════════════
