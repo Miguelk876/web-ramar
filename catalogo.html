@@ -669,6 +669,7 @@
                 <li><a href="ubicaciones.html">Ubicaciones</a></li>
             </ul>
         </nav>
+        <a href="tel:9512283263" class="navbar-phone"><i class="fa-solid fa-phone"></i> 951 228 3263</a>
         <a href="contacto.html" class="btn-primary contact-btn">Contacto</a>
         <div class="hamburger"><div class="line"></div><div class="line"></div><div class="line"></div></div>
     </header>
@@ -727,8 +728,18 @@
                         <span>Herramienta</span>
                     </div>
                     <div class="cat-menu-body">
-                        <p>Makita y DeWalt (amoladora, rotomartillo, sierra, atornillador) · Truper herramienta manual</p>
+                        <p>Makita · DeWalt · Oakland · AXTech · Lincoln Electric · Goni · Austromex · Truper</p>
                         <span class="cat-menu-count" id="cnt-herramienta">— productos</span>
+                    </div>
+                </button>
+                <button class="cat-menu-card" data-cat="herrajes">
+                    <div class="cat-menu-top" style="background-image:linear-gradient(rgba(15,76,117,.55),rgba(27,100,149,.7)),url('https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:7221a5f1-d8fd-420f-83e0-6729446abfbe/as/candado_TSA_Dorado_R.jpg')">
+                        <i class="fa-solid fa-lock"></i>
+                        <span>Herrajes y Cerraduras</span>
+                    </div>
+                    <div class="cat-menu-body">
+                        <p>Phillips cerraduras y candados · Eleva Herrajes · bisagras, topes, jaladores y más</p>
+                        <span class="cat-menu-count" id="cnt-herrajes">— productos</span>
                     </div>
                 </button>
             </div>
@@ -1214,6 +1225,66 @@ const PRODUCTS = [
       {i:'fa-lightbulb',  l:'Tip',       v:'Combina privacidad y ventilación; no requiere soldadura'}
     ], page:'catalogo-comercial.html', wa:'Perfotec%20L%C3%A1mitec', photo:'https://lamitectienda.com/cdn/shop/products/PERFOTEC-N13E_700x700.jpg?v=1581368939' },
 
+  { id:'lamitec-duela-u', cat:'comercial', provider:'Lámitec',
+    name:'Duela U — Panel Acanalado',
+    tagline:'Panel de acero galvanizado cal. 22 con perfil en U para recubrimientos de pared y fachada.',
+    specs:[
+      {i:'fa-ruler',      l:'Perfil',    v:'U — acanalado horizontal'},
+      {i:'fa-layer-group',l:'Calibre',   v:'Cal. 22 (0.76 mm)'},
+      {i:'fa-arrows-left-right',l:'Ancho util',v:'10 cm por duela'},
+      {i:'fa-palette',    l:'Colores',   v:'Blanco · Chocolate · Nogal'},
+      {i:'fa-building',   l:'Usos',      v:'Paredes exteriores, bodegas, naves industriales'},
+      {i:'fa-lightbulb',  l:'Tip',       v:'Compatible con accesorios LamiClick'}
+    ], page:'catalogo-comercial.html', wa:'Duela%20U%20L%C3%A1mitec', photo:'https://lamitectienda.com/cdn/shop/products/DU8-100TR_512x512.jpg?v=1605910667' },
+
+  { id:'lamitec-duelatec-elegance', cat:'comercial', provider:'Lámitec',
+    name:'Duelatec Elegance — Panel Premium Madera',
+    tagline:'Panel de acero cal. 22 con textura de madera de alta resolución para fachadas de lujo.',
+    specs:[
+      {i:'fa-tree',       l:'Textura',   v:'Madera alta resolución'},
+      {i:'fa-layer-group',l:'Calibre',   v:'Cal. 22 (0.76 mm)'},
+      {i:'fa-shield-halved',l:'Recubrimiento',v:'5 capas — resistente a UV y corrosión'},
+      {i:'fa-palette',    l:'Maderas',   v:'Nogal · Roble · Caoba · Teca'},
+      {i:'fa-building',   l:'Usos',      v:'Fachadas residenciales, bardas premium, interiores'},
+      {i:'fa-lightbulb',  l:'Tip',       v:'Acabado realista sin mantenimiento de madera natural'}
+    ], page:'catalogo-comercial.html', wa:'Duelatec%20Elegance%20L%C3%A1mitec', photo:'https://lamitectienda.com/cdn/shop/products/DUELATEC-ELEGANCE-DT20-065-TR_512x512.jpg?v=1579199764' },
+
+  { id:'lamitec-al-elegance', cat:'comercial', provider:'Lámitec',
+    name:'Lámitec Al Elegance — Panel Aluminio',
+    tagline:'Panel de aluminio con acabado premium para portones y fachadas de alta gama.',
+    specs:[
+      {i:'fa-atom',       l:'Material',  v:'Aluminio — ligero y anticorrosivo'},
+      {i:'fa-arrows-up-down',l:'Largo',  v:'Variable según diseño'},
+      {i:'fa-shield-halved',l:'Acabado', v:'Anodizado o lacado'},
+      {i:'fa-palette',    l:'Colores',   v:'Champagne · Blanco · Grafito'},
+      {i:'fa-door-open',  l:'Usos',      v:'Portones residenciales y comerciales, fachadas'},
+      {i:'fa-lightbulb',  l:'Tip',       v:'Ideal para zonas costeras por resistencia a la humedad'}
+    ], page:'catalogo-comercial.html', wa:'L%C3%A1mitec%20Al%20Elegance', photo:'https://lamitectienda.com/cdn/shop/products/LAMITEC-AL-ELEGANCE_AL080-CCH_512x512.jpg' },
+
+  { id:'lamitec-elegance-cuadro', cat:'comercial', provider:'Lámitec',
+    name:'Panel Elegance Cuadro — Estampado Cuadrícula',
+    tagline:'Panel de acero cal. 22 con diseño cuadrado estampado para portones y accesos residenciales.',
+    specs:[
+      {i:'fa-border-all', l:'Diseño',    v:'Cuadrícula estampada'},
+      {i:'fa-layer-group',l:'Calibre',   v:'Cal. 22 (0.76 mm)'},
+      {i:'fa-shield-halved',l:'Recubrimiento',v:'5 capas — autolimpiable'},
+      {i:'fa-palette',    l:'Colores',   v:'Blanco · Negro · Nogal'},
+      {i:'fa-door-open',  l:'Usos',      v:'Portones, accesos, cercas decorativas'},
+      {i:'fa-lightbulb',  l:'Tip',       v:'Ensamble LamiClick — sin soldadura ni herramienta especial'}
+    ], page:'catalogo-comercial.html', wa:'Panel%20Elegance%20Cuadro%20L%C3%A1mitec', photo:'https://lamitectienda.com/cdn/shop/products/LAMITEC-ELEGANCE-43TR_512x512.jpg' },
+
+  { id:'lamitec-angulos-remates', cat:'comercial', provider:'Lámitec',
+    name:'Ángulos y Remates Lámitec',
+    tagline:'Perfiles de acabado en acero galvanizado para esquinas, bordes y empalmes de paneles Lámitec.',
+    specs:[
+      {i:'fa-ruler-combined',l:'Tipos',  v:'Ángulo esquinero · Remate superior · Remate inferior'},
+      {i:'fa-layer-group',l:'Calibre',   v:'Cal. 22 — mismo acabado que los paneles'},
+      {i:'fa-arrows-up-down',l:'Largo',  v:'2.44 m por pieza'},
+      {i:'fa-palette',    l:'Colores',   v:'Se pide en el mismo tono del panel'},
+      {i:'fa-building',   l:'Usos',      v:'Terminados de instalaciones con cualquier panel Lámitec'},
+      {i:'fa-lightbulb',  l:'Tip',       v:'Imprescindibles para instalación correcta y estética final'}
+    ], page:'catalogo-comercial.html', wa:'%C3%81ngulos%20y%20Remates%20L%C3%A1mitec', photo:'https://lamitectienda.com/cdn/shop/products/PA-100CB_512x512.jpg?v=1650409103' },
+
   /* ── ESPECIALIZADO ───────────────────────────── */
   { id:'barra-hueca', cat:'especializado',
     name:'Barra Hueca y Tubería Mecánica',
@@ -1383,7 +1454,271 @@ const PRODUCTS = [
       {i:'fa-cart-flatbed',l:'Transporte',v:'Carretillas de 6 ft³ · Diablitos · Paletas'},
       {i:'fa-wrench',    l:'Taller',      v:'Llaves ajustables · Pinzas · Martillos · Seguetas'},
       {i:'fa-lightbulb', l:'Tip',         v:'Truper fabricación mexicana, alta disponibilidad en stock'}
-    ], page:'catalogo.html', wa:'Herramienta%20Manual%20Truper', photo:'https://catalogovigente.truper.com/CatVigente/modulos/28201.jpg' }
+    ], page:'catalogo.html', wa:'Herramienta%20Manual%20Truper', photo:'https://catalogovigente.truper.com/CatVigente/modulos/28201.jpg' },
+
+  { id:'discos-corte-metal', cat:'herramienta', provider:'Austromex',
+    name:'Discos de Corte para Metal',
+    tagline:'Discos abrasivos para corte de acero al carbón, lámina y alambre. Acabado limpio y rápido.',
+    specs:[
+      {i:'fa-ruler',        l:'Medidas',   v:'4½" (115mm) · 7" (180mm) · 14" (355mm)'},
+      {i:'fa-layer-group',  l:'Espesor',   v:'1.0 mm (fino) · 1.6 mm (estándar) · 3.0 mm (reforzado)'},
+      {i:'fa-rotate',       l:'RPM máx',   v:'13,300 rpm (115mm) · 8,500 rpm (180mm)'},
+      {i:'fa-certificate',  l:'Norma',     v:'EN 12413 · ANSI B7.1'},
+      {i:'fa-hammer',       l:'Material',  v:'Acero al carbón, lámina, perfiles, barras'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Para corte limpio usar el disco al 90° — nunca de lado'}
+    ], page:'catalogo.html', wa:'Discos%20de%20Corte%20Metal%20Austromex', photo:'https://www.austromex.com.mx/austromex/media/images/product/1/3/1316.png' },
+
+  { id:'discos-corte-inox', cat:'herramienta', provider:'Austromex',
+    name:'Discos de Corte para Inoxidable',
+    tagline:'Discos especiales libre de hierro y azufre para corte preciso de acero inoxidable.',
+    specs:[
+      {i:'fa-ruler',        l:'Medidas',   v:'4½" (115mm) · 7" (180mm)'},
+      {i:'fa-layer-group',  l:'Espesor',   v:'1.0 mm y 1.6 mm'},
+      {i:'fa-shield-halved',l:'Composición',v:'Libre de Fe, S y Cl — no contamina inox'},
+      {i:'fa-certificate',  l:'Norma',     v:'EN 12413 · Apto acero inoxidable y aluminio'},
+      {i:'fa-hammer',       l:'Usos',      v:'Acero inoxidable, aluminio, tubería sanitaria'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Usar disco exclusivo para inox; no intercambiar con discos de acero negro'}
+    ], page:'catalogo.html', wa:'Discos%20Corte%20Inoxidable%20Austromex', photo:'https://www.austromex.com.mx/austromex/media/images/product/1/3/1317_frente.png' },
+
+  { id:'soldadora-mig-axtech', cat:'herramienta', provider:'AXTech',
+    name:'Soldadora MIG/MAG AXTech',
+    tagline:'Soldadora inversora multiproceso MIG/MAG con electrodo y TIG LIFT. 250A, 220V monofásico.',
+    specs:[
+      {i:'fa-bolt',         l:'Proceso',   v:'MIG/MAG gas · Sin gas (flux) · Electrodo · TIG LIFT'},
+      {i:'fa-gauge-high',   l:'Amperaje',  v:'30–250A · Ciclo de servicio 60%'},
+      {i:'fa-plug',         l:'Alimentación',v:'220V monofásico · 50/60 Hz'},
+      {i:'fa-display',      l:'Panel',     v:'LCD digital — control de voltaje y velocidad de alambre'},
+      {i:'fa-weight-hanging',l:'Peso',     v:'~14 kg — compacta para taller y obra'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Incluye carrete 0.8 mm; compatible con alambre ER70S-6'}
+    ], page:'catalogo.html', wa:'Soldadora%20MIG%20AXTech', photo:'https://axtech.com.mx/wp-content/uploads/2020/04/AXT-MIG255LCD-1-500x500.jpg' },
+
+  { id:'soldadora-tig-axtech', cat:'herramienta', provider:'AXTech',
+    name:'Soldadora TIG AC/DC AXTech',
+    tagline:'Soldadora inversora TIG AC/DC 320A para aluminio y aceros especiales. Multifase 220/440V.',
+    specs:[
+      {i:'fa-bolt',         l:'Proceso',   v:'TIG AC/DC · Electrodo CC · Alta frecuencia'},
+      {i:'fa-gauge-high',   l:'Amperaje',  v:'10–320A · Ciclo de servicio 60%'},
+      {i:'fa-plug',         l:'Alimentación',v:'220V/440V multifase'},
+      {i:'fa-display',      l:'Panel',     v:'LCD digital con 9 memorias de programa'},
+      {i:'fa-atom',         l:'Materiales',v:'Aluminio · Acero inox · Cobre · Titanio'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'AC para aluminio; DC- para inox y acero al carbón'}
+    ], page:'catalogo.html', wa:'Soldadora%20TIG%20AXTech', photo:'https://axtech.com.mx/wp-content/uploads/2026/02/AXT-TAF320LCD-1-500x500.jpg' },
+
+  { id:'soldadora-lincoln', cat:'herramienta', provider:'Lincoln Electric',
+    name:'Soldadora Inversora Lincoln Electric',
+    tagline:'Soldadora inversora de electrodo bivoltaje (110/220V) con tecnología IGBT. Portátil y precisa.',
+    specs:[
+      {i:'fa-bolt',         l:'Proceso',   v:'Electrodo revestido (SMAW) · TIG scratch'},
+      {i:'fa-gauge-high',   l:'Amperaje',  v:'20–200A · Bivoltaje 110V/220V automático'},
+      {i:'fa-plug',         l:'Tecnología',v:'IGBT inverter — eficiencia 85%+'},
+      {i:'fa-weight-hanging',l:'Peso',     v:'~5 kg — fácil transporte a obra'},
+      {i:'fa-certificate',  l:'Marca',     v:'Lincoln Electric — líder mundial en soldadura'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Ideal para varilla 6013 y 7018; arco suave sin salpicadura'}
+    ], page:'catalogo.html', wa:'Soldadora%20Inversora%20Lincoln%20Electric', photo:'https://soldaexpress.mx/wp-content/uploads/2024/10/5-7-300x300.png' },
+
+  { id:'rotomartillo-oakland', cat:'herramienta', provider:'Oakland',
+    name:'Rotomartillo Oakland',
+    tagline:'Rotomartillo SDS-Plus 800W para perforación en concreto, block y mampostería.',
+    specs:[
+      {i:'fa-bolt',         l:'Potencia',  v:'800W · 0–1,100 golpes/min'},
+      {i:'fa-ruler',        l:'Capacidad', v:'Concreto ⌀26mm · Metal ⌀13mm · Madera ⌀30mm'},
+      {i:'fa-screwdriver',  l:'Sistema',   v:'SDS-Plus — cambio de broca sin llave'},
+      {i:'fa-arrows-spin',  l:'Modos',     v:'Rotación + martillo · Solo rotación · Solo martillo'},
+      {i:'fa-weight-hanging',l:'Peso',     v:'~3.2 kg'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Usar brocas para concreto con punta de carburo; lubricar vástago SDS'}
+    ], page:'catalogo.html', wa:'Rotomartillo%20Oakland', photo:'https://equiposmaher.com/cdn/shop/files/OAKTR-9013.png?v=1709935229&width=1946' },
+
+  { id:'compresor-goni', cat:'herramienta', provider:'Goni',
+    name:'Compresor de Banda Goni',
+    tagline:'Compresor de pistón con banda 3.5 HP y tanque de 50 litros para taller y obra.',
+    specs:[
+      {i:'fa-gauge-high',   l:'Motor',     v:'3.5 HP · 2 pistones · Lubricado con aceite'},
+      {i:'fa-weight-hanging',l:'Tanque',   v:'50 litros'},
+      {i:'fa-compress',     l:'Presión',   v:'Hasta 125 PSI (8.6 bar)'},
+      {i:'fa-plug',         l:'Voltaje',   v:'220V monofásico'},
+      {i:'fa-wind',         l:'Flujo',     v:'~10.5 CFM a 90 PSI'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Drenar el tanque diariamente para evitar corrosión interna'}
+    ], page:'catalogo.html', wa:'Compresor%20Goni', photo:'https://cms.grupoferrepat.net/assets/img/productos/P977.webp' },
+
+  { id:'candados-phillips', cat:'herrajes', provider:'Phillips',
+    name:'Candados Phillips',
+    tagline:'Candados de acero endurecido y latón para bodegas, portones, lockers y equipo industrial.',
+    specs:[
+      {i:'fa-lock',         l:'Tipos',     v:'Candado de arco corto · Arco largo · TSA aprobado'},
+      {i:'fa-shield-halved',l:'Material',  v:'Cuerpo de acero endurecido o latón sólido'},
+      {i:'fa-ruler',        l:'Anchos',    v:'25mm · 40mm · 50mm · 63mm'},
+      {i:'fa-key',          l:'Sistemas',  v:'Llave individual · Llave maestra · TSA (viajes)'},
+      {i:'fa-building',     l:'Usos',      v:'Portones, bodegas, lockers, herramienta'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Para exteriores usar candado con arco de acero inox'}
+    ], page:'catalogo.html', wa:'Candados%20Phillips', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:5ba6996d-bf52-4103-a176-c96bde085c71/as/Candados_4.jpg' },
+
+  { id:'cerradura-residencial-phillips', cat:'herrajes', provider:'Phillips',
+    name:'Cerraduras Residenciales Phillips',
+    tagline:'Cerraduras de parche y perilla para puertas de madera interior y exterior con cilindro de alta seguridad.',
+    specs:[
+      {i:'fa-lock',         l:'Tipos',     v:'Cerradura parche · Perilla · Manija tubular'},
+      {i:'fa-key',          l:'Cilindro',  v:'Doble función llave-llave o llave-botón'},
+      {i:'fa-shield-halved',l:'Grupo',     v:'ASSA ABLOY — líder mundial en cerraduras'},
+      {i:'fa-screwdriver',  l:'Instalación',v:'Para puertas de 35–45mm de espesor'},
+      {i:'fa-building',     l:'Usos',      v:'Habitaciones, closets, accesos principales, recámaras'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Lubricar cilindro con grafito cada 6 meses, nunca con aceite'}
+    ], page:'catalogo.html', wa:'Cerraduras%20Residenciales%20Phillips', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:4c2aeabb-77eb-4f38-b635-b3b1d0f61fc6/as/L%C3%ADnea%20residencial%202.jpg' },
+
+  { id:'cerradura-digital-phillips', cat:'herrajes', provider:'Phillips',
+    name:'Cerraduras Digitales Phillips (PCD)',
+    tagline:'Cerradura digital con perilla o manija, código PIN y sin llave para accesos modernos.',
+    specs:[
+      {i:'fa-hashtag',      l:'Acceso',    v:'Código PIN de 4–8 dígitos · Sin llave física'},
+      {i:'fa-battery-full', l:'Batería',   v:'4 pilas AA · Indicador de batería baja'},
+      {i:'fa-rotate',       l:'Modos',     v:'Solo código · Código + llave de emergencia'},
+      {i:'fa-shield-halved',l:'Seguridad', v:'Bloqueo automático tras 5 intentos fallidos'},
+      {i:'fa-building',     l:'Usos',      v:'Oficinas, rentas vacacionales, locales, bodegas'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Guardar llave de emergencia fuera del inmueble'}
+    ], page:'catalogo.html', wa:'Cerradura%20Digital%20Phillips%20PCD', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:ba16c5fc-eb11-4caf-9139-ff19b40e552e/as/PERILLA%20PCD275%20AMBIENTADO.jpg' },
+
+  { id:'cerradura-electromecanica-phillips', cat:'herrajes', provider:'Phillips',
+    name:'Cerraduras Electromecánicas Phillips',
+    tagline:'Cerradura con apertura eléctrica para control de acceso en empresas, hoteles y edificios.',
+    specs:[
+      {i:'fa-bolt',         l:'Apertura',  v:'Eléctrica 12V/24V DC · Compatible con control de acceso'},
+      {i:'fa-wifi',         l:'Integración',v:'Tarjeta RFID · Teclado · Biométrico (según modelo)'},
+      {i:'fa-rotate',       l:'Falla',     v:'Fail-safe (abierta en fallo) o Fail-secure (cerrada)'},
+      {i:'fa-shield-halved',l:'Grupo',     v:'ASSA ABLOY — tecnología de control de acceso'},
+      {i:'fa-building',     l:'Usos',      v:'Hoteles, corporativos, hospitales, bodegas seguras'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Fail-secure para bóvedas; fail-safe para salidas de emergencia'}
+    ], page:'catalogo.html', wa:'Cerradura%20Electromecanica%20Phillips', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:54545e85-4bc5-43a2-8697-e804c4b9634d/as/Cerraduras%20electromecan%C3%ADcas.jpg' },
+
+  { id:'cerradura-embutir-phillips', cat:'herrajes', provider:'Phillips',
+    name:'Cerraduras de Embutir Phillips',
+    tagline:'Cerradura empotrada en la hoja de la puerta para acabado limpio sin mecanismo visible exterior.',
+    specs:[
+      {i:'fa-lock',         l:'Tipo',      v:'Embutir — cuerpo oculto dentro de la puerta'},
+      {i:'fa-key',          l:'Llaves',    v:'2 llaves incluidas · Cilindro extraíble'},
+      {i:'fa-ruler',        l:'Instalación',v:'Requiere fresado en canto de puerta'},
+      {i:'fa-atom',         l:'Material',  v:'Cuerpo de acero · Frente de acero inox'},
+      {i:'fa-building',     l:'Usos',      v:'Puertas de madera, MDF, aluminio y PVC'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Combinar con cerrojo de embutir para doble seguridad'}
+    ], page:'catalogo.html', wa:'Cerradura%20Embutir%20Phillips', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:89069c35-adfe-4f22-b8a2-ee8df79c7960/as/Embutir.jpg' },
+
+  { id:'cerradura-sobreponer-phillips', cat:'herrajes', provider:'Phillips',
+    name:'Cerraduras de Sobreponer Phillips',
+    tagline:'Cerradura que se instala sobre la superficie de la puerta, sin necesidad de fresar ni embutir.',
+    specs:[
+      {i:'fa-lock',         l:'Tipo',      v:'Sobreponer — se atornilla en la cara de la puerta'},
+      {i:'fa-key',          l:'Llaves',    v:'2–3 llaves · Cilindro de alta seguridad'},
+      {i:'fa-screwdriver',  l:'Instalación',v:'Solo tornillos, sin carpintería especial'},
+      {i:'fa-atom',         l:'Material',  v:'Cuerpo de acero cromado o pintado'},
+      {i:'fa-building',     l:'Usos',      v:'Puertas de madera y metal · Bodegas · Cuartos de servicio'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Ideal para instalación rápida sin herramienta especializada'}
+    ], page:'catalogo.html', wa:'Cerradura%20Sobreponer%20Phillips', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:e22ca4ec-e3dc-45c5-b248-6b942f8b2d27/as/Sobreponer%202.jpg' },
+
+  { id:'cerradura-mueble-phillips', cat:'herrajes', provider:'Phillips',
+    name:'Cerraduras para Mueble y Gabinete Phillips',
+    tagline:'Cerraduras compactas para cajones, gabinetes, archiveros y lockers de oficina.',
+    specs:[
+      {i:'fa-lock',         l:'Tipos',     v:'Cerradura de cajón · Cerradura de gabinete · Llave tubular'},
+      {i:'fa-ruler',        l:'Diámetro',  v:'16mm · 19mm · 22mm según modelo'},
+      {i:'fa-key',          l:'Llaves',    v:'2 llaves · Cilindro de disco o leva'},
+      {i:'fa-atom',         l:'Material',  v:'Zamak cromado o niquelado'},
+      {i:'fa-building',     l:'Usos',      v:'Archiveros, mesas de trabajo, cajones de mostrador, lockers'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Anotar número de llave para duplicados futuros'}
+    ], page:'catalogo.html', wa:'Cerradura%20Mueble%20Phillips', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:a3bf5073-482e-4cce-9606-d81da5494d7c/as/Cerraduras%20para%20mueble.jpg' },
+
+  { id:'cerradura-aluminio-phillips', cat:'herrajes', provider:'Phillips',
+    name:'Cerraduras para Perfiles de Aluminio Phillips',
+    tagline:'Cerraduras especiales para cancelería, ventanas y puertas de perfiles de aluminio.',
+    specs:[
+      {i:'fa-lock',         l:'Tipo',      v:'Cerradura para cancel · Cerrojo lateral · Manija con llave'},
+      {i:'fa-atom',         l:'Perfil',    v:'Compatible con perfiles de aluminio estándar mexicano'},
+      {i:'fa-key',          l:'Llaves',    v:'2 llaves · Cilindro de alta seguridad'},
+      {i:'fa-screwdriver',  l:'Instalación',v:'Fija en canal del perfil de aluminio'},
+      {i:'fa-building',     l:'Usos',      v:'Cancelería, ventanas corredizas, baños de vidrio, mamparas'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Verificar medida del canal antes de pedir: 6mm, 8mm o 10mm'}
+    ], page:'catalogo.html', wa:'Cerradura%20Perfil%20Aluminio%20Phillips', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:b54c6263-e799-4a4b-947f-4eabc612ed66/as/Cerraduras%20perfiles%20de%20aluminio%202.jpg' },
+
+  { id:'bisagras-phillips', cat:'herrajes', provider:'Phillips',
+    name:'Bisagras Phillips',
+    tagline:'Bisagras de acero para puertas residenciales y comerciales con acabado cromado o latonado.',
+    specs:[
+      {i:'fa-ruler',        l:'Medidas',   v:'3"×3" · 3½"×3½" · 4"×4" · 4½"×4½"'},
+      {i:'fa-shield-halved',l:'Material',  v:'Acero con acabado cromado o latonado'},
+      {i:'fa-rotate',       l:'Tipos',     v:'Bisagra de canto · Bisagra media vuelta · Bisagra piano'},
+      {i:'fa-screwdriver',  l:'Instalación',v:'Tornillos incluidos · Para madera y metal'},
+      {i:'fa-building',     l:'Usos',      v:'Puertas de interior, closets, canceles, portones'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Para puertas >40 kg usar bisagra 4" con 3 bisagras mínimo'}
+    ], page:'catalogo.html', wa:'Bisagras%20Phillips', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:f014cb4d-ba99-488d-a9e8-f197bc0af0cc/as/Bisagras.jpg' },
+
+  { id:'cierrapuertas-phillips', cat:'herrajes', provider:'Phillips',
+    name:'Cierra Puertas Phillips',
+    tagline:'Dispositivo hidráulico para cierre automático y controlado de puertas en edificios y oficinas.',
+    specs:[
+      {i:'fa-rotate',       l:'Función',   v:'Cierre automático con velocidad ajustable'},
+      {i:'fa-gauge-high',   l:'Fuerza',    v:'Tamaños EN1–EN6 según peso de puerta (20–120 kg)'},
+      {i:'fa-screwdriver',  l:'Montaje',   v:'Brazo estándar · Brazo deslizante · Montaje en suelo'},
+      {i:'fa-shield-halved',l:'Norma',     v:'EN 1154 — resistente a >500,000 ciclos'},
+      {i:'fa-building',     l:'Usos',      v:'Oficinas, hospitales, hoteles, edificios con salida de emergencia'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Ajustar velocidad de cierre y retención en posición abierta'}
+    ], page:'catalogo.html', wa:'Cierra%20Puertas%20Phillips', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:57b2c12a-9a91-4f4d-97ac-6f172b106c17/as/Cierrapuertas.jpg' },
+
+  { id:'topes-phillips', cat:'herrajes', provider:'Phillips',
+    name:'Topes de Puerta Phillips',
+    tagline:'Topes de piso y pared en acero inoxidable para proteger paredes y evitar daños al abrir puertas.',
+    specs:[
+      {i:'fa-door-open',    l:'Tipos',     v:'Tope de piso · Tope de pared · Tope magnético'},
+      {i:'fa-atom',         l:'Material',  v:'Acero inoxidable · Zamak cromado'},
+      {i:'fa-screwdriver',  l:'Instalación',v:'Atornillado al piso o a la pared · Tarugo incluido'},
+      {i:'fa-ruler',        l:'Alturas',   v:'Bajo (40mm) · Estándar (60mm) · Alto (80mm)'},
+      {i:'fa-building',     l:'Usos',      v:'Puertas de madera, metal, vidrio, cancelería'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Tope magnético ideal en puertas de alto tráfico — no golpea'}
+    ], page:'catalogo.html', wa:'Topes%20Phillips', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:0a7da6b0-c704-434a-bb3a-e5d72b45050c/as/tope.jpg' },
+
+  { id:'accesorios-phillips', cat:'herrajes', provider:'Phillips',
+    name:'Accesorios de Puerta Phillips',
+    tagline:'Jaladores, pasadores, sellos y accesorios complementarios para puertas y cancelería.',
+    specs:[
+      {i:'fa-hand-pointer', l:'Jaladores', v:'Jalador barra · Jalador copa · Jalador tubo inox'},
+      {i:'fa-arrows-left-right',l:'Pasadores',v:'Pasador de sobreponer · Pasador de embutir · Tornillo de seguridad'},
+      {i:'fa-atom',         l:'Material',  v:'Acero inoxidable · Zamak · Aluminio'},
+      {i:'fa-screwdriver',  l:'Instalación',v:'Atornillado directo · Sin herramienta especial'},
+      {i:'fa-building',     l:'Usos',      v:'Puertas, ventanas, cajones, gabinetes, cancelería'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Pedir jalador y cerradura del mismo acabado para estética uniforme'}
+    ], page:'catalogo.html', wa:'Accesorios%20Phillips', photo:'https://www.phillips.com.mx/adobe/assets/urn:aaid:aem:ea04b3bc-886f-4e0b-a5f4-30513b946f38/as/Accesorios.jpg' },
+
+  { id:'metal-desplegado-ladesa', cat:'especializado', provider:'Ladesa',
+    name:'Metal Desplegado Ladesa',
+    tagline:'Lámina de acero expandida en rombos para pisos, rejas, andamios y trabajos decorativos.',
+    specs:[
+      {i:'fa-border-all',   l:'Modelos',   v:'E-2616 · E-3020 · E-4020 · E-6030 y más'},
+      {i:'fa-ruler',        l:'Calibres',  v:'Cal. 16, 18 y 20 (acero al carbón o galvanizado)'},
+      {i:'fa-arrows-left-right',l:'Medida hoja',v:'0.91×1.83 m (3×6 ft) estándar'},
+      {i:'fa-rotate',       l:'Material',  v:'Acero al carbón · Galvanizado · Acero inox'},
+      {i:'fa-building',     l:'Usos',      v:'Rejillas, andamios, pisos antiderrapantes, bardas decorativas'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Para piso usar E-2616 cal.16; para reja ornamental E-6030 cal.18'}
+    ], page:'catalogo.html', wa:'Metal%20Desplegado%20Ladesa', photo:'https://ladesa.com/wp-content/uploads/2022/12/imagen-MD-ROLLOS-2.jpg' },
+
+  { id:'ptr-regiopytsa', cat:'estructural', provider:'Regiopytsa',
+    name:'PTR y Tubería Estructural Regiopytsa',
+    tagline:'Perfiles tubulares cuadrados y rectangulares fabricados en Monterrey con acero A-500 y A-513.',
+    specs:[
+      {i:'fa-ruler',        l:'PTR Cuadrado',v:'½" hasta 6" · Cal. 9 a 20'},
+      {i:'fa-ruler-combined',l:'PTR Rectangular',v:'1"×½" hasta 8"×4" · Cal. 10 a 20'},
+      {i:'fa-certificate',  l:'Norma',     v:'ASTM A-500 Gr. B · ASTM A-513'},
+      {i:'fa-arrows-up-down',l:'Largo',    v:'6.00 m y 6.10 m estándar · Corte a medida disponible'},
+      {i:'fa-screwdriver',  l:'V.A.',      v:'Corte · Doblez · Punzonado · Biselado'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Fabricación local Monterrey — tiempos de entrega cortos'}
+    ], page:'catalogo.html', wa:'PTR%20Regiopytsa', photo:'https://www.regiopytsa.com/wp-content/uploads/2019/04/TUBO-300x216.png' },
+
+  { id:'polin-regiopytsa', cat:'estructural', provider:'Regiopytsa',
+    name:'Polín Estructural C/Z Regiopytsa',
+    tagline:'Polín C y Z de acero galvanizado fabricado en Monterrey para naves industriales y techos.',
+    specs:[
+      {i:'fa-ruler',        l:'Secciones C',v:'3" a 14" · Cal. 10 a 16'},
+      {i:'fa-ruler',        l:'Secciones Z', v:'4" a 14" · Cal. 10 a 16'},
+      {i:'fa-certificate',  l:'Norma',     v:'ASTM A-653 SS Grado 50 galvanizado'},
+      {i:'fa-arrows-up-down',l:'Largo',    v:'6.00 m estándar · Corte a medida'},
+      {i:'fa-screwdriver',  l:'V.A.',      v:'Punzonado de alma · Doblez · Corte CNC'},
+      {i:'fa-lightbulb',    l:'Tip',       v:'Polín Z para traslapes continuos; polín C para tramos simples'}
+    ], page:'catalogo.html', wa:'Pol%C3%ADn%20Regiopytsa', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Polin-C-scaled.jpg' }
 ];
 
 /* ════════════════════════════════════════
@@ -1422,7 +1757,17 @@ const CAT_NAMES = {
   comercial:'Acero Comercial',
   especializado:'Aceros Especializados',
   pintura:'Pinturas PintuMex',
-  herramienta:'Herramienta'
+  herramienta:'Herramienta',
+  herrajes:'Herrajes y Cerraduras'
+};
+
+const CAT_LABELS_FULL = {
+  estructural:  'Acero Estructural',
+  comercial:    'Acero Comercial',
+  especializado:'Acero Especializado',
+  pintura:      'Pinturas PintuMex',
+  herramienta:  'Herramienta',
+  herrajes:     'Herrajes y Cerraduras'
 };
 
 let activeCat = 'all';
@@ -1503,9 +1848,6 @@ function openModal(id){
         <div class="pmodal-specs">${specsHTML}</div>
         ${TABLE_HTML[p.id] ? `<div style="margin-top:1.25rem;">${TABLE_HTML[p.id]}</div>` : ''}
         <div class="pmodal-actions">
-          <a href="${p.page}" class="btn-modal-full">
-            <i class="fa-solid fa-list-ul"></i> Ver especificaciones completas
-          </a>
           <a href="https://wa.me/5219512283263?text=Hola%2C%20quiero%20cotizar%3A%20${p.wa}"
              target="_blank" class="btn-modal-wa">
             <i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp
@@ -1530,16 +1872,9 @@ document.getElementById('pmodal-overlay').addEventListener('click', e => {
 });
 document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
 
-const CAT_LABELS_FULL = {
-  estructural:  'Acero Estructural',
-  comercial:    'Acero Comercial',
-  especializado:'Acero Especializado',
-  pintura:      'Pinturas PintuMex',
-  herramienta:  'Herramienta'
-};
-
 function openCategory(cat) {
   activeCat = cat;
+  location.hash = cat;
   document.getElementById('cat-menu').style.display = 'none';
   document.getElementById('cat-products').style.display = 'block';
   document.getElementById('cat-breadcrumb').textContent = CAT_LABELS_FULL[cat] || cat;
@@ -1549,6 +1884,8 @@ function openCategory(cat) {
 }
 
 function showMenu() {
+  activeCat = 'all';
+  location.hash = '';
   document.getElementById('cat-products').style.display = 'none';
   document.getElementById('cat-menu').style.display = '';
   document.getElementById('cat-search').value = '';
@@ -1561,12 +1898,19 @@ document.querySelectorAll('.cat-menu-card').forEach(btn => {
 
 document.getElementById('cat-back-btn').addEventListener('click', showMenu);
 
+/* Restaurar categoría al recargar usando el hash de la URL */
+(function() {
+  const validCats = ['estructural','comercial','especializado','pintura','herramienta'];
+  const hash = location.hash.replace('#', '');
+  if (validCats.includes(hash)) openCategory(hash);
+})();
+
 document.getElementById('cat-search').addEventListener('input', e => {
   render(e.target.value);
 });
 
 /* Inicializar contadores del menú de categorías */
-['estructural','comercial','especializado','pintura','herramienta'].forEach(cat => {
+['estructural','comercial','especializado','pintura','herramienta','herrajes'].forEach(cat => {
   const count = PRODUCTS.filter(p => p.cat === cat).length;
   const el = document.getElementById('cnt-' + cat);
   if(el) el.textContent = count + ' producto' + (count !== 1 ? 's' : '');

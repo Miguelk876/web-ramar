@@ -4,7 +4,12 @@
       "Bash(python -)",
       "WebFetch(domain:www.fortacero.com)",
       "WebFetch(domain:www.ternium.com.mx)",
-      "WebFetch(domain:www.makita.com.mx)"
+      "WebFetch(domain:www.makita.com.mx)",
+      "WebFetch(domain:articulo.mercadolibre.com.mx)",
+      "WebFetch(domain:www.homedepot.com.mx)",
+      "WebFetch(domain:www.coppel.com)",
+      "WebFetch(domain:www.walmart.com.mx)",
+      "WebFetch(domain:www.elevaherrajes.com)"
     ]
   }
 }

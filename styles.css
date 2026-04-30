@@ -738,18 +738,103 @@ footer {
    TELÉFONO EN NAVBAR
    ============================================ */
 .navbar-phone {
-    color: var(--color-blue);
-    font-weight: 700;
-    font-size: 1rem;
-    margin-right: 1.5rem;
-    white-space: nowrap;
-}
-.navbar-phone a {
-    color: var(--color-blue);
+    display: flex;
+    align-items: center;
+    gap: .45rem;
+    background: var(--color-blue);
+    color: #fff;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: .95rem;
+    letter-spacing: .03em;
+    padding: .45rem 1.1rem;
+    border-radius: 999px;
     text-decoration: none;
-    transition: color 0.3s ease;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+    white-space: nowrap;
+    transition: background .2s, transform .15s;
 }
-.navbar-phone a:hover { color: var(--color-red); }
+.navbar-phone:hover {
+    background: var(--color-red);
+    transform: translateY(-1px);
+    color: #fff;
+}
+.navbar-phone i { font-size: .85rem; }
+@media (max-width: 900px) { .navbar-phone { display: none; } }
+
+/* ============================================
+   CONSTRUTIPS
+   ============================================ */
+.construtips-section { background: #f8fafc; padding: 5rem 0; }
+.construtips-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+    margin-top: 2.5rem;
+}
+.construtip-card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 16px rgba(28,43,84,.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform .2s, box-shadow .2s;
+}
+.construtip-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(28,43,84,.13);
+}
+.construtip-icon {
+    background: var(--color-blue);
+    color: #fff;
+    font-size: 1.8rem;
+    padding: 1.5rem 1.75rem;
+    display: flex;
+    align-items: center;
+}
+.construtip-body { padding: 1.5rem 1.75rem; flex: 1; display: flex; flex-direction: column; gap: .6rem; }
+.construtip-tag {
+    display: inline-block;
+    background: #EEF2FF;
+    color: var(--color-blue);
+    font-size: .72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    padding: .2rem .65rem;
+    border-radius: 999px;
+    width: fit-content;
+}
+.construtip-body h3 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-blue);
+    line-height: 1.3;
+}
+.construtip-body p {
+    font-size: .9rem;
+    color: #475569;
+    line-height: 1.65;
+    flex: 1;
+}
+.construtip-link {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    color: var(--color-red);
+    font-weight: 600;
+    font-size: .88rem;
+    text-decoration: none;
+    margin-top: .5rem;
+    transition: gap .2s;
+}
+.construtip-link:hover { gap: .7rem; }
+@media (max-width: 900px) {
+    .construtips-grid { grid-template-columns: 1fr; }
+}
 
 /* ============================================
    WHATSAPP FLOTANTE
