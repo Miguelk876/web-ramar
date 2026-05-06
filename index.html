@@ -9,6 +9,11 @@
     <meta property="og:description" content="26 años distribuyendo acero en Oaxaca. 8 sucursales, amplio catálogo y atención personalizada para tu obra.">
     <meta property="og:image" content="assets/images/hero_steel_1774502974788.png">
     <meta property="og:type" content="website">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#1C2B54">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -198,7 +203,7 @@
                 <div class="tip-rotator" id="tip-rotator">
                     <!-- Las tarjetas se inyectan por JS; este es el placeholder inicial -->
                     <div class="tip-card active">
-                        <div class="tip-icon"><i class="fa-solid fa-fire-flame-curved"></i></div>
+                        <div class="tip-icon"><img src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Fire/3D/fire_3d.png" alt="" loading="lazy"></div>
                         <span class="tip-cat">Soldadura</span>
                         <h3 class="tip-headline">¿Cuál electrodo uso?</h3>
                         <p class="tip-text"><strong>6013</strong> para herrería y muebles. <strong>7018</strong> para estructuras pesadas que aguantan más carga.</p>
@@ -298,26 +303,27 @@
     <!-- ═══════════════ TIPS ROTATIVOS ═══════════════ -->
     <script>
     (function () {
+        const EMOJI_BASE = 'https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets';
         const TIPS = [
-            { icon: 'fa-fire-flame-curved', cat: 'Soldadura',  title: '¿Cuál electrodo uso?',
+            { img: EMOJI_BASE + '/Fire/3D/fire_3d.png', cat: 'Soldadura',  title: '¿Cuál electrodo uso?',
               text: '<strong>6013</strong> para herrería y muebles. <strong>7018</strong> para estructuras pesadas que aguantan más carga.' },
-            { icon: 'fa-cube',              cat: 'Estructural', title: 'PTR: ¿cuadrado o rectangular?',
+            { img: EMOJI_BASE + '/Brick/3D/brick_3d.png', cat: 'Estructural', title: 'PTR: ¿cuadrado o rectangular?',
               text: 'Cuadrado para <strong>columnas</strong>. Rectangular para <strong>vigas</strong> que cargan peso encima.' },
-            { icon: 'fa-grip-lines',        cat: 'Lámina',     title: '¿Qué calibre escojo?',
+            { img: EMOJI_BASE + '/Straight%20ruler/3D/straight_ruler_3d.png', cat: 'Lámina', title: '¿Qué calibre escojo?',
               text: 'A mayor número, más delgada la lámina. <strong>Cal. 26</strong> techos · <strong>Cal. 22</strong> fachadas · <strong>Cal. 18</strong> portones.' },
-            { icon: 'fa-fill-drip',         cat: 'Pintura',    title: 'Empieza por el primario',
+            { img: EMOJI_BASE + '/Paintbrush/3D/paintbrush_3d.png', cat: 'Pintura', title: 'Empieza por el primario',
               text: 'Sin <strong>primario anticorrosivo</strong> antes del esmalte, la pintura se cae en pocos meses.' },
-            { icon: 'fa-gears',             cat: 'Torno',      title: 'Para tornear inox',
+            { img: EMOJI_BASE + '/Gear/3D/gear_3d.png', cat: 'Torno', title: 'Para tornear inox',
               text: 'Usa <strong>buriles de cobalto</strong>. Los buriles normales se queman muy rápido en inox o acero duro.' },
-            { icon: 'fa-droplet-slash',     cat: 'Soldadura',  title: 'Cuida tus 7018',
+            { img: EMOJI_BASE + '/Droplet/3D/droplet_3d.png', cat: 'Soldadura', title: 'Cuida tus 7018',
               text: 'El <strong>7018 mojado</strong> arruina la soldadura. Guárdalo en bolsa sellada o calientito.' },
-            { icon: 'fa-door-open',         cat: 'Herrería',   title: 'PTR para portón',
+            { img: EMOJI_BASE + '/Door/3D/door_3d.png', cat: 'Herrería', title: 'PTR para portón',
               text: 'Portón <strong>chico</strong>: PTR 1½" cal. 14. Portón <strong>grande</strong>: PTR 2" cal. 12 para que no se chueque.' },
-            { icon: 'fa-utensils',          cat: 'Inoxidable', title: 'Inox: ¿304 o 430?',
+            { img: EMOJI_BASE + '/Cooking/3D/cooking_3d.png', cat: 'Inoxidable', title: 'Inox: ¿304 o 430?',
               text: '<strong>304</strong> para cocinas y donde haya humedad. <strong>430</strong> solo para decorar en lugares secos.' },
-            { icon: 'fa-plug-circle-bolt',  cat: 'Soldadura',  title: '¿Inversora o transformadora?',
+            { img: EMOJI_BASE + '/Electric%20plug/3D/electric_plug_3d.png', cat: 'Soldadura', title: '¿Inversora o transformadora?',
               text: '<strong>Inversora</strong>: ligera, llévala a la obra. <strong>Transformadora</strong>: pesada pero más resistente para taller fijo.' },
-            { icon: 'fa-cloud-rain',        cat: 'Impermeab.', title: '¿Cuánto dura el imper?',
+            { img: EMOJI_BASE + '/Cloud%20with%20rain/3D/cloud_with_rain_3d.png', cat: 'Impermeab.', title: '¿Cuánto dura el imper?',
               text: 'Dura los años que dice <strong>solo si la losa está limpia y sin grietas</strong>. Si no, dura la mitad.' }
         ];
 
@@ -337,7 +343,7 @@
             const t = TIPS[idx];
             rotator.innerHTML =
                 '<div class="tip-card active">' +
-                    '<div class="tip-icon"><i class="fa-solid ' + t.icon + '"></i></div>' +
+                    '<div class="tip-icon"><img src="' + t.img + '" alt="" loading="lazy"></div>' +
                     '<span class="tip-cat">' + t.cat + '</span>' +
                     '<h3 class="tip-headline">' + t.title + '</h3>' +
                     '<p class="tip-text">' + t.text + '</p>' +
