@@ -3553,6 +3553,7 @@ footer {
     filter: drop-shadow(0 4px 8px rgba(28,43,84,0.15));
 }
 .tip-rotator:hover .tip-icon { transform: translateY(-4px) scale(1.04); }
+.cat-menu-illu { width: 56px; height: 56px; object-fit: contain; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25)); }
 @media (max-width: 600px) {
     .tip-icon { width: 130px; height: 130px; border-radius: 20px; margin-top: -75px; }
 }
