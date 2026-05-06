@@ -4,18 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Construaceros RAMAR - Distribuidora de Acero en Oaxaca</title>
-    <meta name="description" content="Distribuidora de acero con 25 años en Oaxaca. Varillas, vigas IPR, PTR, láminas, perfiles de herrería y pinturas PintuMex. 8 sucursales, servicio a todo el estado.">
+    <meta name="description" content="Distribuidora de acero con 26 años en Oaxaca. Varillas, vigas IPR, PTR, láminas, perfiles de herrería y pinturas PintuMex. 8 sucursales, servicio a todo el estado.">
     <meta property="og:title" content="Construaceros RAMAR - Tu soporte de Acero en Oaxaca">
-    <meta property="og:description" content="25 años distribuyendo acero en Oaxaca. 8 sucursales, amplio catálogo y atención personalizada para tu obra.">
+    <meta property="og:description" content="26 años distribuyendo acero en Oaxaca. 8 sucursales, amplio catálogo y atención personalizada para tu obra.">
     <meta property="og:image" content="assets/images/hero_steel_1774502974788.png">
     <meta property="og:type" content="website">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <!-- ═══════════════ NAVBAR ═══════════════ -->
     <header class="navbar">
         <div class="logo">
             <a href="index.html">
@@ -24,7 +26,7 @@
         </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="index.html" style="color: var(--color-red);">Inicio</a></li>
+                <li><a href="index.html" style="color: var(--color-yellow);">Inicio</a></li>
                 <li><a href="nosotros.html">Nosotros</a></li>
                 <li><a href="catalogo.html">Catálogo</a></li>
                 <li><a href="guia.html">Guía</a></li>
@@ -41,19 +43,22 @@
     </header>
 
     <main>
-        <!-- Home Section -->
+
+        <!-- ═══════════════ HERO CAROUSEL ═══════════════ -->
         <section class="hero-section">
             <div class="carousel-slides">
-                <div class="carousel-slide active" style="background-image:url('assets/images/hero_steel_1774502974788.png')"></div>
-                <div class="carousel-slide" style="background-image:url('assets/images/steel_beams_1774503028306.png')"></div>
+                <div class="carousel-slide active" style="background-image:url('assets/images/20260430_182716750_iOS.jpg')"></div>
+                <div class="carousel-slide" style="background-image:url('assets/images/20260430_182919820_iOS.jpg')"></div>
+                <div class="carousel-slide" style="background-image:url('assets/images/hero_steel_1774502974788.png')"></div>
             </div>
             <div class="hero-overlay"></div>
             <div class="hero-content">
                 <img src="assets/images/logo.png" alt="Construaceros RAMAR" class="hero-logo">
-                <p class="hero-tagline">El mejor acero para tus proyectos en Oaxaca.</p>
+                <h1 class="hero-headline">DISTRIBUIDORA DE ACERO<br><span class="text-yellow">EN OAXACA</span></h1>
+                <p class="hero-sub">PTR · Varilla · Vigas IPR · Láminas · Pinturas · Herramienta</p>
                 <div class="hero-buttons">
-                    <a href="catalogo.html" class="btn-primary">Ver Catálogo</a>
-                    <a href="ubicaciones.html" class="btn-secondary">Nuestras Sucursales</a>
+                    <a href="catalogo.html" class="btn-hero-primary">Explorar catálogo <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="https://wa.me/5219512283263" target="_blank" class="btn-hero-wa"><i class="fa-brands fa-whatsapp"></i> Cotizar ahora</a>
                 </div>
             </div>
             <button class="carousel-prev" aria-label="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
@@ -61,155 +66,195 @@
             <div class="carousel-dots">
                 <span class="carousel-dot active" data-idx="0"></span>
                 <span class="carousel-dot" data-idx="1"></span>
+                <span class="carousel-dot" data-idx="2"></span>
+            </div>
+            <div class="hero-scroll-hint">
+                <i class="fa-solid fa-chevron-down"></i>
             </div>
         </section>
 
-        <!-- Estadísticas -->
-        <section class="stats-section fade-in">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <i class="fa-solid fa-calendar-check"></i>
-                    <span class="stat-number">25</span>
-                    <span class="stat-label">Años de Experiencia</span>
+        <!-- ═══════════════ STATS BAR ═══════════════ -->
+        <section class="stats-bar">
+            <div class="stats-bar-inner">
+                <div class="sbar-item">
+                    <span class="sbar-num">26</span>
+                    <span class="sbar-label">Años de experiencia</span>
                 </div>
-                <div class="stat-item">
-                    <i class="fa-solid fa-store"></i>
-                    <span class="stat-number">8</span>
-                    <span class="stat-label">Sucursales en Oaxaca</span>
+                <div class="sbar-div"></div>
+                <div class="sbar-item">
+                    <span class="sbar-num">8</span>
+                    <span class="sbar-label">Sucursales en Oaxaca</span>
                 </div>
-                <div class="stat-item">
-                    <i class="fa-solid fa-users"></i>
-                    <span class="stat-number">+1,000</span>
-                    <span class="stat-label">Clientes Atendidos</span>
+                <div class="sbar-div"></div>
+                <div class="sbar-item">
+                    <span class="sbar-num">+1,000</span>
+                    <span class="sbar-label">Clientes atendidos</span>
                 </div>
-                <div class="stat-item">
-                    <i class="fa-solid fa-map-location-dot"></i>
-                    <span class="stat-number">8</span>
-                    <span class="stat-label">Regiones del Estado</span>
-                </div>
-                <div class="stat-item">
-                    <i class="fa-solid fa-tags"></i>
-                    <span class="stat-number">+5,000</span>
-                    <span class="stat-label">Productos en Stock</span>
+                <div class="sbar-div"></div>
+                <div class="sbar-item">
+                    <span class="sbar-num">+5,000</span>
+                    <span class="sbar-label">Productos en stock</span>
                 </div>
             </div>
         </section>
 
-        <!-- ¿Por qué RAMAR? -->
-        <section class="why-ramar fade-in">
+        <!-- ═══════════════ CATEGORÍAS DE PRODUCTOS ═══════════════ -->
+        <section class="home-categories fade-in">
             <div class="container">
-                <h2 class="section-title text-center">¿Por qué <span class="text-red">RAMAR</span>?</h2>
-                <p class="section-subtitle text-center">Llevamos 25 años siendo el soporte de acero que Oaxaca necesita.</p>
-                <div class="why-grid">
-                    <div class="why-item">
-                        <i class="fa-solid fa-medal"></i>
-                        <h3>Experiencia Comprobada</h3>
-                        <p>Desde el año 2000 abasteciendo a herreros, constructores y contratistas con materiales de la más alta calidad.</p>
+                <p class="section-eyebrow dark">Nuestros productos</p>
+                <h2 class="section-title text-center">TODO LO QUE TU OBRA <span class="text-red">NECESITA</span></h2>
+            </div>
+            <div class="home-cats-grid">
+                <a href="catalogo.html" class="home-cat-card">
+                    <div class="home-cat-img" style="background-image:url('assets/images/20260430_182743814_iOS.jpg')"></div>
+                    <div class="home-cat-overlay"></div>
+                    <div class="home-cat-content">
+                        <span class="home-cat-tag">Estructural</span>
+                        <h3>Acero Estructural</h3>
+                        <p>Varilla, vigas IPR, PTR cuadrado y rectangular para toda obra</p>
+                        <span class="home-cat-cta">Explorar <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
-                    <div class="why-item">
-                        <i class="fa-solid fa-boxes-stacked"></i>
-                        <h3>Amplio Inventario</h3>
-                        <p>Catálogo completo: acero comercial, estructural, especializado y pinturas PintuMex. Todo en un solo lugar.</p>
+                </a>
+                <a href="catalogo.html" class="home-cat-card">
+                    <div class="home-cat-img" style="background-image:url('assets/images/20260430_182719859_iOS.jpg')"></div>
+                    <div class="home-cat-overlay"></div>
+                    <div class="home-cat-content">
+                        <span class="home-cat-tag">Comercial</span>
+                        <h3>Láminas y Perfiles</h3>
+                        <p>Lámina galvanizada, polín C, ángulo, solera y más</p>
+                        <span class="home-cat-cta">Explorar <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
-                    <div class="why-item">
-                        <i class="fa-solid fa-headset"></i>
-                        <h3>Atención Personalizada</h3>
-                        <p>Nuestro equipo te asesora para elegir el material correcto según tu proyecto y presupuesto.</p>
+                </a>
+                <a href="catalogo.html" class="home-cat-card">
+                    <div class="home-cat-img" style="background-image:url('assets/images/20260430_182710507_iOS.jpg')"></div>
+                    <div class="home-cat-overlay"></div>
+                    <div class="home-cat-content">
+                        <span class="home-cat-tag">Pinturas &amp; Herramienta</span>
+                        <h3>Pinturas y Herramienta</h3>
+                        <p>Pinturas, herramienta eléctrica, manual y equipo de soldadura</p>
+                        <span class="home-cat-cta">Explorar <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
-                </div>
+                </a>
             </div>
         </section>
 
-        <!-- Construtips -->
-        <section class="construtips-section fade-in">
+        <!-- ═══════════════ POR QUÉ RAMAR ═══════════════ -->
+        <section class="home-why fade-in">
             <div class="container">
-                <h2 class="section-title text-center">Guías y <span class="text-red">Consejos</span></h2>
-                <p class="section-subtitle text-center">Información técnica para que tu obra salga bien desde el principio.</p>
-                <div class="construtips-grid">
-                    <article class="construtip-card">
-                        <div class="construtip-icon"><i class="fa-solid fa-ruler-combined"></i></div>
-                        <div class="construtip-body">
-                            <span class="construtip-tag">Estructural</span>
-                            <h3>¿Qué calibre de PTR necesita tu proyecto?</h3>
-                            <p>Para canceles y muebles usa calibre 20. Para estructuras ligeras (techos, pérgolas) calibre 16. Para naves y portones pesados calibre 14 o inferior. El calibre equivocado puede comprometer la seguridad de tu obra.</p>
-                            <a href="catalogo.html#estructural" class="construtip-link">Ver PTR en catálogo <i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </article>
-                    <article class="construtip-card">
-                        <div class="construtip-icon"><i class="fa-solid fa-bars"></i></div>
-                        <div class="construtip-body">
-                            <span class="construtip-tag">Comercial</span>
-                            <h3>Varilla G42 vs G50: ¿cuál va en tu colado?</h3>
-                            <p>La G42 (grado 42) es la más común y económica, ideal para losas y trabes de vivienda. La G50 tiene mayor resistencia a la fluencia y se usa en construcción sísmica y estructuras que requieren mayor rigidez. Tu ingeniero debe especificar cuál usar.</p>
-                            <a href="catalogo.html#comercial" class="construtip-link">Ver varilla en catálogo <i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </article>
-                    <article class="construtip-card">
-                        <div class="construtip-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                        <div class="construtip-body">
-                            <span class="construtip-tag">Pintura</span>
-                            <h3>Cómo proteger el acero negro contra la corrosión</h3>
-                            <p>Aplica primario anticorrosivo dentro de las primeras 24 horas de corte o soldadura. En exteriores usa dos manos de primario y dos de esmalte alquidálico. En zonas costeras o húmedas, el galvanizado es la mejor inversión a largo plazo.</p>
-                            <a href="catalogo.html#pintura" class="construtip-link">Ver pinturas en catálogo <i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </article>
+                <p class="section-eyebrow dark">¿Por qué elegirnos?</p>
+                <h2 class="section-title text-center">RAMAR ES TU <span class="text-red">MEJOR OPCIÓN</span></h2>
+                <div class="home-why-grid">
+                    <div class="home-why-item">
+                        <div class="home-why-icon"><i class="fa-solid fa-award"></i></div>
+                        <h4>26 Años de Experiencia</h4>
+                        <p>Más de dos décadas suministrando acero de calidad en Oaxaca y la región.</p>
+                    </div>
+                    <div class="home-why-item">
+                        <div class="home-why-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <h4>8 Sucursales</h4>
+                        <p>Presencia estratégica en todo el estado para atenderte donde estés.</p>
+                    </div>
+                    <div class="home-why-item">
+                        <div class="home-why-icon"><i class="fa-solid fa-scissors"></i></div>
+                        <h4>Corte a Medida</h4>
+                        <p>Dimensionamos el material según las necesidades exactas de tu proyecto.</p>
+                    </div>
+                    <div class="home-why-item">
+                        <div class="home-why-icon"><i class="fa-solid fa-truck"></i></div>
+                        <h4>Entrega a Obra</h4>
+                        <p>Servicio de flete a toda la región, directamente al sitio de tu construcción.</p>
+                    </div>
+                    <div class="home-why-item">
+                        <div class="home-why-icon"><i class="fa-solid fa-tags"></i></div>
+                        <h4>Precios Competitivos</h4>
+                        <p>Alianzas directas con las mejores marcas y proveedores líderes del mercado.</p>
+                    </div>
+                    <div class="home-why-item">
+                        <div class="home-why-icon"><i class="fa-solid fa-headset"></i></div>
+                        <h4>Asesoría Personalizada</h4>
+                        <p>Nuestro equipo te orienta para elegir el perfil o material correcto.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Marcas que Manejamos -->
+        <!-- ═══════════════ MARCAS ═══════════════ -->
         <section class="brands-section fade-in">
             <div class="container">
-                <h2 class="section-title text-center">Marcas que <span class="text-red">Manejamos</span></h2>
-                <p class="section-subtitle text-center">Proveedores líderes de acero, herramienta y pintura en México.</p>
-                <div class="brands-grid">
-                    <div class="brand-card">
-                        <img src="assets/images/brands/ternium.svg" alt="Ternium" class="brand-logo">
+                <p class="section-eyebrow dark">Calidad garantizada</p>
+                <h2 class="brands-headline">CONTAMOS CON<br><span class="text-red">LAS MEJORES MARCAS</span></h2>
+                <p class="brands-sub">Trabajamos con proveedores líderes en acero, pintura, herramienta y soldadura para garantizar la calidad de cada material que entregamos en tu obra.</p>
+            </div>
+        </section>
+
+        <!-- ═══════════════ TIPS ROTATIVOS ═══════════════ -->
+        <section class="tips-section fade-in">
+            <div class="tips-bg-pattern"></div>
+            <div class="container">
+                <p class="section-eyebrow light">Conoce más</p>
+                <h2 class="tips-title">TIP <span class="text-yellow">RAMAR</span></h2>
+                <p class="tips-sub">Consejos prácticos de nuestros expertos — actualizando cada pocos segundos.</p>
+
+                <div class="tip-rotator" id="tip-rotator">
+                    <!-- Las tarjetas se inyectan por JS; este es el placeholder inicial -->
+                    <div class="tip-card active">
+                        <div class="tip-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <span class="tip-cat">Soldadura</span>
+                        <h3 class="tip-headline">¿Cuál electrodo uso?</h3>
+                        <p class="tip-text"><strong>6013</strong> para herrería y muebles. <strong>7018</strong> para estructuras pesadas que aguantan más carga.</p>
                     </div>
-                    <div class="brand-card">
-                        <img src="assets/images/brands/prolamsa.svg" alt="PROLAMSA" class="brand-logo">
-                    </div>
-                    <div class="brand-card">
-                        <img src="assets/images/brands/fortacero.png" alt="Fortacero" class="brand-logo">
-                    </div>
-                    <div class="brand-card">
-                        <img src="assets/images/brands/tyasa.svg" alt="TYASA" class="brand-logo">
-                    </div>
-                    <div class="brand-card">
-                        <img src="assets/images/brands/pintumex.png" alt="PintuMex" class="brand-logo">
-                    </div>
-                    <div class="brand-card">
-                        <img src="assets/images/brands/makita.png" alt="Makita" class="brand-logo">
-                    </div>
-                    <div class="brand-card brand-card--dark">
-                        <img src="assets/images/brands/dewalt.png" alt="DeWalt" class="brand-logo">
-                    </div>
-                    <div class="brand-card">
-                        <img src="assets/images/brands/truper.svg" alt="Truper" class="brand-logo">
-                    </div>
-                    <div class="brand-card">
-                        <img src="https://fartisticar.com.mx/wp-content/uploads/2019/05/logo.png" alt="Forja Artística Renacimiento" class="brand-logo">
-                    </div>
-                    <div class="brand-card">
-                        <img src="https://decorsteel.com.mx/wp-content/uploads/2021/04/LOGO-DECORSTEEL-2.jpg" alt="Decorsteel" class="brand-logo">
-                    </div>
-                    <div class="brand-card brand-card--dark">
-                        <img src="https://tiendalinde.com.mx/img/praxair-logo-1577378620.jpg" alt="Praxair / Linde" class="brand-logo">
-                    </div>
-                    <div class="brand-card">
-                        <img src="https://totalglob.com/wp-content/uploads/2024/05/bi-metal-.svg" alt="Bimetal" class="brand-logo">
-                    </div>
-                    <div class="brand-card brand-card--text">
-                        <span class="brand-text-logo">DEXTER</span>
-                    </div>
-                    <div class="brand-card brand-card--text">
-                        <span class="brand-text-logo">CABEL</span>
-                    </div>
+                </div>
+
+                <div class="tip-dots" id="tip-dots"></div>
+            </div>
+        </section>
+
+        <!-- ═══════════════ FACEBOOK FEED ═══════════════ -->
+        <section class="fb-feed-section fade-in">
+            <div class="container">
+                <p class="section-eyebrow dark">Lo más nuevo</p>
+                <h2 class="section-title text-center">SÍGUENOS EN <span class="text-red">FACEBOOK</span></h2>
+                <p class="fb-feed-sub">Promociones, nuevos productos, videos y novedades de la semana — actualizado automáticamente.</p>
+                <div class="fb-feed-wrap">
+                    <iframe
+                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FConstruacerosRamarOficial&tabs=timeline&width=500&height=700&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
+                        width="500"
+                        height="700"
+                        style="border:none;overflow:hidden;max-width:100%;"
+                        scrolling="no"
+                        frameborder="0"
+                        allowfullscreen="true"
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                        loading="lazy"
+                        title="Publicaciones de Construaceros RAMAR en Facebook">
+                    </iframe>
+                </div>
+                <div class="fb-feed-cta">
+                    <a href="https://facebook.com/ConstruacerosRamarOficial" target="_blank" rel="noopener" class="btn-primary">
+                        <i class="fa-brands fa-facebook"></i> Ver página completa en Facebook
+                    </a>
                 </div>
             </div>
         </section>
+
+        <!-- ═══════════════ CTA FINAL ═══════════════ -->
+        <section class="cta-final">
+            <img src="assets/images/20260430_182731019_iOS.jpg" alt="Material RAMAR" class="cta-final-bg" loading="lazy">
+            <div class="cta-final-overlay"></div>
+            <div class="cta-final-content">
+                <p class="section-eyebrow light">¿Listo para comenzar?</p>
+                <h2>COTIZA TU MATERIAL<br><span class="text-yellow">HOY MISMO</span></h2>
+                <p>Escríbenos por WhatsApp, visítanos en cualquiera de nuestras 8 sucursales o llámanos directamente.</p>
+                <div class="cta-final-btns">
+                    <a href="https://wa.me/5219512283263" target="_blank" class="btn-wa-big"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                    <a href="ubicaciones.html" class="btn-outline-light">Ver sucursales <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
+    <!-- ═══════════════ FOOTER ═══════════════ -->
     <footer id="footer-section">
         <div class="footer-container">
             <div class="footer-brand">
@@ -217,30 +262,24 @@
                 <p>Tu aliado de confianza en cada obra.</p>
             </div>
             <div class="footer-links">
-                <h3>Enlaces</h3>
+                <h3>Navegación</h3>
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="nosotros.html">Nosotros</a></li>
                     <li><a href="catalogo.html">Catálogo</a></li>
                     <li><a href="guia.html">Guía</a></li>
-                <li><a href="ubicaciones.html">Ubicaciones</a></li>
+                    <li><a href="ubicaciones.html">Ubicaciones</a></li>
                 </ul>
             </div>
             <div class="footer-contact">
                 <h3>Contacto y Redes</h3>
-                <p><i class="fa-solid fa-phone"></i> <a href="tel:9515173157" style="color: #cbd5e1; text-decoration: none;">951 517 3157</a> · <a href="tel:9515336831" style="color: #cbd5e1; text-decoration: none;">951 533 6831</a></p>
-                <p><i class="fa-solid fa-phone"></i> <a href="tel:9515336045" style="color: #cbd5e1; text-decoration: none;">951 533 6045</a> · <a href="tel:9515494636" style="color: #cbd5e1; text-decoration: none;">951 549 4636</a></p>
+                <p><i class="fa-solid fa-phone"></i> <a href="tel:9515173157" style="color:#cbd5e1;text-decoration:none;">951 517 3157</a> · <a href="tel:9515336831" style="color:#cbd5e1;text-decoration:none;">951 533 6831</a></p>
+                <p><i class="fa-solid fa-phone"></i> <a href="tel:9515336045" style="color:#cbd5e1;text-decoration:none;">951 533 6045</a> · <a href="tel:9515494636" style="color:#cbd5e1;text-decoration:none;">951 549 4636</a></p>
                 <p><i class="fa-solid fa-envelope"></i> ramar.matriz@gmail.com</p>
                 <div class="social-icons">
-                    <a href="https://facebook.com/construacerosramar.oficial" target="_blank" class="social-link fb" aria-label="Facebook">
-                        <i class="fa-brands fa-facebook"></i>
-                    </a>
-                    <a href="https://instagram.com/ramar.oficial" target="_blank" class="social-link ig" aria-label="Instagram">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                    <a href="https://tiktok.com/@ramar.oficial" target="_blank" class="social-link tk" aria-label="TikTok">
-                        <i class="fa-brands fa-tiktok"></i>
-                    </a>
+                    <a href="https://facebook.com/construacerosramar.oficial" target="_blank" class="social-link fb" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://instagram.com/ramar.oficial" target="_blank" class="social-link ig" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://tiktok.com/@ramar.oficial" target="_blank" class="social-link tk" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
                 </div>
             </div>
         </div>
@@ -249,12 +288,92 @@
         </div>
     </footer>
 
-    <!-- WhatsApp flotante -->
     <a href="https://wa.me/5219512283263" target="_blank" class="whatsapp-float" aria-label="Cotiza por WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
         <span class="wa-tooltip">Cotiza por WhatsApp</span>
     </a>
 
     <script src="main.js"></script>
+
+    <!-- ═══════════════ TIPS ROTATIVOS ═══════════════ -->
+    <script>
+    (function () {
+        const TIPS = [
+            { icon: 'fa-bolt',           cat: 'Soldadura',  title: '¿Cuál electrodo uso?',
+              text: '<strong>6013</strong> para herrería y muebles. <strong>7018</strong> para estructuras pesadas que aguantan más carga.' },
+            { icon: 'fa-ruler-combined', cat: 'Estructural', title: 'PTR: ¿cuadrado o rectangular?',
+              text: 'Cuadrado para <strong>columnas</strong>. Rectangular para <strong>vigas</strong> que cargan peso encima.' },
+            { icon: 'fa-layer-group',    cat: 'Lámina',     title: '¿Qué calibre escojo?',
+              text: 'A mayor número, más delgada la lámina. <strong>Cal. 26</strong> techos · <strong>Cal. 22</strong> fachadas · <strong>Cal. 18</strong> portones.' },
+            { icon: 'fa-paint-roller',   cat: 'Pintura',    title: 'Empieza por el primario',
+              text: 'Sin <strong>primario anticorrosivo</strong> antes del esmalte, la pintura se cae en pocos meses.' },
+            { icon: 'fa-screwdriver-wrench', cat: 'Torno',  title: 'Para tornear inox',
+              text: 'Usa <strong>buriles de cobalto</strong>. Los buriles normales se queman muy rápido en inox o acero duro.' },
+            { icon: 'fa-fire',           cat: 'Soldadura',  title: 'Cuida tus 7018',
+              text: 'El <strong>7018 mojado</strong> arruina la soldadura. Guárdalo en bolsa sellada o calientito.' },
+            { icon: 'fa-hammer',         cat: 'Herrería',   title: 'PTR para portón',
+              text: 'Portón <strong>chico</strong>: PTR 1½" cal. 14. Portón <strong>grande</strong>: PTR 2" cal. 12 para que no se chueque.' },
+            { icon: 'fa-shield-halved',  cat: 'Inoxidable', title: 'Inox: ¿304 o 430?',
+              text: '<strong>304</strong> para cocinas y donde haya humedad. <strong>430</strong> solo para decorar en lugares secos.' },
+            { icon: 'fa-gauge-high',     cat: 'Soldadura',  title: '¿Inversora o transformadora?',
+              text: '<strong>Inversora</strong>: ligera, llévala a la obra. <strong>Transformadora</strong>: pesada pero más resistente para taller fijo.' },
+            { icon: 'fa-droplet',        cat: 'Impermeab.', title: '¿Cuánto dura el imper?',
+              text: 'Dura los años que dice <strong>solo si la losa está limpia y sin grietas</strong>. Si no, dura la mitad.' }
+        ];
+
+        const rotator = document.getElementById('tip-rotator');
+        const dots    = document.getElementById('tip-dots');
+        if (!rotator || !dots) return;
+
+        // Pintar dots
+        dots.innerHTML = TIPS.map((_, i) =>
+            `<button class="tip-dot${i === 0 ? ' active' : ''}" aria-label="Tip ${i+1}" data-idx="${i}"></button>`
+        ).join('');
+
+        let current = 0;
+        let timer;
+
+        function render(idx) {
+            const t = TIPS[idx];
+            rotator.innerHTML =
+                '<div class="tip-card active">' +
+                    '<div class="tip-icon"><i class="fa-solid ' + t.icon + '"></i></div>' +
+                    '<span class="tip-cat">' + t.cat + '</span>' +
+                    '<h3 class="tip-headline">' + t.title + '</h3>' +
+                    '<p class="tip-text">' + t.text + '</p>' +
+                '</div>';
+            dots.querySelectorAll('.tip-dot').forEach((d, i) =>
+                d.classList.toggle('active', i === idx)
+            );
+            current = idx;
+        }
+
+        function next() { render((current + 1) % TIPS.length); }
+
+        function start() {
+            stop();
+            timer = setInterval(next, 6000); // cada 6 segundos
+        }
+        function stop() {
+            if (timer) { clearInterval(timer); timer = null; }
+        }
+
+        // Click manual en dot
+        dots.addEventListener('click', e => {
+            const btn = e.target.closest('.tip-dot');
+            if (!btn) return;
+            render(parseInt(btn.dataset.idx, 10));
+            start(); // reinicia el timer
+        });
+
+        // Pausar al pasar el mouse, reanudar al salir
+        rotator.addEventListener('mouseenter', stop);
+        rotator.addEventListener('mouseleave', start);
+
+        // Comenzar al cargar
+        render(0);
+        start();
+    })();
+    </script>
 </body>
 </html>
