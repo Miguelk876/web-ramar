@@ -19,12 +19,11 @@ There are no build, lint, or test commands — files are served as-is.
 
 ## Architecture
 
-10 HTML pages linked with standard `<a href="...">` navigation (no SPA router):
+7 HTML pages linked with standard `<a href="...">` navigation (no SPA router):
 
 - `index.html` — homepage with hero section
 - `nosotros.html` — company history and values
-- `catalogo.html` — catalog hub linking to 4 sub-pages
-- `catalogo-comercial.html`, `catalogo-estructural.html`, `catalogo-especializado.html`, `catalogo-pintura.html` — product detail pages
+- `catalogo.html` — **single, unified catalog** with all products (NEVER split into sub-pages)
 - `guia.html` — "¿Qué material necesito?" guide with project-type filters
 - `ubicaciones.html` — 8 branch locations with embedded Google Maps
 - `contacto.html` — contact info and social links
@@ -48,7 +47,7 @@ All pages share:
 ## Key Patterns
 
 - **Adding a page**: copy the closest existing page, update content, add a nav link to *every* page's header manually (there's no shared include).
-- **Product block** (catalog detail pages): each product uses `.product-block` with an `accent-*` modifier. Inside: a `.pv-wrap` row with `.pv-svg` (inline SVG technical drawing) and `.pv-photo` (Pexels `<img>`), then a `.product-grid-3` with three `.product-col` columns (Medidas / Usos comunes / Recomendación RAMAR).
+- **Adding products**: products live in the JS data array inside `catalogo.html`. Each entry has `name`, `desc`, `bullets[]`, `wa` (URL-encoded WhatsApp text), and `photo`. Rendered into `.product-card` blocks via JS — no separate pages.
 - **Responsive breakpoint**: `@media (max-width: 900px)` is where the hamburger menu activates; match this in any new layout code.
 - **Scroll animations**: add `class="fade-in"` to any element that should animate in on scroll — the `IntersectionObserver` in `main.js` handles it automatically.
 - **Google Maps embeds**: each branch in `ubicaciones.html` uses an `<iframe>` with a Google Maps `src`. Get the embed URL from Google Maps → Share → Embed a map.
@@ -56,4 +55,4 @@ All pages share:
 
 ## Content Rules
 
-- The catalog (products) lives only in `catalogo.html` and its sub-pages — never add product listings to `index.html`.
+- The catalog (products) lives ONLY in `catalogo.html`. Never split into sub-pages, never add product listings to `index.html`.

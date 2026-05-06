@@ -16,22 +16,7 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>catalogo-comercial.html</loc>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>catalogo-estructural.html</loc>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>catalogo-especializado.html</loc>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>catalogo-pintura.html</loc>
+    <loc>guia.html</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
