@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="sheet" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a4f8a"/>
+      <stop offset="1" stop-color="#1C2B54"/>
+    </linearGradient>
+  </defs>
+  <!-- Cal 26 (más delgada, arriba) -->
+  <g transform="translate(20,40)">
+    <polygon points="0,8 140,0 160,4 20,12" fill="url(#sheet)"/>
+    <polygon points="0,8 20,12 20,16 0,12" fill="#0f1c45"/>
+    <text x="170" y="11" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="13" fill="#F08018">26</text>
+  </g>
+  <!-- Cal 22 (medio) -->
+  <g transform="translate(15,80)">
+    <polygon points="0,12 145,0 168,6 22,18" fill="url(#sheet)"/>
+    <polygon points="0,12 22,18 22,26 0,20" fill="#0f1c45"/>
+    <text x="178" y="14" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="13" fill="#DD3B2E">22</text>
+  </g>
+  <!-- Cal 18 (más gruesa, abajo) -->
+  <g transform="translate(10,125)">
+    <polygon points="0,18 150,0 175,8 25,26" fill="url(#sheet)"/>
+    <polygon points="0,18 25,26 25,40 0,32" fill="#0f1c45"/>
+    <text x="185" y="22" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="13" fill="#1C2B54">18</text>
+  </g>
+  <text x="100" y="190" font-family="Inter,Arial,sans-serif" font-weight="700" font-size="11" fill="#475569" text-anchor="middle" letter-spacing="1">+ DELGADA → + GRUESA</text>
+</svg>

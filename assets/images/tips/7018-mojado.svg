@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="rod7018w" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F08018"/>
+      <stop offset=".25" stop-color="#1C2B54"/>
+      <stop offset="1" stop-color="#0f1c45"/>
+    </linearGradient>
+    <linearGradient id="dropG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7dd3fc"/>
+      <stop offset="1" stop-color="#0284c7"/>
+    </linearGradient>
+  </defs>
+  <!-- Electrodo -->
+  <rect x="92" y="30" width="16" height="135" rx="4" fill="url(#rod7018w)"/>
+  <rect x="92" y="30" width="16" height="6" fill="#fff" opacity=".25"/>
+  <text x="100" y="183" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="14" fill="#F08018" text-anchor="middle">7018</text>
+  <!-- Gotas de agua -->
+  <g>
+    <path d="M 60 70 q 0 -10 7 -16 q 7 6 7 16 a 7 7 0 0 1 -14 0 z" fill="url(#dropG)"/>
+    <path d="M 130 100 q 0 -8 5 -13 q 5 5 5 13 a 5 5 0 0 1 -10 0 z" fill="url(#dropG)"/>
+    <path d="M 50 130 q 0 -10 7 -16 q 7 6 7 16 a 7 7 0 0 1 -14 0 z" fill="url(#dropG)"/>
+  </g>
+  <!-- Círculo prohibido -->
+  <circle cx="100" cy="100" r="68" fill="none" stroke="#DD3B2E" stroke-width="9" opacity=".85"/>
+  <line x1="55" y1="55" x2="145" y2="145" stroke="#DD3B2E" stroke-width="9" stroke-linecap="round" opacity=".85"/>
+</svg>

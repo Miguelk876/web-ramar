@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="r6013" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#DD3B2E"/>
+      <stop offset=".25" stop-color="#1C2B54"/>
+      <stop offset="1" stop-color="#0f1c45"/>
+    </linearGradient>
+    <linearGradient id="r7018" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F08018"/>
+      <stop offset=".25" stop-color="#1C2B54"/>
+      <stop offset="1" stop-color="#0f1c45"/>
+    </linearGradient>
+    <radialGradient id="spark" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#FFE082"/>
+      <stop offset=".4" stop-color="#F08018"/>
+      <stop offset="1" stop-color="#DD3B2E" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="spark2" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#fef3c7"/>
+      <stop offset=".4" stop-color="#FFE082"/>
+      <stop offset="1" stop-color="#F08018" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <style>
+    .spark { transform-origin: center; animation: sparkPulse 1.4s ease-in-out infinite; }
+    .spark2 { transform-origin: center; animation: sparkPulse 1.4s ease-in-out infinite 0.7s; }
+    @keyframes sparkPulse {
+      0%,100% { transform: scale(0.7); opacity: 0.55; }
+      50%     { transform: scale(1.25); opacity: 1; }
+    }
+    .ray { animation: rayFade 1.4s ease-in-out infinite; opacity: 0; }
+    .ray.b { animation-delay: 0.7s; }
+    @keyframes rayFade {
+      0%,100% { opacity: 0; }
+      50%     { opacity: 0.85; }
+    }
+  </style>
+  <g transform="rotate(-12 70 100)">
+    <rect x="62" y="35" width="16" height="135" rx="4" fill="url(#r6013)"/>
+    <rect x="62" y="35" width="16" height="6" fill="#fff" opacity=".25"/>
+    <circle class="spark" cx="70" cy="30" r="16" fill="url(#spark)"/>
+    <g class="ray" stroke="#FFE082" stroke-width="2" stroke-linecap="round">
+      <line x1="70" y1="10" x2="70" y2="20"/>
+      <line x1="55" y1="22" x2="62" y2="28"/>
+      <line x1="85" y1="22" x2="78" y2="28"/>
+    </g>
+  </g>
+  <g transform="rotate(12 130 100)">
+    <rect x="122" y="35" width="16" height="135" rx="4" fill="url(#r7018)"/>
+    <rect x="122" y="35" width="16" height="6" fill="#fff" opacity=".25"/>
+    <circle class="spark2" cx="130" cy="30" r="16" fill="url(#spark2)"/>
+    <g class="ray b" stroke="#FFE082" stroke-width="2" stroke-linecap="round">
+      <line x1="130" y1="10" x2="130" y2="20"/>
+      <line x1="115" y1="22" x2="122" y2="28"/>
+      <line x1="145" y1="22" x2="138" y2="28"/>
+    </g>
+  </g>
+  <g font-family="Inter,Arial,sans-serif" font-weight="800" text-anchor="middle">
+    <text x="48" y="190" font-size="20" fill="#DD3B2E">6013</text>
+    <text x="155" y="190" font-size="20" fill="#F08018">7018</text>
+  </g>
+</svg>

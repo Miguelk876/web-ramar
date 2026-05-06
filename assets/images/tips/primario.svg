@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="canBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cf3527"/>
+      <stop offset="1" stop-color="#9a261c"/>
+    </linearGradient>
+  </defs>
+  <!-- Capa esmalte (arriba) -->
+  <rect x="40" y="50" width="120" height="20" fill="#F08018" rx="2"/>
+  <text x="100" y="65" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="11" fill="#fff" text-anchor="middle">2. ESMALTE</text>
+  <!-- Capa primario (medio) -->
+  <rect x="40" y="78" width="120" height="20" fill="#DD3B2E" rx="2"/>
+  <text x="100" y="93" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="11" fill="#fff" text-anchor="middle">1. PRIMARIO</text>
+  <!-- Metal base -->
+  <rect x="40" y="106" width="120" height="20" fill="#1C2B54" rx="2"/>
+  <text x="100" y="121" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="11" fill="#fff" text-anchor="middle">METAL</text>
+  <!-- Bote -->
+  <g transform="translate(125,135)">
+    <rect x="0" y="0" width="35" height="40" fill="url(#canBody)" rx="2"/>
+    <rect x="-2" y="0" width="39" height="6" fill="#1C2B54" rx="2"/>
+    <rect x="14" y="-12" width="7" height="14" fill="#9a261c"/>
+    <text x="17" y="25" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="10" fill="#fff" text-anchor="middle">PRIMER</text>
+  </g>
+  <!-- Flecha -->
+  <path d="M 80 150 L 110 150 L 110 145 L 122 152 L 110 159 L 110 154 L 80 154 Z" fill="#F08018"/>
+</svg>

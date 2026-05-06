@@ -203,7 +203,7 @@
                 <div class="tip-rotator" id="tip-rotator">
                     <!-- Las tarjetas se inyectan por JS; este es el placeholder inicial -->
                     <div class="tip-card active">
-                        <div class="tip-icon"><img src="assets/images/tips/fire.png" alt="" loading="lazy"></div>
+                        <div class="tip-icon"><img src="assets/images/tips/electrodos.svg" alt=""></div>
                         <span class="tip-cat">Soldadura</span>
                         <h3 class="tip-headline">¿Cuál electrodo uso?</h3>
                         <p class="tip-text"><strong>6013</strong> para herrería y muebles. <strong>7018</strong> para estructuras pesadas que aguantan más carga.</p>
@@ -303,27 +303,27 @@
     <!-- ═══════════════ TIPS ROTATIVOS ═══════════════ -->
     <script>
     (function () {
-        const EMOJI_BASE = 'assets/images/tips';
+        const TIPS_BASE = 'assets/images/tips';
         const TIPS = [
-            { img: EMOJI_BASE + '/fire.png',       cat: 'Soldadura',  title: '¿Cuál electrodo uso?',
+            { img: TIPS_BASE + '/electrodos.svg',   cat: 'Soldadura',  title: '¿Cuál electrodo uso?',
               text: '<strong>6013</strong> para herrería y muebles. <strong>7018</strong> para estructuras pesadas que aguantan más carga.' },
-            { img: EMOJI_BASE + '/brick.png',      cat: 'Estructural', title: 'PTR: ¿cuadrado o rectangular?',
+            { img: TIPS_BASE + '/ptr.svg',          cat: 'Estructural', title: 'PTR: ¿cuadrado o rectangular?',
               text: 'Cuadrado para <strong>columnas</strong>. Rectangular para <strong>vigas</strong> que cargan peso encima.' },
-            { img: EMOJI_BASE + '/ruler.png',      cat: 'Lámina', title: '¿Qué calibre escojo?',
+            { img: TIPS_BASE + '/calibre.svg',      cat: 'Lámina', title: '¿Qué calibre escojo?',
               text: 'A mayor número, más delgada la lámina. <strong>Cal. 26</strong> techos · <strong>Cal. 22</strong> fachadas · <strong>Cal. 18</strong> portones.' },
-            { img: EMOJI_BASE + '/paintbrush.png', cat: 'Pintura', title: 'Empieza por el primario',
+            { img: TIPS_BASE + '/primario.svg',     cat: 'Pintura', title: 'Empieza por el primario',
               text: 'Sin <strong>primario anticorrosivo</strong> antes del esmalte, la pintura se cae en pocos meses.' },
-            { img: EMOJI_BASE + '/gear.png',       cat: 'Torno', title: 'Para tornear inox',
+            { img: TIPS_BASE + '/torno.svg',        cat: 'Torno', title: 'Para tornear inox',
               text: 'Usa <strong>buriles de cobalto</strong>. Los buriles normales se queman muy rápido en inox o acero duro.' },
-            { img: EMOJI_BASE + '/droplet.png',    cat: 'Soldadura', title: 'Cuida tus 7018',
+            { img: TIPS_BASE + '/7018-mojado.svg',  cat: 'Soldadura', title: 'Cuida tus 7018',
               text: 'El <strong>7018 mojado</strong> arruina la soldadura. Guárdalo en bolsa sellada o calientito.' },
-            { img: EMOJI_BASE + '/door.png',       cat: 'Herrería', title: 'PTR para portón',
+            { img: TIPS_BASE + '/porton.svg',       cat: 'Herrería', title: 'PTR para portón',
               text: 'Portón <strong>chico</strong>: PTR 1½" cal. 14. Portón <strong>grande</strong>: PTR 2" cal. 12 para que no se chueque.' },
-            { img: EMOJI_BASE + '/cooking.png',    cat: 'Inoxidable', title: 'Inox: ¿304 o 430?',
+            { img: TIPS_BASE + '/inox.svg',         cat: 'Inoxidable', title: 'Inox: ¿304 o 430?',
               text: '<strong>304</strong> para cocinas y donde haya humedad. <strong>430</strong> solo para decorar en lugares secos.' },
-            { img: EMOJI_BASE + '/plug.png',       cat: 'Soldadura', title: '¿Inversora o transformadora?',
+            { img: TIPS_BASE + '/inversora.svg',    cat: 'Soldadura', title: '¿Inversora o transformadora?',
               text: '<strong>Inversora</strong>: ligera, llévala a la obra. <strong>Transformadora</strong>: pesada pero más resistente para taller fijo.' },
-            { img: EMOJI_BASE + '/rain.png',       cat: 'Impermeab.', title: '¿Cuánto dura el imper?',
+            { img: TIPS_BASE + '/imper.svg',        cat: 'Impermeab.', title: '¿Cuánto dura el imper?',
               text: 'Dura los años que dice <strong>solo si la losa está limpia y sin grietas</strong>. Si no, dura la mitad.' }
         ];
 

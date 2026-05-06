@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="losa" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#94a3b8"/>
+      <stop offset="1" stop-color="#475569"/>
+    </linearGradient>
+    <linearGradient id="impCoat" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#DD3B2E"/>
+      <stop offset="1" stop-color="#9a261c"/>
+    </linearGradient>
+    <linearGradient id="dropG2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7dd3fc"/>
+      <stop offset="1" stop-color="#0284c7"/>
+    </linearGradient>
+  </defs>
+  <!-- Lluvia -->
+  <g fill="url(#dropG2)">
+    <path d="M 30 30 q 0 -6 4 -10 q 4 4 4 10 a 4 4 0 0 1 -8 0 z"/>
+    <path d="M 60 20 q 0 -6 4 -10 q 4 4 4 10 a 4 4 0 0 1 -8 0 z"/>
+    <path d="M 95 35 q 0 -6 4 -10 q 4 4 4 10 a 4 4 0 0 1 -8 0 z"/>
+    <path d="M 130 18 q 0 -6 4 -10 q 4 4 4 10 a 4 4 0 0 1 -8 0 z"/>
+    <path d="M 165 30 q 0 -6 4 -10 q 4 4 4 10 a 4 4 0 0 1 -8 0 z"/>
+    <path d="M 45 60 q 0 -6 4 -10 q 4 4 4 10 a 4 4 0 0 1 -8 0 z"/>
+    <path d="M 110 65 q 0 -6 4 -10 q 4 4 4 10 a 4 4 0 0 1 -8 0 z"/>
+    <path d="M 150 65 q 0 -6 4 -10 q 4 4 4 10 a 4 4 0 0 1 -8 0 z"/>
+  </g>
+  <!-- Capa impermeabilizante (encima) -->
+  <rect x="20" y="100" width="160" height="14" rx="2" fill="url(#impCoat)"/>
+  <text x="100" y="111" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="9" fill="#fff" text-anchor="middle">IMPERMEABILIZANTE</text>
+  <!-- Losa -->
+  <rect x="20" y="114" width="160" height="40" fill="url(#losa)"/>
+  <!-- Fisuras (no debe haber) -->
+  <g stroke="#1C2B54" stroke-width="1.5" stroke-dasharray="3,2" opacity=".5">
+    <line x1="55" y1="120" x2="60" y2="150"/>
+    <line x1="120" y1="118" x2="118" y2="148"/>
+  </g>
+  <text x="100" y="140" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="11" fill="#fff" text-anchor="middle">LOSA LIMPIA</text>
+  <!-- Etiqueta -->
+  <g transform="translate(70,165)">
+    <rect width="60" height="22" rx="11" fill="#16a34a"/>
+    <text x="30" y="15" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="11" fill="#fff" text-anchor="middle">DURA AÑOS</text>
+  </g>
+</svg>
