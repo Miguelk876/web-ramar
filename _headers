@@ -1,0 +1,32 @@
+# Netlify Headers — seguridad y caché
+# https://docs.netlify.com/routing/headers/
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.facebook.com https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; img-src 'self' data: https: blob:; connect-src 'self' https:; frame-src https://www.facebook.com https://www.google.com https://maps.google.com; object-src 'none'; base-uri 'self'; form-action 'self' https://formspree.io https://docs.google.com
+
+# Caché agresivo para imágenes
+/assets/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Caché agresivo para favicons
+/favicon-*.png
+  Cache-Control: public, max-age=31536000, immutable
+/apple-touch-icon.png
+  Cache-Control: public, max-age=31536000, immutable
+/android-chrome-*.png
+  Cache-Control: public, max-age=31536000, immutable
+
+# CSS / JS — caché moderado (cambian con cada commit)
+/styles.css
+  Cache-Control: public, max-age=86400, must-revalidate
+/main.js
+  Cache-Control: public, max-age=86400, must-revalidate
+
+# HTML — siempre revalidar (despliegue rápido al hacer push)
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate

@@ -1,33 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>index.html</loc>
+    <loc>https://construacerosramar.netlify.app/</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>nosotros.html</loc>
+    <loc>https://construacerosramar.netlify.app/nosotros.html</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>catalogo.html</loc>
+    <loc>https://construacerosramar.netlify.app/catalogo.html</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>guia.html</loc>
+    <loc>https://construacerosramar.netlify.app/guia.html</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>ubicaciones.html</loc>
+    <loc>https://construacerosramar.netlify.app/ubicaciones.html</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>contacto.html</loc>
+    <loc>https://construacerosramar.netlify.app/contacto.html</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <changefreq>yearly</changefreq>
   </url>
 </urlset>
