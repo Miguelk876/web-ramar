@@ -45,7 +45,12 @@
       "WebFetch(domain:www.ferrekasamexico.com)",
       "WebFetch(domain:www.regiopytsa.com)",
       "WebFetch(domain:www.amazon.com.mx)",
-      "WebFetch(domain:listado.mercadolibre.com.mx)"
+      "WebFetch(domain:listado.mercadolibre.com.mx)",
+      "Bash(python -m http.server 8765)",
+      "Bash(echo \"Server PID: $!\")",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" http://localhost:8765/index.html)",
+      "Bash(curl -s -o /dev/null -w \"CSS HTTP %{http_code}\\\\n\" http://localhost:8765/motel.css)",
+      "Bash(curl -s -o /dev/null -w \"JS HTTP %{http_code}\\\\n\" http://localhost:8765/motel.js)"
     ]
   }
 }
