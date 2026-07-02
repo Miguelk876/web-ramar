@@ -1,7 +1,7 @@
 # Construaceros RAMAR — Sitio web
 
 Sitio de marketing para **Construaceros RAMAR**, distribuidora de acero B2B con 26 años en Oaxaca, México.
-7 sucursales propias activas + 1 próxima apertura + 4 distribuidores autorizados.
+8 sucursales propias activas + 4 distribuidores autorizados.
 
 URL pública: https://construacerosramar.netlify.app
 
@@ -52,10 +52,14 @@ web-ramar/
 ├── assets/images/
 │   ├── logo-horizontal.png # Logo principal usado en navbar/hero/og:image
 │   ├── logo.png            # Logo cube original (uso heredado)
-│   ├── 20260430_*_iOS.jpg  # Fotos reales de tienda y materiales
-│   ├── hero_steel_*.png    # Imagen hero original
+│   ├── 20260430_*_iOS.webp # Fotos reales del almacén (optimizadas WebP, también son fotos de producto)
+│   ├── hero_steel_*.webp   # Imagen hero (optimizada WebP)
+│   ├── nylamid-*.jpg       # Fotos reales del inventario de nylamid
 │   ├── tips/*.svg          # 10 ilustraciones SVG para sección "TIP RAMAR"
 │   └── brands/*.png|svg    # Logos de proveedores (Ternium, PintuMex, etc.)
+│
+├── scripts/
+│   └── verificar.js        # Verificador pre-publicación (node scripts/verificar.js)
 │
 ├── favicon-*.png           # 6 tamaños (16, 32, 48, 180, 192, 512)
 ├── apple-touch-icon.png
@@ -97,22 +101,29 @@ web-ramar/
 
 ## Cómo agregar un producto al catálogo
 
-1. Abre `catalogo.html`, busca el array de productos (~línea 880, después de `const PRODUCTS = [`).
+1. Abre `catalogo.html`, busca el array de productos (después de `const PRODUCTS = [`, ~línea 890).
 2. Copia un objeto producto existente y modifica:
    ```js
-   { id:'mi-producto', cat:'estructural',  // estructural | comercial | pinturas | herramienta | consumibles | herrajes
+   { id:'mi-producto',       // único, en minúsculas-con-guiones
+     cat:'estructural',      // estructural | comercial | especializado | pintura | herramienta | consumibles | herrajes | cerraduras
+     provider:'PROLAMSA',    // opcional: marca/proveedor (sale como badge)
      name:'Nombre del producto',
      tagline:'Descripción corta de una línea',
-     svg:`<svg ... />`,                     // ilustración SVG inline (opcional si hay foto)
-     svgNote:'Nota debajo de la ilustración',
+     svg:`<svg ... />`,      // ilustración SVG inline (opcional si hay foto)
+     svgNote:'Nota debajo de la ilustración/foto',
      specs:[
        {i:'fa-list',     l:'Etiqueta', v:'Valor'},
        {i:'fa-ruler',    l:'Medidas',  v:'1/2", 3/4", 1"'},
      ],
-     wa:'Texto%20URL-encoded%20para%20WhatsApp',
-     photo:'https://url-de-la-foto.jpg' }
+     wa:'Texto%20URL-encoded%20para%20WhatsApp',   // lo que llega al WhatsApp al cotizar
+     photo:'assets/images/mi-foto.webp' }          // foto local (mejor) o URL externa
    ```
-3. Guarda y haz push. Listo.
+3. Si el producto tiene tabla de medidas detallada, agrégala en `TABLE_HTML` (más abajo en el mismo archivo) con el mismo `id`.
+4. **Corre el verificador**: `node scripts/verificar.js` — te avisa si te faltó un campo, duplicaste un id o la foto no existe.
+5. Guarda y haz push. El contador de la categoría, la búsqueda y el modal se actualizan solos.
+
+### Preferir fotos locales
+Sube la foto a `assets/images/` (idealmente `.webp`, máx ~300 KB) y referénciala como `assets/images/foto.webp`. Las URLs externas funcionan pero dependen de que el otro sitio no borre o bloquee la imagen — si eso pasa, se muestra la foto de respaldo automáticamente.
 
 ## Cómo agregar/modificar una sucursal
 
@@ -124,10 +135,20 @@ web-ramar/
 
 ## Cómo cambiar teléfonos / correo
 
-Aparecen en TODAS las páginas (footer copiado). Busca y reemplaza globalmente:
-- Teléfono principal: `9512283263` (también `951 228 3263`)
-- Otros teléfonos: `9515173157`, `9515336831`, `9515336045`, `9515494636`
-- Email: `ramar.matriz@gmail.com`
+Aparecen en TODAS las páginas (navbar y footer copiados). Busca y reemplaza globalmente en los 7 HTML.
+
+⚠️ **Fijo y WhatsApp NO son intercambiables** — usa el ícono y link correcto para cada uno:
+
+| Número | Tipo | Link correcto | Ícono |
+|---|---|---|---|
+| `951 228 3263` (navbar + botón flotante) | WhatsApp | `https://wa.me/5219512283263` | `fa-brands fa-whatsapp` |
+| `951 517 3157` · `951 533 6831` | Fijo Matriz | `tel:9515173157` | `fa-solid fa-phone` |
+| `951 533 6045` · `951 549 4636` | WhatsApp Matriz | `https://wa.me/5219515336045` | `fa-brands fa-whatsapp` |
+| Email | — | `mailto:ramar.matriz@gmail.com` | `fa-solid fa-envelope` |
+
+Los links de WhatsApp llevan `target="_blank" rel="noopener"` para abrir la app.
+
+Después de cambiar, corre `node scripts/verificar.js` para confirmar que navbar/footer siguen consistentes.
 
 ---
 
