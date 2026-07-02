@@ -16,7 +16,13 @@ Vanilla HTML5 + CSS3 + JavaScript — no build, no package manager, no framework
 npx serve .             # or  python -m http.server 8080
 ```
 
-There are no build, lint, or test commands — files are served as-is.
+There is no build — files are served as-is. There IS a pre-publish check script; run it after any change to the catalog, images, or shared chrome:
+
+```bash
+node scripts/verificar.js
+```
+
+It validates: PRODUCTS/TABLE_HTML parse and have no duplicate ids or orphaned table keys, required product fields, every local image reference exists on disk, internal links resolve, navbar/footer consistency, and WhatsApp float presence. Exit code 1 on errors — do not push if it fails.
 
 ## Architecture
 
