@@ -2055,7 +2055,7 @@ function render(query = ''){
     const catBadge = `<span class="pcard-badge badge-cat-${p.cat}">${CAT_NAMES[p.cat]}</span>`;
     const thumbClass = p.photo ? 'pcard-thumb pcard-thumb--photo' : 'pcard-thumb';
     const pos = p.photoPos || 'center center';
-    const thumbContent = p.photo ? `<img src="${p.photo}" alt="${p.name}" class="pcard-photo" loading="lazy" style="object-position:${pos}" onerror="this.onerror=null;this.src='assets/images/steel_beams_1774503028306.png'">` : p.svg;
+    const thumbContent = p.photo ? `<img src="${p.photo}" alt="${p.name}" class="pcard-photo" loading="lazy" style="object-position:${pos}" onerror="this.onerror=null;this.src='assets/images/steel_beams_1774503028306.webp'">` : p.svg;
     return `<div class="pcard" data-cat="${p.cat}" onclick="openModal('${p.id}')">
       <div class="pcard-accent"></div>
       <div class="${thumbClass}">${thumbContent}</div>
@@ -2084,7 +2084,7 @@ function openModal(id){
     <div class="pmodal-accent ${p.cat}"></div>
     <div class="pmodal-inner">
       <div class="pmodal-left">
-        ${p.photo ? `<img src="${p.photo}" alt="${p.name}" class="pmodal-photo" loading="lazy" style="object-position:${p.photoPos||'center center'}" onerror="this.onerror=null;this.src='assets/images/steel_beams_1774503028306.png'">` : p.svg}
+        ${p.photo ? `<img src="${p.photo}" alt="${p.name}" class="pmodal-photo" loading="lazy" style="object-position:${p.photoPos||'center center'}" onerror="this.onerror=null;this.src='assets/images/steel_beams_1774503028306.webp'">` : p.svg}
         <p class="pmodal-svg-note">${p.svgNote}</p>
       </div>
       <div class="pmodal-right">
