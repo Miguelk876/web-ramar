@@ -7,14 +7,15 @@
     <meta name="description" content="Catálogo completo de Construaceros RAMAR: vigas IPR, PTR, polines, láminas, varilla, pinturas y más. Acero estructural, comercial y especializado en Oaxaca.">
     <meta property="og:title" content="Catálogo - Construaceros RAMAR">
     <meta property="og:description" content="Acero comercial, estructural, especializado y pinturas. Todo lo que tu obra necesita.">
-    <meta property="og:image" content="assets/images/logo-horizontal.png">
+    <meta property="og:image" content="https://construacerosramar.netlify.app/assets/images/logo-horizontal.png">
+    <meta property="og:url" content="https://construacerosramar.netlify.app/catalogo.html">
     <link rel="canonical" href="https://construacerosramar.netlify.app/catalogo.html">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Catálogo - Construaceros RAMAR">
     <meta name="twitter:description" content="Acero comercial, estructural, especializado y pinturas. Todo lo que tu obra necesita.">
     <meta name="twitter:image" content="https://construacerosramar.netlify.app/assets/images/logo-horizontal.png">
     <meta property="og:type" content="website">
-        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
@@ -536,125 +537,6 @@
     .cat-menu-top { height: 130px; font-size: 2rem; }
 }
 
-/* ── bottom sheet filtros (móvil) ── */
-.filter-fab {
-    display: none;
-    position: fixed;
-    bottom: 5.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 500;
-    background: var(--color-blue);
-    color: #fff;
-    border: none;
-    border-radius: 50px;
-    padding: .75rem 1.8rem;
-    font-family: var(--font-heading);
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: .5px;
-    cursor: pointer;
-    box-shadow: 0 6px 24px rgba(28,43,84,.35);
-    align-items: center;
-    gap: .6rem;
-    transition: background .2s, transform .2s;
-    white-space: nowrap;
-}
-.filter-fab:active { transform: translateX(-50%) scale(.96); }
-.filter-fab .fab-badge {
-    background: var(--color-yellow);
-    color: #fff;
-    font-size: .72rem;
-    padding: .1rem .5rem;
-    border-radius: 999px;
-    font-weight: 800;
-    display: none;
-}
-.filter-fab .fab-badge.visible { display: inline; }
-
-.bs-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,.45);
-    z-index: 600;
-    opacity: 0;
-    transition: opacity .25s;
-}
-.bs-overlay.open { display: block; opacity: 1; }
-
-.bottom-sheet {
-    position: fixed;
-    bottom: 0; left: 0; right: 0;
-    background: #fff;
-    border-radius: 20px 20px 0 0;
-    z-index: 700;
-    padding: 1.25rem 1.25rem 2.5rem;
-    transform: translateY(100%);
-    transition: transform .3s cubic-bezier(.32,1.01,.6,1);
-    box-shadow: 0 -8px 40px rgba(0,0,0,.18);
-}
-.bottom-sheet.open { transform: translateY(0); }
-.bs-handle {
-    width: 40px; height: 5px;
-    background: #cbd5e1;
-    border-radius: 999px;
-    margin: 0 auto 1.2rem;
-}
-.bs-title {
-    font-family: var(--font-heading);
-    font-size: 1.1rem;
-    color: var(--color-blue);
-    text-transform: uppercase;
-    letter-spacing: .5px;
-    margin-bottom: 1.1rem;
-    text-align: center;
-}
-.bs-cats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: .75rem;
-}
-.bs-cat-btn {
-    display: flex;
-    align-items: center;
-    gap: .75rem;
-    padding: 1rem 1.1rem;
-    border: 2px solid #e2e8f0;
-    border-radius: 14px;
-    background: #f8fafc;
-    font-family: var(--font-body);
-    font-size: .97rem;
-    font-weight: 600;
-    color: #334155;
-    cursor: pointer;
-    transition: all .18s;
-    text-align: left;
-}
-.bs-cat-btn i { font-size: 1.3rem; width: 1.5rem; text-align: center; }
-.bs-cat-btn[data-cat="all"]          { grid-column: 1 / -1; justify-content: center; font-size: 1.05rem; }
-.bs-cat-btn[data-cat="all"] i        { color: var(--color-blue); }
-.bs-cat-btn[data-cat="estructural"] i{ color: #1e40af; }
-.bs-cat-btn[data-cat="comercial"] i  { color: #15803d; }
-.bs-cat-btn[data-cat="especializado"] i{ color: #7e22ce; }
-.bs-cat-btn[data-cat="pintura"] i    { color: #c2410c; }
-.bs-cat-btn[data-cat="herramienta"] i{ color: #b45309; }
-.bs-cat-btn[data-cat="herrajes"] i    { color: #0f766e; }
-.bs-cat-btn.active {
-    border-color: var(--color-blue);
-    background: #eff6ff;
-    color: var(--color-blue);
-}
-.bs-cat-btn[data-cat="estructural"].active  { border-color:#1e40af; background:#eff6ff; color:#1e40af; }
-.bs-cat-btn[data-cat="comercial"].active    { border-color:#15803d; background:#f0fdf4; color:#15803d; }
-.bs-cat-btn[data-cat="especializado"].active{ border-color:#7e22ce; background:#faf5ff; color:#7e22ce; }
-.bs-cat-btn[data-cat="pintura"].active      { border-color:#c2410c; background:#fff7ed; color:#c2410c; }
-.bs-cat-btn[data-cat="herramienta"].active  { border-color:#b45309; background:#fffbeb; color:#b45309; }
-.bs-cat-btn[data-cat="herrajes"].active     { border-color:#0f766e; background:#f0fdfa; color:#0f766e; }
-.bs-cat-btn[data-cat="cerraduras"] i        { color: #be185d; }
-.bs-cat-btn[data-cat="cerraduras"].active   { border-color:#be185d; background:#fdf2f8; color:#be185d; }
-.bs-cat-btn[data-cat="consumibles"] i       { color: #dc2626; }
-.bs-cat-btn[data-cat="consumibles"].active  { border-color:#dc2626; background:#fef2f2; color:#dc2626; }
 
 /* ── responsive ── */
 @media (max-width: 1100px) { .product-grid-explorer { grid-template-columns: repeat(2,1fr); } }
@@ -668,7 +550,6 @@
     .pmodal-specs { grid-template-columns: 1fr; }
     /* Ocultar tabs, mostrar FAB */
     .cat-tab-bar { display: none; }
-    .filter-fab  { display: inline-flex; }
     .cat-filters .container { padding: 0 1rem; }
     .cat-search-box { max-width: 100%; flex: 1; }
 }
@@ -686,7 +567,7 @@
             <a href="index.html"><img src="assets/images/logo-horizontal.png" alt="Construaceros RAMAR Logo"></a>
         </div>
         <nav>
-            <ul class="nav-links">
+            <ul class="nav-links" id="nav-principal">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="nosotros.html">Nosotros</a></li>
                 <li><a href="catalogo.html" style="color:var(--color-red);">Catálogo</a></li>
@@ -696,7 +577,7 @@
         </nav>
         <a href="https://wa.me/5219512283263" target="_blank" rel="noopener" class="navbar-phone" aria-label="Cotiza por WhatsApp al 951 228 3263"><i class="fa-brands fa-whatsapp"></i> 951 228 3263</a>
         <a href="contacto.html" class="btn-primary contact-btn">Contacto</a>
-        <div class="hamburger"><div class="line"></div><div class="line"></div><div class="line"></div></div>
+        <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-principal"><div class="line"></div><div class="line"></div><div class="line"></div></button>
     </header>
 
     <main id="main">
@@ -816,20 +697,6 @@
         </div>
     </section>
 
-    <div class="bs-overlay" id="bs-overlay"></div>
-    <div class="bottom-sheet" id="bottom-sheet" role="dialog" aria-modal="true" aria-label="Filtrar por categoría">
-        <div class="bs-handle"></div>
-        <div class="bs-title"><i class="fa-solid fa-sliders"></i> Selecciona una categoría</div>
-        <div class="bs-cats">
-            <button class="bs-cat-btn active" data-cat="all"><i class="fa-solid fa-border-all"></i> Todos los productos</button>
-            <button class="bs-cat-btn" data-cat="estructural"><i class="fa-solid fa-building-columns"></i> Estructural</button>
-            <button class="bs-cat-btn" data-cat="comercial"><i class="fa-solid fa-helmet-safety"></i> Comercial</button>
-            <button class="bs-cat-btn" data-cat="especializado"><i class="fa-solid fa-gear"></i> Especializado</button>
-            <button class="bs-cat-btn" data-cat="pintura"><i class="fa-solid fa-fill-drip"></i> Pintura</button>
-            <button class="bs-cat-btn" data-cat="herramienta"><i class="fa-solid fa-screwdriver-wrench"></i> Herramienta</button>
-        </div>
-    </div>
-
     <!-- ══ MODAL ══ -->
     <div class="pmodal-overlay" id="pmodal-overlay">
         <div class="pmodal" id="pmodal">
@@ -864,7 +731,7 @@
                 <p><i class="fa-brands fa-whatsapp" style="color:#25D366;"></i> <a href="https://wa.me/5219515336045" target="_blank" rel="noopener" style="color:#cbd5e1;text-decoration:none;">951 533 6045</a> · <a href="https://wa.me/5219515494636" target="_blank" rel="noopener" style="color:#cbd5e1;text-decoration:none;">951 549 4636</a></p>
                 <p><i class="fa-solid fa-envelope"></i> ramar.matriz@gmail.com</p>
                 <div class="social-icons">
-                    <a href="https://facebook.com/construacerosramar.oficial" target="_blank" class="social-link fb" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://facebook.com/ConstruacerosRamarOficial" target="_blank" class="social-link fb" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
                     <a href="https://instagram.com/ramar.oficial" target="_blank" class="social-link ig" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://tiktok.com/@ramar.oficial" target="_blank" class="social-link tk" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
                 </div>
@@ -914,19 +781,19 @@ const PRODUCTS = [
   { id:'ptr-c', cat:'estructural', provider:'PROLAMSA',
     name:'PTR Cuadrado',
     tagline:'Tubo estructural cuadrado — la base de la herrería metálica. Pregunta por el calibre, no por el código de serie.',
-    svg:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 200"><rect x="20" y="28" width="130" height="130" fill="none" stroke="#1C2B54" stroke-width="6" rx="5"/><rect x="42" y="50" width="86" height="86" fill="none" stroke="#1C2B54" stroke-width="5" rx="4"/><rect x="64" y="72" width="42" height="42" fill="none" stroke="#1C2B54" stroke-width="4" rx="3"/><rect x="76" y="84" width="18" height="18" fill="#1C2B54" rx="2"/><line x1="150" y1="28" x2="175" y2="16" stroke="#94A3B8" stroke-width="1"/><text x="177" y="17" fill="#1C2B54" font-family="Inter,sans-serif" font-size="9" dominant-baseline="middle">C-600 · 6″</text><line x1="128" y1="50" x2="175" y2="36" stroke="#94A3B8" stroke-width="1"/><text x="177" y="37" fill="#1C2B54" font-family="Inter,sans-serif" font-size="9" dominant-baseline="middle">C-400 · 4″</text><line x1="106" y1="72" x2="175" y2="58" stroke="#94A3B8" stroke-width="1"/><text x="177" y="59" fill="#1C2B54" font-family="Inter,sans-serif" font-size="9" dominant-baseline="middle">C-200 · 2″</text><line x1="85" y1="84" x2="175" y2="100" stroke="#94A3B8" stroke-width="1"/><text x="177" y="101" fill="#1C2B54" font-family="Inter,sans-serif" font-size="9" dominant-baseline="middle">C-050 · ½″</text><text x="85" y="188" text-anchor="middle" fill="#F08018" font-family="Oswald,sans-serif" font-size="12" font-weight="600">PTR CUADRADO · SERIE C</text></svg>`,
+    svg:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 200"><rect x="20" y="28" width="130" height="130" fill="none" stroke="#1C2B54" stroke-width="6" rx="5"/><rect x="42" y="50" width="86" height="86" fill="none" stroke="#1C2B54" stroke-width="5" rx="4"/><rect x="64" y="72" width="42" height="42" fill="none" stroke="#1C2B54" stroke-width="4" rx="3"/><rect x="76" y="84" width="18" height="18" fill="#1C2B54" rx="2"/><line x1="150" y1="28" x2="175" y2="16" stroke="#94A3B8" stroke-width="1"/><text x="177" y="17" fill="#1C2B54" font-family="Inter,sans-serif" font-size="9" dominant-baseline="middle">6″</text><line x1="128" y1="50" x2="175" y2="36" stroke="#94A3B8" stroke-width="1"/><text x="177" y="37" fill="#1C2B54" font-family="Inter,sans-serif" font-size="9" dominant-baseline="middle">4″</text><line x1="106" y1="72" x2="175" y2="58" stroke="#94A3B8" stroke-width="1"/><text x="177" y="59" fill="#1C2B54" font-family="Inter,sans-serif" font-size="9" dominant-baseline="middle">2″</text><line x1="85" y1="84" x2="175" y2="100" stroke="#94A3B8" stroke-width="1"/><text x="177" y="101" fill="#1C2B54" font-family="Inter,sans-serif" font-size="9" dominant-baseline="middle">½″</text><text x="85" y="188" text-anchor="middle" fill="#F08018" font-family="Oswald,sans-serif" font-size="12" font-weight="600">PTR CUADRADO</text></svg>`,
     svgNote:'½" hasta 6" · Cal. 11 principalmente; cal. 12, 14 y 16 en dos medidas · Todos 6 m · Pintado / Galvanizado',
     specs:[
       {i:'fa-ruler',     l:'Tamaños',  v:'½" hasta 6" — pregunta por la medida'},
       {i:'fa-layer-group',l:'Calibres',v:'Cal. 11 (principal) · Cal. 12, 14 y 16 en dos medidas · Largo 6 m'},
       {i:'fa-building',  l:'Usos',     v:'Portones, marcos, columnas, muebles metálicos'},
       {i:'fa-lightbulb', l:'Tip',      v:'1½" y 2" los más populares en herrería residencial'}
-    ], wa:'PTR%20Cuadrado%20Serie%20C', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/PTR-Cuadrado-scaled.jpg' },
+    ], wa:'PTR%20Cuadrado', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/PTR-Cuadrado-scaled.jpg' },
 
   { id:'ptr-r', cat:'estructural', provider:'PROLAMSA',
     name:'PTR Rectangular',
     tagline:'Tubo rectangular de uso estructural — el calibre 11 es el más utilizado en estructuras.',
-    svg:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 190"><rect x="10" y="58" width="142" height="72" fill="none" stroke="#1C2B54" stroke-width="5.5" rx="5"/><rect x="44" y="68" width="74" height="52" fill="none" stroke="#1C2B54" stroke-width="4" rx="4"/><rect x="56" y="76" width="52" height="36" fill="none" stroke="#1C2B54" stroke-width="3" rx="3"/><rect x="66" y="86" width="32" height="16" fill="none" stroke="#1C2B54" stroke-width="2.5" rx="2"/><rect x="74" y="90" width="16" height="8" fill="#1C2B54" rx="1"/><line x1="152" y1="58" x2="175" y2="44" stroke="#94A3B8" stroke-width="1"/><text x="177" y="45" fill="#1C2B54" font-family="Inter,sans-serif" font-size="9" dominant-baseline="middle">R-804 · 8×4″</text><line x1="118" y1="68" x2="175" y2="62" stroke="#94A3B8" stroke-width="1"/><text x="177" y="63" fill="#1C2B54" font-family="Inter,sans-serif" font-size="9" dominant-baseline="middle">R-403 · 4×3″</text><line x1="82" y1="90" x2="175" y2="110" stroke="#94A3B8" stroke-width="1"/><text x="177" y="111" fill="#1C2B54" font-family="Inter,sans-serif" font-size="9" dominant-baseline="middle">R-100 · 1×½″</text><text x="80" y="180" text-anchor="middle" fill="#F08018" font-family="Oswald,sans-serif" font-size="12" font-weight="600">PTR RECTANGULAR · SERIE R</text></svg>`,
+    svg:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 190"><rect x="10" y="58" width="142" height="72" fill="none" stroke="#1C2B54" stroke-width="5.5" rx="5"/><rect x="44" y="68" width="74" height="52" fill="none" stroke="#1C2B54" stroke-width="4" rx="4"/><rect x="56" y="76" width="52" height="36" fill="none" stroke="#1C2B54" stroke-width="3" rx="3"/><rect x="66" y="86" width="32" height="16" fill="none" stroke="#1C2B54" stroke-width="2.5" rx="2"/><rect x="74" y="90" width="16" height="8" fill="#1C2B54" rx="1"/><line x1="152" y1="58" x2="175" y2="44" stroke="#94A3B8" stroke-width="1"/><text x="177" y="45" fill="#1C2B54" font-family="Inter,sans-serif" font-size="9" dominant-baseline="middle">8×4″</text><line x1="118" y1="68" x2="175" y2="62" stroke="#94A3B8" stroke-width="1"/><text x="177" y="63" fill="#1C2B54" font-family="Inter,sans-serif" font-size="9" dominant-baseline="middle">4×3″</text><line x1="82" y1="90" x2="175" y2="110" stroke="#94A3B8" stroke-width="1"/><text x="177" y="111" fill="#1C2B54" font-family="Inter,sans-serif" font-size="9" dominant-baseline="middle">1×½″</text><text x="80" y="180" text-anchor="middle" fill="#F08018" font-family="Oswald,sans-serif" font-size="12" font-weight="600">PTR RECTANGULAR</text></svg>`,
     svgNote:'1"×½" hasta 8"×4" · Cal. 11, 14 y 16 · Largo 6 m · Pintado / Galvanizado',
     specs:[
       {i:'fa-ruler',      l:'Tamaños',  v:'1"×½" hasta 8"×4" — pregunta por medida'},
@@ -1011,7 +878,7 @@ const PRODUCTS = [
   { id:'lamina-pintro', cat:'comercial',
     name:'Lámina Prepintada',
     tagline:'Lámina de acero prepintada en colores para techado arquitectónico y fachadas.',
-    svg:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 148"><rect x="8" y="20" width="244" height="70" rx="3" fill="#DD3B2E" opacity=".85"/><rect x="8" y="88" width="244" height="8" fill="#1C2B54" opacity=".4"/><text x="130" y="75" text-anchor="middle" fill="white" font-family="Oswald,sans-serif" font-size="13" font-weight="700">PINTRO — COLORES</text><text x="120" y="114" text-anchor="middle" fill="#F08018" font-family="Oswald,sans-serif" font-size="12" font-weight="600">LÁMINA PREPINTADA</text><text x="120" y="130" text-anchor="middle" fill="#64748B" font-family="Inter,sans-serif" font-size="8">Rojo · Azul · Verde · Beige · Blanco · Cal. 24–30</text></svg>`,
+    svg:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 148"><rect x="8" y="20" width="244" height="70" rx="3" fill="#DD3B2E" opacity=".85"/><rect x="8" y="88" width="244" height="8" fill="#1C2B54" opacity=".4"/><text x="130" y="75" text-anchor="middle" fill="white" font-family="Oswald,sans-serif" font-size="13" font-weight="700">PINTRO — ROJO</text><text x="120" y="114" text-anchor="middle" fill="#F08018" font-family="Oswald,sans-serif" font-size="12" font-weight="600">LÁMINA PREPINTADA</text><text x="120" y="130" text-anchor="middle" fill="#64748B" font-family="Inter,sans-serif" font-size="8">Solo Rojo · Cal. 24–30</text></svg>`,
     svgNote:'Solo color Rojo · Cal. 24–30 · 3 y 4 pies · Galvanizada base',
     specs:[
       {i:'fa-palette',  l:'Color',     v:'Solo Rojo (único color disponible)'},
@@ -1035,14 +902,14 @@ const PRODUCTS = [
   { id:'lamina-hr', cat:'comercial',
     name:'Lámina Negra',
     tagline:'Lámina lisa de acero negro para placas, refuerzos y manufactura. No se dobla ni se corta.',
-    svg:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 150"><rect x="18" y="30" width="224" height="60" fill="#374151" rx="3"/><line x1="18" y1="50" x2="242" y2="50" stroke="#4B5563" stroke-width="1.5"/><line x1="18" y1="70" x2="242" y2="70" stroke="#4B5563" stroke-width="1.5"/><text x="130" y="67" text-anchor="middle" fill="#94A3B8" font-family="Inter,sans-serif" font-size="9" font-weight="600">LÁMINA NEGRA · HOT ROLLED</text><text x="130" y="108" text-anchor="middle" fill="#F08018" font-family="Oswald,sans-serif" font-size="12" font-weight="600">ROLADA EN CALIENTE HR</text><text x="130" y="123" text-anchor="middle" fill="#64748B" font-family="Inter,sans-serif" font-size="8">Cal. 10–14 · Formatos 4'×8' · A-36 / Grado 50</text></svg>`,
-    svgNote:'Calibres 10–14 · Formatos 4\'×8\' y 4\'×10\' · Grados A-36 y ASTM A572 Gr-50',
+    svg:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 150"><rect x="18" y="30" width="224" height="60" fill="#374151" rx="3"/><line x1="18" y1="50" x2="242" y2="50" stroke="#4B5563" stroke-width="1.5"/><line x1="18" y1="70" x2="242" y2="70" stroke="#4B5563" stroke-width="1.5"/><text x="130" y="67" text-anchor="middle" fill="#94A3B8" font-family="Inter,sans-serif" font-size="9" font-weight="600">LÁMINA NEGRA</text><text x="130" y="108" text-anchor="middle" fill="#F08018" font-family="Oswald,sans-serif" font-size="12" font-weight="600">LÁMINA NEGRA</text><text x="130" y="123" text-anchor="middle" fill="#64748B" font-family="Inter,sans-serif" font-size="8">Cal. 14–26 · Formatos 4'×8' y 4'×10'</text></svg>`,
+    svgNote:'Calibres 14, 16, 18, 20, 22, 24 y 26 · Formatos 4\'×8\' y 4\'×10\' · No se dobla ni se corta',
     specs:[
-      {i:'fa-layer-group',  l:'Calibres',     v:'Cal. 10 (3.4 mm) · 11 (3.0 mm) · 12 (2.7 mm) · 14 (1.9 mm)'},
+      {i:'fa-layer-group',  l:'Calibres',     v:'14, 16, 18, 20, 22, 24 y 26'},
       {i:'fa-expand',       l:'Formatos',     v:'4\'×8\' (1.22×2.44 m) · 4\'×10\' (1.22×3.05 m)'},
-      {i:'fa-certificate',  l:'Grado',        v:'A-36 (Fy=36 ksi) · ASTM A572 Grado 50'},
+      {i:'fa-building',     l:'Usos',         v:'Placas base, refuerzos, manufactura general'},
       {i:'fa-lightbulb',    l:'Tip',          v:'Base para placas, refuerzos y corte con plasma; no requiere imprimante inmediato'}
-    ], wa:'L%C3%A1mina%20HR', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Lamina-Caliente-scaled.jpg' },
+    ], wa:'L%C3%A1mina%20Negra', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Lamina-Caliente-scaled.jpg' },
 
   { id:'malla', cat:'comercial',
     name:'Malla Electrosoldada',
@@ -1071,13 +938,13 @@ const PRODUCTS = [
   { id:'lamina-galvanizada', cat:'comercial',
     name:'Lámina Galvanizada Lisa',
     tagline:'Acero galvanizado para hojalatería, HVAC y trabajos generales.',
-    svg:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 150"><rect x="18" y="24" width="224" height="11" fill="#94A3B8" rx="2"/><text x="130" y="33" text-anchor="middle" fill="white" font-family="Inter,sans-serif" font-size="7" font-weight="600">ZINC G-60</text><rect x="18" y="35" width="224" height="44" fill="#1C2B54" rx="1"/><text x="130" y="61" text-anchor="middle" fill="white" font-family="Inter,sans-serif" font-size="10" font-weight="600">ACERO BASE</text><rect x="18" y="79" width="224" height="11" fill="#94A3B8" rx="2"/><text x="130" y="88" text-anchor="middle" fill="white" font-family="Inter,sans-serif" font-size="7" font-weight="600">ZINC G-60</text><text x="130" y="112" text-anchor="middle" fill="#F08018" font-family="Oswald,sans-serif" font-size="12" font-weight="600">LÁMINA GALVANIZADA LISA</text><text x="130" y="127" text-anchor="middle" fill="#64748B" font-family="Inter,sans-serif" font-size="8">Cal. 14 a 26 · G-60 · Formatos 3'×8' a 4'×10'</text></svg>`,
+    svg:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 150"><rect x="18" y="24" width="224" height="11" fill="#94A3B8" rx="2"/><text x="130" y="33" text-anchor="middle" fill="white" font-family="Inter,sans-serif" font-size="7" font-weight="600">ZINC G-45</text><rect x="18" y="35" width="224" height="44" fill="#1C2B54" rx="1"/><text x="130" y="61" text-anchor="middle" fill="white" font-family="Inter,sans-serif" font-size="10" font-weight="600">ACERO BASE</text><rect x="18" y="79" width="224" height="11" fill="#94A3B8" rx="2"/><text x="130" y="88" text-anchor="middle" fill="white" font-family="Inter,sans-serif" font-size="7" font-weight="600">ZINC G-45</text><text x="130" y="112" text-anchor="middle" fill="#F08018" font-family="Oswald,sans-serif" font-size="12" font-weight="600">LÁMINA GALVANIZADA LISA</text><text x="130" y="127" text-anchor="middle" fill="#64748B" font-family="Inter,sans-serif" font-size="8">Cal. 14 a 26 · G-45 · Formatos 3'×8' a 4'×10'</text></svg>`,
     svgNote:'Cal. 14, 16, 18, 20, 22, 24, 26 · G-45 · Formatos 3′×8′, 3′×10′, 4′×8′, 4′×10′',
     specs:[
       {i:'fa-ruler',    l:'Calibres', v:'Cal. 14, 16, 18, 20, 22, 24, 26'},
       {i:'fa-expand',   l:'Formatos', v:'3′×8′, 3′×10′, 4′×8′, 4′×10′'},
       {i:'fa-building', l:'Usos',     v:'Muebles metálicos, estantería, HVAC, canalones'},
-      {i:'fa-lightbulb',l:'Tip',      v:'G-60 resiste corrosión sin pintura; supera a la lámina fría en exteriores'}
+      {i:'fa-lightbulb',l:'Tip',      v:'El galvanizado resiste corrosión sin pintura adicional'}
     ], wa:'L%C3%A1mina%20Galvanizada', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Lamina-Galvanizada-Lisa-Serviacero-Comercial.jpg' },
 
   { id:'lamina-fria', cat:'comercial',
@@ -1130,7 +997,7 @@ const PRODUCTS = [
 
   { id:'tablero-portones', cat:'comercial', provider:'',
     name:'Tablero para Portones',
-    tagline:'Lámina troquelada con rib horizontal para portones y puertas. Series 147, 148 y 149.',
+    tagline:'Lámina troquelada modelo 170 para portones y canceles. Anchos de 2 a 10 pulgadas.',
     svg:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 185"><rect x="18" y="14" width="224" height="152" fill="#EEF2FF" rx="4" stroke="#e2e8f0" stroke-width="1"/><rect x="18" y="36" width="224" height="17" fill="#1C2B54" rx="2"/><rect x="18" y="73" width="224" height="17" fill="#1C2B54" rx="2"/><rect x="18" y="110" width="224" height="17" fill="#1C2B54" rx="2"/><rect x="18" y="147" width="224" height="17" fill="#1C2B54" rx="2"/><text x="130" y="176" text-anchor="middle" fill="#F08018" font-family="Oswald,sans-serif" font-size="12" font-weight="600">TABLERO PARA PORTONES</text></svg>`,
     svgNote:'Modelo 170 · Cal. 22 · Anchos 2, 4, 6, 8 y 10 pulgadas · Galvanizado o Negro · Sin corte a medida',
     specs:[
@@ -1234,27 +1101,27 @@ const PRODUCTS = [
     svgNote:'D.E. 1″ hasta 10″ · Diferentes cédulas y espesores · Para torneado',
     specs:[
       {i:'fa-ruler',    l:'Diámetros', v:'D.E. 1" hasta 10" o más'},
-      {i:'fa-layer-group',l:'Espesores',v:'Múltiples cédulas para torneado'},
+      {i:'fa-layer-group',l:'Pared',v:'Se maneja en milímetros — la pared cambia según la medida (sin cédulas)'},
       {i:'fa-building', l:'Usos',      v:'Bujes, rodillos, pernos huecos, camisas hidráulicas'},
       {i:'fa-lightbulb',l:'Tip',       v:'Para presión hidráulica, preferir aleaciones tratadas (ST-52)'}
     ], wa:'Barra%20Hueca', photo:'assets/images/20260430_182659213_iOS.webp' },
 
   { id:'nylamid', cat:'especializado',
     name:'Nylamid — Plástico de Ingeniería',
-    tagline:'Barras y placas de nylón MC6 autolubricado para piezas de deslizamiento.',
-    svg:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 178"><circle cx="72" cy="84" r="60" fill="#2A3C72"/><text x="72" y="88" text-anchor="middle" fill="white" font-family="Oswald,sans-serif" font-size="12" font-weight="600">BARRA</text><text x="72" y="104" text-anchor="middle" fill="#CBD5E1" font-family="Inter,sans-serif" font-size="9">½″ – 12″ Ø</text><rect x="148" y="38" width="100" height="92" fill="#2A3C72" rx="4"/><text x="198" y="84" text-anchor="middle" fill="white" font-family="Oswald,sans-serif" font-size="11" font-weight="600">PLACA</text><text x="198" y="99" text-anchor="middle" fill="#CBD5E1" font-family="Inter,sans-serif" font-size="9">¼″ – 3″+ esp.</text><text x="130" y="168" text-anchor="middle" fill="#F08018" font-family="Oswald,sans-serif" font-size="12" font-weight="600">NYLAMID</text></svg>`,
-    svgNote:'Barras ½" a 12" Ø · Placas ¼" a 3"+ · Nylon autolubricado (G) / regular (M)',
+    tagline:'Barras y placas de nylamid blanco para piezas de deslizamiento. Barras hasta 8" de diámetro.',
+    svg:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 178"><circle cx="72" cy="84" r="60" fill="#2A3C72"/><text x="72" y="88" text-anchor="middle" fill="white" font-family="Oswald,sans-serif" font-size="12" font-weight="600">BARRA</text><text x="72" y="104" text-anchor="middle" fill="#CBD5E1" font-family="Inter,sans-serif" font-size="9">½″ – 8″ Ø</text><rect x="148" y="38" width="100" height="92" fill="#2A3C72" rx="4"/><text x="198" y="84" text-anchor="middle" fill="white" font-family="Oswald,sans-serif" font-size="11" font-weight="600">PLACA</text><text x="198" y="99" text-anchor="middle" fill="#CBD5E1" font-family="Inter,sans-serif" font-size="9">½″ – 1″ esp.</text><text x="130" y="168" text-anchor="middle" fill="#F08018" font-family="Oswald,sans-serif" font-size="12" font-weight="600">NYLAMID</text></svg>`,
+    svgNote:'Barras hasta 8" Ø · Placas ½", ¾" y 1" (60×60 cm) · Solo Nylamid blanco normal',
     specs:[
-      {i:'fa-ruler',    l:'Barras',  v:'½" a 12" de diámetro'},
-      {i:'fa-expand',   l:'Placas',  v:'¼" a más de 3" de espesor'},
+      {i:'fa-ruler',    l:'Barras',  v:'Hasta 8" de diámetro'},
+      {i:'fa-expand',   l:'Placas',  v:'½", ¾" y 1" · Tamaño 60 × 60 cm'},
       {i:'fa-building', l:'Usos',    v:'Poleas, rodillos, engranajes silenciosos, guías'},
-      {i:'fa-lightbulb',l:'Tip',     v:'Fricción sin grasa: pedir Nylamid autolubricado (G)'}
+      {i:'fa-lightbulb',l:'Tip',     v:'Solo manejamos Nylamid blanco normal (sin autolubricado)'}
     ], wa:'Nylamid', photo:'assets/images/nylamid-rack.jpg' },
 
   { id:'acero-maquinaria', cat:'especializado',
     name:'Acero Grado Maquinaria',
     tagline:'Redondos y hexagonales 1018, 1045 y 4140 para piezas de precisión industrial.',
-    svg:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 178"><circle cx="72" cy="84" r="56" fill="#1C2B54"/><text x="72" y="80" text-anchor="middle" fill="white" font-family="Oswald,sans-serif" font-size="11" font-weight="600">REDONDO</text><text x="72" y="95" text-anchor="middle" fill="#CBD5E1" font-family="Inter,sans-serif" font-size="9">¼″ – 10″ Ø</text><polygon points="198,32 232,52 232,112 198,132 164,112 164,52" fill="#1C2B54"/><text x="198" y="80" text-anchor="middle" fill="white" font-family="Oswald,sans-serif" font-size="11" font-weight="600">HEXAG.</text><text x="198" y="95" text-anchor="middle" fill="#CBD5E1" font-family="Inter,sans-serif" font-size="9">¼″–3″ A/C</text><text x="130" y="158" text-anchor="middle" fill="#F08018" font-family="Oswald,sans-serif" font-size="10" font-weight="600">1018 · 1045 · 4140</text><text x="130" y="172" text-anchor="middle" fill="#F08018" font-family="Oswald,sans-serif" font-size="11" font-weight="600">ACERO GRADO MAQUINARIA</text></svg>`,
+    svg:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 178"><circle cx="72" cy="84" r="56" fill="#1C2B54"/><text x="72" y="80" text-anchor="middle" fill="white" font-family="Oswald,sans-serif" font-size="11" font-weight="600">REDONDO</text><text x="72" y="95" text-anchor="middle" fill="#CBD5E1" font-family="Inter,sans-serif" font-size="9">¼″ – 10″ Ø</text><polygon points="198,32 232,52 232,112 198,132 164,112 164,52" fill="#1C2B54"/><text x="198" y="80" text-anchor="middle" fill="white" font-family="Oswald,sans-serif" font-size="11" font-weight="600">HEXAG.</text><text x="198" y="95" text-anchor="middle" fill="#CBD5E1" font-family="Inter,sans-serif" font-size="9">hasta 1½″ A/C</text><text x="130" y="158" text-anchor="middle" fill="#F08018" font-family="Oswald,sans-serif" font-size="10" font-weight="600">1018 · 1045 · 4140</text><text x="130" y="172" text-anchor="middle" fill="#F08018" font-family="Oswald,sans-serif" font-size="11" font-weight="600">ACERO GRADO MAQUINARIA</text></svg>`,
     svgNote:'1018 (soldable) · 1045 (templable) · 4140 (alta tensión) · ¼" a 10"',
     specs:[
       {i:'fa-ruler',      l:'Geometrías', v:'Redondo y hexagonal · ¼" a 10"'},
@@ -1379,14 +1246,14 @@ const PRODUCTS = [
   /* ── PINTURA ─────────────────────────────────── */
   { id:'pintura-vinil', cat:'pintura', provider:'PintuMex',
     name:'Pinturas Vinílicas y Acrílicas',
-    tagline:'Vinílicas y acrílicas (Supervin, Acapulco, OMAR, Clasika, Vinet, Kolortex) para muros interiores, exteriores y acabados lavables.',
+    tagline:'Vinílicas y acrílicas (SUPERVIN, OMAR, VINET, KOLORTEX, CH14) para muros interiores, exteriores y acabados lavables. Sobre pedido.',
     svg:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 180"><rect x="14" y="78" width="42" height="66" fill="#1C2B54" rx="4"/><rect x="16" y="66" width="38" height="14" fill="#2A3C72" rx="3"/><rect x="21" y="62" width="28" height="6" fill="#64748B" rx="2"/><text x="35" y="116" text-anchor="middle" fill="white" font-family="Oswald,sans-serif" font-size="10" font-weight="600">1 L</text><rect x="78" y="68" width="62" height="76" fill="#1C2B54" rx="4"/><rect x="81" y="54" width="56" height="16" fill="#2A3C72" rx="3"/><rect x="90" y="48" width="40" height="8" fill="#64748B" rx="2"/><text x="109" y="112" text-anchor="middle" fill="white" font-family="Oswald,sans-serif" font-size="11" font-weight="600">4 L</text><rect x="164" y="48" width="78" height="96" fill="#1C2B54" rx="6"/><rect x="168" y="34" width="70" height="16" fill="#2A3C72" rx="3"/><rect x="181" y="26" width="44" height="10" fill="#64748B" rx="2"/><text x="203" y="100" text-anchor="middle" fill="white" font-family="Oswald,sans-serif" font-size="12" font-weight="600">19 L</text><text x="130" y="172" text-anchor="middle" fill="#F08018" font-family="Oswald,sans-serif" font-size="11" font-weight="600">PINTURA VINÍLICA / ACRÍLICA</text></svg>`,
     svgNote:'Líneas que trabajamos: SUPERVIN · OMAR · VINET · KOLORTEX · CH14 (sobre pedido, sin entrega inmediata)',
     specs:[
       {i:'fa-ruler',      l:'Presentaciones', v:'1 L · 4 L (galón) · 19 L (cubeta)'},
       {i:'fa-list-ul',    l:'Líneas',         v:'SUPERVIN · OMAR · VINET · KOLORTEX · CH14'},
       {i:'fa-truck',      l:'Disponibilidad', v:'Sobre pedido — no hay entrega inmediata'},
-      {i:'fa-list',       l:'Líneas',         v:'Supervin · Acapulco · OMAR · VIP · Clasika · Vinet · Kolortex · CH14'},
+      {i:'fa-list',       l:'Líneas',         v:'SUPERVIN · OMAR · VINET · KOLORTEX · CH14'},
       {i:'fa-building',   l:'Usos',           v:'Muros, plafones, tablaroca, fachadas'},
       {i:'fa-lightbulb',  l:'Tip',            v:'Diluir máx. 10–15%; usar sellador vinílico primero'}
     ], wa:'Pinturas%20Vin%C3%ADlicas%20y%20Acr%C3%ADlicas', photo:'https://pintumex.com.mx/wp-content/uploads/Mock-Up-2025-Supervin-Frente-19-L.png' },
@@ -1679,8 +1546,8 @@ const PRODUCTS = [
     name:'PTR y Tubería Estructural',
     tagline:'Perfiles tubulares cuadrados y rectangulares en acero A-500 y A-513.',
     specs:[
-      {i:'fa-ruler',        l:'PTR Cuadrado',v:'½" hasta 6" · Cal. 9 a 20'},
-      {i:'fa-ruler-combined',l:'PTR Rectangular',v:'1"×½" hasta 8"×4" · Cal. 10 a 20'},
+      {i:'fa-ruler',        l:'PTR Cuadrado',v:'½" hasta 6"'},
+      {i:'fa-ruler-combined',l:'PTR Rectangular',v:'1"×½" hasta 8"×4" · Cal. 18, 20 y 22 (los más vendidos)'},
       {i:'fa-certificate',  l:'Norma',     v:'ASTM A-500 Gr. B · ASTM A-513'},
       {i:'fa-arrows-up-down',l:'Largo',    v:'6.00 m y 6.10 m estándar · Corte a medida disponible'},
       {i:'fa-screwdriver',  l:'V.A.',      v:'Corte · Doblez · Punzonado · Biselado'},
@@ -1709,7 +1576,7 @@ const PRODUCTS = [
       {i:'fa-list',         l:'Pasadores', v:'Planos · De piso · Colonial · Corredizo'},
       {i:'fa-ruler',        l:'Longitud',  v:'33 cm estándar · Tubo 1" cal. 16'},
       {i:'fa-fire',         l:'Aplicación',v:'Todos soldables al marco o hoja de acero'},
-      {i:'fa-building',     v:'Usos',      l:'Usos', v:'Portones · Puertas dobles · Canceles · Rejas'},
+      {i:'fa-building', l:'Usos', v:'Portones · Puertas dobles · Canceles · Rejas'},
       {i:'fa-lightbulb',    l:'Tip',       v:'Cerrojo galvanizado para exteriores, negro para interiores o pintar'}
     ], page:'catalogo.html', wa:'Cerrojos%20y%20Pasadores%20PHV', photo:'https://www.phv.com.mx/images/hp/CER-MACN.jpg', photoPos:'center center' },
 
@@ -1852,12 +1719,12 @@ const PRODUCTS = [
     name:'Tubos Negros (Cédula)',
     tagline:'Tubería negra de pared certificada para gas LP, agua, aire e instalaciones a presión.',
     specs:[
-      {i:'fa-ruler',      l:'Cédulas',     v:'Ced. 30 · 40 (Std) · 80 (XX-Fuerte)'},
+      {i:'fa-ruler',      l:'Cédulas',     v:'Solo Ced. 30 y 40'},
       {i:'fa-arrows-up-down',l:'Diámetros',v:'½" a 6" NPS · Largo 6.10 m'},
       {i:'fa-certificate',l:'Norma',       v:'ASTM A-53 · ASTM A-500'},
       {i:'fa-fire',       l:'Aplicación',  v:'Gas LP · Agua · Aire comprimido · Hidráulica · Vapor baja presión'},
       {i:'fa-building',   l:'Usos',        v:'Instalaciones, estructuras ligeras, herrería, marcos'},
-      {i:'fa-lightbulb',  l:'Tip',         v:'Gas LP residencial: Ced.40; presión >250 PSI: Ced.80'}
+      {i:'fa-lightbulb',  l:'Tip',         v:'Manejamos Ced. 30 y 40; la pared depende de la medida'}
     ], page:'catalogo.html', wa:'Tubos%20Negros%20C%C3%A9dula', photo:'https://images.pexels.com/photos/7794404/pexels-photo-7794404.jpeg' },
 
   { id:'tubo-trenzado', cat:'comercial',
@@ -1973,25 +1840,25 @@ const PRODUCTS = [
    MEDIDAS POR PRODUCTO (tabla modal)
 ════════════════════════════════════════ */
 const TABLE_HTML = {
-  'viga-ipr':`<div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>Designación</th><th>Altura (H)</th><th>Ala (B)</th><th>kg/m</th><th>kg/tramo (6m)</th></tr></thead><tbody><tr><td><strong>IPR 4"</strong></td><td>102 mm</td><td>68 mm</td><td>13</td><td>78</td></tr><tr><td><strong>IPR 6"</strong></td><td>152 mm</td><td>102 mm</td><td>20</td><td>120</td></tr><tr><td><strong>IPR 8"</strong></td><td>203 mm</td><td>133 mm</td><td>31</td><td>186</td></tr><tr><td><strong>IPR 10"</strong></td><td>254 mm</td><td>146 mm</td><td>43</td><td>258</td></tr><tr><td><strong>IPR 12"</strong></td><td>305 mm</td><td>153 mm</td><td>55</td><td>330</td></tr><tr><td><strong>IPR 14"</strong></td><td>356 mm</td><td>166 mm</td><td>68</td><td>408</td></tr></tbody></table></div>`,
+  'viga-ipr':`<div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>Designación</th><th>Altura (H)</th><th>Ala (B)</th><th>kg/m</th><th>kg/tramo (6m)</th></tr></thead><tbody><tr><td><strong>IPR 6"</strong></td><td>152 mm</td><td>102 mm</td><td>20</td><td>120</td></tr><tr><td><strong>IPR 8"</strong></td><td>203 mm</td><td>133 mm</td><td>31</td><td>186</td></tr><tr><td><strong>IPR 10"</strong></td><td>254 mm</td><td>146 mm</td><td>43</td><td>258</td></tr><tr><td><strong>IPR 12"</strong></td><td>305 mm</td><td>153 mm</td><td>55</td><td>330</td></tr><tr><td><strong>IPR 14"</strong></td><td>356 mm</td><td>166 mm</td><td>68</td><td>408</td></tr></tbody></table></div>`,
   'canal-angulo':`<p class="specs-section-label" style="margin:.75rem 0 .35rem"><i class="fa-solid fa-table"></i> Canal U — A-36 (6 m)</p><div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>Tamaño</th><th>Altura (mm)</th><th>Ala (mm)</th><th>Esp. (mm)</th><th>kg/m</th></tr></thead><tbody><tr><td><strong>Canal 3"</strong></td><td>76</td><td>38</td><td>5.1</td><td>4.5</td></tr><tr><td><strong>Canal 4"</strong></td><td>102</td><td>44</td><td>5.1</td><td>6.0</td></tr><tr><td><strong>Canal 6"</strong></td><td>152</td><td>51</td><td>6.4</td><td>8.2</td></tr><tr><td><strong>Canal 8"</strong></td><td>203</td><td>57</td><td>6.4</td><td>11.5</td></tr></tbody></table></div><p class="specs-section-label" style="margin:1.1rem 0 .35rem"><i class="fa-solid fa-table"></i> Ángulo L — A-36 (6 m)</p><div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>Tamaño (pulg.)</th><th>mm×mm</th><th>Espesor</th><th>kg/m</th></tr></thead><tbody><tr><td><strong>1"×1"×1/8"</strong></td><td>25×25</td><td>3.2 mm</td><td>0.76</td></tr><tr><td><strong>1¼"×1¼"×1/8"</strong></td><td>32×32</td><td>3.2 mm</td><td>0.96</td></tr><tr><td><strong>1½"×1½"×3/16"</strong></td><td>38×38</td><td>4.8 mm</td><td>1.74</td></tr><tr><td><strong>2"×2"×3/16"</strong></td><td>51×51</td><td>4.8 mm</td><td>2.35</td></tr><tr><td><strong>2"×2"×1/4"</strong></td><td>51×51</td><td>6.4 mm</td><td>3.08</td></tr><tr><td><strong>2½"×2½"×1/4"</strong></td><td>64×64</td><td>6.4 mm</td><td>3.89</td></tr><tr><td><strong>3"×3"×1/4"</strong></td><td>76×76</td><td>6.4 mm</td><td>4.74</td></tr><tr><td><strong>4"×4"×1/4"</strong></td><td>102×102</td><td>6.4 mm</td><td>6.39</td></tr></tbody></table></div>`,
-  'ptr-c':`<div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>Código</th><th>Dimensión</th><th>Calibres</th><th>Longitud</th><th>Acabados</th></tr></thead><tbody><tr><td><strong>C-050</strong></td><td>½"</td><td>18–20</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>C-062</strong></td><td>⅝"</td><td>18–20</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>C-075</strong></td><td>¾"</td><td>16–20</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>C-087</strong></td><td>⅞"</td><td>16–20</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>C-100</strong></td><td>1"</td><td>14–20</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>C-125</strong></td><td>1¼"</td><td>14–20</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>C-150</strong></td><td>1½"</td><td>14–20</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>C-175</strong></td><td>1¾"</td><td>14–18</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>C-200</strong></td><td>2"</td><td>14–18</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>C-225</strong></td><td>2¼"</td><td>14–18</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>C-250</strong></td><td>2½"</td><td>11–16</td><td>6.10 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>C-300</strong></td><td>3"</td><td>11–14</td><td>6.10 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>C-350</strong></td><td>3½"</td><td>10–12</td><td>6.10 m</td><td>Pintado</td></tr><tr><td><strong>C-400</strong></td><td>4"</td><td>10–12</td><td>6.10 m</td><td>Pintado</td></tr><tr><td><strong>C-450</strong></td><td>4½"</td><td>10–12</td><td>6.10 m</td><td>Pintado</td></tr><tr><td><strong>C-500</strong></td><td>5"</td><td>9–12</td><td>6.10 m</td><td>Pintado</td></tr><tr><td><strong>C-600</strong></td><td>6"</td><td>9–12</td><td>6.10 m</td><td>Pintado</td></tr></tbody></table></div>`,
-  'ptr-r':`<div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>Código</th><th>Dimensiones</th><th>Calibres</th><th>Longitud</th><th>Acabados</th></tr></thead><tbody><tr><td><strong>R-100</strong></td><td>1"×½"</td><td>16–20</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>R-125</strong></td><td>1¼"×¾"</td><td>16–20</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>R-135</strong></td><td>1½"×½"</td><td>16–20</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>R-150</strong></td><td>1½"×¾"</td><td>16–20</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>R-175</strong></td><td>1¾"×¾"</td><td>14–20</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>R-200</strong></td><td>2"×1"</td><td>14–20</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>R-225</strong></td><td>2¼"×¾"</td><td>14–18</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>R-249</strong></td><td>2½"×1¼"</td><td>14–18</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>R-250</strong></td><td>2½"×1½"</td><td>14–18</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>R-275</strong></td><td>2¾"×1"</td><td>14–18</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>R-300</strong></td><td>3"×1½"</td><td>11–18</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>R-301</strong></td><td>3"×1"</td><td>11–18</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>R-302</strong></td><td>3"×2"</td><td>11–16</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>R-400</strong></td><td>4"×1½"</td><td>11–16</td><td>6.10 m</td><td>Pintado</td></tr><tr><td><strong>R-402</strong></td><td>4"×2"</td><td>10–16</td><td>6.10 m</td><td>Pintado</td></tr><tr><td><strong>R-403</strong></td><td>4"×3"</td><td>10–14</td><td>6.10 m</td><td>Pintado</td></tr><tr><td><strong>R-502</strong></td><td>5"×2"</td><td>10–14</td><td>6.10 m</td><td>Pintado</td></tr><tr><td><strong>R-503</strong></td><td>5"×3"</td><td>10–12</td><td>6.10 m</td><td>Pintado</td></tr><tr><td><strong>R-602</strong></td><td>6"×2"</td><td>10–12</td><td>6.10 m</td><td>Pintado</td></tr><tr><td><strong>R-603</strong></td><td>6"×3"</td><td>10–12</td><td>6.10 m</td><td>Pintado</td></tr><tr><td><strong>R-604</strong></td><td>6"×4"</td><td>10–12</td><td>6.10 m</td><td>Pintado</td></tr><tr><td><strong>R-804</strong></td><td>8"×4"</td><td>10–12</td><td>6.10 m</td><td>Pintado</td></tr></tbody></table></div>`,
+  'ptr-c':`<div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>Medida</th><th>Calibres disponibles</th><th>Longitud</th><th>Acabados</th></tr></thead><tbody><tr><td><strong>½"</strong></td><td>Cal. 11</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>¾"</strong></td><td>Cal. 11</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>1"</strong></td><td>Cal. 11 · 14 · 16</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>1¼"</strong></td><td>Cal. 11 · 14</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>1½"</strong></td><td>Cal. 11 · 12 · 14 · 16</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>2"</strong></td><td>Cal. 11 · 12 · 14 · 16</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>2½"</strong></td><td>Cal. 11</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>3"</strong></td><td>Cal. 11</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>4"</strong></td><td>Cal. 11</td><td>6.00 m</td><td>Pintado</td></tr><tr><td><strong>5"</strong></td><td>Cal. 11</td><td>6.00 m</td><td>Pintado</td></tr><tr><td><strong>6"</strong></td><td>Cal. 11</td><td>6.00 m</td><td>Pintado</td></tr></tbody></table></div><p style="font-size:.82rem;color:#64748b;margin-top:.5rem;"><i class="fa-solid fa-circle-info"></i> Pregunta por la medida y calibre — confirmamos existencia al momento.</p>`,
+  'ptr-r':`<div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>Medida</th><th>Calibres disponibles</th><th>Longitud</th><th>Acabados</th></tr></thead><tbody><tr><td><strong>1"×½"</strong></td><td>Cal. 14 · 16</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>1½"×¾"</strong></td><td>Cal. 14 · 16</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>2"×1"</strong></td><td>Cal. 11 · 14 · 16</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>2½"×1½"</strong></td><td>Cal. 11 · 14</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>3"×1½"</strong></td><td>Cal. 11 · 14</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>3"×2"</strong></td><td>Cal. 11</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>4"×2"</strong></td><td>Cal. 11</td><td>6.00 m</td><td>Pintado</td></tr><tr><td><strong>6"×2"</strong></td><td>Cal. 11</td><td>6.00 m</td><td>Pintado</td></tr><tr><td><strong>8"×4"</strong></td><td>Cal. 11</td><td>6.00 m</td><td>Pintado</td></tr></tbody></table></div><p style="font-size:.82rem;color:#64748b;margin-top:.5rem;"><i class="fa-solid fa-circle-info"></i> El cal. 11 es el más usado en estructuras. Confirma medida y existencia al cotizar.</p>`,
   'polin-c':`<div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>Designación</th><th>Sección (pulg.)</th><th>Calibres</th><th>Longitud</th><th>Acabados</th></tr></thead><tbody><tr><td><strong>3EPC</strong></td><td>3"×1.50"</td><td>12–16</td><td>6.00 m</td><td>Rojo AR · Gris CC · Galv.</td></tr><tr><td><strong>4EPC</strong></td><td>4"×2.00"</td><td>12–16</td><td>6.00 m</td><td>Rojo AR · Gris CC · Galv.</td></tr><tr><td><strong>5EPC</strong></td><td>5"×2.00"</td><td>10–16</td><td>6.00 m</td><td>Rojo AR · Gris CC · Galv.</td></tr><tr><td><strong>6EPC</strong></td><td>6"×2.00"</td><td>10–16</td><td>6.00 m</td><td>Rojo AR · Gris CC · Galv.</td></tr><tr><td><strong>7EPC</strong></td><td>7"×2.75"</td><td>10–16</td><td>6.00 m</td><td>Rojo AR · Gris CC</td></tr><tr><td><strong>8EPC</strong></td><td>8"×2.75"</td><td>10–16</td><td>6.00 m</td><td>Rojo AR · Gris CC</td></tr><tr><td><strong>9EPC</strong></td><td>9"×2.75"</td><td>10–16</td><td>6.00 m</td><td>Rojo AR · Gris CC</td></tr><tr><td><strong>10EPC</strong></td><td>10"×2.75"</td><td>10–16</td><td>6.00 m</td><td>Rojo AR · Gris CC</td></tr><tr><td><strong>12EPC</strong></td><td>12"×3.50"</td><td>10–14</td><td>6.00 m</td><td>Rojo AR · Gris CC</td></tr><tr><td><strong>14EPC</strong></td><td>14"×3.50"</td><td>10–14</td><td>6.00 m</td><td>Rojo AR · Gris CC</td></tr></tbody></table></div>`,
-  'hss':`<div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>Dimensión (pulg.)</th><th>Dimensión (mm)</th><th>Espesor (pulg.)</th><th>Espesor (mm)</th><th>kg/m</th></tr></thead><tbody><tr><td><strong>4″×4″</strong></td><td>102×102</td><td>0.312″</td><td>7.9</td><td>22.13</td></tr><tr><td><strong>4″×4″</strong></td><td>102×102</td><td>0.375″</td><td>9.5</td><td>25.74</td></tr><tr><td><strong>6″×6″</strong></td><td>152×152</td><td>0.250″</td><td>6.3</td><td>28.36</td></tr><tr><td><strong>6″×6″</strong></td><td>152×152</td><td>0.375″</td><td>9.5</td><td>40.98</td></tr><tr><td><strong>6″×6″</strong></td><td>152×152</td><td>0.500″</td><td>12.7</td><td>52.46</td></tr><tr><td><strong>8″×8″</strong></td><td>203×203</td><td>0.250″</td><td>6.3</td><td>38.52</td></tr><tr><td><strong>8″×8″</strong></td><td>203×203</td><td>0.375″</td><td>9.5</td><td>56.07</td></tr><tr><td><strong>8″×8″</strong></td><td>203×203</td><td>0.500″</td><td>12.7</td><td>72.79</td></tr><tr><td><strong>10″×10″</strong></td><td>254×254</td><td>0.250″</td><td>6.3</td><td>48.69</td></tr><tr><td><strong>10″×10″</strong></td><td>254×254</td><td>0.375″</td><td>9.5</td><td>71.31</td></tr><tr><td><strong>10″×10″</strong></td><td>254×254</td><td>0.500″</td><td>12.7</td><td>92.95</td></tr><tr><td><strong>12″×12″</strong></td><td>305×305</td><td>0.375″</td><td>9.5</td><td>86.56</td></tr><tr><td><strong>12″×12″</strong></td><td>305×305</td><td>0.500″</td><td>12.7</td><td>113.28</td></tr><tr><td><strong>14″×14″</strong></td><td>356×356</td><td>0.375″</td><td>9.5</td><td>101.80</td></tr><tr><td><strong>16″×16″</strong></td><td>406×406</td><td>0.500″</td><td>12.7</td><td>153.77</td></tr></tbody></table></div>`,
+  'hss':`<div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>Dimensión</th><th>Espesores (pulg.)</th><th>Largo</th></tr></thead><tbody><tr><td><strong>4″×4″</strong></td><td>0.312″ · 0.375″</td><td>12.20 m</td></tr><tr><td><strong>6″×6″</strong></td><td>0.250″ · 0.375″ · 0.500″</td><td>12.20 m</td></tr><tr><td><strong>8″×8″</strong></td><td>0.250″ · 0.375″ · 0.500″</td><td>12.20 m</td></tr><tr><td><strong>10″×10″</strong></td><td>0.250″ · 0.375″ · 0.500″</td><td>12.20 m</td></tr><tr><td><strong>12″×12″</strong></td><td>0.375″ · 0.500″</td><td>12.20 m</td></tr></tbody></table></div>`,
   'varilla':`<div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>No.</th><th>Diámetro</th><th>mm</th><th>kg/m</th><th>kg/varilla (12m)</th><th>Grado</th></tr></thead><tbody><tr><td><strong>No. 3</strong></td><td>3/8"</td><td>9.53</td><td>0.56</td><td>6.7</td><td>G42/G50</td></tr><tr><td><strong>No. 4</strong></td><td>1/2"</td><td>12.70</td><td>0.99</td><td>11.9</td><td>G42/G50</td></tr><tr><td><strong>No. 5</strong></td><td>5/8"</td><td>15.88</td><td>1.55</td><td>18.6</td><td>G42/G50</td></tr><tr><td><strong>No. 6</strong></td><td>3/4"</td><td>19.05</td><td>2.24</td><td>26.9</td><td>G42/G50</td></tr><tr><td><strong>No. 8</strong></td><td>1"</td><td>25.40</td><td>3.97</td><td>47.6</td><td>G42/G50</td></tr></tbody></table></div>`,
   'soleras':`<div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>Espesor×Ancho (pulg.)</th><th>Espesor×Ancho (mm)</th><th>kg/m</th></tr></thead><tbody><tr><td>1/8"×1"</td><td>3.2×25.4</td><td>0.63</td></tr><tr><td>1/8"×2"</td><td>3.2×50.8</td><td>1.27</td></tr><tr><td>3/16"×1"</td><td>4.8×25.4</td><td>0.95</td></tr><tr><td>3/16"×2"</td><td>4.8×50.8</td><td>1.90</td></tr><tr><td>3/16"×3"</td><td>4.8×76.2</td><td>2.84</td></tr><tr><td>1/4"×2"</td><td>6.3×50.8</td><td>2.53</td></tr><tr><td>1/4"×3"</td><td>6.3×76.2</td><td>3.79</td></tr><tr><td>1/4"×4"</td><td>6.3×101.6</td><td>5.06</td></tr><tr><td>1/4"×6"</td><td>6.3×152.4</td><td>7.59</td></tr><tr><td>3/8"×3"</td><td>9.5×76.2</td><td>5.70</td></tr><tr><td>3/8"×4"</td><td>9.5×101.6</td><td>7.59</td></tr><tr><td>1/2"×4"</td><td>12.7×101.6</td><td>10.13</td></tr><tr><td>1/2"×6"</td><td>12.7×152.4</td><td>15.18</td></tr></tbody></table></div>`,
   'barras':`<p class="specs-section-label" style="margin:.75rem 0 .35rem"><i class="fa-solid fa-table"></i> Barra Redonda A-36 (6.10 m)</p><div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>Diámetro</th><th>mm</th><th>kg/m</th><th>kg/barra</th></tr></thead><tbody><tr><td><strong>3/8"</strong></td><td>9.53</td><td>0.56</td><td>3.4</td></tr><tr><td><strong>1/2"</strong></td><td>12.70</td><td>0.99</td><td>6.0</td></tr><tr><td><strong>5/8"</strong></td><td>15.88</td><td>1.55</td><td>9.5</td></tr><tr><td><strong>3/4"</strong></td><td>19.05</td><td>2.24</td><td>13.7</td></tr><tr><td><strong>7/8"</strong></td><td>22.23</td><td>3.04</td><td>18.5</td></tr><tr><td><strong>1"</strong></td><td>25.40</td><td>3.98</td><td>24.3</td></tr><tr><td><strong>1¼"</strong></td><td>31.75</td><td>6.21</td><td>37.9</td></tr><tr><td><strong>1½"</strong></td><td>38.10</td><td>8.94</td><td>54.5</td></tr></tbody></table></div><p class="specs-section-label" style="margin:1.1rem 0 .35rem"><i class="fa-solid fa-table"></i> Barra Cuadrada A-36 (6.10 m)</p><div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>Lado</th><th>mm</th><th>kg/m</th><th>Notas</th></tr></thead><tbody><tr><td><strong>3/8"</strong></td><td>9.53</td><td>0.71</td><td>Tb. retorcida</td></tr><tr><td><strong>1/2"</strong></td><td>12.70</td><td>1.26</td><td>Tb. retorcida</td></tr><tr><td><strong>5/8"</strong></td><td>15.88</td><td>1.97</td><td>Tb. retorcida</td></tr><tr><td><strong>3/4"</strong></td><td>19.05</td><td>2.83</td><td>Lisa</td></tr><tr><td><strong>1"</strong></td><td>25.40</td><td>5.03</td><td>Lisa</td></tr><tr><td><strong>1½"</strong></td><td>38.10</td><td>11.31</td><td>Lisa</td></tr></tbody></table></div>`,
   'perfiles-ventana':`<p class="specs-section-label" style="margin:.75rem 0 .35rem"><i class="fa-solid fa-table"></i> Perfiles para Ventana — Largo 6.00 m</p><div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>Clave</th><th>Descripción</th><th>Cal.</th><th>Espesor (pulg)</th><th>Pzas/paq</th><th>kg/m</th></tr></thead><tbody><tr><td rowspan="2"><strong>101</strong></td><td rowspan="2">Ángulo Liso</td><td>20</td><td>0.0359</td><td>100</td><td>0.91</td></tr><tr><td>18</td><td>0.0478</td><td>80</td><td>1.22</td></tr><tr><td rowspan="2"><strong>103</strong></td><td rowspan="2">Tee Sencilla</td><td>20</td><td>0.0359</td><td>80</td><td>1.08</td></tr><tr><td>18</td><td>0.0478</td><td>80</td><td>1.47</td></tr><tr><td rowspan="2"><strong>106</strong></td><td rowspan="2">Tee Especial</td><td>20</td><td>0.0359</td><td>80</td><td>1.08</td></tr><tr><td>18</td><td>0.0478</td><td>80</td><td>1.47</td></tr><tr><td rowspan="2"><strong>121</strong></td><td rowspan="2">Chambrana Sencilla</td><td>20</td><td>0.0359</td><td>96</td><td>1.00</td></tr><tr><td>18</td><td>0.0478</td><td>96</td><td>1.36</td></tr><tr><td rowspan="2"><strong>122</strong></td><td rowspan="2">Escalonado</td><td>20</td><td>0.0359</td><td>90</td><td>1.36</td></tr><tr><td>18</td><td>0.0478</td><td>90</td><td>—</td></tr><tr><td rowspan="2"><strong>123</strong></td><td rowspan="2">Ángulo Ranurado</td><td>20</td><td>0.0359</td><td>80</td><td>1.07</td></tr><tr><td>18</td><td>0.0478</td><td>80</td><td>—</td></tr><tr><td rowspan="2"><strong>124</strong></td><td rowspan="2">Riel Ventana</td><td>20</td><td>0.0359</td><td>100</td><td>1.27</td></tr><tr><td>18</td><td>0.0478</td><td>48</td><td>1.72</td></tr><tr><td rowspan="2"><strong>126</strong></td><td rowspan="2">Chambrana Tapada</td><td>20</td><td>0.0359</td><td>48</td><td>1.41</td></tr><tr><td>18</td><td>0.0478</td><td>60</td><td>1.91</td></tr><tr><td rowspan="2"><strong>127</strong></td><td rowspan="2">Perfil Esp.</td><td>20</td><td>0.0359</td><td>60</td><td>0.64</td></tr><tr><td>18</td><td>0.0478</td><td>60</td><td>0.64</td></tr><tr><td rowspan="2"><strong>131</strong></td><td rowspan="2">Ángulo Mosquitero</td><td>20</td><td>0.0359</td><td>160</td><td>0.18</td></tr><tr><td>18</td><td>0.0478</td><td>160</td><td>0.25</td></tr><tr><td rowspan="2"><strong>145</strong></td><td rowspan="2">Ángulo Mosquitero</td><td>20</td><td>0.0359</td><td>450</td><td>0.23</td></tr><tr><td>18</td><td>0.0478</td><td>300</td><td>—</td></tr><tr><td rowspan="2"><strong>154</strong></td><td rowspan="2">Vagueta</td><td>20</td><td>0.0359</td><td>90</td><td>1.08</td></tr><tr><td>18</td><td>0.0478</td><td>90</td><td>1.47</td></tr><tr><td rowspan="2"><strong>155</strong></td><td rowspan="2">Perfil Esp.</td><td>20</td><td>0.0359</td><td>72</td><td>1.24</td></tr><tr><td>18</td><td>0.0478</td><td>30</td><td>2.45</td></tr><tr><td rowspan="2"><strong>160</strong></td><td rowspan="2">Perfil Esp.</td><td>16</td><td>0.0598</td><td>30</td><td>3.06</td></tr><tr><td>14</td><td>0.0747</td><td>32</td><td>—</td></tr></tbody></table></div>`,
   'marco-puerta':`<p class="specs-section-label" style="margin:.75rem 0 .35rem"><i class="fa-solid fa-table"></i> Perfiles para Puerta — Series M, P y K</p><div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>Clave</th><th>Dimensión</th><th>Cal.</th><th>Espesor (pulg)</th><th>Long. (m)</th><th>Pzas/paq</th><th>kg/m</th></tr></thead><tbody><tr><td rowspan="2"><strong>M-225</strong></td><td rowspan="2">1½″–2¼″</td><td>20</td><td>0.0359</td><td>5.50</td><td>96</td><td>1.03</td></tr><tr><td>18</td><td>0.0478</td><td>5.50</td><td>96</td><td>1.41</td></tr><tr><td rowspan="2"><strong>M-300</strong></td><td rowspan="2">2¼″–3″</td><td>20</td><td>0.0359</td><td>5.50</td><td>96</td><td>1.17</td></tr><tr><td>18</td><td>0.0478</td><td>5.50</td><td>96</td><td>1.56</td></tr><tr><td rowspan="2"><strong>M-525</strong></td><td rowspan="2">4½″–5¼″</td><td>20</td><td>0.0359</td><td>5.50</td><td>42</td><td>1.69</td></tr><tr><td>18</td><td>0.0478</td><td>5.50</td><td>42</td><td>—</td></tr><tr><td rowspan="2"><strong>M-600</strong></td><td rowspan="2">5¼″–6″</td><td>20</td><td>0.0359</td><td>6.00</td><td>96</td><td>1.01</td></tr><tr><td>18</td><td>0.0478</td><td>6.00</td><td>96</td><td>1.36</td></tr><tr><td rowspan="2"><strong>P-100</strong></td><td rowspan="2">1″</td><td>20</td><td>0.0359</td><td>6.00</td><td>70</td><td>1.19</td></tr><tr><td>18</td><td>0.0478</td><td>6.00</td><td>70</td><td>1.61</td></tr><tr><td rowspan="2"><strong>P-150</strong></td><td rowspan="2">1½″</td><td>20</td><td>0.0359</td><td>6.00</td><td>70</td><td>1.37</td></tr><tr><td>18</td><td>0.0478</td><td>6.00</td><td>70</td><td>1.86</td></tr><tr><td rowspan="2"><strong>P-200</strong></td><td rowspan="2">2″</td><td>20</td><td>0.0359</td><td>6.00</td><td>72</td><td>1.56</td></tr><tr><td>18</td><td>0.0478</td><td>6.00</td><td>72</td><td>2.09</td></tr><tr><td rowspan="2"><strong>P-250</strong></td><td rowspan="2">2½″</td><td>20</td><td>0.0359</td><td>6.00</td><td>42</td><td>1.73</td></tr><tr><td>18</td><td>0.0478</td><td>6.00</td><td>42</td><td>2.32</td></tr><tr><td rowspan="2"><strong>P-300</strong></td><td rowspan="2">3″</td><td>20</td><td>0.0359</td><td>6.00</td><td>42</td><td>2.09</td></tr><tr><td>18</td><td>0.0478</td><td>6.00</td><td>42</td><td>2.82</td></tr><tr><td rowspan="2"><strong>P-400</strong></td><td rowspan="2">4″</td><td>20</td><td>0.0359</td><td>6.00</td><td>48</td><td>2.58</td></tr><tr><td>18</td><td>0.0478</td><td>6.00</td><td>48</td><td>—</td></tr><tr><td rowspan="2"><strong>K-100</strong></td><td rowspan="2">1″</td><td>20</td><td>0.0359</td><td>6.00</td><td>96</td><td>1.34</td></tr><tr><td>18</td><td>0.0478</td><td>6.00</td><td>96</td><td>1.83</td></tr><tr><td rowspan="2"><strong>K-150</strong></td><td rowspan="2">1½″</td><td>20</td><td>0.0359</td><td>6.00</td><td>54</td><td>1.52</td></tr><tr><td>18</td><td>0.0478</td><td>6.00</td><td>54</td><td>—</td></tr><tr><td rowspan="2"><strong>K-200</strong></td><td rowspan="2">2″</td><td>20</td><td>0.0359</td><td>6.00</td><td>48</td><td>1.88</td></tr><tr><td>18</td><td>0.0478</td><td>6.00</td><td>48</td><td>—</td></tr><tr><td rowspan="2"><strong>K-300</strong></td><td rowspan="2">3″</td><td>20</td><td>0.0359</td><td>6.00</td><td>45</td><td>2.57</td></tr><tr><td>18</td><td>0.0478</td><td>6.00</td><td>45</td><td>—</td></tr></tbody></table></div>`,
-  'tablero-portones':`<p class="specs-section-label" style="margin:.75rem 0 .35rem"><i class="fa-solid fa-table"></i> Tableros para Portones — Series 147, 148 y 149</p><div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>Modelo</th><th>Ancho × Largo</th><th>Cal.</th><th>Espesor (pulg)</th><th>kg/m²</th><th>Acabado</th></tr></thead><tbody><tr><td><strong>147-A</strong></td><td>3′ × 6′–10′</td><td>22</td><td>0.0299</td><td>5.45</td><td>PR / GV</td></tr><tr><td><strong>147-A</strong></td><td>3′ × 6′–10′</td><td>20</td><td>0.0359</td><td>6.53</td><td>PR / GV</td></tr><tr><td><strong>147-L</strong></td><td>1.9′–3′ × 3′–10′</td><td>22</td><td>0.0299</td><td>5.45</td><td>PR / GV</td></tr><tr><td><strong>147-L</strong></td><td>1.9′–3′ × 3′–10′</td><td>20</td><td>0.0359</td><td>6.53</td><td>PR / GV</td></tr><tr><td><strong>147-LC</strong></td><td>1.9′–3′ × 3′–10′</td><td>22</td><td>0.0299</td><td>5.45</td><td>PR / GV</td></tr><tr><td><strong>147-LC</strong></td><td>1.9′–3′ × 3′–10′</td><td>20</td><td>0.0359</td><td>6.53</td><td>PR / GV</td></tr><tr><td><strong>148-LC</strong></td><td>4′ × 3′–10′</td><td>22</td><td>0.0299</td><td>5.45</td><td>PR / GV</td></tr><tr><td><strong>148-LC</strong></td><td>4′ × 3′–10′</td><td>20</td><td>0.0359</td><td>8.73</td><td>PR / GV</td></tr><tr><td><strong>149-A</strong></td><td>3′ × 3′–10′</td><td>20</td><td>0.0359</td><td>6.53</td><td>PR / GV</td></tr><tr><td><strong>149-L</strong></td><td>~2.8′ × 3′–10′</td><td>20</td><td>0.0359</td><td>6.53</td><td>PR / GV</td></tr><tr><td><strong>149-LC</strong></td><td>~2.8′ × 3′–10′</td><td>20</td><td>0.0359</td><td>6.53</td><td>PR / GV</td></tr></tbody></table></div>`,
+  'tablero-portones':`<div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>Modelo</th><th>Anchos</th><th>Calibre</th><th>Acabados</th></tr></thead><tbody><tr><td><strong>Tablero 170</strong></td><td>2", 4", 6", 8" y 10" · distintas alturas</td><td>Cal. 22</td><td>Galvanizado · Negro</td></tr></tbody></table></div><p style="font-size:.82rem;color:#64748b;margin-top:.5rem;"><i class="fa-solid fa-circle-info"></i> Sin corte a medida — se entrega en alturas estándar.</p>`,
   'cortina-metalica':`<div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>Tipo</th><th>Cal.</th><th>Pared</th><th>kg/m</th><th>Largo</th><th>kg/pza</th><th>Acabado</th></tr></thead><tbody><tr><td><strong>TCEC—3.05 m</strong></td><td>24</td><td>0.60 mm</td><td>0.60</td><td>3.05 m</td><td>1.83</td><td>Galv. Verde</td></tr><tr><td><strong>TCEC—4.05 m</strong></td><td>24</td><td>0.60 mm</td><td>0.60</td><td>4.05 m</td><td>2.43</td><td>Galv. Verde</td></tr><tr><td><strong>TCEC—5.05 m</strong></td><td>24</td><td>0.60 mm</td><td>0.60</td><td>5.05 m</td><td>3.03</td><td>Galv. Verde</td></tr><tr><td><strong>TCEC—6.10 m</strong></td><td>24</td><td>0.60 mm</td><td>0.60</td><td>6.10 m</td><td>3.66</td><td>Galv. Verde</td></tr></tbody></table></div>`,
   'barra-hueca':`<div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>D.E. (pulg)</th><th>D.E. (mm)</th><th>D.I. (mm)</th><th>Pared (mm)</th><th>kg/m</th><th>kg/tramo 3m</th></tr></thead><tbody><tr><td><strong>1"</strong></td><td>25.4</td><td>12.7</td><td>6.35</td><td>~4.5</td><td>~13.7</td></tr><tr><td><strong>1¼"</strong></td><td>31.75</td><td>15.88</td><td>7.94</td><td>~6.8</td><td>~20.7</td></tr><tr><td><strong>1½"</strong></td><td>38.1</td><td>19.05</td><td>9.53</td><td>~9.7</td><td>~29.6</td></tr><tr><td><strong>2"</strong></td><td>50.8</td><td>25.4</td><td>12.7</td><td>~16.8</td><td>~51.2</td></tr><tr><td><strong>2½"</strong></td><td>63.5</td><td>31.75</td><td>15.88</td><td>~26.0</td><td>~79.3</td></tr><tr><td><strong>3"</strong></td><td>76.2</td><td>38.1</td><td>19.05</td><td>~36.8</td><td>~112.2</td></tr><tr><td><strong>4"</strong></td><td>101.6</td><td>50.8</td><td>25.4</td><td>~63.7</td><td>~194.3</td></tr></tbody></table></div>`,
-  'nylamid':`<div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>Tipo</th><th>Forma</th><th>Diámetros / Espesores</th><th>Color</th><th>Lubricante</th><th>Aplicación típica</th></tr></thead><tbody><tr><td><strong>Nylamid M</strong></td><td>Barra</td><td>½"·¾"·1"·1½"·2"·3"·4"·6"·8"·10"</td><td>Beige</td><td>Sin lubricante</td><td>Poleas, rodillos, bujes</td></tr><tr><td><strong>Nylamid M</strong></td><td>Placa</td><td>¼"·½"·¾"·1"·1½"·2"·3" esp.</td><td>Beige</td><td>Sin lubricante</td><td>Cojinetes planos, guías</td></tr><tr><td><strong>Nylamid G</strong></td><td>Barra</td><td>½"·1"·1½"·2"·3"·4"·6"·8"·10"</td><td>Verde azulado</td><td>MoS₂ interno</td><td>Alta fricción sin grasa</td></tr><tr><td><strong>Nylamid G</strong></td><td>Placa</td><td>½"·¾"·1"·1½"·2"·3" esp.</td><td>Verde azulado</td><td>MoS₂ interno</td><td>Embotelladoras, bandas</td></tr></tbody></table></div>`,
-  'acero-maquinaria':`<p class="specs-section-label" style="margin:.75rem 0 .35rem"><i class="fa-solid fa-table"></i> Propiedades mecánicas por grado</p><div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>Grado</th><th>%C</th><th>Fluencia (MPa)</th><th>Tensión (MPa)</th><th>Maquinab.</th><th>Soldab.</th></tr></thead><tbody><tr><td><strong>1018</strong></td><td>0.15–0.20</td><td>240</td><td>400</td><td>Excelente (78%)</td><td>Excelente</td></tr><tr><td><strong>1045</strong></td><td>0.43–0.50</td><td>415</td><td>570</td><td>Buena (57%)</td><td>Precalentamiento</td></tr><tr><td><strong>4140</strong></td><td>0.38–0.43</td><td>415</td><td>655</td><td>Buena (66%)</td><td>Precal.+Post-calor</td></tr></tbody></table></div><p class="specs-section-label" style="margin:1.1rem 0 .35rem"><i class="fa-solid fa-table"></i> Medidas disponibles (Largo 3.05/6.10 m)</p><div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>Grado</th><th>Forma</th><th>Rango</th><th>mm</th></tr></thead><tbody><tr><td><strong>1018</strong></td><td>Redondo</td><td>¼"–6" Ø</td><td>6.35–152.4</td></tr><tr><td><strong>1018</strong></td><td>Hexagonal</td><td>¼"–3" A/C</td><td>6.35–76.2</td></tr><tr><td><strong>1045</strong></td><td>Redondo</td><td>3/8"–8" Ø</td><td>9.53–203.2</td></tr><tr><td><strong>1045</strong></td><td>Hexagonal</td><td>½"–2½" A/C</td><td>12.7–63.5</td></tr><tr><td><strong>4140</strong></td><td>Redondo</td><td>½"–6" Ø</td><td>12.7–152.4</td></tr><tr><td><strong>4140</strong></td><td>Hexagonal</td><td>½"–2" A/C</td><td>12.7–50.8</td></tr></tbody></table></div>`,
-  'pintura-vinil':`<div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>Producto</th><th>Tipo</th><th>Acabado</th><th>Presentaciones</th><th>Uso principal</th></tr></thead><tbody><tr><td><strong>SUPERVIN 20 AÑOS</strong></td><td>Vinílico-acrílico</td><td>Mate</td><td>4L·19L</td><td>Ext. e int. larga duración</td></tr><tr><td><strong>SUPERVIN 100% Acrílica</strong></td><td>100% Acrílica</td><td>Mate</td><td>4L·19L</td><td>Norma INIFED · escuelas</td></tr><tr><td><strong>SUPERVIN Only One</strong></td><td>Vinílico-acrílico</td><td>Mate</td><td>4L·19L</td><td>Alto poder cubriente (1 mano)</td></tr><tr><td><strong>SUPERVIN Ecológica</strong></td><td>Vinílico-acrílico</td><td>Mate</td><td>4L·19L</td><td>Libre de VOC</td></tr><tr><td><strong>ACAPULCO Satinado</strong></td><td>Vinílico premium</td><td>Satinado</td><td>1L·4L·19L</td><td>Interior lavable</td></tr><tr><td><strong>ACAPULCO Mate</strong></td><td>Vinílico premium</td><td>Semi-plástico</td><td>1L·4L·19L</td><td>Interior acabado fino</td></tr><tr><td><strong>VIP 100% Acrílica</strong></td><td>100% Acrílica</td><td>Mate</td><td>4L·19L</td><td>Ext. e int. alta resistencia</td></tr><tr><td><strong>OMAR</strong></td><td>Vinílico-acrílico</td><td>Mate</td><td>4L·19L</td><td>Profesional interiores</td></tr><tr><td><strong>CLASIKA</strong></td><td>Vinílica base agua</td><td>Mate</td><td>4L·19L</td><td>Uso general</td></tr><tr><td><strong>VINET</strong></td><td>Vinílica</td><td>Mate</td><td>4L·19L</td><td>Económica</td></tr><tr><td><strong>KOLORTEX</strong></td><td>Vinílica estándar</td><td>Mate</td><td>4L·19L</td><td>Uso estándar económico</td></tr><tr><td><strong>CH14</strong></td><td>Vinílica</td><td>Mate terso</td><td>4L·19L</td><td>Interiores</td></tr></tbody></table></div>`,
-  'esmalte':`<div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>Producto</th><th>Base</th><th>Secado</th><th>Acabado</th><th>Presentaciones</th><th>Característica</th></tr></thead><tbody><tr><td><strong>ESMALUX SR</strong></td><td>Alquidálica</td><td>~8 h</td><td>Brillante</td><td>Spray·1L·4L</td><td>Anticorrosivo clásico</td></tr><tr><td><strong>ESMAFLEX</strong></td><td>Alquid. flexible</td><td>~6 h</td><td>Brillante</td><td>1L·4L</td><td>Alta flexibilidad</td></tr><tr><td><strong>DRY LUX SR</strong></td><td>Alquid. sec. rápido</td><td>~2 h</td><td>Brillante</td><td>1L·4L</td><td>Secado ultrarrápido</td></tr><tr><td><strong>PINTAMAR</strong></td><td>Alquid. marina</td><td>~8 h</td><td>Brillante</td><td>1L·4L</td><td>Ambientes costeros</td></tr><tr><td><strong>BIO ESMALUX</strong></td><td>Acrílico base agua</td><td>~4 h</td><td>Semi-brillante</td><td>1L·4L</td><td>Bajo olor, sin solventes</td></tr></tbody></table></div>`,
-  'primario-anticorrosivo':`<div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>Producto</th><th>Base</th><th>Secado</th><th>Presentaciones</th><th>Compatible con</th></tr></thead><tbody><tr><td><strong>PRIMARIO ESMALUX SR</strong></td><td>Alquidálica</td><td>~4 h</td><td>1L·4L</td><td>ESMALUX SR, DRY LUX, ESMAFLEX</td></tr><tr><td><strong>PRIMARIO ESMAFLEX</strong></td><td>Alquid. flexible</td><td>~4 h</td><td>1L·4L</td><td>ESMAFLEX</td></tr><tr><td><strong>PRIMARIO DRY LUX SR</strong></td><td>Alquid. rápida</td><td>~1 h</td><td>1L·4L</td><td>DRY LUX SR</td></tr><tr><td><strong>PRIM. PINTAMAR</strong></td><td>Marina/industrial</td><td>~6 h</td><td>1L·4L</td><td>PINTAMAR</td></tr><tr><td><strong>MULTIPRIMER Base Agua</strong></td><td>Acrílico base agua</td><td>~2 h</td><td>1L·4L</td><td>BIO ESMALUX y acrílicos</td></tr></tbody></table></div>`,
+  'nylamid':`<div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>Forma</th><th>Medidas</th><th>Color</th><th>Aplicación típica</th></tr></thead><tbody><tr><td><strong>Barra</strong></td><td>½"·¾"·1"·1½"·2"·3"·4"·6"·8" Ø</td><td>Blanco natural</td><td>Poleas, rodillos, bujes</td></tr><tr><td><strong>Placa</strong></td><td>½"·¾"·1" espesor · 60×60 cm</td><td>Blanco natural</td><td>Cojinetes planos, guías</td></tr></tbody></table></div>`,
+  'acero-maquinaria':`<p class="specs-section-label" style="margin:.75rem 0 .35rem"><i class="fa-solid fa-table"></i> Formas y medidas disponibles</p><div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>Grado</th><th>Redondo</th><th>Hexagonal</th><th>Cuadrado</th></tr></thead><tbody><tr><td><strong>1018</strong></td><td>¼" – 6" Ø</td><td>hasta 1½" A/C</td><td>Sí — consulta medidas</td></tr><tr><td><strong>1045</strong></td><td>3/8" – 8" Ø</td><td>—</td><td>—</td></tr><tr><td><strong>4140</strong></td><td>½" – 6" Ø</td><td>—</td><td>—</td></tr></tbody></table></div><p style="font-size:.82rem;color:#64748b;margin-top:.5rem;"><i class="fa-solid fa-circle-info"></i> El maestro especialista te orienta sobre qué grado necesitas según la pieza.</p>`,
+  'pintura-vinil':`<div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>Producto</th><th>Tipo</th><th>Acabado</th><th>Presentaciones</th><th>Uso principal</th></tr></thead><tbody><tr><td><strong>SUPERVIN</strong></td><td>Vinílico-acrílico</td><td>Mate</td><td>4L·19L</td><td>Exterior e interior de larga duración</td></tr><tr><td><strong>OMAR</strong></td><td>Vinílico-acrílico</td><td>Mate</td><td>4L·19L</td><td>Profesional interiores</td></tr><tr><td><strong>VINET</strong></td><td>Vinílica</td><td>Mate</td><td>4L·19L</td><td>Económica</td></tr><tr><td><strong>KOLORTEX</strong></td><td>Vinílica estándar</td><td>Mate</td><td>4L·19L</td><td>Uso estándar económico</td></tr><tr><td><strong>CH14</strong></td><td>Vinílica</td><td>Mate terso</td><td>4L·19L</td><td>Interiores</td></tr></tbody></table></div><p style="font-size:.82rem;color:#64748b;margin-top:.5rem;"><i class="fa-solid fa-circle-info"></i> Sobre pedido — sin entrega inmediata. Consulta tiempos al cotizar.</p>`,
+  'esmalte':`<div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>Producto</th><th>Base</th><th>Secado</th><th>Acabado</th><th>Presentaciones</th><th>Característica</th></tr></thead><tbody><tr><td><strong>ESMALUX SR</strong></td><td>Alquidálica</td><td>~8 h</td><td>Brillante</td><td>Spray·1L·4L</td><td>Anticorrosivo clásico</td></tr><tr><td><strong>DRY LUX SR</strong></td><td>Alquid. sec. rápido</td><td>~2 h</td><td>Brillante</td><td>1L·4L</td><td>Secado ultrarrápido</td></tr><tr><td><strong>PINTAMAR</strong></td><td>Alquid. marina</td><td>~8 h</td><td>Brillante</td><td>1L·4L</td><td>Ambientes costeros</td></tr><tr><td><strong>BIO ESMALUX</strong></td><td>Acrílico base agua</td><td>~4 h</td><td>Semi-brillante</td><td>1L·4L</td><td>Bajo olor, sin solventes</td></tr></tbody></table></div>`,
+  'primario-anticorrosivo':`<div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>Producto</th><th>Color</th><th>Presentaciones</th><th>Uso</th></tr></thead><tbody><tr><td><strong>Primario Anticorrosivo</strong></td><td>Rojo Óxido (único)</td><td>1L · ¼ · Galón · Cubeta</td><td>Base adherente sobre metal antes del esmalte</td></tr></tbody></table></div>`,
   'impermeabilizante':`<div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>Producto</th><th>Garantía</th><th>Base</th><th>Presentaciones</th><th>Característica</th></tr></thead><tbody><tr><td><strong>IMPERFIBRA 3 Años</strong></td><td>3 años</td><td>Elastomérica fibrada</td><td>4L·19L</td><td>Económico; losas en buen estado</td></tr><tr><td><strong>IMPERFIBRA 5 Años</strong></td><td>5 años</td><td>Elastomérica fibrada</td><td>4L·19L</td><td>Mayor espesor membrana</td></tr><tr><td><strong>IMPERFIBRA 7 Años</strong></td><td>7 años</td><td>Elastomérica premium</td><td>19L</td><td>Cubre grietas hasta 2 mm</td></tr><tr><td><strong>IMPERFIBRA 10 Años</strong></td><td>10 años</td><td>Elastomérica premium</td><td>19L</td><td>Sistema multicapa; máx. protección</td></tr><tr><td><strong>AQUAMAR 3 Años</strong></td><td>3 años</td><td>Acrílica</td><td>4L·19L</td><td>Secado rápido; reflectivo blanco</td></tr><tr><td><strong>AQUAMAR 5 Años</strong></td><td>5 años</td><td>Acrílica fibrada</td><td>19L</td><td>Reflectivo avanzado</td></tr><tr><td><strong>AQUAMAR 7 Años</strong></td><td>7 años</td><td>Acrílica premium</td><td>19L</td><td>UV superior; blanco duradero</td></tr><tr><td><strong>CH14 Impermeab.</strong></td><td>3 años</td><td>Base agua</td><td>4L·19L</td><td>Económico; uso general</td></tr></tbody></table></div>`,
   'tubo-cerquero':`<div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>D.E. (pulg)</th><th>Nombre Común</th><th>D.E. (mm)</th><th>Pared Ced.40 (mm)</th><th>Acabado</th></tr></thead><tbody><tr><td><strong>0.840″</strong></td><td>½"</td><td>21.3</td><td>2.77</td><td>Galvanizado en caliente</td></tr><tr><td><strong>1.050″</strong></td><td>¾"</td><td>26.7</td><td>2.87</td><td>Galvanizado en caliente</td></tr><tr><td><strong>1.315″</strong></td><td>1"</td><td>33.4</td><td>3.38</td><td>Galvanizado en caliente</td></tr><tr><td><strong>1.660″</strong></td><td>1¼"</td><td>42.2</td><td>3.56</td><td>Galvanizado en caliente</td></tr><tr><td><strong>1.900″</strong></td><td>1½"</td><td>48.3</td><td>3.68</td><td>Galvanizado en caliente</td></tr><tr><td><strong>2.375″</strong></td><td>2"</td><td>60.3</td><td>3.91</td><td>Galvanizado en caliente</td></tr><tr><td><strong>2.875″</strong></td><td>2½"</td><td>73.0</td><td>5.16</td><td>Galvanizado en caliente</td></tr></tbody></table></div>`,
   'duela-prolamsa':`<div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>Modelo</th><th>Calibre</th><th>Espesor (pulg)</th><th>Largo (m)</th><th>Pzas/paquete</th><th>kg/m</th><th>Acabado</th></tr></thead><tbody><tr><td><strong>170</strong></td><td>20</td><td>0.0359</td><td>6.00</td><td>60</td><td>1.54</td><td>PR / GV</td></tr><tr><td><strong>171</strong></td><td>20</td><td>0.0359</td><td>6.00</td><td>120</td><td>0.86</td><td>PR / GV</td></tr></tbody></table></div>`,
@@ -2025,6 +1892,10 @@ const CAT_LABELS_FULL = {
 
 let activeCat = 'all';
 
+function escapeHtml(s){
+  return String(s).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+}
+
 function render(query = ''){
   const q   = query.toLowerCase();
   const grid = document.getElementById('product-grid');
@@ -2038,18 +1909,15 @@ function render(query = ''){
         || CAT_NAMES[p.cat].toLowerCase().includes(q);
   });
 
-  const cntAll = document.getElementById('cnt-all');
-  if(cntAll) cntAll.textContent = PRODUCTS.length;
-
   if(!filtered.length){
-    grid.innerHTML = `<div class="cat-empty"><i class="fa-solid fa-magnifying-glass-minus"></i><p>Sin resultados para "<strong>${query}</strong>"</p></div>`;
+    grid.innerHTML = `<div class="cat-empty"><i class="fa-solid fa-magnifying-glass-minus"></i><p>Sin resultados para "<strong>${escapeHtml(query)}</strong>"</p></div>`;
     bar.innerHTML = '';
     return;
   }
 
   bar.innerHTML = `Mostrando <strong>${filtered.length}</strong> producto${filtered.length!==1?'s':''}`
     + (activeCat!=='all'?' en <strong>'+CAT_NAMES[activeCat]+'</strong>':'')
-    + (q?' para "<strong>'+query+'</strong>"':'');
+    + (q?' para "<strong>'+escapeHtml(query)+'</strong>"':'');
 
   grid.innerHTML = filtered.map(p => {
     const catBadge = `<span class="pcard-badge badge-cat-${p.cat}">${CAT_NAMES[p.cat]}</span>`;
@@ -2085,7 +1953,7 @@ function openModal(id){
     <div class="pmodal-inner">
       <div class="pmodal-left">
         ${p.photo ? `<img src="${p.photo}" alt="${p.name}" class="pmodal-photo" loading="lazy" referrerpolicy="no-referrer" style="object-position:${p.photoPos||'center center'}" onerror="this.onerror=null;this.src='assets/images/steel_beams_1774503028306.webp'">` : p.svg}
-        <p class="pmodal-svg-note">${p.svgNote}</p>
+        ${p.svgNote ? `<p class="pmodal-svg-note">${p.svgNote}</p>` : ''}
       </div>
       <div class="pmodal-right">
         <div class="pmodal-meta">
@@ -2120,9 +1988,8 @@ document.getElementById('pmodal-overlay').addEventListener('click', e => {
 });
 document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
 
-function openCategory(cat) {
+function mostrarCategoria(cat) {
   activeCat = cat;
-  location.hash = cat;
   document.getElementById('cat-menu').style.display = 'none';
   document.getElementById('cat-products').style.display = 'block';
   document.getElementById('cat-breadcrumb').textContent = CAT_LABELS_FULL[cat] || cat;
@@ -2131,13 +1998,27 @@ function openCategory(cat) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-function showMenu() {
+function mostrarMenu() {
   activeCat = 'all';
-  location.hash = '';
   document.getElementById('cat-products').style.display = 'none';
   document.getElementById('cat-menu').style.display = '';
   document.getElementById('cat-search').value = '';
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function openCategory(cat) {
+  if (location.hash !== '#' + cat) location.hash = cat;   // dispara hashchange
+  else mostrarCategoria(cat);
+}
+
+function showMenu() {
+  if (location.hash) {
+    // history.pushState evita dejar '#' colgado; luego aplicamos la vista
+    history.pushState('', document.title, location.pathname + location.search);
+    mostrarMenu();
+  } else {
+    mostrarMenu();
+  }
 }
 
 document.querySelectorAll('.cat-menu-card').forEach(btn => {
@@ -2146,12 +2027,15 @@ document.querySelectorAll('.cat-menu-card').forEach(btn => {
 
 document.getElementById('cat-back-btn').addEventListener('click', showMenu);
 
-/* Restaurar categoría al recargar usando el hash de la URL */
-(function() {
-  const validCats = ['estructural','comercial','especializado','pintura','herramienta','consumibles','herrajes','cerraduras'];
+/* Sincronizar vista con el hash — cubre carga inicial y botón atrás/adelante */
+const validCats = ['estructural','comercial','especializado','pintura','herramienta','consumibles','herrajes','cerraduras'];
+function aplicarHash() {
   const hash = location.hash.replace('#', '');
-  if (validCats.includes(hash)) openCategory(hash);
-})();
+  if (validCats.includes(hash)) mostrarCategoria(hash);
+  else mostrarMenu();
+}
+window.addEventListener('hashchange', aplicarHash);
+if (validCats.includes(location.hash.replace('#', ''))) aplicarHash();
 
 document.getElementById('cat-search').addEventListener('input', e => {
   render(e.target.value);
@@ -2164,7 +2048,6 @@ document.getElementById('cat-search').addEventListener('input', e => {
   if(el) el.textContent = count + ' producto' + (count !== 1 ? 's' : '');
 });
 
-/* El bottom sheet y FAB ya no son necesarios con el menú de dos niveles */
     </script>
 </body>
 </html>
