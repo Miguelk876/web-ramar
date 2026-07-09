@@ -5,13 +5,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (hamburger && navLinks) {
         hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+            const abierto = navLinks.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', abierto);
+            hamburger.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
         });
 
         // Close menu when clicking a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+                hamburger.setAttribute('aria-label', 'Abrir menú');
             });
         });
     }

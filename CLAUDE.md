@@ -104,6 +104,41 @@ All pages share copy-pasted `<header class="navbar">` and `<footer>` blocks. **T
 
 - The catalog (products) lives **ONLY** in `catalogo.html`. Never split into sub-pages, never add product listings to `index.html`. Sub-catalog files (`catalogo-comercial.html`, `catalogo-estructural.html`, `catalogo-especializado.html`, `catalogo-pintura.html`) were deleted on 2026-05-05 by user request — do not recreate them.
 
+### Catalog content rules (RAMAR-specific reality)
+
+Nayvi Padilla (redes) reviewed the catalog in 2026-06. The surviving 96 products reflect what RAMAR **actually stocks in Oaxaca** — don't let generic steel-industry knowledge override these:
+
+- **PTR**: never use "Serie C"/"Serie R" code naming — customers ask by calibre, not code. PTR Cuadrado: cal. 11 is the main one; cal. 12, 14, 16 only in select sizes. PTR Rectangular: only cal. 11, 14, 16. All 6 m.
+- **PTR Regiopytsa**: rectangular in cal. 18, 20, 22 (the best sellers).
+- **HSS**: only square 4"–12". Espesores in **fraction of inch**, never mm. No kg/m column.
+- **Vigas IPR**: peraltes 6, 8, 10, 12, 14 only (no 4").
+- **Rejilla electroforjada**: one medida only (1/8"×1", panel 1×6 m, 140 kg).
+- **Lámina HR is named "Lámina Negra"** (id stays `lamina-hr`). No "HR"/"CR"/"fría"/A-36/A572 wording. Cal. 14–26. No se dobla ni se corta.
+- **Cold Rolled (`lamina-fria`)** is a redirect product — consult Aceros RAMAR.
+- **Lámina Galvanizada**: G-45 (not G-60). **Pintro**: solo color rojo. **Galvateja**: solo cal. 26 (Plus = térmica).
+- **Lozacero** (not "Losacero"/"FortaDeck"): solo cal. 22.
+- **Tablero portones**: solo modelo 170, anchos 2–10", sin corte a medida.
+- **Pinturas vinílicas**: solo SUPERVIN, OMAR, VINET, KOLORTEX, CH14 (sobre pedido). ESMAFLEX is rezago — never list it.
+- **Primario anticorrosivo**: solo Rojo Óxido (1L, ¼, galón, cubeta).
+- **Tubería cédula**: solo Ced. 30 y 40. Pared varies by medida, not cédula. Se maneja en mm.
+- **Nylamid**: barras hasta 8" Ø; placas ½/¾/1" de 60×60 cm; solo blanco normal (no autolubricado G).
+- **Acero maquinaria**: 1018 en redondo/hexagonal/cuadrado; 1045 y 4140 solo redondo; hexagonal hasta 1½".
+- **Bronce**: solo redondos 9¾"–10". **Latón**: solo redondos + cuadrado ¾; no solera.
+- **Cerraduras Phillips**: only the surviving models (715 AS/CL/IF/LL, 620, 625 DC, AS 625, 775, 800/CH/MAX, 850, 875, X-900/MAX). Mueble and aluminio lines were removed for low rotation — don't re-add.
+- **Bisagras PHV**: solo pulidas, no 7/8". **Jaladeras**: solo Estriada y Trenzada, aluminio, atornilladas.
+- **Lanzas**: Forjada, Romana CH/G, Barroco, Azteca, Samurai, Árabe, Contemporáneo (±protección), Flor de Liz (±protección), Galo, Gótico, Puflé 107/105. **No alfanje.**
+- **Soldadoras**: NO AXTech MIG/TIG, NO Lincoln. Sí: AXT, WF, Línea VOLT (bivoltaje). Microalambre 5 kg y 1 kg.
+- **Herramienta**: Oakland es marca de casa. Rotomartillo = SDS Oakland 800W MR-3100 c/maletín. Compresores Goni Mod. 977 y 940 con accesorios.
+- **Truper manual**: NO diablos, paletas, cinceles ni crowbar. Carretilla única: 4.5 ft³ neumática Truper 11740.
+- **Tips**: avoid over-technical language (ASTM grades, hydraulic pressures, SAE formulas) — el maestro especialista orienta en sucursal.
+
+### Phone numbers — fijo vs WhatsApp (NOT interchangeable)
+
+- Navbar + floating button: `951 228 3263` → WhatsApp `https://wa.me/5219512283263` (never `tel:`)
+- Matriz fijo: `951 517 3157`, `951 533 6831` → `tel:` links, `fa-solid fa-phone` icon
+- Matriz WhatsApp: `951 533 6045`, `951 549 4636` → `wa.me` links, `fa-brands fa-whatsapp` icon
+- Viguera WhatsApp `951 416 0571`/`951 228 3259`, fijo `951 229 1055` · La Unión WhatsApp `951 272 1019`/`951 228 3269`
+
 ## Deployment
 
 - **Netlify** (canonical): https://construacerosramar.netlify.app
