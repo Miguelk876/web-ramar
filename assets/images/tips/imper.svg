@@ -26,7 +26,6 @@
   </g>
   <!-- Capa impermeabilizante (encima) -->
   <rect x="20" y="100" width="160" height="14" rx="2" fill="url(#impCoat)"/>
-  <text x="100" y="111" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="9" fill="#fff" text-anchor="middle">IMPERMEABILIZANTE</text>
   <!-- Losa -->
   <rect x="20" y="114" width="160" height="40" fill="url(#losa)"/>
   <!-- Fisuras (no debe haber) -->
@@ -34,10 +33,8 @@
     <line x1="55" y1="120" x2="60" y2="150"/>
     <line x1="120" y1="118" x2="118" y2="148"/>
   </g>
-  <text x="100" y="140" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="11" fill="#fff" text-anchor="middle">LOSA LIMPIA</text>
   <!-- Etiqueta -->
   <g transform="translate(70,165)">
     <rect width="60" height="22" rx="11" fill="#16a34a"/>
-    <text x="30" y="15" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="11" fill="#fff" text-anchor="middle">DURA AÑOS</text>
   </g>
 </svg>
