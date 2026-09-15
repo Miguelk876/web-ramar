@@ -24,6 +24,16 @@ node scripts/verificar.js
 
 It validates: PRODUCTS/TABLE_HTML parse and have no duplicate ids or orphaned table keys, required product fields, every local image reference exists on disk, internal links resolve, navbar/footer consistency, and WhatsApp float presence. Exit code 1 on errors — do not push if it fails.
 
+It only checks **local** images. The catalog's product photos are hotlinked from supplier servers, so they can die silently when a supplier reorganizes their site. A second script checks those, run by hand (it makes ~88 requests to third-party servers and needs open outbound internet):
+
+```bash
+node scripts/verificar-fotos.js                 # informe completo
+node scripts/verificar-fotos.js --solo-muertas  # solo lo que falla
+node scripts/verificar-fotos.js --csv           # para hoja de cálculo
+```
+
+Exit 1 if any photo is dead, exit 2 if every request failed with the same code — that means the network running the script is blocked (proxy/firewall), not that the suppliers went down, so don't edit the catalog based on that run.
+
 ## Architecture
 
 7 HTML pages linked via plain `<a href="...">` navigation:
