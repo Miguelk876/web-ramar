@@ -1,5 +1,5 @@
 # robots.txt — Construaceros RAMAR
-# https://construacerosramar.netlify.app/
+# https://construacerosramar.mx/
 
 User-agent: *
 Allow: /
@@ -13,4 +13,4 @@ Allow: /
 User-agent: Googlebot-Image
 Allow: /assets/images/
 
-Sitemap: https://construacerosramar.netlify.app/sitemap.xml
+Sitemap: https://construacerosramar.mx/sitemap.xml
