@@ -9,7 +9,13 @@
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.facebook.com https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; img-src 'self' data: https: blob:; connect-src 'self' https:; frame-src https://www.facebook.com https://www.google.com https://maps.google.com; object-src 'none'; base-uri 'self'; form-action 'self' https://formsubmit.co https://formspree.io https://docs.google.com
 
-# Caché agresivo para imágenes
+# Caché agresivo para imágenes: se guardan un año en el navegador del visitante.
+#
+# OJO al reemplazar una foto: "immutable" significa que el navegador ni siquiera
+# vuelve a preguntar. Si subes una foto nueva CON EL MISMO NOMBRE de archivo,
+# quien ya visitó el sitio va a seguir viendo la vieja hasta por un año.
+# Para cambiar una imagen, súbela con otro nombre (por ejemplo
+# logo-horizontal-2.png) y actualiza las referencias en el HTML.
 /assets/images/*
   Cache-Control: public, max-age=31536000, immutable
 
@@ -21,11 +27,18 @@
 /android-chrome-*.png
   Cache-Control: public, max-age=31536000, immutable
 
-# CSS / JS — caché moderado (cambian con cada commit)
+# CSS / JS — siempre revalidar, igual que el HTML.
+#
+# Antes estaban en max-age=86400 (24 h). Eso hacía que, al publicar un cambio
+# de diseño, el HTML llegara nuevo pero el CSS siguiera siendo el viejo hasta
+# un día entero: la página se veía rota o sin los cambios, y no había forma de
+# saberlo desde fuera. Con max-age=0 el navegador pregunta cada vez; si el
+# archivo no cambió, Netlify responde "304 Not Modified" sin reenviarlo, así
+# que el costo es de unos pocos bytes y el cliente siempre ve lo último.
 /styles.css
-  Cache-Control: public, max-age=86400, must-revalidate
+  Cache-Control: public, max-age=0, must-revalidate
 /main.js
-  Cache-Control: public, max-age=86400, must-revalidate
+  Cache-Control: public, max-age=0, must-revalidate
 
 # HTML — siempre revalidar (despliegue rápido al hacer push)
 /*.html

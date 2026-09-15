@@ -82,7 +82,7 @@ All pages share copy-pasted `<header class="navbar">` and `<footer>` blocks. **T
 - **`main.js`** — mobile hamburger toggle + `IntersectionObserver` for `.fade-in` (with 800 ms fallback that forces `.visible` if observer doesn't fire).
 - **`assets/images/`** — local images. Product photos in catalog use Pexels CDN URLs with `loading="lazy"`.
 - **`assets/images/tips/*.svg`** — 10 hand-crafted illustrations for the home tips section. `electrodos.svg` is animated (welding sparks pulse).
-- **`_headers`** (Netlify) — CSP, HSTS, X-Frame-Options, Referrer-Policy, Permissions-Policy, aggressive image cache.
+- **`_headers`** (Netlify) — CSP, HSTS, X-Frame-Options, Referrer-Policy, Permissions-Policy, cache policy. HTML, `styles.css` and `main.js` all revalidate on every request, so a deploy reaches visitors immediately. Images under `assets/images/` are cached for a year as `immutable`: **to replace an image, give it a new filename** and update the references — overwriting the same filename leaves returning visitors on the old one for up to a year.
 - **`robots.txt` / `sitemap.xml`** — absolute URLs pointing to Netlify.
 - **`.well-known/security.txt`** — RFC 9116 contact.
 

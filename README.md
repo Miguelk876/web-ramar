@@ -162,6 +162,14 @@ Después de cambiar, corre `node scripts/verificar.js` para confirmar que navbar
 
 Ambos despliegan automáticamente al pushear a `main`. Netlify lee `_headers` para aplicar CSP/HSTS y caché.
 
+### ¿Cuándo ve el cliente los cambios?
+
+El HTML, `styles.css` y `main.js` se revalidan en cada visita, así que **un cambio de texto o de diseño le llega al cliente en cuanto termina el deploy**, sin que tenga que borrar nada. El navegador pregunta si el archivo cambió; si no, Netlify contesta `304 Not Modified` y no lo reenvía, así que preguntar cada vez casi no cuesta.
+
+Las imágenes de `assets/images/` son la excepción: se guardan un año en el navegador y están marcadas `immutable`, o sea que el navegador ni siquiera vuelve a preguntar. **Para reemplazar una foto, súbela con otro nombre de archivo** (`logo-horizontal-2.png`) y actualiza las referencias. Si la sobrescribes con el mismo nombre, quien ya visitó el sitio seguirá viendo la vieja.
+
+Si aun así alguien ve algo viejo, casi siempre es su propio navegador: **Ctrl + Shift + R** recarga ignorando el caché, y una ventana de incógnito sirve para comprobar cómo lo ve alguien que llega por primera vez.
+
 Para forzar redeploy sin cambios:
 ```bash
 git commit --allow-empty -m "chore: trigger redeploy" && git push
