@@ -232,6 +232,90 @@
             </div>
         </section>
 
+        <!-- ═══════════════ REDES SOCIALES ═══════════════ -->
+        <section class="redes-section fade-in" id="redes">
+            <div class="container">
+                <p class="section-eyebrow dark">Lo más nuevo</p>
+                <h2 class="section-title text-center">SÍGUENOS EN <span class="text-red">REDES</span></h2>
+                <p class="redes-sub">Promociones, material que va llegando y videos de obra. Elige dónde quieres vernos.</p>
+
+                <div class="redes-tabs" role="tablist" aria-label="Elige una red social">
+                    <button class="red-tab red-fb active" id="tab-fb" data-red="fb" role="tab" aria-selected="true" aria-controls="panel-fb" type="button">
+                        <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                        <span class="red-tab-txt">
+                            <span class="red-tab-nombre">Facebook</span>
+                            <span class="red-tab-handle">Publicaciones y promos</span>
+                        </span>
+                    </button>
+                    <button class="red-tab red-ig" id="tab-ig" data-red="ig" role="tab" aria-selected="false" aria-controls="panel-ig" type="button">
+                        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                        <span class="red-tab-txt">
+                            <span class="red-tab-nombre">Instagram</span>
+                            <span class="red-tab-handle">Fotos del día a día</span>
+                        </span>
+                    </button>
+                    <button class="red-tab red-tk" id="tab-tk" data-red="tk" role="tab" aria-selected="false" aria-controls="panel-tk" type="button">
+                        <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+                        <span class="red-tab-txt">
+                            <span class="red-tab-nombre">TikTok</span>
+                            <span class="red-tab-handle">Videos cortos</span>
+                        </span>
+                    </button>
+                </div>
+
+                <div class="redes-paneles">
+                    <!-- Facebook: muro real vía plugin oficial -->
+                    <div class="red-panel red-panel-fb active" id="panel-fb" role="tabpanel" aria-labelledby="tab-fb">
+                        <div class="fb-feed-wrap">
+                            <iframe
+                                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FConstruacerosRamarOficial&tabs=timeline&width=500&height=640&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
+                                width="500"
+                                height="640"
+                                style="border:none;overflow:hidden;max-width:100%;"
+                                scrolling="no"
+                                frameborder="0"
+                                allowfullscreen="true"
+                                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                                loading="lazy"
+                                title="Publicaciones de Construaceros RAMAR en Facebook">
+                            </iframe>
+                        </div>
+                        <a href="https://facebook.com/ConstruacerosRamarOficial" target="_blank" rel="noopener" class="red-cta red-cta-fb">
+                            <i class="fa-brands fa-facebook-f"></i> Abrir Facebook
+                        </a>
+                    </div>
+
+                    <!-- Instagram: fotos reales de bodega como antesala, sin simular el feed -->
+                    <div class="red-panel red-panel-ig" id="panel-ig" role="tabpanel" aria-labelledby="tab-ig" hidden>
+                        <p class="red-panel-intro">Así se ve la bodega por dentro. Todo el contenido está en Instagram.</p>
+                        <div class="red-galeria">
+                            <img src="assets/images/20260430_182659213_iOS.webp" alt="Tubería de acero acomodada por medida en el rack" loading="lazy">
+                            <img src="assets/images/20260430_182710507_iOS.webp" alt="Material de acero en bodega RAMAR" loading="lazy">
+                            <img src="assets/images/20260430_182716750_iOS.webp" alt="Perfiles de acero en existencia" loading="lazy">
+                            <img src="assets/images/20260430_182731019_iOS.webp" alt="Almacén de perfiles y soleras" loading="lazy">
+                            <img src="assets/images/20260430_182743814_iOS.webp" alt="Material estructural en bodega" loading="lazy">
+                            <img src="assets/images/20260430_182919820_iOS.webp" alt="Vista general de la bodega RAMAR" loading="lazy">
+                        </div>
+                        <a href="https://instagram.com/ramar.oficial" target="_blank" rel="noopener" class="red-cta red-cta-ig">
+                            <i class="fa-brands fa-instagram"></i> Ver @ramar.oficial en Instagram
+                        </a>
+                    </div>
+
+                    <!-- TikTok -->
+                    <div class="red-panel red-panel-tk" id="panel-tk" role="tabpanel" aria-labelledby="tab-tk" hidden>
+                        <div class="red-tk-caja">
+                            <i class="fa-brands fa-tiktok red-tk-icono" aria-hidden="true"></i>
+                            <h3>Videos cortos de obra y material</h3>
+                            <p>Cómo se ve el material de cerca, cómo se usa y qué va llegando a bodega.</p>
+                            <a href="https://tiktok.com/@ramar.oficial" target="_blank" rel="noopener" class="red-cta red-cta-tk">
+                                <i class="fa-brands fa-tiktok"></i> Ver @ramar.oficial en TikTok
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- ═══════════════ MARCAS ═══════════════ -->
         <section class="brands-section fade-in">
             <div class="container">
@@ -260,34 +344,6 @@
                 </div>
 
                 <div class="tip-dots" id="tip-dots"></div>
-            </div>
-        </section>
-
-        <!-- ═══════════════ FACEBOOK FEED ═══════════════ -->
-        <section class="fb-feed-section fade-in">
-            <div class="container">
-                <p class="section-eyebrow dark">Lo más nuevo</p>
-                <h2 class="section-title text-center">SÍGUENOS EN <span class="text-red">FACEBOOK</span></h2>
-                <p class="fb-feed-sub">Promociones, nuevos productos, videos y novedades de la semana — actualizado automáticamente.</p>
-                <div class="fb-feed-wrap">
-                    <iframe
-                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FConstruacerosRamarOficial&tabs=timeline&width=500&height=700&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
-                        width="500"
-                        height="700"
-                        style="border:none;overflow:hidden;max-width:100%;"
-                        scrolling="no"
-                        frameborder="0"
-                        allowfullscreen="true"
-                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                        loading="lazy"
-                        title="Publicaciones de Construaceros RAMAR en Facebook">
-                    </iframe>
-                </div>
-                <div class="fb-feed-cta">
-                    <a href="https://facebook.com/ConstruacerosRamarOficial" target="_blank" rel="noopener" class="btn-primary">
-                        <i class="fa-brands fa-facebook"></i> Ver página completa en Facebook
-                    </a>
-                </div>
             </div>
         </section>
 
@@ -348,6 +404,41 @@
     </a>
 
     <script src="main.js"></script>
+
+    <!-- ═══════════════ PESTAÑAS DE REDES SOCIALES ═══════════════ -->
+    <script>
+    (function () {
+        const tabs = document.querySelectorAll('.red-tab');
+        if (!tabs.length) return;
+
+        function mostrar(red) {
+            tabs.forEach((t) => {
+                const activa = t.dataset.red === red;
+                t.classList.toggle('active', activa);
+                t.setAttribute('aria-selected', activa ? 'true' : 'false');
+            });
+            document.querySelectorAll('.red-panel').forEach((p) => {
+                const activo = p.id === 'panel-' + red;
+                p.classList.toggle('active', activo);
+                p.hidden = !activo;
+            });
+        }
+
+        tabs.forEach((t) => t.addEventListener('click', () => mostrar(t.dataset.red)));
+
+        // Flechas izquierda/derecha entre pestañas, como espera un lector de pantalla.
+        document.querySelector('.redes-tabs').addEventListener('keydown', (e) => {
+            if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+            const lista = [...tabs];
+            const i = lista.indexOf(document.activeElement);
+            if (i === -1) return;
+            const sig = lista[(i + (e.key === 'ArrowRight' ? 1 : -1) + lista.length) % lista.length];
+            sig.focus();
+            mostrar(sig.dataset.red);
+            e.preventDefault();
+        });
+    })();
+    </script>
 
     <!-- ═══════════════ TIPS ROTATIVOS ═══════════════ -->
     <script>
