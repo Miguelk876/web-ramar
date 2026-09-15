@@ -67,7 +67,7 @@
 
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
             gap: 2.5rem;
             margin-top: 3rem;
         }
@@ -78,6 +78,9 @@
             border-radius: 16px;
             padding: 2.5rem;
             box-shadow: 0 4px 24px rgba(28,43,84,0.10);
+            /* Sin esto el contenido fija un ancho mínimo y la página se
+               desborda 21px en pantallas de 320px. */
+            min-width: 0;
         }
 
         .contact-info-card h3 {
