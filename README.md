@@ -3,7 +3,7 @@
 Sitio de marketing para **Construaceros RAMAR**, distribuidora de acero B2B con 26 años en Oaxaca, México.
 8 sucursales propias activas + 4 distribuidores autorizados.
 
-URL pública: https://construacerosramar.netlify.app
+URL pública: https://construacerosramar.mx
 
 ---
 
@@ -154,7 +154,9 @@ Después de cambiar, corre `node scripts/verificar.js` para confirmar que navbar
 
 ## Despliegue
 
-- **Netlify** (URL principal): https://construacerosramar.netlify.app
+- **Netlify** (URL principal): https://construacerosramar.mx
+  - Dominio propio registrado en Akky. Los nameservers del dominio apuntan a Netlify DNS.
+  - Subdominio interno de Netlify (sigue funcionando): https://construacerosramar.netlify.app
 - **GitHub Pages** (respaldo): https://miguelk876.github.io/web-ramar/
 
 Ambos despliegan automáticamente al pushear a `main`. Netlify lee `_headers` para aplicar CSP/HSTS y caché.

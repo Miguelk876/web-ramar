@@ -141,7 +141,7 @@ Nayvi Padilla (redes) reviewed the catalog in 2026-06. The surviving 96 products
 
 ## Deployment
 
-- **Netlify** (canonical): https://construacerosramar.netlify.app
+- **Netlify** (canonical): https://construacerosramar.mx — custom domain, registered at Akky, nameservers delegated to Netlify DNS. The `construacerosramar.netlify.app` subdomain still resolves but is no longer the canonical URL; don't reintroduce it in `canonical`, `og:url`, `sitemap.xml` or `robots.txt`.
 - **GitHub Pages** (backup): https://miguelk876.github.io/web-ramar/
 
 Both auto-deploy on `git push origin main`. Netlify reads `_headers` for security policies. GitHub Pages does not — security headers there will be defaults.
