@@ -59,7 +59,8 @@ web-ramar/
 │   └── brands/*.png|svg    # Logos de proveedores (Ternium, PintuMex, etc.)
 │
 ├── scripts/
-│   └── verificar.js        # Verificador pre-publicación (node scripts/verificar.js)
+│   ├── verificar.js        # Verificador pre-publicación (node scripts/verificar.js)
+│   └── verificar-fotos.js  # Revisa las fotos externas de proveedores (a mano, requiere internet)
 │
 ├── favicon-*.png           # 6 tamaños (16, 32, 48, 180, 192, 512)
 ├── apple-touch-icon.png
