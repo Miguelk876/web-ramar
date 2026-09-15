@@ -177,6 +177,34 @@
         .suc-info { list-style: none; padding: 0; margin: 0 0 1rem; display: flex; flex-direction: column; gap: .45rem; }
         .suc-info li { display: flex; align-items: flex-start; gap: .6rem; font-size: .9rem; color: var(--color-text); }
         .suc-info li i { margin-top: 2px; min-width: 16px; }
+
+        /* Teléfonos: cada número es su propia ficha tocable, con su tipo escrito.
+           Antes iban dos por renglón separados por "·" y todos con icono de
+           teléfono, aunque varios son solo WhatsApp: al cliente le marcaba a
+           una línea que nadie contesta. Ahora se ve de un vistazo a cuál se
+           llama y a cuál se le escribe, y si uno no responde tiene el otro. */
+        .suc-tels-li { display: block !important; }
+        .suc-tels { display: flex; flex-wrap: wrap; gap: .5rem; }
+        .suc-tel {
+            display: inline-flex; align-items: center; gap: .55rem;
+            min-height: 44px; padding: .45rem .8rem;
+            border: 1px solid #e2e8f0; border-radius: 10px;
+            background: #fff; text-decoration: none; color: inherit;
+            transition: border-color .2s, box-shadow .2s, transform .2s;
+        }
+        .suc-tel:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(28,43,84,.12); }
+        .suc-tel i { font-size: 1.05rem; min-width: auto; margin: 0; }
+        .suc-tel-txt { display: flex; flex-direction: column; line-height: 1.15; }
+        .suc-tel-num { font-weight: 700; font-size: .92rem; color: var(--color-blue); }
+        .suc-tel-tipo { font-size: .7rem; color: #64748b; text-transform: uppercase; letter-spacing: .04em; }
+        .suc-tel-fijo i { color: var(--color-blue); }
+        .suc-tel-fijo:hover { border-color: var(--color-blue); }
+        .suc-tel-wa i { color: #25D366; }
+        .suc-tel-wa:hover { border-color: #25D366; }
+        @media (max-width: 480px) {
+            .suc-tels { gap: .45rem; }
+            .suc-tel { flex: 1 1 100%; }
+        }
         .suc-map { width: 100%; height: 180px; border: 0; display: block; }
         .suc-footer { padding: .8rem 1.5rem 1.2rem; }
         .suc-btn-map {
@@ -264,9 +292,15 @@
                             <p class="suc-region"><i class="fa-solid fa-location-dot" style="color:var(--color-red);"></i> Santa Cruz Xoxocotlán, Oax.</p>
                             <ul class="suc-info">
                                 <li><i class="fa-solid fa-map-pin" style="color:var(--color-red);"></i> Av. Del Valle #8 Bis, Col. Ex Garita</li>
-                                <li><i class="fa-solid fa-phone" style="color:var(--color-blue);"></i> <a href="tel:9515173157" style="color:inherit;text-decoration:none">951 517 3157</a> · <a href="tel:9515336831" style="color:inherit;text-decoration:none">951 533 6831</a></li>
-                                <li><i class="fa-solid fa-phone" style="color:var(--color-blue);"></i> <a href="tel:9515336045" style="color:inherit;text-decoration:none">951 533 6045</a> · <a href="tel:9515494636" style="color:inherit;text-decoration:none">951 549 4636</a></li>
-                                <li><i class="fa-brands fa-whatsapp" style="color:#25D366;"></i> <a href="https://wa.me/5219512283263" target="_blank" style="color:inherit;text-decoration:none">951 228 3263</a></li>
+                                <li class="suc-tels-li">
+                                    <div class="suc-tels">
+                                    <a class="suc-tel suc-tel-fijo" href="tel:9515173157" aria-label="Tel. fijo 951 517 3157"><i class="fa-solid fa-phone" aria-hidden="true"></i><span class="suc-tel-txt"><span class="suc-tel-num">951 517 3157</span><span class="suc-tel-tipo">Tel. fijo</span></span></a>
+                                    <a class="suc-tel suc-tel-fijo" href="tel:9515336831" aria-label="Tel. fijo 951 533 6831"><i class="fa-solid fa-phone" aria-hidden="true"></i><span class="suc-tel-txt"><span class="suc-tel-num">951 533 6831</span><span class="suc-tel-tipo">Tel. fijo</span></span></a>
+                                    <a class="suc-tel suc-tel-wa" href="https://wa.me/5219515336045" target="_blank" rel="noopener" aria-label="WhatsApp 951 533 6045"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span class="suc-tel-txt"><span class="suc-tel-num">951 533 6045</span><span class="suc-tel-tipo">WhatsApp</span></span></a>
+                                    <a class="suc-tel suc-tel-wa" href="https://wa.me/5219515494636" target="_blank" rel="noopener" aria-label="WhatsApp 951 549 4636"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span class="suc-tel-txt"><span class="suc-tel-num">951 549 4636</span><span class="suc-tel-tipo">WhatsApp</span></span></a>
+                                    <a class="suc-tel suc-tel-wa" href="https://wa.me/5219512283263" target="_blank" rel="noopener" aria-label="WhatsApp 951 228 3263"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span class="suc-tel-txt"><span class="suc-tel-num">951 228 3263</span><span class="suc-tel-tipo">WhatsApp</span></span></a>
+                                    </div>
+                                </li>
                                 <li><i class="fa-solid fa-envelope" style="color:var(--color-blue);"></i> <a href="mailto:ramar.matriz@gmail.com" style="color:inherit;text-decoration:none">ramar.matriz@gmail.com</a></li>
                                 <li><i class="fa-regular fa-clock" style="color:var(--color-blue);"></i> Lun-Vie 8:00–18:00 · Sáb 8:00–14:00</li>
                             </ul>
@@ -286,7 +320,12 @@
                             <p class="suc-region"><i class="fa-solid fa-location-dot" style="color:var(--color-red);"></i> Santa Cruz Xoxocotlán, Oax.</p>
                             <ul class="suc-info">
                                 <li><i class="fa-solid fa-map-pin" style="color:var(--color-red);"></i> Av. Del Valle #8 Bis, Col. Ex Garita</li>
-                                <li><i class="fa-solid fa-phone" style="color:var(--color-blue);"></i> <a href="tel:9512261469" style="color:inherit;text-decoration:none">951 226 1469</a> · <a href="tel:9512284192" style="color:inherit;text-decoration:none">951 228 4192</a></li>
+                                <li class="suc-tels-li">
+                                    <div class="suc-tels">
+                                    <a class="suc-tel suc-tel-fijo" href="tel:9512261469" aria-label="Tel. fijo 951 226 1469"><i class="fa-solid fa-phone" aria-hidden="true"></i><span class="suc-tel-txt"><span class="suc-tel-num">951 226 1469</span><span class="suc-tel-tipo">Tel. fijo</span></span></a>
+                                    <a class="suc-tel suc-tel-fijo" href="tel:9512284192" aria-label="Tel. fijo 951 228 4192"><i class="fa-solid fa-phone" aria-hidden="true"></i><span class="suc-tel-txt"><span class="suc-tel-num">951 228 4192</span><span class="suc-tel-tipo">Tel. fijo</span></span></a>
+                                    </div>
+                                </li>
                                 <li><i class="fa-solid fa-envelope" style="color:var(--color-blue);"></i> <a href="mailto:ramar.aceros@gmail.com" style="color:inherit;text-decoration:none">ramar.aceros@gmail.com</a></li>
                                 <li><i class="fa-solid fa-star" style="color:#7e22ce;"></i> Aceros especializados · Metales no ferrosos</li>
                                 <li><i class="fa-regular fa-clock" style="color:var(--color-blue);"></i> Lun-Vie 8:00–18:00 · Sáb 8:00–14:00</li>
@@ -307,7 +346,12 @@
                             <p class="suc-region"><i class="fa-solid fa-location-dot" style="color:var(--color-red);"></i> Santa Cruz Xoxocotlán, Oax.</p>
                             <ul class="suc-info">
                                 <li><i class="fa-solid fa-map-pin" style="color:var(--color-red);"></i> Blvd. Guadalupe Hinojosa de Murat #22, Col. Juquilita</li>
-                                <li><i class="fa-solid fa-phone" style="color:var(--color-blue);"></i> <a href="tel:9512261471" style="color:inherit;text-decoration:none">951 226 1471</a> · <a href="tel:9514765148" style="color:inherit;text-decoration:none">951 476 5148</a></li>
+                                <li class="suc-tels-li">
+                                    <div class="suc-tels">
+                                    <a class="suc-tel suc-tel-fijo" href="tel:9512261471" aria-label="Tel. fijo 951 226 1471"><i class="fa-solid fa-phone" aria-hidden="true"></i><span class="suc-tel-txt"><span class="suc-tel-num">951 226 1471</span><span class="suc-tel-tipo">Tel. fijo</span></span></a>
+                                    <a class="suc-tel suc-tel-fijo" href="tel:9514765148" aria-label="Tel. fijo 951 476 5148"><i class="fa-solid fa-phone" aria-hidden="true"></i><span class="suc-tel-txt"><span class="suc-tel-num">951 476 5148</span><span class="suc-tel-tipo">Tel. fijo</span></span></a>
+                                    </div>
+                                </li>
                                 <li><i class="fa-solid fa-envelope" style="color:var(--color-blue);"></i> <a href="mailto:ramar.juquilita@gmail.com" style="color:inherit;text-decoration:none">ramar.juquilita@gmail.com</a></li>
                                 <li><i class="fa-regular fa-clock" style="color:var(--color-blue);"></i> Lun-Vie 8:00–18:00 · Sáb 8:00–14:00</li>
                             </ul>
@@ -327,8 +371,12 @@
                             <p class="suc-region"><i class="fa-solid fa-location-dot" style="color:var(--color-red);"></i> Santa Cruz Xoxocotlán, Oax.</p>
                             <ul class="suc-info">
                                 <li><i class="fa-solid fa-map-pin" style="color:var(--color-red);"></i> Blvd. Guadalupe Hinojosa de Murat #204, Col. Agustín Melgar</li>
-                                <li><i class="fa-solid fa-phone" style="color:var(--color-blue);"></i> Tel <a href="tel:9511339973" style="color:inherit;text-decoration:none">951 133 9973</a></li>
-                                <li><i class="fa-brands fa-whatsapp" style="color:#25D366;"></i> Cel <a href="https://wa.me/5219512283689" target="_blank" style="color:inherit;text-decoration:none">951 228 3689</a></li>
+                                <li class="suc-tels-li">
+                                    <div class="suc-tels">
+                                    <a class="suc-tel suc-tel-fijo" href="tel:9511339973" aria-label="Tel. fijo 951 133 9973"><i class="fa-solid fa-phone" aria-hidden="true"></i><span class="suc-tel-txt"><span class="suc-tel-num">951 133 9973</span><span class="suc-tel-tipo">Tel. fijo</span></span></a>
+                                    <a class="suc-tel suc-tel-wa" href="https://wa.me/5219512283689" target="_blank" rel="noopener" aria-label="WhatsApp 951 228 3689"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span class="suc-tel-txt"><span class="suc-tel-num">951 228 3689</span><span class="suc-tel-tipo">WhatsApp</span></span></a>
+                                    </div>
+                                </li>
                                 <li><i class="fa-solid fa-envelope" style="color:var(--color-blue);"></i> <a href="mailto:ramar.sanisidro@gmail.com" style="color:inherit;text-decoration:none">ramar.sanisidro@gmail.com</a></li>
                                 <li><i class="fa-regular fa-clock" style="color:var(--color-blue);"></i> Lun-Vie 8:00–18:00 · Sáb 8:00–14:00</li>
                             </ul>
@@ -348,8 +396,13 @@
                             <p class="suc-region"><i class="fa-solid fa-location-dot" style="color:var(--color-red);"></i> Oaxaca de Juárez, Oax.</p>
                             <ul class="suc-info">
                                 <li><i class="fa-solid fa-map-pin" style="color:var(--color-red);"></i> Libramiento del Río Atoyac #4956, Trinidad de Viguera</li>
-                                <li><i class="fa-solid fa-phone" style="color:var(--color-blue);"></i> <a href="tel:9514160571" style="color:inherit;text-decoration:none">951 416 0571</a> · <a href="tel:9512283259" style="color:inherit;text-decoration:none">951 228 3259</a></li>
-                                <li><i class="fa-solid fa-phone" style="color:var(--color-blue);"></i> <a href="tel:9512291055" style="color:inherit;text-decoration:none">951 229 1055</a></li>
+                                <li class="suc-tels-li">
+                                    <div class="suc-tels">
+                                    <a class="suc-tel suc-tel-wa" href="https://wa.me/5219514160571" target="_blank" rel="noopener" aria-label="WhatsApp 951 416 0571"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span class="suc-tel-txt"><span class="suc-tel-num">951 416 0571</span><span class="suc-tel-tipo">WhatsApp</span></span></a>
+                                    <a class="suc-tel suc-tel-wa" href="https://wa.me/5219512283259" target="_blank" rel="noopener" aria-label="WhatsApp 951 228 3259"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span class="suc-tel-txt"><span class="suc-tel-num">951 228 3259</span><span class="suc-tel-tipo">WhatsApp</span></span></a>
+                                    <a class="suc-tel suc-tel-fijo" href="tel:9512291055" aria-label="Tel. fijo 951 229 1055"><i class="fa-solid fa-phone" aria-hidden="true"></i><span class="suc-tel-txt"><span class="suc-tel-num">951 229 1055</span><span class="suc-tel-tipo">Tel. fijo</span></span></a>
+                                    </div>
+                                </li>
                                 <li><i class="fa-solid fa-envelope" style="color:var(--color-blue);"></i> <a href="mailto:ramar.viguera@gmail.com" style="color:inherit;text-decoration:none">ramar.viguera@gmail.com</a></li>
                                 <li><i class="fa-regular fa-clock" style="color:var(--color-blue);"></i> Lun-Vie 8:00–18:00 · Sáb 8:00–14:00</li>
                             </ul>
@@ -369,7 +422,12 @@
                             <p class="suc-region"><i class="fa-solid fa-location-dot" style="color:var(--color-red);"></i> Santa Cruz Xoxocotlán, Oax.</p>
                             <ul class="suc-info">
                                 <li><i class="fa-solid fa-map-pin" style="color:var(--color-red);"></i> Carretera Arrazola #424, Col. La Unión</li>
-                                <li><i class="fa-solid fa-phone" style="color:var(--color-blue);"></i> <a href="tel:9512721019" style="color:inherit;text-decoration:none">951 272 1019</a> · <a href="tel:9512283269" style="color:inherit;text-decoration:none">951 228 3269</a></li>
+                                <li class="suc-tels-li">
+                                    <div class="suc-tels">
+                                    <a class="suc-tel suc-tel-wa" href="https://wa.me/5219512721019" target="_blank" rel="noopener" aria-label="WhatsApp 951 272 1019"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span class="suc-tel-txt"><span class="suc-tel-num">951 272 1019</span><span class="suc-tel-tipo">WhatsApp</span></span></a>
+                                    <a class="suc-tel suc-tel-wa" href="https://wa.me/5219512283269" target="_blank" rel="noopener" aria-label="WhatsApp 951 228 3269"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span class="suc-tel-txt"><span class="suc-tel-num">951 228 3269</span><span class="suc-tel-tipo">WhatsApp</span></span></a>
+                                    </div>
+                                </li>
                                 <li><i class="fa-solid fa-envelope" style="color:var(--color-blue);"></i> <a href="mailto:ramar.union@gmail.com" style="color:inherit;text-decoration:none">ramar.union@gmail.com</a></li>
                                 <li><i class="fa-regular fa-clock" style="color:var(--color-blue);"></i> Lun-Vie 8:00–18:00 · Sáb 8:00–14:00</li>
                             </ul>
@@ -389,7 +447,11 @@
                             <p class="suc-region"><i class="fa-solid fa-location-dot" style="color:var(--color-red);"></i> Sierra Norte · San Andrés Solaga, Oax.</p>
                             <ul class="suc-info">
                                 <li><i class="fa-solid fa-map-pin" style="color:var(--color-red);"></i> Carretera Principal S/N, San Andrés Solaga</li>
-                                <li><i class="fa-solid fa-phone" style="color:var(--color-blue);"></i> <a href="tel:9512283104" style="color:inherit;text-decoration:none">951 228 3104</a></li>
+                                <li class="suc-tels-li">
+                                    <div class="suc-tels">
+                                    <a class="suc-tel suc-tel-fijo" href="tel:9512283104" aria-label="Tel. fijo 951 228 3104"><i class="fa-solid fa-phone" aria-hidden="true"></i><span class="suc-tel-txt"><span class="suc-tel-num">951 228 3104</span><span class="suc-tel-tipo">Tel. fijo</span></span></a>
+                                    </div>
+                                </li>
                                 <li><i class="fa-solid fa-envelope" style="color:var(--color-blue);"></i> <a href="mailto:ramar.solaga@gmail.com" style="color:inherit;text-decoration:none">ramar.solaga@gmail.com</a></li>
                                 <li><i class="fa-regular fa-clock" style="color:var(--color-blue);"></i> Lun-Vie 8:00–18:00 · Sáb 8:00–14:00</li>
                             </ul>
@@ -435,7 +497,12 @@
                             <p class="suc-region"><i class="fa-solid fa-location-dot" style="color:var(--color-red);"></i> Heroica Ciudad de Ejutla de Crespo, Oax.</p>
                             <ul class="suc-info">
                                 <li><i class="fa-solid fa-map-pin" style="color:var(--color-red);"></i> José María Ramírez 36, Centro</li>
-                                <li><i class="fa-solid fa-phone" style="color:var(--color-blue);"></i> <a href="tel:9515730734" style="color:inherit;text-decoration:none">951 573 0734</a> · <a href="tel:9513662580" style="color:inherit;text-decoration:none">951 366 2580</a></li>
+                                <li class="suc-tels-li">
+                                    <div class="suc-tels">
+                                    <a class="suc-tel suc-tel-fijo" href="tel:9515730734" aria-label="Tel. fijo 951 573 0734"><i class="fa-solid fa-phone" aria-hidden="true"></i><span class="suc-tel-txt"><span class="suc-tel-num">951 573 0734</span><span class="suc-tel-tipo">Tel. fijo</span></span></a>
+                                    <a class="suc-tel suc-tel-fijo" href="tel:9513662580" aria-label="Tel. fijo 951 366 2580"><i class="fa-solid fa-phone" aria-hidden="true"></i><span class="suc-tel-txt"><span class="suc-tel-num">951 366 2580</span><span class="suc-tel-tipo">Tel. fijo</span></span></a>
+                                    </div>
+                                </li>
                                 <li><i class="fa-solid fa-envelope" style="color:var(--color-blue);"></i> <a href="mailto:perfilesantequera_ejutla@hotmail.com" style="color:inherit;text-decoration:none;font-size:.85rem;">perfilesantequera_ejutla@hotmail.com</a></li>
                             </ul>
                         </div>
@@ -453,8 +520,13 @@
                             <p class="suc-region"><i class="fa-solid fa-location-dot" style="color:var(--color-red);"></i> San Pedro y San Pablo Ayutla, Oax.</p>
                             <ul class="suc-info">
                                 <li><i class="fa-solid fa-map-pin" style="color:var(--color-red);"></i> Px Yukp 141, San Pedro y San Pablo Ayutla</li>
-                                <li><i class="fa-solid fa-phone" style="color:var(--color-blue);"></i> <a href="tel:9513125189" style="color:inherit;text-decoration:none">951 312 5189</a> · <a href="tel:9512577941" style="color:inherit;text-decoration:none">951 257 7941</a></li>
-                                <li><i class="fa-solid fa-phone" style="color:var(--color-blue);"></i> <a href="tel:9516079059" style="color:inherit;text-decoration:none">951 607 9059</a></li>
+                                <li class="suc-tels-li">
+                                    <div class="suc-tels">
+                                    <a class="suc-tel suc-tel-fijo" href="tel:9513125189" aria-label="Tel. fijo 951 312 5189"><i class="fa-solid fa-phone" aria-hidden="true"></i><span class="suc-tel-txt"><span class="suc-tel-num">951 312 5189</span><span class="suc-tel-tipo">Tel. fijo</span></span></a>
+                                    <a class="suc-tel suc-tel-fijo" href="tel:9512577941" aria-label="Tel. fijo 951 257 7941"><i class="fa-solid fa-phone" aria-hidden="true"></i><span class="suc-tel-txt"><span class="suc-tel-num">951 257 7941</span><span class="suc-tel-tipo">Tel. fijo</span></span></a>
+                                    <a class="suc-tel suc-tel-fijo" href="tel:9516079059" aria-label="Tel. fijo 951 607 9059"><i class="fa-solid fa-phone" aria-hidden="true"></i><span class="suc-tel-txt"><span class="suc-tel-num">951 607 9059</span><span class="suc-tel-tipo">Tel. fijo</span></span></a>
+                                    </div>
+                                </li>
                             </ul>
                         </div>
                         <div class="suc-footer">
@@ -471,8 +543,13 @@
                             <p class="suc-region"><i class="fa-solid fa-location-dot" style="color:var(--color-red);"></i> Villa de Tututepec, Oax. (Costa)</p>
                             <ul class="suc-info">
                                 <li><i class="fa-solid fa-map-pin" style="color:var(--color-red);"></i> Mariano Abasolo 604, Col. Linda Vista, Río Grande</li>
-                                <li><i class="fa-solid fa-phone" style="color:var(--color-blue);"></i> <a href="tel:9541837312" style="color:inherit;text-decoration:none">954 183 7312</a> · <a href="tel:9541085512" style="color:inherit;text-decoration:none">954 108 5512</a></li>
-                                <li><i class="fa-solid fa-phone" style="color:var(--color-blue);"></i> <a href="tel:9545599300" style="color:inherit;text-decoration:none">954 559 9300</a></li>
+                                <li class="suc-tels-li">
+                                    <div class="suc-tels">
+                                    <a class="suc-tel suc-tel-fijo" href="tel:9541837312" aria-label="Tel. fijo 954 183 7312"><i class="fa-solid fa-phone" aria-hidden="true"></i><span class="suc-tel-txt"><span class="suc-tel-num">954 183 7312</span><span class="suc-tel-tipo">Tel. fijo</span></span></a>
+                                    <a class="suc-tel suc-tel-fijo" href="tel:9541085512" aria-label="Tel. fijo 954 108 5512"><i class="fa-solid fa-phone" aria-hidden="true"></i><span class="suc-tel-txt"><span class="suc-tel-num">954 108 5512</span><span class="suc-tel-tipo">Tel. fijo</span></span></a>
+                                    <a class="suc-tel suc-tel-fijo" href="tel:9545599300" aria-label="Tel. fijo 954 559 9300"><i class="fa-solid fa-phone" aria-hidden="true"></i><span class="suc-tel-txt"><span class="suc-tel-num">954 559 9300</span><span class="suc-tel-tipo">Tel. fijo</span></span></a>
+                                    </div>
+                                </li>
                             </ul>
                         </div>
                         <div class="suc-footer">
@@ -489,7 +566,11 @@
                             <p class="suc-region"><i class="fa-solid fa-location-dot" style="color:var(--color-red);"></i> Sola de Vega, Oax.</p>
                             <ul class="suc-info">
                                 <li><i class="fa-solid fa-map-pin" style="color:var(--color-red);"></i> Domicilio Conocido S/N, Centro Santiago Amoltepec</li>
-                                <li><i class="fa-solid fa-phone" style="color:var(--color-blue);"></i> <a href="tel:9515859454" style="color:inherit;text-decoration:none">951 585 9454</a></li>
+                                <li class="suc-tels-li">
+                                    <div class="suc-tels">
+                                    <a class="suc-tel suc-tel-fijo" href="tel:9515859454" aria-label="Tel. fijo 951 585 9454"><i class="fa-solid fa-phone" aria-hidden="true"></i><span class="suc-tel-txt"><span class="suc-tel-num">951 585 9454</span><span class="suc-tel-tipo">Tel. fijo</span></span></a>
+                                    </div>
+                                </li>
                                 <li><i class="fa-solid fa-envelope" style="color:var(--color-blue);"></i> <a href="mailto:tangelrey@gmail.com" style="color:inherit;text-decoration:none">tangelrey@gmail.com</a></li>
                             </ul>
                         </div>
