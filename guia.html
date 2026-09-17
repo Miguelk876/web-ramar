@@ -453,15 +453,34 @@
                 <h2 style="font-family: var(--font-heading); color: var(--color-blue); font-size: 1.6rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-ruler-combined"></i> Tabla de Conversiones de Calibre</h2>
                 <p style="color: var(--color-text-light); margin-bottom: 1.5rem;">Referencia rápida para convertir calibre MSG a espesor en pulgadas y milímetros. Útil para especificar láminas, PTR, polines y cualquier perfil calibrado.</p>
 
-                <!-- Explicación visual antes de la tabla: quien no sabe qué es el
-                     calibre no entiende la tabla, y lo que más confunde es que
-                     el número va al revés del grosor. -->
-                <figure class="calibre-figura">
-                    <img src="assets/images/calibre-explicacion.svg"
-                         alt="Entre más alto el número de calibre, más delgado es el material. Calibre 10 mide 2.54 mm, calibre 14 mide 1.98 mm, calibre 18 mide 1.27 mm, calibre 22 mide 0.79 mm y calibre 26 mide 0.48 mm."
-                         width="520" height="500" loading="lazy">
-                    <figcaption>Los grosores del dibujo están a escala real entre sí.</figcaption>
-                </figure>
+                <!-- Explorador de calibre. La duda real del cliente no es
+                     "qué tan grueso es", es "¿me sirve para lo que voy a hacer?".
+                     Por eso se dibuja la pieza que de verdad va a comprar — el PTR
+                     visto de punta o la lámina de canto — con la pared al grosor
+                     que le toca, y se dice para qué se usa. -->
+                <div class="calibre-explorador" id="calibre-explorador">
+                    <p class="ce-regla">
+                        <strong>Número más alto = material más delgado.</strong>
+                        Pícale a un calibre y mira cómo cambia la pared.
+                    </p>
+
+                    <div class="ce-botones" id="ce-botones" role="group" aria-label="Elige un calibre"></div>
+
+                    <div class="ce-vista">
+                        <div class="ce-dibujo" id="ce-dibujo"></div>
+                        <div class="ce-datos">
+                            <p class="ce-pieza" id="ce-pieza"></p>
+                            <p class="ce-titulo" id="ce-titulo"></p>
+                            <p class="ce-espesor" id="ce-espesor"></p>
+                            <p class="ce-uso" id="ce-uso"></p>
+                            <p class="ce-sensacion" id="ce-sensacion"></p>
+                            <a class="ce-cta" id="ce-cta" target="_blank" rel="noopener">
+                                <i class="fa-brands fa-whatsapp"></i> Cotizar este calibre
+                            </a>
+                        </div>
+                    </div>
+                    <p class="ce-nota">Los dibujos están a la misma escala entre sí, así que la comparación es real.</p>
+                </div>
 
                 <div class="specs-table-wrapper">
                     <table class="specs-table">
@@ -973,6 +992,92 @@
                 });
             });
         })();
+    </script>
+
+    <!-- ═══════════ EXPLORADOR DE CALIBRE ═══════════ -->
+    <script>
+    (function () {
+        const cont = document.getElementById('calibre-explorador');
+        if (!cont) return;
+
+        // Espesores tomados de la tabla de conversiones de esta misma página.
+        // Se usan solo calibres cuyo espesor baja de forma pareja conforme sube
+        // el número; los calibres 12 y 13 de la tabla no cumplen eso y están
+        // pendientes de revisar con proveedor, así que aquí no se incluyen.
+        const CAL = [
+            { n:10, mm:2.54, pulg:'0.1000"', pieza:'ptr',    nombre:'PTR cuadrado',        uso:'PTR estructural, polín C y Z',     sens:'Estructural. Aguanta techo, carga y peso.' },
+            { n:11, mm:2.38, pulg:'0.0938"', pieza:'ptr',    nombre:'PTR cuadrado',        uso:'PTR mediano, polín — el más pedido', sens:'El de siempre para herrería y estructura.' },
+            { n:14, mm:1.98, pulg:'0.0781"', pieza:'ptr',    nombre:'PTR ligero',          uso:'Polín avícola, PTR ligero',        sens:'Firme, pero ya se siente más liviano.' },
+            { n:16, mm:1.59, pulg:'0.0625"', pieza:'ptr',    nombre:'PTR / polín',         uso:'Polín C y Z, lámina galvanizada',  sens:'Para herrería ligera, no para cargar.' },
+            { n:18, mm:1.27, pulg:'0.0500"', pieza:'lamina', nombre:'Lámina galvanizada',  uso:'Lámina galvanizada, tubería',      sens:'Se dobla con herramienta, no con la mano.' },
+            { n:20, mm:0.95, pulg:'0.0375"', pieza:'lamina', nombre:'Lámina galvanizada',  uso:'Lámina galvanizada ligera',        sens:'Ligera. Para cubiertas que no cargan.' },
+            { n:22, mm:0.79, pulg:'0.0313"', pieza:'lamina', nombre:'Lámina acanalada',    uso:'Lámina acanalada Zintro',          sens:'La de techo más común.' },
+            { n:24, mm:0.64, pulg:'0.0250"', pieza:'lamina', nombre:'Lámina acanalada',    uso:'Lámina acanalada Zintro',          sens:'Delgada. Techo de poca exigencia.' },
+            { n:26, mm:0.48, pulg:'0.0188"', pieza:'lamina', nombre:'Lámina decorativa',   uso:'Lámina decorativa, Galvateja',     sens:'Muy delgada. Decorativa, no para carga.' },
+        ];
+
+        const ESCALA = 13;          // píxeles por milímetro, igual para todos
+        const AZUL = '#1C2B54', NARANJA = '#F08018';
+
+        // PTR visto de punta: el cliente ve exactamente esto al mirar el tubo.
+        function dibujoPTR(mm) {
+            const t = mm * ESCALA;
+            const L = 190, x = 35, y = 20;
+            return `<svg viewBox="0 0 260 235" role="img" aria-label="PTR visto de punta con pared de ${mm} milímetros">
+                <rect x="${x}" y="${y}" width="${L}" height="${L}" rx="6" fill="${AZUL}"/>
+                <rect x="${x + t}" y="${y + t}" width="${L - 2*t}" height="${L - 2*t}" rx="3" fill="#ffffff"/>
+                <line x1="${x}" y1="${y + L + 14}" x2="${x + t}" y2="${y + L + 14}" stroke="${NARANJA}" stroke-width="3"/>
+                <line x1="${x}" y1="${y + L + 9}" x2="${x}" y2="${y + L + 19}" stroke="${NARANJA}" stroke-width="3"/>
+                <line x1="${x + t}" y1="${y + L + 9}" x2="${x + t}" y2="${y + L + 19}" stroke="${NARANJA}" stroke-width="3"/>
+                <text x="${x + t + 12}" y="${y + L + 19}" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" fill="${NARANJA}">pared ${mm} mm</text>
+            </svg>`;
+        }
+
+        // Lámina acanalada vista de canto, con el espesor real del material.
+        function dibujoLamina(mm) {
+            const t = Math.max(mm * ESCALA, 2.5);
+            let d = 'M 20 150';
+            for (let i = 0; i < 4; i++) {
+                const x = 20 + i * 55;
+                d += ` L ${x + 14} 108 L ${x + 34} 108 L ${x + 48} 150`;
+            }
+            return `<svg viewBox="0 0 260 235" role="img" aria-label="Lámina acanalada vista de canto, espesor ${mm} milímetros">
+                <path d="${d}" fill="none" stroke="${AZUL}" stroke-width="${t}" stroke-linejoin="round" stroke-linecap="round"/>
+                <line x1="205" y1="150" x2="205" y2="${150 - t}" stroke="${NARANJA}" stroke-width="3"/>
+                <text x="20" y="200" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" fill="${NARANJA}">espesor ${mm} mm</text>
+            </svg>`;
+        }
+
+        const botones = document.getElementById('ce-botones');
+        botones.innerHTML = CAL.map((c, i) =>
+            `<button type="button" class="ce-btn${i === 2 ? ' active' : ''}" data-i="${i}" aria-pressed="${i === 2}">${c.n}</button>`
+        ).join('');
+
+        function mostrar(i) {
+            const c = CAL[i];
+            document.getElementById('ce-dibujo').innerHTML =
+                c.pieza === 'ptr' ? dibujoPTR(c.mm) : dibujoLamina(c.mm);
+            document.getElementById('ce-pieza').textContent    = c.nombre;
+            document.getElementById('ce-titulo').textContent   = 'Calibre ' + c.n;
+            document.getElementById('ce-espesor').textContent  = c.mm + ' mm  ·  ' + c.pulg;
+            document.getElementById('ce-uso').textContent      = c.uso;
+            document.getElementById('ce-sensacion').textContent = c.sens;
+            document.getElementById('ce-cta').href =
+                'https://wa.me/5219512283263?text=' +
+                encodeURIComponent('Hola, quiero cotizar: ' + c.nombre + ' calibre ' + c.n);
+            botones.querySelectorAll('.ce-btn').forEach((b, k) => {
+                b.classList.toggle('active', k === i);
+                b.setAttribute('aria-pressed', k === i ? 'true' : 'false');
+            });
+        }
+
+        botones.addEventListener('click', (e) => {
+            const b = e.target.closest('.ce-btn');
+            if (b) mostrar(+b.dataset.i);
+        });
+
+        mostrar(2);   // arranca en calibre 14
+    })();
     </script>
 </body>
 </html>
