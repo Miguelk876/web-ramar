@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 500" role="img"
+     aria-labelledby="cal-titulo cal-desc">
+  <title id="cal-titulo">Qué significa el calibre</title>
+  <desc id="cal-desc">Entre más alto el número de calibre, más delgado es el material.
+    Calibre 10 mide 2.54 mm, calibre 14 mide 1.98 mm, calibre 18 mide 1.27 mm,
+    calibre 22 mide 0.79 mm y calibre 26 mide 0.48 mm.</desc>
+
+  <defs>
+    <linearGradient id="cal-acero" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#3b4d7f"/>
+      <stop offset="0.5" stop-color="#1C2B54"/>
+      <stop offset="1"   stop-color="#0f1c45"/>
+    </linearGradient>
+    <linearGradient id="cal-flecha" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#DD3B2E"/>
+      <stop offset="1" stop-color="#F08018"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="520" height="500" fill="#ffffff"/>
+
+  <!-- Encabezado -->
+  <text x="260" y="38" text-anchor="middle" font-family="Oswald, Arial, sans-serif"
+        font-size="27" font-weight="700" fill="#1C2B54">¿QUÉ ES EL CALIBRE?</text>
+  <text x="260" y="68" text-anchor="middle" font-family="Inter, Arial, sans-serif"
+        font-size="17" fill="#475569">Es el grosor de la lámina. Y va al revés:</text>
+
+  <!-- La regla, que es lo único que hay que recordar -->
+  <rect x="34" y="84" width="452" height="46" rx="10" fill="#fff7ed" stroke="#F08018" stroke-width="2"/>
+  <text x="260" y="114" text-anchor="middle" font-family="Inter, Arial, sans-serif"
+        font-size="18" font-weight="700" fill="#1C2B54">
+    Número más ALTO <tspan fill="#DD3B2E">=</tspan> material más DELGADO
+  </text>
+
+  <!-- Filas. El grosor dibujado es proporcional al real: 14 px por milímetro. -->
+  <!-- Cal. 10 — 2.54 mm -->
+  <text x="34"  y="176" font-family="Oswald, Arial, sans-serif" font-size="21" font-weight="700" fill="#1C2B54">Cal. 10</text>
+  <rect x="140" y="153" width="250" height="36" rx="3" fill="url(#cal-acero)"/>
+  <rect x="140" y="153" width="250" height="5"  rx="2" fill="#fff" opacity="0.22"/>
+  <text x="404" y="176" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#334155">2.54 mm</text>
+
+  <!-- Cal. 14 — 1.98 mm -->
+  <text x="34"  y="235" font-family="Oswald, Arial, sans-serif" font-size="21" font-weight="700" fill="#1C2B54">Cal. 14</text>
+  <rect x="140" y="217" width="250" height="28" rx="3" fill="url(#cal-acero)"/>
+  <rect x="140" y="217" width="250" height="4"  rx="2" fill="#fff" opacity="0.22"/>
+  <text x="404" y="235" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#334155">1.98 mm</text>
+
+  <!-- Cal. 18 — 1.27 mm -->
+  <text x="34"  y="289" font-family="Oswald, Arial, sans-serif" font-size="21" font-weight="700" fill="#1C2B54">Cal. 18</text>
+  <rect x="140" y="277" width="250" height="18" rx="3" fill="url(#cal-acero)"/>
+  <rect x="140" y="277" width="250" height="3"  rx="2" fill="#fff" opacity="0.22"/>
+  <text x="404" y="289" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#334155">1.27 mm</text>
+
+  <!-- Cal. 22 — 0.79 mm -->
+  <text x="34"  y="339" font-family="Oswald, Arial, sans-serif" font-size="21" font-weight="700" fill="#1C2B54">Cal. 22</text>
+  <rect x="140" y="332" width="250" height="11" rx="2" fill="url(#cal-acero)"/>
+  <text x="404" y="339" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#334155">0.79 mm</text>
+
+  <!-- Cal. 26 — 0.48 mm -->
+  <text x="34"  y="387" font-family="Oswald, Arial, sans-serif" font-size="21" font-weight="700" fill="#1C2B54">Cal. 26</text>
+  <rect x="140" y="383" width="250" height="7" rx="2" fill="url(#cal-acero)"/>
+  <text x="404" y="387" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#334155">0.48 mm</text>
+
+  <!-- Flecha: de grueso a delgado -->
+  <rect x="140" y="410" width="250" height="6" rx="3" fill="url(#cal-flecha)"/>
+  <path d="M390 413 L381 407 L381 419 Z" fill="#F08018"/>
+  <text x="140" y="435" font-family="Inter, Arial, sans-serif" font-size="13"
+        font-weight="700" fill="#DD3B2E" letter-spacing="1">MÁS GRUESO</text>
+  <text x="390" y="435" text-anchor="end" font-family="Inter, Arial, sans-serif" font-size="13"
+        font-weight="700" fill="#F08018" letter-spacing="1">MÁS DELGADO</text>
+
+  <!-- Cierre práctico -->
+  <line x1="34" y1="455" x2="486" y2="455" stroke="#e2e8f0" stroke-width="2"/>
+  <text x="260" y="479" text-anchor="middle" font-family="Inter, Arial, sans-serif"
+        font-size="15" fill="#475569">
+    ¿Dudas con tu medida? Pregunta en sucursal, te orientamos.
+  </text>
+</svg>
