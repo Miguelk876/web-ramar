@@ -3570,3 +3570,14 @@ footer {
     .ce-titulo { font-size: 1.7rem; }
     .ce-btn { flex: 0 0 calc(20% - .4rem); min-width: 0; padding: .5rem .2rem; }
 }
+
+/* Botón de Facebook arriba del muro: el plugin puede venir bloqueado y el
+   panel no debe quedarse sin nada en qué picarle. */
+.red-cta-arriba { margin-top: 0; margin-bottom: 1.4rem; }
+.red-aviso {
+    max-width: 520px;
+    margin: 1rem auto 0;
+    font-size: .85rem;
+    color: var(--color-text-light);
+    line-height: 1.45;
+}

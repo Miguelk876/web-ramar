@@ -128,6 +128,7 @@ Nayvi Padilla (redes) reviewed the catalog in 2026-06. The surviving 96 products
 - **Lámina Galvanizada**: G-45 (not G-60). **Pintro**: solo color rojo. **Galvateja**: solo cal. 26 (Plus = térmica).
 - **Lozacero** (not "Losacero"/"FortaDeck"): solo cal. 22.
 - **Tablero portones**: solo modelo 170, anchos 2–10", sin corte a medida.
+- **Paint is PintuMex, and paint only.** RAMAR does **NOT** sell impermeabilizantes — the `impermeabilizante` product and its `TABLE_HTML` entry were removed on 2026-09-17 by user request, along with the home tip "¿Cuánto dura el imper?" and `assets/images/tips/imper.svg`. Don't reintroduce waterproofing products, IMPERFIBRA or AQUAMAR lines under any name.
 - **Pinturas vinílicas**: solo SUPERVIN, OMAR, VINET, KOLORTEX, CH14 (sobre pedido). ESMAFLEX is rezago — never list it.
 - **Primario anticorrosivo**: solo Rojo Óxido (1L, ¼, galón, cubeta).
 - **Tubería cédula**: solo Ced. 30 y 40. Pared varies by medida, not cédula. Se maneja en mm.
@@ -145,6 +146,12 @@ Nayvi Padilla (redes) reviewed the catalog in 2026-06. The surviving 96 products
 ### Phone numbers — fijo vs WhatsApp (NOT interchangeable)
 
 - Navbar + floating button: `951 228 3263` → WhatsApp `https://wa.me/5219512283263` (never `tel:`)
+
+### Social links — always use the `www.` form
+
+`https://www.facebook.com/ConstruacerosRamarOficial` · `https://www.instagram.com/ramar.oficial` · `https://www.tiktok.com/@ramar.oficial`
+
+Dropping `www` broke Facebook and TikTok for real users (TikTok in particular does not serve the bare domain reliably). The Facebook page plugin iframe is a *bonus*, never the only content in its panel: tracking protection blocks it often, which left the panel looking empty — the "Abrir nuestro Facebook" button sits above the iframe for that reason.
 - Matriz fijo: `951 517 3157`, `951 533 6831` → `tel:` links, `fa-solid fa-phone` icon
 - Matriz WhatsApp: `951 533 6045`, `951 549 4636` → `wa.me` links, `fa-brands fa-whatsapp` icon
 - Viguera WhatsApp `951 416 0571`/`951 228 3259`, fijo `951 229 1055` · La Unión WhatsApp `951 272 1019`/`951 228 3269`

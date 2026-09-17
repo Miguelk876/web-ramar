@@ -50,9 +50,9 @@
       },
       "areaServed": { "@type": "State", "name": "Oaxaca" },
       "sameAs": [
-        "https://facebook.com/ConstruacerosRamarOficial",
-        "https://instagram.com/ramar.oficial",
-        "https://tiktok.com/@ramar.oficial"
+        "https://www.facebook.com/ConstruacerosRamarOficial",
+        "https://www.instagram.com/ramar.oficial",
+        "https://www.tiktok.com/@ramar.oficial"
       ]
     }
     </script>
@@ -281,8 +281,16 @@
                 </div>
 
                 <div class="redes-paneles">
-                    <!-- Facebook: muro real vía plugin oficial -->
+                    <!-- Facebook. El plugin oficial se queda, pero NO puede ser lo
+                         único: muchos navegadores con protección de rastreo lo
+                         bloquean y el panel se veía como un recuadro vacío. Por eso
+                         el botón va arriba y siempre visible, y el muro va abajo
+                         con un aviso de qué hacer si no aparece. -->
                     <div class="red-panel red-panel-fb active" id="panel-fb" role="tabpanel" aria-labelledby="tab-fb">
+                        <p class="red-panel-intro">Promociones, material que va llegando y avisos de la semana.</p>
+                        <a href="https://www.facebook.com/ConstruacerosRamarOficial" target="_blank" rel="noopener" class="red-cta red-cta-fb red-cta-arriba">
+                            <svg aria-hidden="true" focusable="false"><use href="#ico-facebook"/></svg> Abrir nuestro Facebook
+                        </a>
                         <div class="fb-feed-wrap">
                             <iframe
                                 src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FConstruacerosRamarOficial&tabs=timeline&width=500&height=640&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
@@ -297,9 +305,7 @@
                                 title="Publicaciones de Construaceros RAMAR en Facebook">
                             </iframe>
                         </div>
-                        <a href="https://facebook.com/ConstruacerosRamarOficial" target="_blank" rel="noopener" class="red-cta red-cta-fb">
-                            <svg aria-hidden="true" focusable="false"><use href="#ico-facebook"/></svg> Abrir Facebook
-                        </a>
+                        <p class="red-aviso">¿No ves las publicaciones aquí abajo? Tu navegador está bloqueando el muro de Facebook. Usa el botón de arriba.</p>
                     </div>
 
                     <!-- Instagram: fotos reales de bodega como antesala, sin simular el feed -->
@@ -313,7 +319,7 @@
                             <img src="assets/images/20260430_182743814_iOS.webp" alt="Material estructural en bodega" loading="lazy">
                             <img src="assets/images/20260430_182919820_iOS.webp" alt="Vista general de la bodega RAMAR" loading="lazy">
                         </div>
-                        <a href="https://instagram.com/ramar.oficial" target="_blank" rel="noopener" class="red-cta red-cta-ig">
+                        <a href="https://www.instagram.com/ramar.oficial" target="_blank" rel="noopener" class="red-cta red-cta-ig">
                             <svg aria-hidden="true" focusable="false"><use href="#ico-instagram"/></svg> Ver @ramar.oficial en Instagram
                         </a>
                     </div>
@@ -324,7 +330,7 @@
                             <svg class="red-tk-icono" aria-hidden="true" focusable="false"><use href="#ico-tiktok"/></svg>
                             <h3>Videos cortos de obra y material</h3>
                             <p>Cómo se ve el material de cerca, cómo se usa y qué va llegando a bodega.</p>
-                            <a href="https://tiktok.com/@ramar.oficial" target="_blank" rel="noopener" class="red-cta red-cta-tk">
+                            <a href="https://www.tiktok.com/@ramar.oficial" target="_blank" rel="noopener" class="red-cta red-cta-tk">
                                 <svg aria-hidden="true" focusable="false"><use href="#ico-tiktok"/></svg> Ver @ramar.oficial en TikTok
                             </a>
                         </div>
@@ -403,9 +409,9 @@
                 <p><i class="fa-brands fa-whatsapp" style="color:#25D366;"></i> <a href="https://wa.me/5219515336045" target="_blank" rel="noopener" style="color:#cbd5e1;text-decoration:none;">951 533 6045</a> · <a href="https://wa.me/5219515494636" target="_blank" rel="noopener" style="color:#cbd5e1;text-decoration:none;">951 549 4636</a></p>
                 <p><i class="fa-solid fa-envelope"></i> ramar.matriz@gmail.com</p>
                 <div class="social-icons">
-                    <a href="https://facebook.com/ConstruacerosRamarOficial" target="_blank" class="social-link fb" aria-label="Facebook"><svg aria-hidden="true" focusable="false"><use href="#ico-facebook"/></svg></a>
-                    <a href="https://instagram.com/ramar.oficial" target="_blank" class="social-link ig" aria-label="Instagram"><svg aria-hidden="true" focusable="false"><use href="#ico-instagram"/></svg></a>
-                    <a href="https://tiktok.com/@ramar.oficial" target="_blank" class="social-link tk" aria-label="TikTok"><svg aria-hidden="true" focusable="false"><use href="#ico-tiktok"/></svg></a>
+                    <a href="https://www.facebook.com/ConstruacerosRamarOficial" target="_blank" class="social-link fb" aria-label="Facebook"><svg aria-hidden="true" focusable="false"><use href="#ico-facebook"/></svg></a>
+                    <a href="https://www.instagram.com/ramar.oficial" target="_blank" class="social-link ig" aria-label="Instagram"><svg aria-hidden="true" focusable="false"><use href="#ico-instagram"/></svg></a>
+                    <a href="https://www.tiktok.com/@ramar.oficial" target="_blank" class="social-link tk" aria-label="TikTok"><svg aria-hidden="true" focusable="false"><use href="#ico-tiktok"/></svg></a>
                 </div>
             </div>
         </div>
@@ -478,9 +484,7 @@
             { img: TIPS_BASE + '/inox.svg',         cat: 'Inoxidable', title: 'Inox: ¿304 o 430?',
               text: '<strong>304</strong> para cocinas y donde haya humedad. <strong>430</strong> solo para decorar en lugares secos.' },
             { img: TIPS_BASE + '/inversora.svg',    cat: 'Soldadura', title: '¿Inversora o transformadora?',
-              text: '<strong>Inversora</strong>: ligera, llévala a la obra. <strong>Transformadora</strong>: pesada pero más resistente para taller fijo.' },
-            { img: TIPS_BASE + '/imper.svg',        cat: 'Impermeab.', title: '¿Cuánto dura el imper?',
-              text: 'Dura los años que dice <strong>solo si la losa está limpia y sin grietas</strong>. Si no, dura la mitad.' }
+              text: '<strong>Inversora</strong>: ligera, llévala a la obra. <strong>Transformadora</strong>: pesada pero más resistente para taller fijo.' }
         ];
 
         const rotator = document.getElementById('tip-rotator');
