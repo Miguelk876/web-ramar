@@ -3485,24 +3485,88 @@ footer {
 .red-tk-icono { width: 3.2rem; height: 3.2rem; margin: 0 auto 1.2rem; display: block; }
 .social-link svg { width: 1.25em; height: 1.25em; }
 
-/* Explicación visual del calibre (guia.html) */
-.calibre-figura {
-    margin: 0 0 1.8rem;
-    text-align: center;
-}
-.calibre-figura img {
-    width: 100%;
-    max-width: 520px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    border: 1px solid #e2e8f0;
-    border-radius: 14px;
-    box-shadow: 0 4px 16px rgba(28,43,84,0.08);
+
+/* ═══════════ EXPLORADOR DE CALIBRE (guia.html) ═══════════
+   Antes era un dibujo fijo de barras. El cliente no piensa en "grosores",
+   piensa en la pieza que va a comprar, así que ahora elige el calibre y ve
+   el PTR de punta o la lámina de canto con esa pared. */
+.calibre-explorador {
     background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 1.6rem;
+    margin-bottom: 1.8rem;
+    box-shadow: 0 4px 16px rgba(28,43,84,0.07);
 }
-.calibre-figura figcaption {
-    margin-top: .7rem;
-    font-size: .85rem;
-    color: var(--color-text-light);
+.ce-regla {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: #475569;
+    margin: 0 0 1.1rem;
+    line-height: 1.5;
+}
+.ce-regla strong { color: var(--color-blue); display: block; font-size: 1.12rem; margin-bottom: .2rem; }
+
+.ce-botones { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.5rem; }
+.ce-btn {
+    min-width: 54px;
+    min-height: 44px;
+    padding: .5rem .8rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    background: #fff;
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-blue);
+    cursor: pointer;
+    transition: all .2s;
+}
+.ce-btn:hover { border-color: var(--color-blue); transform: translateY(-2px); }
+.ce-btn.active {
+    background: var(--color-blue);
+    border-color: var(--color-blue);
+    color: #fff;
+    box-shadow: 0 6px 16px rgba(28,43,84,.3);
+}
+
+.ce-vista { display: flex; gap: 1.8rem; align-items: center; flex-wrap: wrap; }
+.ce-dibujo {
+    flex: 0 0 260px;
+    max-width: 100%;
+    background: #f1f5f9;
+    border-radius: 12px;
+    padding: .5rem;
+}
+.ce-dibujo svg { width: 100%; height: auto; display: block; }
+.ce-datos { flex: 1 1 240px; min-width: 0; }
+.ce-pieza {
+    font-family: var(--font-body);
+    font-size: .78rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 2px; color: var(--color-red); margin: 0 0 .3rem;
+}
+.ce-titulo {
+    font-family: var(--font-heading);
+    font-size: 2rem; font-weight: 700; color: var(--color-blue);
+    margin: 0 0 .2rem; line-height: 1.1;
+}
+.ce-espesor { font-family: var(--font-body); font-size: 1.05rem; font-weight: 600; color: var(--color-yellow); margin: 0 0 .9rem; }
+.ce-uso { font-family: var(--font-body); font-size: .98rem; color: var(--color-blue); font-weight: 600; margin: 0 0 .35rem; }
+.ce-sensacion { font-family: var(--font-body); font-size: .93rem; color: #64748b; margin: 0 0 1.1rem; line-height: 1.45; }
+.ce-cta {
+    display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+    min-height: 44px; padding: .6rem 1.2rem;
+    background: #25D366; color: #fff; border-radius: 999px;
+    font-family: var(--font-body); font-weight: 700; font-size: .93rem;
+    text-decoration: none; transition: transform .2s, box-shadow .2s;
+}
+.ce-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37,211,102,.35); }
+.ce-nota { font-size: .82rem; color: var(--color-text-light); margin: 1.2rem 0 0; }
+
+@media (max-width: 600px) {
+    .calibre-explorador { padding: 1.1rem; }
+    .ce-vista { gap: 1.2rem; }
+    .ce-dibujo { flex: 1 1 100%; }
+    .ce-titulo { font-size: 1.7rem; }
+    .ce-btn { flex: 0 0 calc(20% - .4rem); min-width: 0; padding: .5rem .2rem; }
 }
