@@ -126,7 +126,7 @@ From the company's own printed history sheet, supplied by the user. `nosotros.ht
 
 **Do not mention the intermediate trade name "Perfiles de Antequera"** — removed on user request; more corporate changes are expected and they don't want that history on the site. Don't explain "RAMAR" as surname initials either.
 
-⚠️ **Unresolved:** the sheet lists a **Lachigolo** branch that does not exist anywhere on the site, and does not mention Tlacolula. Confirm with the user before adding or removing a branch.
+**Branches vs. the sheet — resolved 2026-09-18.** The sheet lists a **Lachigolo** branch: it is **not** a RAMAR branch and must **not** be added to `ubicaciones.html`, the sitemap or the JSON-LD. The sheet predates **Tlacolula**, which is correct as it stands (badge "Próximamente", no `openingHours` in its JSON-LD) — leave it alone.
 
 ## Content Rules
 
