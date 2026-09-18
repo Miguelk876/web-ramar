@@ -80,7 +80,9 @@ All pages share copy-pasted `<header class="navbar">` and `<footer>` blocks. **T
   - `--color-red: #DD3B2E` (secondary accent)
   - `--font-heading: 'Oswald'`, `--font-body: 'Inter'`
 - **`main.js`** — mobile hamburger toggle + `IntersectionObserver` for `.fade-in` (with 800 ms fallback that forces `.visible` if observer doesn't fire).
-- **`assets/images/`** — local images. Product photos in catalog use Pexels CDN URLs with `loading="lazy"`.
+- **`assets/images/`** — local images. Files prefixed **`ramar-`** are the company's own photos, taken in the warehouse and supplied by the user; prefer them over hotlinked supplier photos whenever one covers the product. The rest of the catalog still hotlinks ~85 photos from supplier servers (see `verificar-fotos.js`).
+  - **Processing own photos:** phone shots arrive portrait at ~1.3 MB. Crop to landscape (4:3 for product cards, 16:9 for hero backgrounds), cap the long side at 1200 px / 1920 px, JPEG quality ~0.84, keeping each file under 500 KB. There is no ImageMagick, `cwebp` or PIL in this environment — resizing is done through Chromium's canvas (see the pattern in a prior session: serve the originals over the local HTTP server, load them by URL, `drawImage` a crop into a canvas, read back `toDataURL`). Loading originals as base64 data URIs fails with `EncodingError`; serve them by URL instead.
+  - Remember the cache rule above: **never overwrite an image filename** — publish under a new name.
 - **`assets/images/tips/*.svg`** — 10 hand-crafted illustrations for the home tips section. `electrodos.svg` is animated (welding sparks pulse).
 - **`_headers`** (Netlify) — CSP, HSTS, X-Frame-Options, Referrer-Policy, Permissions-Policy, cache policy. HTML, `styles.css` and `main.js` all revalidate on every request, so a deploy reaches visitors immediately. Images under `assets/images/` are cached for a year as `immutable`: **to replace an image, give it a new filename** and update the references — overwriting the same filename leaves returning visitors on the old one for up to a year.
 - **`robots.txt` / `sitemap.xml`** — absolute URLs pointing to Netlify.
