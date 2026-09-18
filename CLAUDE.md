@@ -114,17 +114,22 @@ All pages share copy-pasted `<header class="navbar">` and `<footer>` blocks. **T
 
 From the company's own printed history sheet, supplied by the user. `nosotros.html` follows this — don't rewrite it from imagination.
 
-> ⚠️ **Privacy — this repository is public.** The user asked on 2026-09-18 for discretion about the family. **Name no individual anywhere in the repo** — no founder, no officer, no relative — not in pages, commit messages, PR descriptions or these notes. Write "nuestro fundador", "un negocio de familia", never a person's name or job title. If a future sheet, photo or message carries names, leave them out and say so.
+> ⚠️ **Privacy — this repository is public.** Discretion about the family, as the user set out on 2026-09-18.
+>
+> - **The founder, Félix Martínez Lázaro, may be named.** He has passed away and the user wants him credited in the company's story. Surname included.
+> - **No one else.** No officer, no relative, no living family member — not on the pages, not in commit messages, not in PR descriptions, not in these notes. Write "un negocio de familia".
+> - **Never explain what RAMAR stands for.** The acronym comes from family surnames; the user asked that it not be spelled out. "Construaceros" from *construyendo aceros* is fine.
+> - If a future sheet, photo or message carries other names, leave them out and tell the user.
 
-- **2000-08-08** — opens at Av. del Valle N°6, Col. Ex Garita, Santa Cruz Xoxocotlán, under the name **"Perfiles San Miguel"**. A 300 m² yard plus a 6 m² caseta used as the counter. "Perfiles" for the product; "San Miguel" for **San Miguel Amatlán**, Sierra Juárez, the founder's home town.
+- **2000-08-08** — founded by **Félix Martínez Lázaro**; opens at Av. del Valle N°6, Col. Ex Garita, Santa Cruz Xoxocotlán, under the name **"Perfiles San Miguel"**. A 300 m² yard plus a 6 m² caseta used as the counter. "Perfiles" for the product; "San Miguel" for **San Miguel Amatlán**, Sierra Juárez, the founder's home town.
 - **2010** — outgrows the first premises and moves to a larger site on Blvd. Guadalupe Hinojosa de Murat. More delivery units and staff, to cover the whole state.
-- **2021** — takes the current name, **Construaceros RAMAR**, from *construyendo aceros*.
+- **2021** — takes the current name, **Construaceros RAMAR**, from *construyendo aceros*. (Do not spell out the RAMAR acronym — see the privacy note above.)
 - Catalogue of **+5,000 products** across perfilería, aceros estructurales, láminas, aceros especiales, herrajes.
 - Foráneas routes: Miahuatlán, Huatulco, Mixes, Juquila, Mixteca, Peras, Teojomulco, Istmo, Valle Nacional, Zimatlán.
 - Customers by trade: herreros, torneros, balconeros, hojalateros, carroceros, mofleros, estructuristas, constructoras, revendedores, distribuidores.
 - Slogans: "Tu Soporte de Acero", the logo line "Si de perfil lo va a realizar, que sea de Construaceros RAMAR", and **"La Mujer de Acero"** — the resilience line the user explicitly wants kept. It stays unattributed on purpose; never pair it with a name.
 
-**Do not mention the intermediate trade name "Perfiles de Antequera"** — removed on user request; more corporate changes are expected and they don't want that history on the site. Don't explain "RAMAR" as surname initials either.
+**Do not mention the intermediate trade name "Perfiles de Antequera"** — removed on user request; more corporate changes are expected and they don't want that history on the site. Don't explain "RAMAR" as surname initials either (see the privacy note).
 
 **Branches vs. the sheet — resolved 2026-09-18.** The sheet lists a **Lachigolo** branch: it is **not** a RAMAR branch and must **not** be added to `ubicaciones.html`, the sitemap or the JSON-LD. The sheet predates **Tlacolula**, which is correct as it stands (badge "Próximamente", no `openingHours` in its JSON-LD) — leave it alone.
 
