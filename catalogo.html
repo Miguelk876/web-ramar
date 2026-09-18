@@ -125,6 +125,30 @@
     text-decoration: none;
 }
 .cat-empty-wa:hover { filter: brightness(.95); }
+
+/* Botón de compartir dentro de la ficha del producto */
+.pmodal-actions { display: flex; flex-wrap: wrap; gap: .7rem; }
+.btn-modal-share {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .55rem;
+    min-height: 46px;
+    padding: .7rem 1.2rem;
+    border: 2px solid var(--color-blue);
+    border-radius: 999px;
+    background: #fff;
+    font-family: var(--font-body);
+    font-size: .93rem;
+    font-weight: 700;
+    color: var(--color-blue);
+    cursor: pointer;
+    transition: background .2s, color .2s;
+}
+.btn-modal-share:hover { background: var(--color-blue); color: #fff; }
+@media (max-width: 600px) {
+    .pmodal-actions > * { flex: 1 1 100%; }
+}
 .cat-tab-bar {
     display: flex;
     gap: .4rem;
@@ -2075,17 +2099,57 @@ function openModal(id){
              target="_blank" class="btn-modal-wa">
             <i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp
           </a>
+          <button type="button" class="btn-modal-share" onclick="compartirProducto('${p.id}')">
+            <i class="fa-solid fa-share-nodes"></i> <span>Copiar liga de este producto</span>
+          </button>
         </div>
       </div>
     </div>`;
 
   document.getElementById('pmodal-overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
+
+  /* La dirección del navegador queda apuntando a este producto, para que el
+     vendedor la pueda copiar y mandar por WhatsApp. Se usa replaceState y no
+     el hash para no disparar hashchange, que reabriría la vista. */
+  modalAbierto = p.id;
+  history.replaceState(null, '', location.pathname + '#p-' + p.id);
+}
+
+/* id del producto abierto, o null. Sirve para saber a dónde volver al cerrar. */
+let modalAbierto = null;
+
+/* Liga directa a un producto: catalogo.html#p-<id> */
+function ligaProducto(id){
+  return location.origin + location.pathname + '#p-' + id;
+}
+
+function compartirProducto(id){
+  const url = ligaProducto(id);
+  const btn = document.querySelector('.btn-modal-share span');
+  const avisar = (txt) => { if (btn) { const antes = btn.textContent; btn.textContent = txt;
+                                       setTimeout(() => { btn.textContent = antes; }, 2200); } };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(url).then(() => avisar('¡Liga copiada!'))
+                                      .catch(() => avisar(url));
+  } else {
+    // Navegadores viejos: se selecciona para que el usuario copie a mano.
+    const ta = document.createElement('textarea');
+    ta.value = url; document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); avisar('¡Liga copiada!'); }
+    catch(e) { avisar(url); }
+    ta.remove();
+  }
 }
 
 function closeModal(){
   document.getElementById('pmodal-overlay').classList.remove('open');
   document.body.style.overflow = '';
+  if (modalAbierto) {
+    modalAbierto = null;
+    const destino = (activeCat && activeCat !== 'all') ? '#' + activeCat : '';
+    history.replaceState(null, '', location.pathname + destino);
+  }
 }
 
 /* Events */
@@ -2140,11 +2204,16 @@ document.getElementById('cat-back-btn').addEventListener('click', showMenu);
 const validCats = ['estructural','comercial','especializado','pintura','herramienta','consumibles','herrajes','cerraduras'];
 function aplicarHash() {
   const hash = location.hash.replace('#', '');
+  // #p-<id>: liga directa a un producto. Se abre su categoría y luego su ficha.
+  if (hash.startsWith('p-')) {
+    const prod = PRODUCTS.find(x => x.id === hash.slice(2));
+    if (prod) { mostrarCategoria(prod.cat); openModal(prod.id); return; }
+  }
   if (validCats.includes(hash)) mostrarCategoria(hash);
   else mostrarMenu();
 }
 window.addEventListener('hashchange', aplicarHash);
-if (validCats.includes(location.hash.replace('#', ''))) aplicarHash();
+if (location.hash) aplicarHash();   // categorías y ligas de producto
 
 document.getElementById('cat-search').addEventListener('input', e => {
   render(e.target.value);
