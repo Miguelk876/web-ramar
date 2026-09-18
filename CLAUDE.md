@@ -112,18 +112,19 @@ All pages share copy-pasted `<header class="navbar">` and `<footer>` blocks. **T
 
 ## Company history (source of truth)
 
-From the company's own printed history sheet, supplied by the user on 2026-09-18. `nosotros.html` follows this — don't rewrite it from imagination.
+From the company's own printed history sheet, supplied by the user. `nosotros.html` follows this — don't rewrite it from imagination.
 
-- Founded by **Félix Martínez Lázaro**, with his wife **Lic. Patricia Francisca Ramírez Santiago**, who is the current **Directora General**.
-- **2000-08-08** — opens as **"Perfiles San Miguel"** at Av. del Valle N°6, Col. Ex Garita, Santa Cruz Xoxocotlán. A 300 m² yard plus a 6 m² caseta used as the counter. "Perfiles" for the product; "San Miguel" for **San Miguel Amatlán**, Sierra Juárez, the founder's home town.
-- **2010** — renamed **"Perfiles de Antequera"** (Antequera = Oaxacan roots), moves to Blvd. Guadalupe Hinojosa de Murat N°111.
-- **2021** — administrative change, renamed **"Construaceros RAMAR"**: *construyendo aceros* + **Ra**mírez and **Mar**tínez.
+> ⚠️ **Privacy — this repository is public.** The user asked on 2026-09-18 for discretion about the family. **Name no individual anywhere in the repo** — no founder, no officer, no relative — not in pages, commit messages, PR descriptions or these notes. Write "nuestro fundador", "un negocio de familia", never a person's name or job title. If a future sheet, photo or message carries names, leave them out and say so.
+
+- **2000-08-08** — opens at Av. del Valle N°6, Col. Ex Garita, Santa Cruz Xoxocotlán, under the name **"Perfiles San Miguel"**. A 300 m² yard plus a 6 m² caseta used as the counter. "Perfiles" for the product; "San Miguel" for **San Miguel Amatlán**, Sierra Juárez, the founder's home town.
+- **2010** — outgrows the first premises and moves to a larger site on Blvd. Guadalupe Hinojosa de Murat. More delivery units and staff, to cover the whole state.
+- **2021** — takes the current name, **Construaceros RAMAR**, from *construyendo aceros*.
 - Catalogue of **+5,000 products** across perfilería, aceros estructurales, láminas, aceros especiales, herrajes.
 - Foráneas routes: Miahuatlán, Huatulco, Mixes, Juquila, Mixteca, Peras, Teojomulco, Istmo, Valle Nacional, Zimatlán.
 - Customers by trade: herreros, torneros, balconeros, hojalateros, carroceros, mofleros, estructuristas, constructoras, revendedores, distribuidores.
-- Slogans: "Tu Soporte de Acero" and, on the logo, "Si de perfil lo va a realizar, que sea de Construaceros RAMAR".
+- Slogans: "Tu Soporte de Acero", the logo line "Si de perfil lo va a realizar, que sea de Construaceros RAMAR", and **"La Mujer de Acero"** — the resilience line the user explicitly wants kept. It stays unattributed on purpose; never pair it with a name.
 
-Two things previously on the page were **not** in that sheet and were removed: a "La Mujer de Acero" legacy line, and a 2020 pandemic-resilience milestone. Don't reintroduce either without a source.
+**Do not mention the intermediate trade name "Perfiles de Antequera"** — removed on user request; more corporate changes are expected and they don't want that history on the site. Don't explain "RAMAR" as surname initials either.
 
 ⚠️ **Unresolved:** the sheet lists a **Lachigolo** branch that does not exist anywhere on the site, and does not mention Tlacolula. Confirm with the user before adding or removing a branch.
 
