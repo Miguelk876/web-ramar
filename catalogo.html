@@ -71,6 +71,60 @@
     transition: border-color .2s;
 }
 .cat-search-box input:focus { outline: none; border-color: var(--color-blue); }
+
+/* ── Buscador global de la pantalla de categorías ── */
+.cat-buscador-global { max-width: 720px; margin: 0 auto 2.5rem; }
+.cat-search-box--grande { max-width: none; width: 100%; }
+.cat-search-box--grande input {
+    font-size: 1.05rem;
+    padding: 1rem 1rem 1rem 3rem;
+    min-height: 56px;
+    border-width: 2px;
+}
+.cat-search-box--grande i { font-size: 1.1rem; left: 1.15rem; }
+.cat-buscador-ayuda {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .45rem;
+    margin: .9rem 0 0;
+    font-family: var(--font-body);
+    font-size: .9rem;
+    color: var(--color-text-light);
+}
+.cat-sug {
+    min-height: 34px;
+    padding: .3rem .8rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 999px;
+    background: #fff;
+    font-family: var(--font-body);
+    font-size: .88rem;
+    font-weight: 700;
+    color: var(--color-blue);
+    cursor: pointer;
+    transition: all .2s;
+}
+.cat-sug:hover { background: var(--color-blue); border-color: var(--color-blue); color: #fff; }
+
+/* Cuando no hay resultados, que el cliente no se quede sin salida. */
+.cat-empty-wa {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    min-height: 44px;
+    margin-top: 1.2rem;
+    padding: .65rem 1.3rem;
+    background: #25D366;
+    color: #fff;
+    border-radius: 999px;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: .92rem;
+    text-decoration: none;
+}
+.cat-empty-wa:hover { filter: brightness(.95); }
 .cat-tab-bar {
     display: flex;
     gap: .4rem;
@@ -595,7 +649,27 @@
         <div class="container">
             <div class="cat-menu-header">
                 <h2>¿Qué tipo de material necesitas?</h2>
-                <p>Selecciona una categoría para ver todos los productos disponibles.</p>
+                <p>Busca por medida si ya sabes qué quieres, o elige una categoría.</p>
+            </div>
+
+            <!-- Buscador global. Antes había que entrar a una categoría para poder
+                 buscar, y ahí solo buscaba por nombre: quien llegaba sabiendo su
+                 medida no encontraba nada. -->
+            <div class="cat-buscador-global">
+                <div class="cat-search-box cat-search-box--grande">
+                    <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                    <input type="text" id="cat-search-global" autocomplete="off"
+                           placeholder="Busca: 3/8, cal 11, polín…"
+                           aria-label="Buscar en todo el catálogo por producto, medida o calibre">
+                </div>
+                <p class="cat-buscador-ayuda">
+                    Busca también dentro de las medidas. Prueba
+                    <button type="button" class="cat-sug" data-q="3/8">3/8</button>
+                    <button type="button" class="cat-sug" data-q="cal 11">cal 11</button>
+                    <button type="button" class="cat-sug" data-q="galvanizada">galvanizada</button>
+                    <button type="button" class="cat-sug" data-q="polin">polín</button>
+                    <button type="button" class="cat-sug" data-q="7018">7018</button>
+                </p>
             </div>
             <div class="cat-menu-grid">
                 <button class="cat-menu-card" data-cat="estructural">
@@ -692,7 +766,7 @@
                 <span class="cat-breadcrumb" id="cat-breadcrumb"></span>
                 <div class="cat-search-box" style="margin-left:auto;">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" id="cat-search" placeholder="Buscar en esta categoría…">
+                    <input type="text" id="cat-search" placeholder="Buscar aquí: nombre, medida o calibre…">
                 </div>
             </div>
         </div>
@@ -1890,27 +1964,66 @@ function escapeHtml(s){
   return String(s).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 }
 
+/* El cliente no busca por nombre de producto: busca por medida. Llega
+   escribiendo "PTR 2x2 cal 11" o "3/8". Para que eso funcione hay que
+   normalizar lo que escribe y lo que hay en el catálogo a una misma forma. */
+const FRACCIONES = { '½':'1/2', '¼':'1/4', '¾':'3/4', '⅜':'3/8', '⅝':'5/8',
+                     '⅞':'7/8', '⅛':'1/8', '⅓':'1/3', '⅔':'2/3', '⅕':'1/5' };
+
+function normalizar(t){
+  return String(t || '')
+    .toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')   // fuera acentos
+    .replace(/[½¼¾⅜⅝⅞⅛⅓⅔⅕]/g, c => FRACCIONES[c] || c)   // ⅜ -> 3/8
+    .replace(/["“”'']/g, '')                              // fuera marcas de pulgada
+    .replace(/\bcal\.\s*/g, 'cal ')                      // "Cal. 11" = "cal 11"
+    .replace(/(\d)\s*[x×]\s*(\d)/g, '$1x$2')            // "2 x 2" -> "2x2"
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+/* Todo lo que se puede buscar de un producto, incluidas las especificaciones,
+   que es donde viven las medidas, los calibres y los diámetros. */
+const BUSCABLE = new Map();
+function textoBuscable(p){
+  if (!BUSCABLE.has(p.id)) {
+    const partes = [p.name, p.tagline, p.provider, p.svgNote, CAT_NAMES[p.cat],
+                    CAT_LABELS_FULL[p.cat], p.id];
+    (p.specs || []).forEach(sp => { partes.push(sp.l, sp.v); });
+    BUSCABLE.set(p.id, normalizar(partes.filter(Boolean).join(' · ')));
+  }
+  return BUSCABLE.get(p.id);
+}
+
+function coincide(p, consulta){
+  const texto = textoBuscable(p);
+  // Varias palabras = todas deben aparecer, en cualquier orden.
+  return normalizar(consulta).split(' ').every(t => !t || texto.includes(t));
+}
+
 function render(query = ''){
-  const q   = query.toLowerCase();
+  const q   = normalizar(query);
   const grid = document.getElementById('product-grid');
   const bar  = document.getElementById('cat-results-bar');
 
   const filtered = PRODUCTS.filter(p => {
     if(activeCat !== 'all' && p.cat !== activeCat) return false;
     if(!q) return true;
-    return p.name.toLowerCase().includes(q)
-        || (p.tagline||'').toLowerCase().includes(q)
-        || CAT_NAMES[p.cat].toLowerCase().includes(q);
+    return coincide(p, query);
   });
 
   if(!filtered.length){
-    grid.innerHTML = `<div class="cat-empty"><i class="fa-solid fa-magnifying-glass-minus"></i><p>Sin resultados para "<strong>${escapeHtml(query)}</strong>"</p></div>`;
+    grid.innerHTML = `<div class="cat-empty"><i class="fa-solid fa-magnifying-glass-minus"></i>
+      <p>Sin resultados para "<strong>${escapeHtml(query)}</strong>"</p>
+      <p style="font-size:.92rem;margin-top:.6rem;">Prueba con la medida sola (<strong>3/8</strong>, <strong>2x2</strong>, <strong>cal 11</strong>) o pregúntanos directo.</p>
+      <a href="https://wa.me/5219512283263?text=${encodeURIComponent('Hola, busco: ' + query)}" target="_blank" rel="noopener" class="cat-empty-wa"><i class="fa-brands fa-whatsapp"></i> Preguntar por WhatsApp</a></div>`;
     bar.innerHTML = '';
     return;
   }
 
   bar.innerHTML = `Mostrando <strong>${filtered.length}</strong> producto${filtered.length!==1?'s':''}`
-    + (activeCat!=='all'?' en <strong>'+CAT_NAMES[activeCat]+'</strong>':'')
+    + (activeCat!=='all' ? ' en <strong>'+CAT_NAMES[activeCat]+'</strong>'
+                         : (q ? ' de <strong>todo el catálogo</strong>' : ''))
     + (q?' para "<strong>'+escapeHtml(query)+'</strong>"':'');
 
   grid.innerHTML = filtered.map(p => {
@@ -1997,6 +2110,8 @@ function mostrarMenu() {
   document.getElementById('cat-products').style.display = 'none';
   document.getElementById('cat-menu').style.display = '';
   document.getElementById('cat-search').value = '';
+  const g = document.getElementById('cat-search-global');
+  if (g) g.value = '';
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -2033,6 +2148,37 @@ if (validCats.includes(location.hash.replace('#', ''))) aplicarHash();
 
 document.getElementById('cat-search').addEventListener('input', e => {
   render(e.target.value);
+});
+
+/* Buscar desde la pantalla de categorías: muestra resultados de TODO el
+   catálogo, sin obligar a elegir una categoría primero. */
+function buscarEnTodo(texto) {
+  const q = (texto || '').trim();
+  if (!q) { mostrarMenu(); return; }
+  activeCat = 'all';
+  document.getElementById('cat-menu').style.display = 'none';
+  document.getElementById('cat-products').style.display = 'block';
+  document.getElementById('cat-breadcrumb').textContent = 'Todo el catálogo';
+  const dentro = document.getElementById('cat-search');
+  dentro.value = q;
+  render(q);
+}
+
+const globalInput = document.getElementById('cat-search-global');
+globalInput.addEventListener('input', e => {
+  const q = e.target.value;
+  if (q.trim().length >= 2) buscarEnTodo(q);
+  else if (!q.trim()) mostrarMenu();
+});
+globalInput.addEventListener('keydown', e => {
+  if (e.key === 'Enter') { e.preventDefault(); buscarEnTodo(e.target.value); }
+});
+
+document.querySelectorAll('.cat-sug').forEach(b => {
+  b.addEventListener('click', () => {
+    globalInput.value = b.dataset.q;
+    buscarEnTodo(b.dataset.q);
+  });
 });
 
 /* Inicializar contadores del menú de categorías */
