@@ -110,6 +110,23 @@ All pages share copy-pasted `<header class="navbar">` and `<footer>` blocks. **T
 
 **The site is consumed primarily on cheap Android phones**: salespeople send WhatsApp links to leads. Test mentally on 360 px width before declaring any visual change done. Optimize image weight aggressively (target < 500 KB per photo). Tap targets ≥ 44 px.
 
+## Company history (source of truth)
+
+From the company's own printed history sheet, supplied by the user on 2026-09-18. `nosotros.html` follows this — don't rewrite it from imagination.
+
+- Founded by **Félix Martínez Lázaro**, with his wife **Lic. Patricia Francisca Ramírez Santiago**, who is the current **Directora General**.
+- **2000-08-08** — opens as **"Perfiles San Miguel"** at Av. del Valle N°6, Col. Ex Garita, Santa Cruz Xoxocotlán. A 300 m² yard plus a 6 m² caseta used as the counter. "Perfiles" for the product; "San Miguel" for **San Miguel Amatlán**, Sierra Juárez, the founder's home town.
+- **2010** — renamed **"Perfiles de Antequera"** (Antequera = Oaxacan roots), moves to Blvd. Guadalupe Hinojosa de Murat N°111.
+- **2021** — administrative change, renamed **"Construaceros RAMAR"**: *construyendo aceros* + **Ra**mírez and **Mar**tínez.
+- Catalogue of **+5,000 products** across perfilería, aceros estructurales, láminas, aceros especiales, herrajes.
+- Foráneas routes: Miahuatlán, Huatulco, Mixes, Juquila, Mixteca, Peras, Teojomulco, Istmo, Valle Nacional, Zimatlán.
+- Customers by trade: herreros, torneros, balconeros, hojalateros, carroceros, mofleros, estructuristas, constructoras, revendedores, distribuidores.
+- Slogans: "Tu Soporte de Acero" and, on the logo, "Si de perfil lo va a realizar, que sea de Construaceros RAMAR".
+
+Two things previously on the page were **not** in that sheet and were removed: a "La Mujer de Acero" legacy line, and a 2020 pandemic-resilience milestone. Don't reintroduce either without a source.
+
+⚠️ **Unresolved:** the sheet lists a **Lachigolo** branch that does not exist anywhere on the site, and does not mention Tlacolula. Confirm with the user before adding or removing a branch.
+
 ## Content Rules
 
 - The catalog (products) lives **ONLY** in `catalogo.html`. Never split into sub-pages, never add product listings to `index.html`. Sub-catalog files (`catalogo-comercial.html`, `catalogo-estructural.html`, `catalogo-especializado.html`, `catalogo-pintura.html`) were deleted on 2026-05-05 by user request — do not recreate them.

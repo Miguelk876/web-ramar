@@ -3581,3 +3581,61 @@ footer {
     color: var(--color-text-light);
     line-height: 1.45;
 }
+
+/* ═══════════ A QUIÉN ATENDEMOS Y RUTAS FORÁNEAS (nosotros.html) ═══════════
+   Datos de la hoja histórica de la empresa: los oficios que atiende y las
+   rutas de reparto foráneo. No estaban en ninguna página. */
+.alcance-section { padding: 6rem 0; background: var(--color-bg); }
+.alcance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: 3rem;
+}
+.alcance-intro {
+    font-family: var(--font-body);
+    color: var(--color-text-light);
+    margin: .6rem 0 1.4rem;
+    line-height: 1.55;
+}
+.alcance-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .55rem;
+}
+.alcance-lista li {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-left: 3px solid var(--color-yellow);
+    border-radius: 8px;
+    padding: .55rem .9rem;
+    font-family: var(--font-body);
+    font-size: .93rem;
+    font-weight: 600;
+    color: var(--color-blue);
+}
+.alcance-lista--rutas li { border-left-color: var(--color-red); }
+.alcance-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .55rem;
+    min-height: 44px;
+    margin-top: 1.5rem;
+    padding: .7rem 1.4rem;
+    background: #25D366;
+    color: #fff;
+    border-radius: 999px;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: .93rem;
+    text-decoration: none;
+    transition: transform .2s, box-shadow .2s;
+}
+.alcance-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37,211,102,.35); }
+@media (max-width: 600px) {
+    .alcance-section { padding: 4rem 0; }
+    .alcance-grid { gap: 2.5rem; }
+}
