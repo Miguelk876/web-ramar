@@ -151,10 +151,12 @@ Two rules follow from that:
 
 The FAQ in `contacto.html` answers "¿Facturan?". Two rules, both learned the hard way on 2026-09-19:
 
-- **Never ask the customer for their Constancia de Situación Fiscal.** Invoicing needs four data points — RFC, razón social o nombre, código postal fiscal, régimen fiscal — plus an email. The CSF carries far more (CURP, home address, phone, economic activities), so asking for it collects personal data well beyond what the purpose needs, which cuts against the proportionality principle of the LFPDPPP and against the privacy notice this repo publishes. The page now states plainly that it is **not** required.
-- **Do not state SAT rules as fact.** An earlier version asserted "una vez cerrado el mes, el SAT ya no permite emitirla con esa fecha". That was written without a verifiable source, and this environment has **no outbound internet** — SAT, PRODECON and any other site are blocked by the proxy, so such claims cannot be checked here. The wording is now a recommendation ("pídela lo antes posible") with an invitation to ask, not a rule.
+- **Never ask the customer for their Constancia de Situación Fiscal — it is a fineable offence.** Under CFF art. 83 fr. IX conditioning a CFDI on handing over the CSF is an infraction, sanctioned by art. 84 with **$21,420 to $122,440**, and preventive closure of 3–15 days on repeat. Invoicing needs four data points — RFC, razón social o nombre, código postal fiscal, régimen fiscal — plus an email. The CSF carries far more (CURP, home address, phone, economic activities), so asking for it collects personal data well beyond what the purpose needs, which cuts against the proportionality principle of the LFPDPPP and against the privacy notice this repo publishes. The page now states plainly that it is **not** required.
+- **Never state a shorter deadline than the law gives.** An earlier version asserted "una vez cerrado el mes, el SAT ya no permite emitirla con esa fecha". **That was false.** The SAT's position is that the invoice may be requested **throughout the same fiscal year** of the operation, and refusing it merely because the month closed is itself an improper practice. The page now says so.
 
-General principle: for anything fiscal, legal or about deadlines, write what RAMAR *does*, not what the law *says*, and tell the user to have their contador or abogado confirm it.
+> 🔎 **You CAN research from here.** `curl` and `WebFetch` on most sites are blocked by the egress proxy, but the **`WebSearch` tool works** and was what settled both points above. Don't conclude "no internet" from a failed `curl` — try `WebSearch` first. Some domains are still blocked to `WebFetch`, so prefer `WebSearch` and cross-check across several results.
+
+General principle: for anything fiscal, legal or about deadlines, **verify with `WebSearch` before writing**, prefer describing what RAMAR *does* over what the law *says*, and still tell the user to have their contador or abogado confirm.
 
 ## Quote list (`catalogo.html`)
 
