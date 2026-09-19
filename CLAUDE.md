@@ -36,7 +36,7 @@ Exit 1 if any photo is dead, exit 2 if every request failed with the same code �
 
 ## Architecture
 
-7 HTML pages linked via plain `<a href="...">` navigation:
+8 HTML pages linked via plain `<a href="...">` navigation:
 
 | Page | Purpose | Notes |
 |------|---------|-------|
@@ -47,6 +47,7 @@ Exit 1 if any photo is dead, exit 2 if every request failed with the same code �
 | `ubicaciones.html` | 7 branches + Google Maps | Has full Schema.org JSON-LD with all branch addresses |
 | `contacto.html` | Form + contact info | Posts to Formspree → redirects to `gracias.html` |
 | `gracias.html` | Thank-you page | `<meta name="robots" content="noindex">` |
+| `aviso-privacidad.html` | Legal — LFPDPPP privacy notice | Linked from every footer and from the contact form. **Keep it truthful:** if a feature starts storing or transferring visitor data, the notice must be updated in the same commit. |
 
 All pages share copy-pasted `<header class="navbar">` and `<footer>` blocks. **There are no server-side includes or components**, so changes to navbar/footer must be replicated in all 7 pages manually.
 
@@ -134,6 +135,23 @@ From the company's own printed history sheet, supplied by the user. `nosotros.ht
 **Do not mention the intermediate trade name "Perfiles de Antequera"** — removed on user request; more corporate changes are expected and they don't want that history on the site. Don't explain "RAMAR" as surname initials either (see the privacy note).
 
 **Branches vs. the sheet — resolved 2026-09-18.** The sheet lists a **Lachigolo** branch: it is **not** a RAMAR branch and must **not** be added to `ubicaciones.html`, the sitemap or the JSON-LD. The sheet predates **Tlacolula**, which is correct as it stands (badge "Próximamente", no `openingHours` in its JSON-LD) — leave it alone.
+
+## Privacy notice — keep it accurate
+
+`aviso-privacidad.html` describes the **real** data flows of this site, not boilerplate: the contact form is processed by FormSubmit and lands in Gmail; Google Maps, the Meta page plugin, Google Fonts and Cloudflare are embedded and see the visitor's IP; the site is hosted on Netlify.
+
+Two rules follow from that:
+
+- **No localStorage, no own cookies, no analytics** without updating the notice in the same commit. The catalog's quote list deliberately uses `sessionStorage` (product ids and quantities only, cleared when the tab closes) and the notice says exactly that.
+- **Add a new third party → disclose it.** Any new embed, form processor or tracking tool means a new bullet in sections 4 and 5 of the notice.
+
+⚠️ The notice identifies the responsable by commercial name and the Matriz address. **The user still has to confirm the razón social with their accountant/lawyer**, and the whole document should be reviewed by a lawyer before being relied on.
+
+## Quote list (`catalogo.html`)
+
+`lista` is a `Map` of product id → `{producto, cantidad}`, mirrored into `sessionStorage` under `ramar-cotizacion` as `[[id, cantidad], …]`. `enviarLista()` builds one WhatsApp message with every line. The target number comes from `waDeSucursal()`.
+
+**`SUCURSALES_WA` only lists branches whose WhatsApp number is confirmed** — Matriz, Viguera, La Unión, San Isidro, plus the aggregated number. Aceros, Juquilita and Solaga are deliberately absent: their numbers are registered as `tel:` and nobody has confirmed whether they receive WhatsApp. Don't add them by guessing.
 
 ## Content Rules
 

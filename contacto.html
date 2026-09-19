@@ -385,6 +385,7 @@
                             <label for="mensaje">Mensaje / Material Buscado</label>
                             <textarea id="mensaje" name="mensaje" rows="4" placeholder="Requiero cotizar vigas IPR..." required></textarea>
                         </div>
+                        <p class="form-privacidad">Al enviar aceptas nuestro <a href="aviso-privacidad.html" target="_blank" rel="noopener">Aviso de Privacidad</a>.</p>
                         <button type="submit" class="btn-primary" style="width:100%; padding:15px; font-size:1.1rem; border:none; cursor:pointer;">
                             Enviar Mensaje <i class="fa-solid fa-paper-plane"></i>
                         </button>
@@ -442,6 +443,44 @@
                 </p>
             </div>
         </section>
+
+        <!-- ══ FACTURACIÓN ══
+             Pregunta constante en B2B que la página no contestaba en ningún lado.
+             Los datos que se piden son los que exige el SAT desde 2022 (CFDI 4.0). -->
+        <section class="factura-section fade-in" id="facturacion">
+            <div class="container">
+                <div class="factura-card">
+                    <div class="factura-icono"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                    <div class="factura-cuerpo">
+                        <p class="section-eyebrow dark">Comprobantes fiscales</p>
+                        <h2 class="section-title">SÍ <span class="text-red">FACTURAMOS</span></h2>
+                        <p class="factura-intro">Todas nuestras ventas pueden facturarse. Pídela en el mostrador al momento de tu compra o escríbenos con tu ticket a la mano.</p>
+
+                        <h3>Qué datos necesitamos</h3>
+                        <ul class="factura-lista">
+                            <li><strong>RFC</strong> tal como aparece en tu Constancia de Situación Fiscal</li>
+                            <li><strong>Razón social o nombre</strong>, sin el régimen de capital</li>
+                            <li><strong>Código postal</strong> de tu domicilio fiscal</li>
+                            <li><strong>Régimen fiscal</strong></li>
+                            <li><strong>Uso del CFDI</strong> (por ejemplo, gastos en general o construcciones)</li>
+                            <li><strong>Correo electrónico</strong> para enviarte el archivo</li>
+                        </ul>
+                        <p class="factura-nota"><i class="fa-solid fa-circle-info"></i> Lo más fácil es mandarnos tu <strong>Constancia de Situación Fiscal</strong> en PDF: ahí vienen todos los datos y evitamos errores de captura.</p>
+
+                        <h3>Cómo pedirla</h3>
+                        <ul class="factura-lista">
+                            <li><strong>En sucursal</strong>, al momento de pagar. Es lo más rápido.</li>
+                            <li><strong>Por WhatsApp</strong>, mandando foto del ticket y tu constancia.</li>
+                        </ul>
+                        <p class="factura-nota factura-nota--aviso"><i class="fa-solid fa-triangle-exclamation"></i> Pide tu factura dentro del <strong>mismo mes de la compra</strong>. Una vez cerrado el mes, el SAT ya no permite emitirla con esa fecha.</p>
+
+                        <a href="https://wa.me/5219512283263?text=Hola%2C%20quiero%20solicitar%20mi%20factura.%20Le%20mando%20mi%20ticket%20y%20mi%20Constancia%20de%20Situaci%C3%B3n%20Fiscal." target="_blank" rel="noopener" class="factura-cta">
+                            <i class="fa-brands fa-whatsapp"></i> Solicitar mi factura
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer id="footer-section">
@@ -480,6 +519,7 @@
         </div>
         <div class="footer-bottom">
             <p>&copy; 2026 Construaceros Ramar. Todos los derechos reservados.</p>
+            <p class="footer-legal"><a href="aviso-privacidad.html">Aviso de Privacidad</a></p>
         </div>
     </footer>
 
