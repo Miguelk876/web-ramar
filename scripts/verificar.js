@@ -18,7 +18,8 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
 const PAGES = ['index.html', 'nosotros.html', 'catalogo.html', 'guia.html',
-               'ubicaciones.html', 'contacto.html', 'gracias.html'];
+               'ubicaciones.html', 'contacto.html', 'gracias.html',
+               'aviso-privacidad.html'];
 
 let errores = 0, avisos = 0;
 const err = (m) => { console.error('  ✗ ' + m); errores++; };
@@ -115,12 +116,12 @@ const base = firmas['index.html'];
 const distintos = PAGES.filter(p => firmas[p] !== base && firmas[p] !== base.replace(' style="color: var(--color-yellow);"',''));
 // nav-links puede variar solo en el highlight de página activa; comparar sin estilos ya lo normaliza
 const unicos = [...new Set(Object.values(firmas))];
-unicos.length === 1 ? ok('Navbar idéntico en las 7 páginas')
+unicos.length === 1 ? ok(`Navbar idéntico en las ${PAGES.length} páginas`)
                     : warn(`Navbar tiene ${unicos.length} variantes (revisar manualmente si es solo el highlight)`);
 
 const waFloat = PAGES.filter(p => !fs.readFileSync(path.join(ROOT, p), 'utf8').includes('whatsapp-float'));
 waFloat.length ? warn('Sin botón WhatsApp flotante: ' + waFloat.join(', '))
-               : ok('Botón WhatsApp flotante en las 7 páginas');
+               : ok(`Botón WhatsApp flotante en las ${PAGES.length} páginas`);
 
 // ─── Resultado ───────────────────────────────────────────────
 console.log('\n' + '─'.repeat(50));

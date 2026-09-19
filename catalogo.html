@@ -93,7 +93,7 @@
     color: var(--color-text-light);
 }
 .cat-sug {
-    min-height: 34px;
+    min-height: 44px;
     padding: .3rem .8rem;
     border: 1px solid #cbd5e1;
     border-radius: 999px;
@@ -146,6 +146,32 @@
     transition: background .2s, color .2s;
 }
 .btn-modal-share:hover { background: var(--color-blue); color: #fff; }
+
+/* Selector de sucursal para la cotización */
+.pmodal-sucursal { margin-top: 1rem; }
+.pmodal-sucursal label {
+    display: block;
+    font-family: var(--font-body);
+    font-size: .85rem;
+    font-weight: 600;
+    color: var(--color-text-light);
+    margin-bottom: .4rem;
+}
+.pmodal-sucursal label i { color: var(--color-blue); margin-right: .25rem; }
+.pmodal-sucursal select {
+    width: 100%;
+    min-height: 44px;
+    padding: .6rem .8rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    background: #fff;
+    font-family: var(--font-body);
+    font-size: .93rem;
+    color: var(--color-blue);
+    font-weight: 600;
+    cursor: pointer;
+}
+.pmodal-sucursal select:focus { outline: none; border-color: var(--color-blue); }
 @media (max-width: 600px) {
     .pmodal-actions > * { flex: 1 1 100%; }
 }
@@ -844,6 +870,7 @@
         </div>
         <div class="footer-bottom">
             <p>&copy; 2026 Construaceros Ramar. Todos los derechos reservados.</p>
+            <p class="footer-legal"><a href="aviso-privacidad.html">Aviso de Privacidad</a></p>
         </div>
     </footer>
 
@@ -851,6 +878,34 @@
         <i class="fa-brands fa-whatsapp"></i>
         <span class="wa-tooltip">Cotiza por WhatsApp</span>
     </a>
+
+
+    <!-- ══ LISTA DE COTIZACIÓN ══ -->
+    <button type="button" id="cot-burbuja" class="cot-burbuja" onclick="abrirLista()" hidden
+            aria-label="Ver mi lista de cotización">
+        <i class="fa-solid fa-clipboard-list"></i>
+        <span class="cot-burbuja-txt">Mi cotización</span>
+        <span id="cot-cuenta" class="cot-cuenta">0</span>
+    </button>
+
+    <div id="cot-panel" class="cot-panel" role="dialog" aria-modal="true" aria-labelledby="cot-titulo">
+        <div class="cot-fondo" onclick="cerrarLista()"></div>
+        <div class="cot-caja">
+            <div class="cot-cabeza">
+                <h2 id="cot-titulo"><i class="fa-solid fa-clipboard-list"></i> Mi cotización</h2>
+                <button type="button" class="cot-cerrar" onclick="cerrarLista()" aria-label="Cerrar">&times;</button>
+            </div>
+            <div id="cot-items" class="cot-items"></div>
+            <div id="cot-pie" class="cot-pie" hidden>
+                <label for="cot-nota">Medidas, calibres o detalles (opcional)</label>
+                <textarea id="cot-nota" rows="3" placeholder="Ej. PTR cal. 11 de 2x2, 6 tramos. Lámina cal. 26 en 3 m."></textarea>
+                <p class="cot-aviso">Los precios se cotizan al momento. Te respondemos por WhatsApp con el precio del día.</p>
+                <button type="button" class="cot-enviar" onclick="enviarLista()">
+                    <i class="fa-brands fa-whatsapp"></i> Enviar mi lista por WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
 
     <script src="main.js"></script>
     <script>
@@ -2095,13 +2150,24 @@ function openModal(id){
         <div class="pmodal-specs">${specsHTML}</div>
         ${TABLE_HTML[p.id] ? `<div style="margin-top:1.25rem;">${TABLE_HTML[p.id]}</div>` : ''}
         <div class="pmodal-actions">
-          <a href="https://wa.me/5219512283263?text=Hola%2C%20quiero%20cotizar%3A%20${p.wa}"
+          <a id="pmodal-wa-btn"
+             data-base="https://wa.me/WANUM?text=Hola%2C%20quiero%20cotizar%3A%20${p.wa}"
+             href="https://wa.me/${waDeSucursal()}?text=Hola%2C%20quiero%20cotizar%3A%20${p.wa}"
              target="_blank" class="btn-modal-wa">
             <i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp
           </a>
+          <button type="button" id="pmodal-add-btn" class="btn-modal-add" onclick="agregarALista('${p.id}')">
+            <i class="fa-solid fa-plus"></i> <span>Agregar a mi cotización</span>
+          </button>
           <button type="button" class="btn-modal-share" onclick="compartirProducto('${p.id}')">
             <i class="fa-solid fa-share-nodes"></i> <span>Copiar liga de este producto</span>
           </button>
+        </div>
+        <div class="pmodal-sucursal">
+          <label for="pmodal-sucursal-sel"><i class="fa-solid fa-store"></i> ¿A qué sucursal le escribes?</label>
+          <select id="pmodal-sucursal-sel" onchange="cambiarSucursal(this)">
+            ${SUCURSALES_WA.map(x => `<option value="${x.id}"${x.id===sucursalElegida?' selected':''}>${x.nombre}</option>`).join('')}
+          </select>
         </div>
       </div>
     </div>`;
@@ -2118,6 +2184,152 @@ function openModal(id){
 
 /* id del producto abierto, o null. Sirve para saber a dónde volver al cerrar. */
 let modalAbierto = null;
+
+
+/* ═══════════ A QUÉ SUCURSAL SE MANDA LA COTIZACIÓN ═══════════
+   Antes todos los botones iban al 951 228 3263 y en Matriz tenían que
+   reenviar. Aquí solo van las sucursales cuyo WhatsApp está confirmado;
+   Aceros, Juquilita y Solaga no aparecen porque sus números están
+   registrados como teléfono fijo y falta confirmar si reciben WhatsApp. */
+const SUCURSALES_WA = [
+  { id:'general',  nombre:'Cualquier sucursal (Matriz canaliza)', wa:'5219512283263' },
+  { id:'matriz',   nombre:'Matriz La Ex-Garita',                  wa:'5219515336045' },
+  { id:'viguera',  nombre:'Viguera',                              wa:'5219514160571' },
+  { id:'union',    nombre:'La Unión',                             wa:'5219512721019' },
+  { id:'sanisidro',nombre:'San Isidro',                           wa:'5219512283689' },
+];
+/* Se guarda en memoria, no en el navegador: el aviso de privacidad dice que
+   este sitio no almacena nada del visitante y eso tiene que seguir siendo cierto. */
+let sucursalElegida = 'general';
+
+function waDeSucursal(){
+  const s = SUCURSALES_WA.find(x => x.id === sucursalElegida) || SUCURSALES_WA[0];
+  return s.wa;
+}
+
+function cambiarSucursal(sel){
+  sucursalElegida = sel.value;
+  const btn = document.getElementById('pmodal-wa-btn');
+  if (btn) btn.href = btn.dataset.base.replace('WANUM', waDeSucursal());
+}
+
+
+/* ═══════════ LISTA DE COTIZACIÓN ═══════════
+   Un herrero no compra una cosa: compra PTR, solera, electrodo y pintura.
+   Antes tenía que mandar un WhatsApp por producto. Aquí junta todo y manda uno.
+   Vive solo en memoria, no se guarda en el navegador: el aviso de privacidad
+   dice que este sitio no almacena nada del visitante. */
+const lista = new Map();   // id -> { producto, cantidad }
+const CLAVE_LISTA = 'ramar-cotizacion';
+
+/* Se guarda en sessionStorage, no en localStorage: vive mientras la pestaña
+   esté abierta y se borra sola al cerrarla. Solo se guardan ids de producto y
+   cantidades, ningún dato personal. Va envuelto en try/catch porque en
+   navegación privada el acceso puede fallar. */
+function guardarLista(){
+  try {
+    const plano = [...lista.values()].map(x => [x.producto.id, x.cantidad]);
+    sessionStorage.setItem(CLAVE_LISTA, JSON.stringify(plano));
+  } catch (e) { /* sin almacenamiento: la lista sigue viva en memoria */ }
+}
+
+function recuperarLista(){
+  try {
+    const crudo = sessionStorage.getItem(CLAVE_LISTA);
+    if (!crudo) return;
+    JSON.parse(crudo).forEach(([id, cantidad]) => {
+      const p = PRODUCTS.find(x => x.id === id);
+      if (p && cantidad > 0) lista.set(id, { producto: p, cantidad });
+    });
+  } catch (e) { /* dato corrupto o sin acceso: se arranca con lista vacía */ }
+}
+
+function actualizarBurbuja(){
+  const n = [...lista.values()].reduce((a,x) => a + x.cantidad, 0);
+  const b = document.getElementById('cot-burbuja');
+  const c = document.getElementById('cot-cuenta');
+  if (!b) return;
+  c.textContent = n;
+  b.hidden = n === 0;
+}
+
+function agregarALista(id){
+  const p = PRODUCTS.find(x => x.id === id);
+  if (!p) return;
+  const item = lista.get(id);
+  lista.set(id, { producto: p, cantidad: item ? item.cantidad + 1 : 1 });
+  guardarLista();
+  actualizarBurbuja();
+  pintarLista();
+  const btn = document.getElementById('pmodal-add-btn');
+  if (btn) {
+    const txt = btn.querySelector('span');
+    const antes = txt.textContent;
+    txt.textContent = '¡Agregado!';
+    btn.classList.add('agregado');
+    setTimeout(() => { txt.textContent = antes; btn.classList.remove('agregado'); }, 1600);
+  }
+}
+
+function quitarDeLista(id){ lista.delete(id); guardarLista(); actualizarBurbuja(); pintarLista(); }
+
+function cambiarCantidad(id, delta){
+  const item = lista.get(id);
+  if (!item) return;
+  const nueva = item.cantidad + delta;
+  if (nueva <= 0) { quitarDeLista(id); return; }
+  lista.set(id, { ...item, cantidad: nueva });
+  guardarLista();
+  actualizarBurbuja();
+  pintarLista();
+}
+
+function pintarLista(){
+  const cont = document.getElementById('cot-items');
+  const pie  = document.getElementById('cot-pie');
+  if (!cont) return;
+  if (!lista.size) {
+    cont.innerHTML = `<p class="cot-vacia">Tu lista está vacía.<br>Abre un producto y pícale a <strong>«Agregar a mi cotización»</strong>.</p>`;
+    pie.hidden = true;
+    return;
+  }
+  pie.hidden = false;
+  cont.innerHTML = [...lista.values()].map(({producto:p, cantidad}) => `
+    <div class="cot-item">
+      <div class="cot-item-txt">
+        <p class="cot-item-nombre">${p.name}</p>
+        <span class="cot-item-cat">${CAT_NAMES[p.cat]}</span>
+      </div>
+      <div class="cot-item-ctl">
+        <button type="button" aria-label="Quitar uno de ${p.name}" onclick="cambiarCantidad('${p.id}', -1)">−</button>
+        <span class="cot-item-num">${cantidad}</span>
+        <button type="button" aria-label="Agregar uno de ${p.name}" onclick="cambiarCantidad('${p.id}', 1)">+</button>
+        <button type="button" class="cot-item-x" aria-label="Quitar ${p.name} de la lista" onclick="quitarDeLista('${p.id}')"><i class="fa-solid fa-trash-can"></i></button>
+      </div>
+    </div>`).join('');
+}
+
+function abrirLista(){
+  pintarLista();
+  document.getElementById('cot-panel').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function cerrarLista(){
+  document.getElementById('cot-panel').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+/* Arma un solo mensaje de WhatsApp con toda la lista. */
+function enviarLista(){
+  if (!lista.size) return;
+  const lineas = [...lista.values()].map(({producto:p, cantidad}, i) =>
+    `${i+1}. ${p.name}${cantidad > 1 ? ` — ${cantidad} pz` : ''}`);
+  const nota = document.getElementById('cot-nota').value.trim();
+  const texto = 'Hola, quiero cotizar lo siguiente:\n\n' + lineas.join('\n')
+              + (nota ? `\n\nMedidas y detalles:\n${nota}` : '')
+              + '\n\n(Enviado desde construacerosramar.mx)';
+  window.open('https://wa.me/' + waDeSucursal() + '?text=' + encodeURIComponent(texto), '_blank', 'noopener');
+}
 
 /* Liga directa a un producto: catalogo.html#p-<id> */
 function ligaProducto(id){
@@ -2214,6 +2426,9 @@ function aplicarHash() {
 }
 window.addEventListener('hashchange', aplicarHash);
 if (location.hash) aplicarHash();   // categorías y ligas de producto
+
+recuperarLista();
+actualizarBurbuja();
 
 document.getElementById('cat-search').addEventListener('input', e => {
   render(e.target.value);
