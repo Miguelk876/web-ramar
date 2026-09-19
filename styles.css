@@ -3718,87 +3718,6 @@ footer {
 }
 .form-privacidad a { color: var(--color-blue); font-weight: 600; }
 
-/* ═══════════ FACTURACIÓN (contacto.html) ═══════════ */
-.factura-section { padding: 4.5rem 0 5.5rem; background: var(--color-bg); }
-.factura-card {
-    display: flex;
-    gap: 2rem;
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 2.5rem;
-    background: #fff;
-    border-radius: 16px;
-    border-top: 4px solid var(--color-yellow);
-    box-shadow: 0 4px 24px rgba(28,43,84,.10);
-}
-.factura-icono {
-    flex: 0 0 auto;
-    width: 64px; height: 64px;
-    display: flex; align-items: center; justify-content: center;
-    background: #fff7ed;
-    border-radius: 50%;
-    font-size: 1.7rem;
-    color: var(--color-yellow);
-}
-.factura-cuerpo { min-width: 0; }
-.factura-intro { font-family: var(--font-body); color: #475569; line-height: 1.6; margin: .5rem 0 1.6rem; }
-.factura-cuerpo h3 {
-    font-family: var(--font-heading);
-    font-size: 1.15rem;
-    color: var(--color-blue);
-    margin: 1.6rem 0 .7rem;
-    text-transform: uppercase;
-    letter-spacing: .03em;
-}
-.factura-lista { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: .5rem; }
-.factura-lista li {
-    font-family: var(--font-body);
-    font-size: .95rem;
-    color: #475569;
-    padding-left: 1.4rem;
-    position: relative;
-    line-height: 1.5;
-}
-.factura-lista li::before {
-    content: '';
-    position: absolute; left: 0; top: .55em;
-    width: 7px; height: 7px;
-    border-radius: 50%;
-    background: var(--color-yellow);
-}
-.factura-lista strong { color: var(--color-blue); }
-.factura-nota {
-    display: flex; gap: .6rem;
-    margin: 1.1rem 0 0;
-    padding: .85rem 1rem;
-    background: #f1f5f9;
-    border-left: 4px solid var(--color-blue);
-    border-radius: 0 8px 8px 0;
-    font-family: var(--font-body);
-    font-size: .9rem;
-    color: #475569;
-    line-height: 1.5;
-}
-.factura-nota i { color: var(--color-blue); flex-shrink: 0; margin-top: .15rem; }
-.factura-nota--aviso { background: #fffbeb; border-left-color: #d97706; }
-.factura-nota--aviso i { color: #d97706; }
-.factura-cta {
-    display: inline-flex; align-items: center; justify-content: center; gap: .55rem;
-    min-height: 48px;
-    margin-top: 1.8rem;
-    padding: .8rem 1.6rem;
-    background: #25D366; color: #fff;
-    border-radius: 999px;
-    font-family: var(--font-body); font-weight: 700; font-size: .95rem;
-    text-decoration: none;
-    transition: transform .2s, box-shadow .2s;
-}
-.factura-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37,211,102,.35); }
-@media (max-width: 700px) {
-    .factura-card { flex-direction: column; gap: 1.2rem; padding: 1.5rem 1.3rem; }
-    .factura-icono { width: 54px; height: 54px; font-size: 1.4rem; }
-    .factura-section { padding: 3rem 0 4rem; }
-}
 
 /* ═══════════ LISTA DE COTIZACIÓN (catalogo.html) ═══════════ */
 .cot-burbuja {
@@ -3918,4 +3837,97 @@ footer {
         align-items: center;
         min-height: 44px;
     }
+}
+
+/* ═══════════ PREGUNTAS FRECUENTES (contacto.html) ═══════════ */
+.faq-section { padding: 4.5rem 0 5.5rem; background: var(--color-bg); }
+.faq-cabeza { text-align: center; max-width: 620px; margin: 0 auto 2.5rem; }
+.faq-sub { font-family: var(--font-body); color: var(--color-text-light); margin-top: .6rem; line-height: 1.55; }
+.faq-lista { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: .8rem; }
+.faq-item {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: box-shadow .2s, border-color .2s;
+}
+.faq-item[open] { border-color: var(--color-yellow); box-shadow: 0 6px 20px rgba(28,43,84,.09); }
+.faq-item summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 56px;
+    padding: 1rem 1.3rem;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--color-blue);
+    list-style: none;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+    content: '+';
+    flex-shrink: 0;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--color-yellow);
+    transition: transform .25s;
+}
+.faq-item[open] summary::after { content: '−'; transform: rotate(180deg); }
+.faq-item summary:hover { background: #f8fafc; }
+.faq-cuerpo {
+    padding: 0 1.3rem 1.4rem;
+    font-family: var(--font-body);
+    color: #475569;
+    line-height: 1.65;
+}
+.faq-cuerpo p { margin: 0 0 .9rem; }
+.faq-cuerpo ul { margin: 0 0 .9rem; padding-left: 1.2rem; }
+.faq-cuerpo li { margin-bottom: .35rem; }
+.faq-cuerpo strong { color: var(--color-blue); }
+.faq-cuerpo a { color: var(--color-blue); font-weight: 600; }
+/* Nada de flex aquí: con flex, el <strong> del texto se vuelve otro elemento
+   de la fila y la frase se parte en columnas. El icono va posicionado. */
+.faq-tip, .faq-aviso {
+    position: relative;
+    padding: .8rem 1rem .8rem 2.6rem;
+    border-radius: 0 8px 8px 0;
+    font-size: .9rem;
+    line-height: 1.55;
+}
+.faq-tip i, .faq-aviso i {
+    position: absolute;
+    left: 1rem;
+    top: .95rem;
+}
+.faq-tip { background: #f1f5f9; border-left: 4px solid var(--color-blue); }
+.faq-tip i { color: var(--color-blue); }
+.faq-aviso { background: #fffbeb; border-left: 4px solid #d97706; }
+.faq-aviso i { color: #d97706; }
+.faq-cta {
+    display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+    min-height: 44px;
+    margin-top: .6rem;
+    padding: .6rem 1.2rem;
+    background: #25D366; color: #fff !important;
+    border-radius: 999px;
+    font-weight: 700; font-size: .9rem;
+    text-decoration: none;
+}
+.faq-cta:hover { filter: brightness(.95); }
+.faq-cta--azul { background: var(--color-blue); }
+.faq-cierre {
+    max-width: 780px;
+    margin: 2rem auto 0;
+    text-align: center;
+    font-family: var(--font-body);
+    color: var(--color-text-light);
+}
+.faq-cierre a { color: var(--color-blue); font-weight: 700; }
+@media (max-width: 600px) {
+    .faq-section { padding: 3rem 0 4rem; }
+    .faq-item summary { font-size: .95rem; padding: .9rem 1rem; }
+    .faq-cuerpo { padding: 0 1rem 1.2rem; }
 }
