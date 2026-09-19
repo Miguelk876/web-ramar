@@ -25,6 +25,80 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <!-- Schema.org FAQPage: permite que Google muestre estas preguntas
+         desplegables directamente en sus resultados de búsqueda. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Facturan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, todas nuestras ventas pueden facturarse. Pídela en el mostrador al momento de tu compra o escríbenos con tu ticket. Necesitamos tu RFC, razón social o nombre, código postal del domicilio fiscal, régimen fiscal, uso del CFDI y un correo electrónico. Lo más fácil es mandarnos tu Constancia de Situación Fiscal en PDF. Pide tu factura dentro del mismo mes de la compra: una vez cerrado el mes, el SAT ya no permite emitirla con esa fecha."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuál es su horario?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lunes a viernes de 8:00 a 18:00 horas, y sábados de 8:00 a 14:00 horas, en todas nuestras sucursales."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Por qué no veo los precios en la página?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Porque el precio del acero se mueve constantemente. Si lo publicáramos, en pocos días estaría equivocado. Por eso cotizamos al momento: arma tu lista en el catálogo y mándanosla por WhatsApp, y te respondemos con el precio del día."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Hacen entregas? ¿Hasta dónde llegan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, tenemos unidades de reparto propias y cubrimos las 8 regiones del estado de Oaxaca. Salen rutas foráneas a Miahuatlán, Huatulco, Mixes, Juquila, Mixteca, Peras, Teojomulco, Istmo, Valle Nacional y Zimatlán. Si tu zona no aparece, pregúntanos: es probable que te podamos atender por medio de un distribuidor autorizado."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Tienen todo en existencia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La mayor parte del catálogo lo manejamos en piso, pero algunos productos son sobre pedido y no hay entrega inmediata; cuando es el caso, viene señalado en la ficha del producto. Por ejemplo, la varilla corrugada es sobre pedido en todas las medidas. Si tu obra tiene fecha, avísanos con anticipación."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Dan certificado de calidad del material?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, expedimos certificado de proveedor bajo solicitud. Es el documento que suelen pedir las constructoras y los estructuristas para respaldar el material de una obra. Pídelo al hacer tu pedido."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Le venden a revendedores y distribuidores?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Atendemos a herreros, torneros, balconeros, hojalateros, carroceros, mofleros, estructuristas y constructoras, y también a revendedores y distribuidores. Tenemos distribuidores autorizados en Ejutla de Crespo, Mixes, Río Grande y Amoltepec."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué significa el calibre? ¿Cómo sé cuál pedir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El calibre es el grosor del material, y va al revés de lo que uno pensaría: entre más alto el número, más delgado. Un calibre 11 es mucho más grueso que un calibre 26. En la Guía hay un explorador donde eliges un calibre y ves el PTR o la lámina dibujados con esa pared."
+          }
+        }
+      ]
+    }
+    </script>
     <style>
         .contact-hero {
             margin-top: 72px;
@@ -444,43 +518,106 @@
             </div>
         </section>
 
-        <!-- ══ FACTURACIÓN ══
-             Pregunta constante en B2B que la página no contestaba en ningún lado.
-             Los datos que se piden son los que exige el SAT desde 2022 (CFDI 4.0). -->
-        <section class="factura-section fade-in" id="facturacion">
+        <!-- ══ PREGUNTAS FRECUENTES ══
+             Se usa <details>/<summary> nativo: acordeón accesible sin JavaScript.
+             Solo van preguntas que el sitio puede contestar con datos verificados;
+             las que dependen de información que no tenemos quedaron fuera. -->
+        <section class="faq-section fade-in" id="preguntas-frecuentes">
             <div class="container">
-                <div class="factura-card">
-                    <div class="factura-icono"><i class="fa-solid fa-file-invoice-dollar"></i></div>
-                    <div class="factura-cuerpo">
-                        <p class="section-eyebrow dark">Comprobantes fiscales</p>
-                        <h2 class="section-title">SÍ <span class="text-red">FACTURAMOS</span></h2>
-                        <p class="factura-intro">Todas nuestras ventas pueden facturarse. Pídela en el mostrador al momento de tu compra o escríbenos con tu ticket a la mano.</p>
-
-                        <h3>Qué datos necesitamos</h3>
-                        <ul class="factura-lista">
-                            <li><strong>RFC</strong> tal como aparece en tu Constancia de Situación Fiscal</li>
-                            <li><strong>Razón social o nombre</strong>, sin el régimen de capital</li>
-                            <li><strong>Código postal</strong> de tu domicilio fiscal</li>
-                            <li><strong>Régimen fiscal</strong></li>
-                            <li><strong>Uso del CFDI</strong> (por ejemplo, gastos en general o construcciones)</li>
-                            <li><strong>Correo electrónico</strong> para enviarte el archivo</li>
-                        </ul>
-                        <p class="factura-nota"><i class="fa-solid fa-circle-info"></i> Lo más fácil es mandarnos tu <strong>Constancia de Situación Fiscal</strong> en PDF: ahí vienen todos los datos y evitamos errores de captura.</p>
-
-                        <h3>Cómo pedirla</h3>
-                        <ul class="factura-lista">
-                            <li><strong>En sucursal</strong>, al momento de pagar. Es lo más rápido.</li>
-                            <li><strong>Por WhatsApp</strong>, mandando foto del ticket y tu constancia.</li>
-                        </ul>
-                        <p class="factura-nota factura-nota--aviso"><i class="fa-solid fa-triangle-exclamation"></i> Pide tu factura dentro del <strong>mismo mes de la compra</strong>. Una vez cerrado el mes, el SAT ya no permite emitirla con esa fecha.</p>
-
-                        <a href="https://wa.me/5219512283263?text=Hola%2C%20quiero%20solicitar%20mi%20factura.%20Le%20mando%20mi%20ticket%20y%20mi%20Constancia%20de%20Situaci%C3%B3n%20Fiscal." target="_blank" rel="noopener" class="factura-cta">
-                            <i class="fa-brands fa-whatsapp"></i> Solicitar mi factura
-                        </a>
-                    </div>
+                <div class="faq-cabeza">
+                    <p class="section-eyebrow dark">Antes de que nos escribas</p>
+                    <h2 class="section-title">PREGUNTAS <span class="text-red">FRECUENTES</span></h2>
+                    <p class="faq-sub">Lo que más nos preguntan en mostrador. Si tu duda no está aquí, escríbenos.</p>
                 </div>
+
+                <div class="faq-lista">
+
+                    <details class="faq-item">
+                        <summary>¿Facturan?</summary>
+                        <div class="faq-cuerpo">
+                            <p><strong>Sí, todas nuestras ventas pueden facturarse.</strong> Pídela en el mostrador al momento de tu compra o escríbenos con tu ticket a la mano.</p>
+                            <p>Necesitamos estos datos:</p>
+                            <ul>
+                                <li><strong>RFC</strong> tal como aparece en tu Constancia de Situación Fiscal</li>
+                                <li><strong>Razón social o nombre</strong>, sin el régimen de capital</li>
+                                <li><strong>Código postal</strong> de tu domicilio fiscal</li>
+                                <li><strong>Régimen fiscal</strong> y <strong>uso del CFDI</strong></li>
+                                <li><strong>Correo electrónico</strong> para enviarte el archivo</li>
+                            </ul>
+                            <p class="faq-tip"><i class="fa-solid fa-circle-info"></i> Lo más fácil es mandarnos tu <strong>Constancia de Situación Fiscal</strong> en PDF: ahí vienen todos los datos y evitamos errores de captura.</p>
+                            <p class="faq-aviso"><i class="fa-solid fa-triangle-exclamation"></i> Pide tu factura <strong>dentro del mismo mes de la compra</strong>. Una vez cerrado el mes, el SAT ya no permite emitirla con esa fecha.</p>
+                            <a href="https://wa.me/5219512283263?text=Hola%2C%20quiero%20solicitar%20mi%20factura.%20Le%20mando%20mi%20ticket%20y%20mi%20Constancia%20de%20Situaci%C3%B3n%20Fiscal." target="_blank" rel="noopener" class="faq-cta"><i class="fa-brands fa-whatsapp"></i> Solicitar mi factura</a>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>¿Cuál es su horario?</summary>
+                        <div class="faq-cuerpo">
+                            <p><strong>Lunes a viernes de 8:00 a 18:00 h, y sábados de 8:00 a 14:00 h.</strong></p>
+                            <p>Ese horario aplica en nuestras sucursales. Puedes ver la dirección y el mapa de cada una en <a href="ubicaciones.html">Ubicaciones</a>.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>¿Por qué no veo los precios en la página?</summary>
+                        <div class="faq-cuerpo">
+                            <p>Porque el <strong>precio del acero se mueve constantemente</strong>. Si lo publicáramos, en pocos días estaría equivocado y te daríamos un dato que no podríamos respetar.</p>
+                            <p>Por eso cotizamos al momento: arma tu lista en el <a href="catalogo.html">catálogo</a> y mándanosla por WhatsApp. Te respondemos con el <strong>precio del día</strong>.</p>
+                            <a href="catalogo.html" class="faq-cta faq-cta--azul"><i class="fa-solid fa-list-check"></i> Armar mi cotización</a>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>¿Hacen entregas? ¿Hasta dónde llegan?</summary>
+                        <div class="faq-cuerpo">
+                            <p><strong>Sí, tenemos unidades de reparto propias y cubrimos las 8 regiones del estado.</strong></p>
+                            <p>Además de los Valles Centrales, salen rutas foráneas a <strong>Miahuatlán, Huatulco, Mixes, Juquila, Mixteca, Peras, Teojomulco, Istmo, Valle Nacional y Zimatlán</strong>.</p>
+                            <p>Si tu zona no aparece en la lista, pregúntanos de todos modos: es probable que te podamos atender por medio de un distribuidor autorizado.</p>
+                            <a href="https://wa.me/5219512283263?text=Hola%2C%20quiero%20saber%20si%20llegan%20a%20mi%20zona" target="_blank" rel="noopener" class="faq-cta"><i class="fa-brands fa-whatsapp"></i> Preguntar por mi zona</a>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>¿Tienen todo en existencia?</summary>
+                        <div class="faq-cuerpo">
+                            <p>La mayor parte del catálogo lo manejamos en piso, pero <strong>algunos productos son sobre pedido</strong> y no hay entrega inmediata. Cuando es el caso, viene señalado en la ficha del producto dentro del <a href="catalogo.html">catálogo</a>.</p>
+                            <p>Por ejemplo, la <strong>varilla corrugada</strong> es sobre pedido en todas las medidas, y algunas líneas de pintura también.</p>
+                            <p>Si tu obra tiene fecha, avísanos con anticipación y te decimos el tiempo real de entrega.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>¿Dan certificado de calidad del material?</summary>
+                        <div class="faq-cuerpo">
+                            <p><strong>Sí, expedimos certificado de proveedor bajo solicitud.</strong> Es el documento que suelen pedir las constructoras y los estructuristas para respaldar el material de una obra.</p>
+                            <p>Pídelo al hacer tu pedido, para que te lo preparemos junto con la entrega.</p>
+                            <a href="https://wa.me/5219512283263?text=Hola%2C%20necesito%20certificado%20de%20calidad%20del%20material%20para%20mi%20obra." target="_blank" rel="noopener" class="faq-cta"><i class="fa-brands fa-whatsapp"></i> Solicitar certificado</a>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>¿Le venden a revendedores y distribuidores?</summary>
+                        <div class="faq-cuerpo">
+                            <p><strong>Sí.</strong> Atendemos a herreros, torneros, balconeros, hojalateros, carroceros, mofleros, estructuristas y constructoras, y también a <strong>revendedores y distribuidores</strong>.</p>
+                            <p>De hecho tenemos distribuidores autorizados en Ejutla de Crespo, Mixes, Río Grande y Amoltepec. Si te interesa manejar nuestro material en tu zona, escríbenos.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>¿Qué significa el calibre? ¿Cómo sé cuál pedir?</summary>
+                        <div class="faq-cuerpo">
+                            <p>El calibre es el <strong>grosor del material</strong>, y va al revés de lo que uno pensaría: <strong>entre más alto el número, más delgado</strong>. Un calibre 11 es mucho más grueso que un calibre 26.</p>
+                            <p>En la <a href="guia.html">Guía</a> tenemos un explorador donde le picas a un calibre y ves el PTR o la lámina dibujados con esa pared, junto con la tabla de conversión a pulgadas y milímetros.</p>
+                            <a href="guia.html" class="faq-cta faq-cta--azul"><i class="fa-solid fa-ruler-combined"></i> Ver el explorador de calibre</a>
+                        </div>
+                    </details>
+
+                </div>
+
+                <p class="faq-cierre">¿Tu duda no está aquí? <a href="https://wa.me/5219512283263" target="_blank" rel="noopener">Escríbenos por WhatsApp</a> y con gusto te orientamos.</p>
             </div>
         </section>
+
     </main>
 
     <footer id="footer-section">
