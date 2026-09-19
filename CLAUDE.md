@@ -147,6 +147,15 @@ Two rules follow from that:
 
 ⚠️ The notice identifies the responsable by commercial name and the Matriz address. **The user still has to confirm the razón social with their accountant/lawyer**, and the whole document should be reviewed by a lawyer before being relied on.
 
+## Fiscal and legal claims — be careful
+
+The FAQ in `contacto.html` answers "¿Facturan?". Two rules, both learned the hard way on 2026-09-19:
+
+- **Never ask the customer for their Constancia de Situación Fiscal.** Invoicing needs four data points — RFC, razón social o nombre, código postal fiscal, régimen fiscal — plus an email. The CSF carries far more (CURP, home address, phone, economic activities), so asking for it collects personal data well beyond what the purpose needs, which cuts against the proportionality principle of the LFPDPPP and against the privacy notice this repo publishes. The page now states plainly that it is **not** required.
+- **Do not state SAT rules as fact.** An earlier version asserted "una vez cerrado el mes, el SAT ya no permite emitirla con esa fecha". That was written without a verifiable source, and this environment has **no outbound internet** — SAT, PRODECON and any other site are blocked by the proxy, so such claims cannot be checked here. The wording is now a recommendation ("pídela lo antes posible") with an invitation to ask, not a rule.
+
+General principle: for anything fiscal, legal or about deadlines, write what RAMAR *does*, not what the law *says*, and tell the user to have their contador or abogado confirm it.
+
 ## Quote list (`catalogo.html`)
 
 `lista` is a `Map` of product id → `{producto, cantidad}`, mirrored into `sessionStorage` under `ramar-cotizacion` as `[[id, cantidad], …]`. `enviarLista()` builds one WhatsApp message with every line. The target number comes from `waDeSucursal()`.
