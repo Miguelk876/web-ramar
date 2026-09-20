@@ -126,6 +126,16 @@
 }
 .cat-empty-wa:hover { filter: brightness(.95); }
 
+/* Insignia de proveedor: diferenciada de la de categoría, en tono neutro
+   para que no compita con el color que identifica a cada categoría. */
+.pcard-badge-prov {
+    background: #f1f5f9;
+    color: #475569;
+    border: 1px solid #cbd5e1;
+    font-weight: 700;
+}
+.pcard-badge-prov i { font-size: .7em; color: var(--color-yellow); margin-right: .25rem; }
+
 /* Botón de compartir dentro de la ficha del producto */
 .pmodal-actions { display: flex; flex-wrap: wrap; gap: .7rem; }
 .btn-modal-share {
@@ -2107,6 +2117,10 @@ function render(query = ''){
 
   grid.innerHTML = filtered.map(p => {
     const catBadge = `<span class="pcard-badge badge-cat-${p.cat}">${CAT_NAMES[p.cat]}</span>`;
+    // El proveedor ya venía en los datos de 47 productos pero nunca se mostraba:
+    // solo servía para el buscador. Saber que un herraje es PHV o una cerradura
+    // Phillips es justo lo que le da confianza al cliente que conoce las marcas.
+    const provBadge = p.provider ? `<span class="pcard-badge pcard-badge-prov">${p.provider}</span>` : '';
     const thumbClass = p.photo ? 'pcard-thumb pcard-thumb--photo' : 'pcard-thumb';
     const pos = p.photoPos || 'center center';
     const thumbContent = p.photo ? `<img src="${p.photo}" alt="${p.name}" class="pcard-photo" loading="lazy" referrerpolicy="no-referrer" style="object-position:${pos}" onerror="this.onerror=null;this.src='assets/images/steel_beams_1774503028306.webp'">` : p.svg;
@@ -2116,7 +2130,7 @@ function render(query = ''){
       <div class="pcard-body">
         <p class="pcard-name">${p.name}</p>
         <p class="pcard-tagline">${p.tagline}</p>
-        <div class="pcard-badges">${catBadge}</div>
+        <div class="pcard-badges">${catBadge}${provBadge}</div>
       </div>
       <div class="pcard-arrow"><i class="fa-solid fa-arrow-right"></i></div>
     </div>`;
@@ -2144,6 +2158,7 @@ function openModal(id){
       <div class="pmodal-right">
         <div class="pmodal-meta">
           <span class="pcard-badge badge-cat-${p.cat}" style="font-size:.72rem;padding:.2rem .7rem;border-radius:999px;">${catName}</span>
+          ${p.provider ? `<span class="pcard-badge pcard-badge-prov" style="font-size:.72rem;padding:.2rem .7rem;border-radius:999px;"><i class="fa-solid fa-certificate"></i> ${p.provider}</span>` : ''}
         </div>
         <h2 class="pmodal-title">${p.name}</h2>
         <p class="pmodal-tagline">${p.tagline}</p>
