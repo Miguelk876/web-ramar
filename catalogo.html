@@ -2203,15 +2203,19 @@ let modalAbierto = null;
 
 /* ═══════════ A QUÉ SUCURSAL SE MANDA LA COTIZACIÓN ═══════════
    Antes todos los botones iban al 951 228 3263 y en Matriz tenían que
-   reenviar. Aquí solo van las sucursales cuyo WhatsApp está confirmado;
-   Aceros, Juquilita y Solaga no aparecen porque sus números están
-   registrados como teléfono fijo y falta confirmar si reciben WhatsApp. */
+   reenviar. Las 8 sucursales ya están confirmadas contra el directorio
+   impreso que proporcionó el usuario: en ese directorio los números bajo
+   "Celular" son los que reciben WhatsApp, y los de "Teléfono" son fijos. */
 const SUCURSALES_WA = [
   { id:'general',  nombre:'Cualquier sucursal (Matriz canaliza)', wa:'5219512283263' },
   { id:'matriz',   nombre:'Matriz La Ex-Garita',                  wa:'5219515336045' },
+  { id:'aceros',   nombre:'Aceros Especializados',                wa:'5219512261469' },
+  { id:'juquilita',nombre:'Juquilita',                            wa:'5219512261471' },
+  { id:'sanisidro',nombre:'San Isidro',                           wa:'5219512283689' },
   { id:'viguera',  nombre:'Viguera',                              wa:'5219514160571' },
   { id:'union',    nombre:'La Unión',                             wa:'5219512721019' },
-  { id:'sanisidro',nombre:'San Isidro',                           wa:'5219512283689' },
+  { id:'solaga',   nombre:'Solaga',                               wa:'5219512283104' },
+  { id:'tlacolula',nombre:'Tlacolula (próximamente)',             wa:'5219514760926' },
 ];
 /* Se guarda en memoria, no en el navegador: el aviso de privacidad dice que
    este sitio no almacena nada del visitante y eso tiene que seguir siendo cierto. */
