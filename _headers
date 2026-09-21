@@ -1,5 +1,6 @@
-# Netlify Headers — seguridad y caché
-# https://docs.netlify.com/routing/headers/
+# Headers de seguridad y caché.
+# Formato compartido: lo leen Cloudflare (el host actual) y Netlify.
+# https://developers.cloudflare.com/pages/configuration/headers/
 
 /*
   X-Content-Type-Options: nosniff
@@ -33,7 +34,7 @@
 # de diseño, el HTML llegara nuevo pero el CSS siguiera siendo el viejo hasta
 # un día entero: la página se veía rota o sin los cambios, y no había forma de
 # saberlo desde fuera. Con max-age=0 el navegador pregunta cada vez; si el
-# archivo no cambió, Netlify responde "304 Not Modified" sin reenviarlo, así
+# archivo no cambió, el servidor responde "304 Not Modified" sin reenviarlo, así
 # que el costo es de unos pocos bytes y el cliente siempre ve lo último.
 /styles.css
   Cache-Control: public, max-age=0, must-revalidate

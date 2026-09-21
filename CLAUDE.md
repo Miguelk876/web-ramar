@@ -85,8 +85,8 @@ All pages share copy-pasted `<header class="navbar">` and `<footer>` blocks. **T
   - **Processing own photos:** phone shots arrive portrait at ~1.3 MB. Crop to landscape (4:3 for product cards, 16:9 for hero backgrounds), cap the long side at 1200 px / 1920 px, JPEG quality ~0.84, keeping each file under 500 KB. There is no ImageMagick, `cwebp` or PIL in this environment — resizing is done through Chromium's canvas (see the pattern in a prior session: serve the originals over the local HTTP server, load them by URL, `drawImage` a crop into a canvas, read back `toDataURL`). Loading originals as base64 data URIs fails with `EncodingError`; serve them by URL instead.
   - Remember the cache rule above: **never overwrite an image filename** — publish under a new name.
 - **`assets/images/tips/*.svg`** — 10 hand-crafted illustrations for the home tips section. `electrodos.svg` is animated (welding sparks pulse).
-- **`_headers`** (Netlify) — CSP, HSTS, X-Frame-Options, Referrer-Policy, Permissions-Policy, cache policy. HTML, `styles.css` and `main.js` all revalidate on every request, so a deploy reaches visitors immediately. Images under `assets/images/` are cached for a year as `immutable`: **to replace an image, give it a new filename** and update the references — overwriting the same filename leaves returning visitors on the old one for up to a year.
-- **`robots.txt` / `sitemap.xml`** — absolute URLs pointing to Netlify.
+- **`_headers`** (lo leen Cloudflare y Netlify por igual; hoy sirve Cloudflare) — CSP, HSTS, X-Frame-Options, Referrer-Policy, Permissions-Policy, cache policy. HTML, `styles.css` and `main.js` all revalidate on every request, so a deploy reaches visitors immediately. Images under `assets/images/` are cached for a year as `immutable`: **to replace an image, give it a new filename** and update the references — overwriting the same filename leaves returning visitors on the old one for up to a year.
+- **`robots.txt` / `sitemap.xml`** — absolute URLs pointing to https://construacerosramar.mx (they never named the host, so the migration did not touch them).
 - **`.well-known/security.txt`** — RFC 9116 contact.
 
 ## Key Patterns
@@ -101,7 +101,7 @@ All pages share copy-pasted `<header class="navbar">` and `<footer>` blocks. **T
 ## SEO and standards (already implemented)
 
 - HTML5 semantic (`<header> <nav> <main> <section> <footer>` everywhere)
-- Canonical URLs on all 7 pages → Netlify
+- Canonical URLs on all 8 pages → https://construacerosramar.mx
 - Open Graph + Twitter Card meta tags on all pages
 - Schema.org JSON-LD: `Organization` (index.html), `LocalBusiness` × 7 (ubicaciones.html), `WebSite`
 - Skip-to-content link on all pages
@@ -138,7 +138,7 @@ From the company's own printed history sheet, supplied by the user. `nosotros.ht
 
 ## Privacy notice — keep it accurate
 
-`aviso-privacidad.html` describes the **real** data flows of this site, not boilerplate: the contact form is processed by FormSubmit and lands in Gmail; Google Maps, the Meta page plugin, Google Fonts and Cloudflare are embedded and see the visitor's IP; the site is hosted on Netlify.
+`aviso-privacidad.html` describes the **real** data flows of this site, not boilerplate: the contact form is processed by FormSubmit and lands in Gmail; Google Maps, the Meta page plugin, Google Fonts and Cloudflare are embedded and see the visitor's IP; the site is hosted on Cloudflare (was Netlify until 2026-09-21; section 4 of the notice was corrected in the same commit, and the notice date bumped to 2026-09-21).
 
 Two rules follow from that:
 
@@ -348,9 +348,50 @@ Dropping `www` broke Facebook and TikTok for real users (TikTok in particular do
 
 ## Deployment
 
-- **Netlify** (canonical): https://construacerosramar.mx — custom domain, registered at Akky, nameservers delegated to Netlify DNS. The `construacerosramar.netlify.app` subdomain still resolves but is no longer the canonical URL; don't reintroduce it in `canonical`, `og:url`, `sitemap.xml` or `robots.txt`.
+**Migrated off Netlify to Cloudflare on 2026-09-21.** Netlify is no longer the
+host — do not send anyone there, and do not reintroduce `construacerosramar.netlify.app`
+in `canonical`, `og:url`, `sitemap.xml` or `robots.txt`.
+
+- **Cloudflare** (canonical): https://construacerosramar.mx — a **Worker with
+  static assets**, not Cloudflare Pages. The dashboard steers new projects to
+  Workers now, so that is what this is: project `web-ramar`, direct URL
+  `web-ramar.motocrossmiguel.workers.dev`.
 - **GitHub Pages** (backup): https://miguelk876.github.io/web-ramar/
 
-Both auto-deploy on `git push origin main`. Netlify reads `_headers` for security policies. GitHub Pages does not — security headers there will be defaults.
+Both auto-deploy on `git push origin main`. Cloudflare reads `_headers` for
+static assets exactly as Netlify did, so the security and cache policy carried
+over unchanged. GitHub Pages ignores `_headers` — security headers there are
+defaults.
+
+**`wrangler.jsonc` is what makes it work.** Without it, `npx wrangler deploy`
+publishes an empty Worker: the build reports "Success", and the dashboard shows
+*No URLs enabled*, *Bindings 0* and zero invocations. It happened on the first
+attempt. The config declares `assets.directory: "./"` and no `main`, because
+there is no server code. `.assetsignore` keeps `CLAUDE.md`, `README.md`,
+`scripts/` and `.claude/` out of what gets served.
+
+DNS: the domain stays **registered at Akky**, with nameservers delegated to
+Cloudflare (`ben.ns.cloudflare.com`, `betty.ns.cloudflare.com`). The zone holds
+a Worker route on the apex, a proxied `CNAME www → construacerosramar.mx`, and
+the `google-site-verification` TXT for Search Console — **don't delete that TXT.**
+
+### Why the move — and the deploy discipline that goes with it
+
+Netlify moved to a **credits** model (Sept 2025): 300 credits/month on the free
+plan, **15 credits per production deploy**, so roughly **20 deploys a month**, and
+when they run out **every site on the team is paused** and visitors get a "Site
+not available" page until the cycle resets. That is what happened: seven pushes
+to `main` in one day exhausted it. It was not traffic.
+
+Cloudflare's free plan has unmetered static-asset bandwidth and 500 builds a
+month, so the same mistake costs nothing. **But batch changes and push once
+anyway** — a deploy per fix is sloppy regardless of who is paying.
 
 To force redeploy without changes: `git commit --allow-empty -m "chore: redeploy" && git push`.
+
+⚠️ **Not yet verified:** that Cloudflare is actually serving the `_headers`
+policy. The egress proxy blocks HTTP to `construacerosramar.mx` and to
+`*.workers.dev` from this environment, so it could not be checked by request.
+Cloudflare documents `_headers` support for static assets, and the file is at the
+repo root, which is the asset directory — but confirm with a header check
+(browser devtools or an external header scanner) before relying on the CSP.

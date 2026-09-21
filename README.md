@@ -11,7 +11,7 @@ URL pública: https://construacerosramar.mx
 
 - **HTML5 + CSS3 + JavaScript vanilla**. Sin frameworks, sin build, sin npm.
 - Servir el directorio raíz tal cual: cualquier servidor estático funciona.
-- Despliegue automático: cada `git push` a `main` publica en Netlify y GitHub Pages.
+- Despliegue automático: cada `git push` a `main` publica en Cloudflare y GitHub Pages.
 
 ### ¿Por qué sin build?
 La empresa no tiene equipo de desarrollo. Cualquier persona con conocimiento básico de HTML puede editar textos, precios o productos sin instalar nada. Si vas a integrar algo y necesitas build, evalúa si vale la pena romper esa simplicidad.
@@ -69,7 +69,9 @@ web-ramar/
 │
 ├── robots.txt              # Reglas para crawlers
 ├── sitemap.xml             # Sitemap con URLs absolutas
-├── _headers                # Headers de Netlify (CSP, HSTS, caché)
+├── _headers                # Headers de seguridad y caché (los lee Cloudflare)
+├── wrangler.jsonc          # Config de Cloudflare: sirve la raíz como sitio estático
+├── .assetsignore           # Archivos del repo que NO se publican
 └── .well-known/
     └── security.txt        # Contacto de seguridad (RFC 9116)
 ```
@@ -155,16 +157,18 @@ Después de cambiar, corre `node scripts/verificar.js` para confirmar que navbar
 
 ## Despliegue
 
-- **Netlify** (URL principal): https://construacerosramar.mx
-  - Dominio propio registrado en Akky. Los nameservers del dominio apuntan a Netlify DNS.
-  - Subdominio interno de Netlify (sigue funcionando): https://construacerosramar.netlify.app
+- **Cloudflare** (URL principal): https://construacerosramar.mx
+  - Dominio propio registrado en Akky. Los nameservers apuntan a Cloudflare (`ben` y `betty.ns.cloudflare.com`).
+  - Dirección interna de Cloudflare: https://web-ramar.motocrossmiguel.workers.dev
 - **GitHub Pages** (respaldo): https://miguelk876.github.io/web-ramar/
 
-Ambos despliegan automáticamente al pushear a `main`. Netlify lee `_headers` para aplicar CSP/HSTS y caché.
+Ambos despliegan automáticamente al pushear a `main`. Cloudflare lee `_headers` para aplicar CSP/HSTS y caché; GitHub Pages no.
+
+> Se migró de Netlify a Cloudflare el 2026-09-21. Netlify pasó a un modelo de créditos: 300 al mes, 15 por publicación (unas 20 al mes), y al acabarse **pausa el sitio**. Cloudflare da tráfico ilimitado y 500 publicaciones al mes. Aun así, conviene juntar los cambios y publicar una sola vez.
 
 ### ¿Cuándo ve el cliente los cambios?
 
-El HTML, `styles.css` y `main.js` se revalidan en cada visita, así que **un cambio de texto o de diseño le llega al cliente en cuanto termina el deploy**, sin que tenga que borrar nada. El navegador pregunta si el archivo cambió; si no, Netlify contesta `304 Not Modified` y no lo reenvía, así que preguntar cada vez casi no cuesta.
+El HTML, `styles.css` y `main.js` se revalidan en cada visita, así que **un cambio de texto o de diseño le llega al cliente en cuanto termina el deploy**, sin que tenga que borrar nada. El navegador pregunta si el archivo cambió; si no, el servidor contesta `304 Not Modified` y no lo reenvía, así que preguntar cada vez casi no cuesta.
 
 Las imágenes de `assets/images/` son la excepción: se guardan un año en el navegador y están marcadas `immutable`, o sea que el navegador ni siquiera vuelve a preguntar. **Para reemplazar una foto, súbela con otro nombre de archivo** (`logo-horizontal-2.png`) y actualiza las referencias. Si la sobrescribes con el mismo nombre, quien ya visitó el sitio seguirá viendo la vieja.
 
@@ -187,7 +191,7 @@ El sitio cumple con:
 - ✅ robots.txt + sitemap.xml con URLs absolutas
 - ✅ PWA: site.webmanifest + favicons en 6 tamaños
 - ✅ Accesibilidad: lang="es", skip link, alt en todas las imágenes, focus-visible
-- ✅ Seguridad (Netlify _headers): CSP, HSTS, X-Frame-Options, Referrer-Policy, Permissions-Policy
+- ✅ Seguridad (`_headers`): CSP, HSTS, X-Frame-Options, Referrer-Policy, Permissions-Policy
 - ✅ security.txt en `.well-known/`
 - ✅ Performance: imágenes comprimidas (-86%, 48 MB → 6.7 MB), `loading="lazy"`, preconnect a Google Fonts
 
