@@ -304,6 +304,47 @@ new Meta widget on the page would.
 
 - The catalog (products) lives **ONLY** in `catalogo.html`. Never split into sub-pages, never add product listings to `index.html`. Sub-catalog files (`catalogo-comercial.html`, `catalogo-estructural.html`, `catalogo-especializado.html`, `catalogo-pintura.html`) were deleted on 2026-05-05 by user request — do not recreate them.
 
+### Reading a warehouse photo — finish and shape (told by the user 2026-09-21)
+
+Before placing any photo on a product, identify **shape** and **finish**. Putting
+a photo on the wrong product is worse than leaving the supplier hotlink.
+
+**Shape** — the user's own words for what look similar in a photo:
+
+| He calls it | Catalog product |
+|---|---|
+| **Monten** | `polin-c` — Canal Monten / Polín C. C-channel with inward lips |
+| **Cuadrado** | `ptr-c` — PTR Cuadrado. Closed square section |
+| **Tubular** | rectangular tube — `ptr-r`. He names it apart from "cuadrado" |
+
+**Finish** — by the colour of the *material itself*, not of the painted ends:
+
+| Colour of the steel | What it is |
+|---|---|
+| **Verde** | **Galvanizado** |
+| **Gris claro / medio claro** | **Galvanizado** too, a different type |
+| **Negro** | Acero negro (the sheet version is sold as *Lámina Negra*) |
+| Bright, mirror-like | Inoxidable — none of the photos so far |
+
+⛔ **The painted ends are an internal code. NEVER publish it or explain it.**
+
+RAMAR paints the cut ends **azul, naranja, amarillo, blanco** to identify the
+**calibre** in the warehouse. They keep their own colour-to-calibre chart. The
+user was explicit: *"eso no agregues… nosotros lo tenemos así para identificarlo
+en la bodega, pero nadie sabe por qué lo pintamos así"*. Treat it like the RAMAR
+acronym — it stays out of the site, the product text, the `alt` attributes and
+the commit messages.
+
+⚠️ **Correction to an earlier note.** The commit that added
+`ramar-angulo-l-estibado.jpg` claimed "los cantos pintados de amarillo, verde y
+azul son la marca de medida". That conflated two different things: **green is a
+galvanised finish of the steel**, while **yellow, blue, orange and white are the
+painted calibre code**. Don't repeat the conflation.
+
+Practical consequence: **ask for the rack label.** The user's racks are labelled
+("CHAMBRANA L", "15", "13", "14"), and that label settles the identification
+faster than any visual guess. It is what resolved the chambrana question.
+
 ### Catalog content rules (RAMAR-specific reality)
 
 Nayvi Padilla (redes) reviewed the catalog in 2026-06. The 96 products reflect what RAMAR **actually stocks in Oaxaca** — don't let generic steel-industry knowledge override these:
