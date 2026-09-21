@@ -1,0 +1,9 @@
+# Archivos del repositorio que NO deben publicarse como parte del sitio.
+# Cloudflare sube todo lo que está en "assets.directory" (la raíz), así que
+# aquí se excluye lo que es de desarrollo y no tiene por qué servirse.
+CLAUDE.md
+README.md
+scripts/
+.claude/
+.editorconfig
+wrangler.jsonc

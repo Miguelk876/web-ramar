@@ -1,0 +1,19 @@
+{
+  // Configuración para Cloudflare (Workers con archivos estáticos).
+  //
+  // El sitio es HTML/CSS/JS puro: no hay script de servidor, solo archivos
+  // que se sirven tal cual. Por eso no hay "main" — únicamente "assets".
+  //
+  // Sin este archivo, `npx wrangler deploy` publica un Worker vacío: se
+  // sube, dice "Success", y no sirve nada. Fue exactamente lo que pasó en
+  // el primer intento (2026-09-21).
+  //
+  // "_headers" en la raíz lo sigue leyendo Cloudflare, igual que Netlify,
+  // así que la política de seguridad y de caché se conserva.
+  "name": "web-ramar",
+  "compatibility_date": "2026-09-21",
+  "assets": {
+    // La raíz del repo: index.html y las otras 7 páginas viven aquí.
+    "directory": "./"
+  }
+}
