@@ -1059,16 +1059,17 @@ const PRODUCTS = [
     ], wa:'L%C3%A1mina%20Prepintada', photo:'https://www.monten.mx/wp-content/uploads/2020/12/Productos-.png' },
 
   { id:'lamina-teja', cat:'comercial',
-    name:'Lámina Teja — Perfil Colonial',
-    tagline:'Lámina con perfil tipo teja para cubiertas de aspecto residencial y naves industriales.',
+    name:'Lámina Teja — Galvateja',
+    tagline:'Lámina con perfil tipo teja, conocida como Galvateja, para cubiertas de aspecto residencial y naves industriales.',
     svg:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 140"><path d="M8,70 Q20,35 44,35 Q68,35 80,70 Q92,35 116,35 Q140,35 152,70 Q164,35 188,35 Q212,35 224,70 L224,82 Q212,47 188,47 Q164,47 152,82 Q140,47 116,47 Q92,47 80,82 Q68,47 44,47 Q20,47 8,82 Z" fill="#c2410c"/><text x="120" y="105" text-anchor="middle" fill="#F08018" font-family="Oswald,sans-serif" font-size="12" font-weight="600">LÁMINA TEJA</text><text x="120" y="120" text-anchor="middle" fill="#64748B" font-family="Inter,sans-serif" font-size="8">Perfil Colonial · / · Cal. 26–30</text></svg>`,
-    svgNote:'Perfil Colonial · galvanizada o prepintada · Cal. 26–30 · Ancho cubierta 840 mm',
+    svgNote:'Galvateja · Perfil Colonial · Solo cal. 26 · Ancho cubierta 840 mm',
     specs:[
       {i:'fa-house-chimney',l:'Perfil',       v:'Colonial · Paso 200 mm · Alto 35 mm'},
       {i:'fa-paint-brush',  l:'Acabados',     v:'Galvanizado · Prepintado'},
-      {i:'fa-ruler',        l:'Calibres',     v:'Cal. 26 · 28 · 30'},
-      {i:'fa-lightbulb',    l:'Tip',          v:'Estética residencial con durabilidad industrial; fácil instalación'}
-    ], wa:'L%C3%A1mina%20Teja', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Teja-de-Acero-Serviacero-Comercial.jpg' },
+      {i:'fa-ruler',        l:'Calibre',      v:'Solo cal. 26'},
+      {i:'fa-temperature-half',l:'Galvateja Plus', v:'Es la versión térmica, pregunta por ella'},
+      {i:'fa-lightbulb',    l:'Tip',          v:'Se pide como «Galvateja»; estética de teja con durabilidad de acero'}
+    ], wa:'Galvateja%20(L%C3%A1mina%20Teja)', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Teja-de-Acero-Serviacero-Comercial.jpg' },
 
   { id:'lamina-hr', cat:'comercial',
     name:'Lámina Negra',
@@ -1933,6 +1934,17 @@ const PRODUCTS = [
       {i:'fa-lightbulb',  l:'Tip',         v:'Para piso usar E-2616 cal.16; para reja ornamental E-6030 cal.18'}
     ], page:'catalogo.html', wa:'Metal%20Desplegado', photo:'https://images.pexels.com/photos/5800558/pexels-photo-5800558.jpeg' },
 
+  { id:'metal-desplegable', cat:'comercial',
+    name:'Metal Desplegable',
+    tagline:'Lámina de acero cortada y estirada en rombos, para protecciones, rejas y pisos antiderrapantes.',
+    svg:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 190"><defs><pattern id="mdp" width="34" height="20" patternUnits="userSpaceOnUse"><path d="M0 10 L8 0 L26 0 L34 10 L26 20 L8 20 Z" fill="none" stroke="#1C2B54" stroke-width="3.2"/></pattern></defs><rect x="18" y="16" width="224" height="126" fill="url(#mdp)"/><rect x="18" y="16" width="224" height="126" fill="none" stroke="#1C2B54" stroke-width="4" rx="3"/><text x="130" y="170" text-anchor="middle" fill="#F08018" font-family="Oswald,sans-serif" font-size="13" font-weight="600">METAL DESPLEGABLE</text></svg>`,
+    svgNote:'Hoja de rombo abierto en acero negro o galvanizado · Se corta con disco y se suelda',
+    specs:[
+      {i:'fa-border-all',  l:'Presentación', v:'Hoja de rombo abierto — pregunta por medida y calibre'},
+      {i:'fa-paint-roller',l:'Acabado',      v:'Acero negro o galvanizado'},
+      {i:'fa-building',    l:'Usos',         v:'Protecciones de ventana, rejas, portones, pisos antiderrapantes, cercas'},
+      {i:'fa-lightbulb',   l:'Tip',          v:'Pesa mucho menos que la lámina lisa y deja pasar aire y luz'}
+    ], wa:'Metal%20Desplegable' },
   { id:'malla-ciclonica', cat:'comercial',
     name:'Malla Ciclónica',
     tagline:'Malla romboidal galvanizada para cercas perimetrales, parques y áreas industriales.',
