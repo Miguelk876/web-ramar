@@ -407,6 +407,36 @@ deliberately not written — the spec says "pregunta por la medida"), and a
 **photo**. It currently carries an inline SVG because it was never clear which
 of the warehouse photos showed the golden sheet.
 
+### Two products the warehouse photos revealed were missing (2026-09-21)
+
+Both were absent from the catalog until the user's photos surfaced them. Facts
+below come from research, not assumption; anything RAMAR-specific says
+"pregunta".
+
+**`lamina-antiderrapante` — Lámina Antiderrapante.** Hot-rolled steel sheet with
+a raised **diamond** pattern, made to **ASTM A-786 / A-786M** (that norm defines
+the relief geometry and the thickness tolerance). Grades SAE-1008, SAE-1010 and
+ASTM A-36. Standard sheet formats in Mexico are 3′×8′, 3′×10′, 4′×8′ and 4′×10′.
+For foot traffic a thin gauge is enough; for forklifts and vehicles, 1/8″ to 1/4″.
+RAMAR's own thicknesses were **not** written. Note the plate is also the
+warehouse's own floor, visible in other photos.
+
+**`reja-acero-panel` — Reja de Acero, panel soldado.** Galvanised steel rod
+joined by electric welding and finished with **thermoset polyester baked paint**.
+Panels are **2.50 m wide**, with standard heights 0.62 / 1.00 / 1.50 / 2.00 /
+2.50 / 3.00 m. White and green are the usual immediate-delivery colours; the
+user's photo shows white. Takes concertina or barbed wire on top.
+
+**Do not confuse it with `malla-ciclonica`.** The reja arrives as a *rigid panel*
+and does not get tensioned; the ciclónica is rolled chain-link that does. That
+distinction is in the product's Tip because a customer asking for "malla" could
+mean either.
+
+⚠️ **A person appeared in one of the source photos** (an employee at the right
+edge of the reja shot). The crop was tightened to exclude them: the repository is
+public and `aviso-privacidad.html` covers visitors' data, not third parties'
+likeness. Apply the same care to every future warehouse photo.
+
 ### Catalog content rules (RAMAR-specific reality)
 
 Nayvi Padilla (redes) reviewed the catalog in 2026-06. The 96 products reflect what RAMAR **actually stocks in Oaxaca** — don't let generic steel-industry knowledge override these:
