@@ -389,9 +389,16 @@ anyway** — a deploy per fix is sloppy regardless of who is paying.
 
 To force redeploy without changes: `git commit --allow-empty -m "chore: redeploy" && git push`.
 
-⚠️ **Not yet verified:** that Cloudflare is actually serving the `_headers`
-policy. The egress proxy blocks HTTP to `construacerosramar.mx` and to
-`*.workers.dev` from this environment, so it could not be checked by request.
-Cloudflare documents `_headers` support for static assets, and the file is at the
-repo root, which is the asset directory — but confirm with a header check
-(browser devtools or an external header scanner) before relying on the CSP.
+✅ **Verified 2026-09-21:** Cloudflare *is* serving the `_headers` policy.
+securityheaders.com graded `construacerosramar.mx` an **A** and reported
+`Content-Security-Policy`, `Permissions-Policy`, `Referrer-Policy`,
+`X-Content-Type-Options` and `X-Frame-Options` all present. Nothing was lost in
+the migration. (The grade was capped at A because that scan went over `http://`,
+where HSTS is not sent — re-scan over `https://` to see it.)
+
+Note for future sessions: the egress proxy blocks HTTP to
+`construacerosramar.mx` and to `*.workers.dev` from this environment, so the
+live site cannot be fetched from here. DNS *can* be queried — `dig` is absent but
+`pip install dnspython` works, and querying `ben.ns.cloudflare.com` directly is
+how the records were confirmed during the migration. For anything that needs a
+real HTTP response, ask the user or use an external scanner.
