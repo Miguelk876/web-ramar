@@ -158,6 +158,42 @@ The FAQ in `contacto.html` answers "¿Facturan?". Two rules, both learned the ha
 
 General principle: for anything fiscal, legal or about deadlines, **verify with `WebSearch` before writing**, prefer describing what RAMAR *does* over what the law *says*, and still tell the user to have their contador or abogado confirm.
 
+## Promociones (`index.html`)
+
+A `PROMOS` array inside `index.html`, rendered into `#promos-grid`. Sits between
+the stats bar and the product categories, so it is the first thing after the hero.
+
+- **The section carries `hidden` in the HTML.** The script removes it only when
+  there is at least one live promo. Empty list, or a JS failure → stays hidden.
+  Never show an empty block or an expired promo.
+- Each entry: `titulo`, `texto` (accepts `<strong>`), `img`, `alt`, `hasta`
+  (`'YYYY-MM-DD'`, inclusive), `wa` (URL-encoded). `img` and `wa` are optional —
+  without `img` the card renders text-only, which looks fine.
+- **Expiry is automatic**: `hasta` is compared as a string against today's local
+  date (ISO dates sort chronologically). The day after `hasta`, the promo
+  disappears on its own — nobody has to remember to remove it.
+- `.promo-img` uses `aspect-ratio: 4/3` plus explicit `width`/`height` so the
+  text doesn't jump while the photo loads (CLS).
+- WhatsApp goes to `5219512283263` (the general number, same as the navbar).
+- Image rules are the same as everywhere: landscape, under 500 KB, and **never
+  overwrite a published filename** — `_headers` caches images for a year.
+
+⚠️ `verificar.js` scans for `assets/images/…` references **even inside JS
+comments**. The commented-out example entry deliberately uses
+`ramar-promo-<nombre>.jpg` so the angle brackets break the regex; don't "fix" it
+into a real-looking path or the check will fail on a file that doesn't exist.
+
+**Pulling promos automatically from Facebook was considered and deliberately not
+built** (2026-09-21). Reading a page's photos through the Graph API needs App
+Review plus Business Verification (~20 days, frequently rejected) and a token
+that expires every ~60 days and would fail silently. Worse, a blind pull would
+put birthday and holiday posts into the site, portrait and 1–2 MB. If it is ever
+revisited, the agreed design is: the user curates a Facebook album named `WEB`,
+a scheduled job reads **only that album**, and it opens a PR rather than
+publishing directly. Note that a server-side pull sends no visitor data to Meta,
+so it would **not** require changing `aviso-privacidad.html` — but embedding any
+new Meta widget on the page would.
+
 ## Quote list (`catalogo.html`)
 
 `lista` is a `Map` of product id → `{producto, cantidad}`, mirrored into `sessionStorage` under `ramar-cotizacion` as `[[id, cantidad], …]`. `enviarLista()` builds one WhatsApp message with every line. The target number comes from `waDeSucursal()`.

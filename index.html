@@ -169,6 +169,17 @@
             </div>
         </section>
 
+        <!-- ═══════════════ PROMOCIONES ═══════════════ -->
+        <!-- Nace oculta. El script de abajo la muestra SOLO si hay promociones
+             vigentes. Las vencidas se quitan solas según su fecha 'hasta'. -->
+        <section class="promos-section fade-in" id="promociones" hidden>
+            <div class="container">
+                <p class="section-eyebrow dark">Por tiempo limitado</p>
+                <h2 class="section-title text-center">PROMOCIONES <span class="text-red">VIGENTES</span></h2>
+                <div class="promos-grid" id="promos-grid"></div>
+            </div>
+        </section>
+
         <!-- ═══════════════ CATEGORÍAS DE PRODUCTOS ═══════════════ -->
         <section class="home-categories fade-in">
             <div class="container">
@@ -460,6 +471,95 @@
             mostrar(sig.dataset.red);
             e.preventDefault();
         });
+    })();
+    </script>
+
+    <!-- ═══════════════ PROMOCIONES ═══════════════ -->
+    <script>
+    (function () {
+        /* ─────────────────────────────────────────────────────────────
+           PROMOCIONES
+
+           Para agregar una: copia un bloque y llena los campos.
+           Para quitarla: no hace falta tocar nada — se va sola el día
+           siguiente de su fecha 'hasta'.
+
+             titulo    Qué es la promoción
+             texto     Una o dos líneas. Admite <strong>.
+             img       Ruta local en assets/images/ (nunca sobreescribir
+                       un nombre de archivo ya publicado: el caché dura
+                       un año — usa un nombre nuevo).
+             alt       Descripción de la imagen para accesibilidad.
+             hasta     'AAAA-MM-DD' — último día que se muestra (inclusive).
+             wa        Texto del mensaje de WhatsApp, URL-encoded.
+
+           Con la lista vacía, la sección queda oculta.
+        ───────────────────────────────────────────────────────────── */
+        const PROMOS = [
+            // {
+            //     titulo: 'Lámina Galvanizada Cal. 26',
+            //     texto:  'Precio especial por volumen en <strong>Matriz La Ex-Garita</strong>.',
+            //     img:    'assets/images/ramar-promo-<nombre>.jpg',
+            //     alt:    'Rollos de lámina galvanizada calibre 26 en bodega RAMAR',
+            //     hasta:  '2026-09-30',
+            //     wa:     'Me%20interesa%20la%20promoci%C3%B3n%20de%20L%C3%A1mina%20Galvanizada'
+            // },
+        ];
+
+        const WA_GENERAL = '5219512283263';
+        const MESES = ['enero','febrero','marzo','abril','mayo','junio','julio',
+                       'agosto','septiembre','octubre','noviembre','diciembre'];
+
+        /* Fecha local en formato AAAA-MM-DD. Se compara como texto:
+           en ISO el orden alfabético es el orden cronológico. */
+        function hoyISO() {
+            const d = new Date();
+            return d.getFullYear() + '-' +
+                   String(d.getMonth() + 1).padStart(2, '0') + '-' +
+                   String(d.getDate()).padStart(2, '0');
+        }
+
+        function fechaLarga(iso) {
+            const p = String(iso).split('-');
+            if (p.length !== 3) return iso;
+            return Number(p[2]) + ' de ' + (MESES[Number(p[1]) - 1] || '') + ' de ' + p[0];
+        }
+
+        const seccion = document.getElementById('promociones');
+        const grid    = document.getElementById('promos-grid');
+        if (!seccion || !grid) return;
+
+        /* Vigente = sin fecha, o con fecha de hoy o posterior. */
+        const hoy   = hoyISO();
+        const vivas = PROMOS.filter(p => !p.hasta || String(p.hasta) >= hoy);
+
+        if (!vivas.length) return;   // se queda oculta
+
+        grid.innerHTML = vivas.map(p => {
+            const wa = 'https://wa.me/' + WA_GENERAL + '?text=' +
+                       (p.wa || encodeURIComponent('Me interesa la promoción: ' + p.titulo));
+            const vig = p.hasta
+                ? '<p class="promo-vigencia"><i class="fa-regular fa-clock"></i> Vigente hasta el ' +
+                  fechaLarga(p.hasta) + '</p>'
+                : '';
+            const img = p.img
+                ? '<img src="' + p.img + '" alt="' + (p.alt || p.titulo) + '" class="promo-img" ' +
+                  'width="800" height="600" loading="lazy" decoding="async">'
+                : '';
+            return '<article class="promo-card">' +
+                       img +
+                       '<div class="promo-body">' +
+                           '<h3 class="promo-titulo">' + p.titulo + '</h3>' +
+                           '<p class="promo-texto">' + (p.texto || '') + '</p>' +
+                           vig +
+                           '<a href="' + wa + '" class="promo-wa" target="_blank" rel="noopener">' +
+                               '<i class="fa-brands fa-whatsapp"></i> Preguntar por esta promoción' +
+                           '</a>' +
+                       '</div>' +
+                   '</article>';
+        }).join('');
+
+        seccion.hidden = false;
     })();
     </script>
 
