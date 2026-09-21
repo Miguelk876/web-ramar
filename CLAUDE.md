@@ -437,6 +437,36 @@ edge of the reja shot). The crop was tightened to exclude them: the repository i
 public and `aviso-privacidad.html` covers visitors' data, not third parties'
 likeness. Apply the same care to every future warehouse photo.
 
+### ⛔ The catalog does not teach. Say what it is and what it's for — nothing else.
+
+The user was explicit on 2026-09-21, after a batch of new products came out
+explanatory: *"no quiero que me le expliques al cliente… posiblemente te pedí una
+explicación, pero para que TÚ te dieras cuenta de cómo era. Para que el cliente
+luego piensa que nosotros le vemos la cara de zonzo."*
+
+So: **research as much as needed to place a product correctly, then leave the
+lesson out of the page.** The explanation is for whoever is writing the entry,
+not for the buyer. The buyer is a herrero, a tornero, a constructor — they know
+their trade better than the site does, and a lecture reads as condescension.
+
+What an entry carries: a one-line `tagline`, medidas / calibres / acabado, a
+short `Usos`, and at most one practical `Tip`. What it does **not** carry:
+
+- why a material is the colour it is, or how its coating works
+- norm numbers as teaching material (`ASTM A-786`, `NMX-B-177`, tin vs zinc)
+- "no lo confundas con X" comparisons between products
+- comparison tables built to explain a category
+
+Four products added that night were rewritten down to that shape
+(`lamina-antiderrapante`, `reja-acero-panel`, `tubo-galvanizado-agua`,
+`lamina-lata`), and the comparison table that had been added to `lamina-lata`
+was **deleted** — the user had asked for that comparison so the assistant would
+understand the product, not so it would ship.
+
+This extends the existing tip rule (avoid ASTM grades, hydraulic pressures, SAE
+formulas): it is not only about being too technical, it is about not explaining
+at all. **El maestro especialista orienta en sucursal.**
+
 ### Catalog content rules (RAMAR-specific reality)
 
 Nayvi Padilla (redes) reviewed the catalog in 2026-06. The 96 products reflect what RAMAR **actually stocks in Oaxaca** — don't let generic steel-industry knowledge override these:

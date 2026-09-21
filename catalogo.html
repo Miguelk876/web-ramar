@@ -1117,29 +1117,23 @@ const PRODUCTS = [
 
   { id:'lamina-lata', cat:'comercial',
     name:'Lámina de Lata — Hojalata',
-    tagline:'La que se ve dorada. Acero recubierto de estaño, delgada y fácil de trabajar a mano. Aquí le dicen lámina tecate o corcholata.',
+    tagline:'Lámina delgada para hojalatería. Aquí le dicen lámina tecate o corcholata.',
     svg:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 180"><defs><linearGradient id="est" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E8C56A"/><stop offset=".5" stop-color="#C9A24B"/><stop offset="1" stop-color="#A88536"/></linearGradient></defs><rect x="26" y="46" width="200" height="12" fill="url(#est)" stroke="#8A6C28" stroke-width="1.2" rx="1"/><rect x="20" y="62" width="200" height="12" fill="url(#est)" stroke="#8A6C28" stroke-width="1.2" rx="1"/><rect x="32" y="78" width="200" height="12" fill="url(#est)" stroke="#8A6C28" stroke-width="1.2" rx="1"/><rect x="24" y="94" width="200" height="12" fill="url(#est)" stroke="#8A6C28" stroke-width="1.2" rx="1"/><rect x="30" y="110" width="200" height="12" fill="url(#est)" stroke="#8A6C28" stroke-width="1.2" rx="1"/><text x="130" y="34" text-anchor="middle" fill="#1C2B54" font-family="Inter,sans-serif" font-size="10">Recubierta de estaño</text><text x="130" y="144" text-anchor="middle" fill="#F08018" font-family="Oswald,sans-serif" font-size="12" font-weight="600">LÁMINA DE LATA</text><text x="130" y="160" text-anchor="middle" fill="#64748B" font-family="Inter,sans-serif" font-size="8">también le dicen tecate o corcholata</text></svg>`,
-    svgNote:'Recubrimiento de estaño (no de zinc) · Delgada · Hoja chica, por pieza · Pregunta por la medida',
+    svgNote:'Hoja chica, por pieza · Pregunta por la medida',
     specs:[
-      {i:'fa-palette',    l:'Por qué es dorada', v:'Va recubierta de estaño en las dos caras, no de zinc como la galvanizada'},
-      {i:'fa-ruler',      l:'Medidas',           v:'Se maneja en hoja chica y por pieza — pregunta por la medida'},
-      {i:'fa-hammer',     l:'Se trabaja a mano', v:'Se corta, dobla, estampa y troquela sin que se desprenda el recubrimiento'},
-      {i:'fa-users',      l:'Quién la pide',     v:'Hojalateros, para ductos, canaletas, parches y piezas a la medida'},
-      {i:'fa-circle-info',l:'Ojo',               v:'No es para techumbre de intemperie; para eso van la galvanizada o la Zinc Alum'}
+      {i:'fa-ruler',    l:'Medidas', v:'Hoja chica, por pieza — pregunta por la medida'},
+      {i:'fa-building', l:'Usos',    v:'Ductos, canaletas, parches y piezas de hojalatería'}
     ], wa:'L%C3%A1mina%20de%20Lata%20(Tecate)' },
 
   { id:'tubo-galvanizado-agua', cat:'comercial',
     name:'Tubo Galvanizado con Rosca — Agua',
-    tagline:'Tubo galvanizado cédula 40 con rosca en los extremos, para conducir agua a presión. Es el gris con la punta pintada de azul.',
-    svgNote:'Cédula 40 · Galvanizado por inmersión en caliente · Con rosca · ASTM A-53 / NMX-B-177',
+    tagline:'Tubo galvanizado cédula 40 con rosca, para agua a presión.',
+    svgNote:'Cédula 40 · Galvanizado · Con rosca en los extremos · Pregunta por el diámetro',
     specs:[
-      {i:'fa-droplet',    l:'Para qué es', v:'Conducir agua a presión; también gas y aire comprimido'},
-      {i:'fa-ruler',      l:'Medidas',     v:'Pregunta por el diámetro y el largo que necesitas'},
-      {i:'fa-layer-group',l:'Cédula',      v:'Cédula 40'},
-      {i:'fa-link',       l:'Unión',       v:'Rosca en los extremos — se conecta con coples, no requiere soldar'},
-      {i:'fa-shield',     l:'Acabado',     v:'Galvanizado por inmersión en caliente, por dentro y por fuera'},
-      {i:'fa-building',   l:'Usos',        v:'Tomas de agua, líneas de alimentación, instalaciones hidráulicas'},
-      {i:'fa-lightbulb',  l:'Tip',         v:'No lo confundas con el tubo negro: el de agua es gris y viene roscado'}
+      {i:'fa-ruler',      l:'Medidas', v:'Pregunta por el diámetro y el largo'},
+      {i:'fa-layer-group',l:'Cédula',  v:'Cédula 40 · Galvanizado'},
+      {i:'fa-link',       l:'Unión',   v:'Con rosca en los extremos'},
+      {i:'fa-building',   l:'Usos',    v:'Agua a presión, gas y aire comprimido'}
     ], wa:'Tubo%20Galvanizado%20con%20Rosca%20para%20Agua', photo:'assets/images/ramar-tubo-galvanizado-agua.jpg' },
 
   { id:'lamina-galvanizada', cat:'comercial',
@@ -1996,28 +1990,24 @@ const PRODUCTS = [
 
   { id:'lamina-antiderrapante', cat:'comercial',
     name:'Lámina Antiderrapante',
-    tagline:'Lámina con relieve de diamante para pisos, rampas y escalones donde no se debe resbalar. Aguanta mojada y con grasa.',
-    svgNote:'Relieve de diamante · Laminada en caliente · Norma ASTM A-786 · Pregunta por el espesor y la medida',
+    tagline:'Lámina con relieve de diamante para pisos, rampas y escalones.',
+    svgNote:'Relieve de diamante · Hoja 3′×8′, 3′×10′, 4′×8′ y 4′×10′ · Pregunta por el espesor',
     specs:[
-      {i:'fa-shoe-prints', l:'Para qué es', v:'Pisos de nave, rampas, plataformas, escalones, pasillos y estribos'},
-      {i:'fa-gem',         l:'Relieve',     v:'De diamante, hecho al laminar en caliente — no es pintura ni pegado'},
-      {i:'fa-ruler',       l:'Espesores',   v:'Pregunta por el espesor que manejamos'},
-      {i:'fa-expand',      l:'Formatos',    v:'Hoja estándar 3′×8′, 3′×10′, 4′×8′ y 4′×10′ — confirma existencia'},
-      {i:'fa-certificate', l:'Norma',       v:'ASTM A-786 / A-786M (define el relieve y la tolerancia de espesor)'},
-      {i:'fa-lightbulb',   l:'Tip',         v:'Para andar a pie basta la delgada; si van a pasar montacargas o carros, pide más gruesa'}
+      {i:'fa-ruler',     l:'Espesores', v:'Pregunta por el espesor'},
+      {i:'fa-expand',    l:'Hoja',      v:'3′×8′ · 3′×10′ · 4′×8′ · 4′×10′'},
+      {i:'fa-building',  l:'Usos',      v:'Pisos de nave, rampas, plataformas, escalones y estribos'},
+      {i:'fa-lightbulb', l:'Tip',       v:'Si van a pasar montacargas, pide más gruesa'}
     ], wa:'L%C3%A1mina%20Antiderrapante', photo:'assets/images/ramar-lamina-antiderrapante.jpg' },
 
   { id:'reja-acero-panel', cat:'comercial',
     name:'Reja de Acero — Panel Soldado',
-    tagline:'Panel de varilla galvanizada soldada con pintura horneada. Llega listo para instalar: no hay que fabricar reja.',
-    svgNote:'Varilla galvanizada soldada · Pintura de poliéster horneada · Panel de 2.50 m de ancho · Pregunta por la altura y el color',
+    tagline:'Panel de varilla soldada con pintura horneada, listo para instalar.',
+    svgNote:'Panel de 2.50 m de ancho · Alturas 0.62 a 3.00 m · Pregunta por la altura y el color',
     specs:[
-      {i:'fa-shield-halved',l:'Para qué es', v:'Cerca perimetral de casa, fraccionamiento, escuela, cancha, parque y nave'},
-      {i:'fa-link',         l:'Material',    v:'Varilla de acero galvanizado unida por soldadura eléctrica'},
-      {i:'fa-paint-roller', l:'Acabado',     v:'Pintura de poliéster horneada sobre el galvanizado — pregunta por el color'},
-      {i:'fa-ruler',        l:'Medidas',     v:'Panel de 2.50 m de ancho; alturas de 0.62 a 3.00 m — pregunta por la que manejamos'},
-      {i:'fa-clock',        l:'Instalación', v:'Es ligera y se pone rápido; admite concertina o alambre de púas arriba'},
-      {i:'fa-lightbulb',    l:'Tip',         v:'No la confundas con la malla ciclónica: esta ya viene en panel rígido y no se tensa'}
+      {i:'fa-ruler',        l:'Medidas', v:'Panel de 2.50 m de ancho · Alturas 0.62 a 3.00 m'},
+      {i:'fa-paint-roller', l:'Acabado', v:'Galvanizada con pintura horneada — pregunta por el color'},
+      {i:'fa-building',     l:'Usos',    v:'Cerca perimetral de casa, fraccionamiento, escuela, cancha y nave'},
+      {i:'fa-lightbulb',    l:'Tip',     v:'Admite concertina o alambre de púas arriba'}
     ], wa:'Reja%20de%20Acero%20en%20Panel', photo:'assets/images/ramar-reja-acero-panel.jpg' },
 
   { id:'malla-ciclonica', cat:'comercial',
@@ -2086,7 +2076,6 @@ const PRODUCTS = [
    MEDIDAS POR PRODUCTO (tabla modal)
 ════════════════════════════════════════ */
 const TABLE_HTML = {
-  'lamina-lata':`<p class="specs-section-label" style="margin:.75rem 0 .35rem"><i class="fa-solid fa-table"></i> Cómo se compara con las otras láminas que manejamos</p><div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>Lámina</th><th>Recubrimiento</th><th>Para qué se pide</th></tr></thead><tbody><tr><td><strong>De Lata (esta)</strong></td><td><strong>Estaño</strong>, en las dos caras</td><td>Trabajo a mano: ductos, canaletas, parches, piezas a la medida</td></tr><tr><td><strong>Negra</strong></td><td>Ninguno — acero desnudo</td><td>Placas base, refuerzos, manufactura. No se dobla ni se corta</td></tr><tr><td><strong>Galvanizada Lisa</strong></td><td>Zinc</td><td>Hojalatería, muebles metálicos, estantería, canalones</td></tr><tr><td><strong>Acanalada Galvanizada</strong></td><td>Zinc</td><td>Techo de bodega y nave, bardas</td></tr><tr><td><strong>Zinc Alum</strong></td><td>Zinc <em>y</em> aluminio</td><td>Techumbre; aguanta mejor la corrosión que la galvanizada sola</td></tr><tr><td><strong>Prepintada (Pintro)</strong></td><td>Zinc + pintura horneada</td><td>Techo que se ve, fachadas. Solo color rojo</td></tr><tr><td><strong>Galvateja</strong></td><td>Zinc, con perfil de teja</td><td>Cubierta con aspecto de teja de barro</td></tr></tbody></table></div><p style="font-size:.82rem;color:#64748b;margin-top:.5rem;"><i class="fa-solid fa-circle-info"></i> La diferencia de fondo es el recubrimiento: la de lata va con estaño y por eso se ve dorada y se trabaja a mano; las demás van con zinc y están hechas para aguantar la intemperie.</p>`,
   'viga-ipr':`<div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>Designación</th><th>Altura (H)</th><th>Ala (B)</th><th>kg/m</th><th>kg/tramo (6m)</th></tr></thead><tbody><tr><td><strong>IPR 6"</strong></td><td>152 mm</td><td>102 mm</td><td>20</td><td>120</td></tr><tr><td><strong>IPR 8"</strong></td><td>203 mm</td><td>133 mm</td><td>31</td><td>186</td></tr><tr><td><strong>IPR 10"</strong></td><td>254 mm</td><td>146 mm</td><td>43</td><td>258</td></tr><tr><td><strong>IPR 12"</strong></td><td>305 mm</td><td>153 mm</td><td>55</td><td>330</td></tr><tr><td><strong>IPR 14"</strong></td><td>356 mm</td><td>166 mm</td><td>68</td><td>408</td></tr></tbody></table></div>`,
   'canal-angulo':`<p class="specs-section-label" style="margin:.75rem 0 .35rem"><i class="fa-solid fa-table"></i> Canal U — A-36 (6 m)</p><div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>Tamaño</th><th>Altura (mm)</th><th>Ala (mm)</th><th>Esp. (mm)</th><th>kg/m</th></tr></thead><tbody><tr><td><strong>Canal 3"</strong></td><td>76</td><td>38</td><td>5.1</td><td>4.5</td></tr><tr><td><strong>Canal 4"</strong></td><td>102</td><td>44</td><td>5.1</td><td>6.0</td></tr><tr><td><strong>Canal 6"</strong></td><td>152</td><td>51</td><td>6.4</td><td>8.2</td></tr><tr><td><strong>Canal 8"</strong></td><td>203</td><td>57</td><td>6.4</td><td>11.5</td></tr></tbody></table></div><p class="specs-section-label" style="margin:1.1rem 0 .35rem"><i class="fa-solid fa-table"></i> Ángulo L — A-36 (6 m)</p><div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>Tamaño (pulg.)</th><th>mm×mm</th><th>Espesor</th><th>kg/m</th></tr></thead><tbody><tr><td><strong>1"×1"×1/8"</strong></td><td>25×25</td><td>3.2 mm</td><td>0.76</td></tr><tr><td><strong>1¼"×1¼"×1/8"</strong></td><td>32×32</td><td>3.2 mm</td><td>0.96</td></tr><tr><td><strong>1½"×1½"×3/16"</strong></td><td>38×38</td><td>4.8 mm</td><td>1.74</td></tr><tr><td><strong>2"×2"×3/16"</strong></td><td>51×51</td><td>4.8 mm</td><td>2.35</td></tr><tr><td><strong>2"×2"×1/4"</strong></td><td>51×51</td><td>6.4 mm</td><td>3.08</td></tr><tr><td><strong>2½"×2½"×1/4"</strong></td><td>64×64</td><td>6.4 mm</td><td>3.89</td></tr><tr><td><strong>3"×3"×1/4"</strong></td><td>76×76</td><td>6.4 mm</td><td>4.74</td></tr><tr><td><strong>4"×4"×1/4"</strong></td><td>102×102</td><td>6.4 mm</td><td>6.39</td></tr></tbody></table></div>`,
   'ptr-c':`<div class="specs-table-wrapper"><table class="specs-table"><thead><tr><th>Medida</th><th>Calibres disponibles</th><th>Longitud</th><th>Acabados</th></tr></thead><tbody><tr><td><strong>½"</strong></td><td>Cal. 11</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>¾"</strong></td><td>Cal. 11</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>1"</strong></td><td>Cal. 11 · 14 · 16</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>1¼"</strong></td><td>Cal. 11 · 14</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>1½"</strong></td><td>Cal. 11 · 12 · 14 · 16</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>2"</strong></td><td>Cal. 11 · 12 · 14 · 16</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>2½"</strong></td><td>Cal. 11</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>3"</strong></td><td>Cal. 11</td><td>6.00 m</td><td>Pintado · Galv.</td></tr><tr><td><strong>4"</strong></td><td>Cal. 11</td><td>6.00 m</td><td>Pintado</td></tr><tr><td><strong>5"</strong></td><td>Cal. 11</td><td>6.00 m</td><td>Pintado</td></tr><tr><td><strong>6"</strong></td><td>Cal. 11</td><td>6.00 m</td><td>Pintado</td></tr></tbody></table></div><p style="font-size:.82rem;color:#64748b;margin-top:.5rem;"><i class="fa-solid fa-circle-info"></i> Pregunta por la medida y calibre — confirmamos existencia al momento.</p>`,
