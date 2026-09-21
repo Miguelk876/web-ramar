@@ -3248,7 +3248,6 @@ footer {
 }
 .electrode-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,0.50); }
 .electrode-6013 { border-top-color: #16a34a; }
-.electrode-6011 { border-top-color: #dc2626; }
 .electrode-7018 { border-top-color: #1e40af; }
 .electrode-badge {
     display: inline-block;
@@ -3262,7 +3261,6 @@ footer {
     box-shadow: 0 4px 12px rgba(0,0,0,0.20);
 }
 .electrode-6013 .electrode-badge { background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); }
-.electrode-6011 .electrode-badge { background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); }
 .electrode-7018 .electrode-badge { background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%); }
 .electrode-tag {
     font-size: 0.78rem;
@@ -3284,7 +3282,6 @@ footer {
 }
 .electrode-uses li:last-child { border-bottom: 0; }
 .electrode-uses li i { color: #16a34a; margin-top: 0.2rem; flex-shrink: 0; }
-.electrode-6011 .electrode-uses li i { color: #dc2626; }
 .electrode-7018 .electrode-uses li i { color: #2563eb; }
 .process-card {
     background: #fff;

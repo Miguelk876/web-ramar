@@ -158,6 +158,66 @@ The FAQ in `contacto.html` answers "¿Facturan?". Two rules, both learned the ha
 
 General principle: for anything fiscal, legal or about deadlines, **verify with `WebSearch` before writing**, prefer describing what RAMAR *does* over what the law *says*, and still tell the user to have their contador or abogado confirm.
 
+## Copy audit — 2026-09-21
+
+The user reported that people were telling him the site had spelling mistakes. A
+full pass over all visible text (139,859 characters across the 8 pages, including
+what the JS renders) found 20 items. UTF-8 is clean on every page — there is no
+mojibake, so don't go looking for one.
+
+**Facts the user confirmed in that conversation, which the copy now reflects:**
+
+- **Corte a medida = placa y piezas de perfil tubular.** For any other material
+  the customer is told to ask in the branch. This was previously an unqualified
+  "Dimensionamos el material según las necesidades exactas de tu proyecto", which
+  contradicted the catalog (Lámina Negra "no se dobla ni se corta"; tablero de
+  portones "sin corte a medida").
+- **Polín Z is not stocked** — only Polín C (Canal Monten). The guide's advice to
+  prefer Z over C for vanos > 6 m was removed; it now says to ask in the branch.
+- **Electrode 6011 is not stocked** — the catalog carries 6013 and 7018 only. The
+  6011 card was removed from `guia.html` along with its now-dead
+  `.electrode-6011` CSS rules.
+- **The Ejutla distributor's email stays as it is**, even though it contains
+  `perfilesantequera`. The user decided that explicitly. It is the only remaining
+  trace of that trade name on the site — do not "clean" it without asking.
+
+**Spelling and consistency rules established:**
+
+- `Lozacero`, never `Losacero`, and never `FortaDeck` or its `FD15/FD25/FD30`
+  model codes. The product's SVG said "LOSACERO / FORTADECK"; it now says
+  "LOZACERO" and the models read `Lozacero 15 / 25 / 30`.
+- **`acero al carbón`**, not `al carbono`. Both forms were in use; the site was
+  unified to `al carbón`, which is what customers say. `al carbono` is the more
+  technically correct term if the user ever prefers it.
+- **`Construaceros RAMAR`** in full caps. All 8 footers said
+  "Construaceros Ramar".
+- **`Av. del Valle`** — lowercase `del`, including inside the JSON-LD
+  `streetAddress`.
+- **No `®`** on the slogans. `ubicaciones.html` had "Somos tu soporte de Acero®",
+  which asserts a registered trademark. Don't reintroduce it unless the user
+  confirms the mark is registered.
+- `Espacia` (no accent) is the imperative of *espaciar* — `Espacía` is wrong.
+
+**Still open, waiting on the user:**
+
+- **Calibre table in `guia.html`.** Rows for cal. **12** and **13** were exact
+  duplicates of cal. **9** and **11**, which made cal. 12 read thicker than
+  cal. 10 and 11 and contradicted the table's own headline ("número más alto =
+  material más delgado"). A row labelled **`2/4`** (0.8750") is not a gauge
+  designation at all. All three rows were **removed** on the user's instruction
+  ("quita esas calibres") rather than guessed at. If he supplies the real values,
+  add them back; if the `2/4` row meant plate sold by fraction, it belongs in a
+  separate table, not in a gauge column.
+- **Lozacero calibre.** The entry claimed "Cal. 18 al 24 · Peso 6.72–13.68 kg/m²".
+  Per the rule above it is **solo cal. 22**, so the range was replaced with
+  "Solo cal. 22" and the weight range dropped — it covered calibres that aren't
+  sold. The kg/m² for cal. 22 alone is unknown; ask before writing one.
+- **`guia.html` still recommends `PTR 4"×4"`** — corrected from cal. 12 to
+  cal. 11, because the PTR table says 4" exists only in cal. 11.
+- **Over-technical tips.** Several `Tip` fields still use language the user asked
+  to avoid: `hss` cites ASTM A500, `barra-hueca` talks about presión hidráulica
+  and ST-52, `placa-acero` about oxicorte. Not changed — flagged only.
+
 ## Performance — what was measured, and what not to re-try
 
 Measured 2026-09-21 with Chromium: 360 px viewport, Fast 3G (1.6 Mbps / 150 ms),
