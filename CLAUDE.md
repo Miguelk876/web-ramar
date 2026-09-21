@@ -345,6 +345,54 @@ Practical consequence: **ask for the rack label.** The user's racks are labelled
 ("CHAMBRANA L", "15", "13", "14"), and that label settles the identification
 faster than any visual guess. It is what resolved the chambrana question.
 
+### Warehouse vocabulary the user taught (2026-09-21)
+
+**Rack labels are measured in metres, and `82` means 82 cm.** Confirmed by the
+user: *"si es 0.82, pues es centímetro"*. So a label reading `4.88 X 82` is
+4.88 m × 0.82 m. That is how the real measurements for `lamina-zincalum`
+(largos 4.27 / 4.88 / 5.50 m, anchos 0.82 y 1.08 m) and `lamina-acrilica`
+(2.44 × 0.82 m and 3.05 × 0.82 m) were finally written — read off his own rack
+labels, not guessed.
+
+**Window profiles are asked for by the *ceja*.** The user: *"si es de una ceja,
+posiblemente sí, para ventanas… está la de una ceja, dos cejas, en escalera"*.
+So the stepped profile that took three photo batches to identify belongs to
+`perfiles-ventana` — it is the *escalonado* (clave 122). `perfiles-ventana` now
+carries a `Cómo pedirlo` spec with that vocabulary, because that is how the
+customer says it at the counter.
+
+**Two different round pipes — do not mix them up:**
+
+| What it looks like | What it is |
+|---|---|
+| Black, unthreaded, rack says `TUBO NEGRO` | `tubos-negros` — gas LP, air, structure |
+| **Grey (galvanised), blue-painted end, threaded** | `tubo-galvanizado-agua` — **water under pressure** |
+
+The user described the second one specifically: *"tiene como una tapa azul y es
+así como gris, y tiene enroscado para conectarlos… ese lo ocupan para
+transportar agua con alta presión"*. It was **missing from the catalog** and was
+added on 2026-09-21. Verified by research: galvanised cédula 40 with threaded
+ends is made to ASTM A-53 / NMX-B-177 Grade A, hot-dip galvanised inside and
+out, for water, gas and compressed air. Its diameters and lengths were **not**
+written — ask the user.
+
+Note this is *not* the same as `tubo-cerquero`, which is also galvanised cédula
+40 but made to NMX-H-077 and sold for corrals and fences.
+
+**Most steel arrives in one of two finishes** — plain *acero negro* or
+*galvanizado*. Either one can come in; don't assume a single finish per product.
+
+**`cortina-metalica` usage examples** were made concrete at the user's request
+(*"da ejemplos"*): abarrotes, farmacia, papelería, taller mecánico, local de
+plaza, bodega, cochera, estacionamiento.
+
+⚠️ **Still unidentified: "lámina tecatera" / "lámina tecate".** The user says
+there is a gold-looking sheet called that. Research found it sold in Mexico as
+**"lámina de lata o tecate"** and **"lámina lata corcholata"**, in small formats
+(one listing: 85 × 90 cm) — i.e. a thin tinplate-style sheet, which would fit
+RAMAR's *hojalateros* clientele. **Not added to the catalog yet**: the exact
+product, its sizes and which photo shows it all still need the user's word.
+
 ### Catalog content rules (RAMAR-specific reality)
 
 Nayvi Padilla (redes) reviewed the catalog in 2026-06. The 96 products reflect what RAMAR **actually stocks in Oaxaca** — don't let generic steel-industry knowledge override these:
