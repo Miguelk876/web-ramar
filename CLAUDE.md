@@ -386,12 +386,26 @@ Note this is *not* the same as `tubo-cerquero`, which is also galvanised cédula
 (*"da ejemplos"*): abarrotes, farmacia, papelería, taller mecánico, local de
 plaza, bodega, cochera, estacionamiento.
 
-⚠️ **Still unidentified: "lámina tecatera" / "lámina tecate".** The user says
-there is a gold-looking sheet called that. Research found it sold in Mexico as
-**"lámina de lata o tecate"** and **"lámina lata corcholata"**, in small formats
-(one listing: 85 × 90 cm) — i.e. a thin tinplate-style sheet, which would fit
-RAMAR's *hojalateros* clientele. **Not added to the catalog yet**: the exact
-product, its sizes and which photo shows it all still need the user's word.
+**"Lámina tecate" = lámina de lata = hojalata.** Added as `lamina-lata` on
+2026-09-21 at the user's instruction (*"busca una comparación y ya lo agregas"*).
+The gold colour has a cause: **hojalata is low-carbon steel coated on both faces
+with tin (estaño), not zinc.** Because the tin bonds firmly, the sheet can be
+cut, bent, stamped and punched by hand without the coating flaking — which is
+exactly why RAMAR's *hojalateros* buy it. Locally also called *corcholata*.
+
+It is **not** a roofing sheet for the weather; galvanizada and Zinc Alum are.
+
+Its `TABLE_HTML` entry is a **comparison table against RAMAR's other sheets**,
+built because the user asked for the comparison. The axis is the coating:
+lata = tin · negra = bare steel · galvanizada / acanalada / galvateja = zinc ·
+Zinc Alum = zinc *and* aluminium · Pintro = zinc plus baked paint. Those coating
+facts were verified by research, not assumed.
+
+⚠️ Two things about `lamina-lata` still need the user: its **real medidas** (the
+85 × 90 cm and 1.70 m figures found online belong to *other* stores and were
+deliberately not written — the spec says "pregunta por la medida"), and a
+**photo**. It currently carries an inline SVG because it was never clear which
+of the warehouse photos showed the golden sheet.
 
 ### Catalog content rules (RAMAR-specific reality)
 
