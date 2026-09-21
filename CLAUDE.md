@@ -162,7 +162,11 @@ General principle: for anything fiscal, legal or about deadlines, **verify with 
 
 `lista` is a `Map` of product id → `{producto, cantidad}`, mirrored into `sessionStorage` under `ramar-cotizacion` as `[[id, cantidad], …]`. `enviarLista()` builds one WhatsApp message with every line. The target number comes from `waDeSucursal()`.
 
-**`SUCURSALES_WA` only lists branches whose WhatsApp number is confirmed** — Matriz, Viguera, La Unión, San Isidro, plus the aggregated number. Aceros, Juquilita and Solaga are deliberately absent: their numbers are registered as `tel:` and nobody has confirmed whether they receive WhatsApp. Don't add them by guessing.
+**`SUCURSALES_WA` lists all 8 branches**, confirmed on 2026-09-21 against the company's printed branch directory. In that directory the numbers under **"Teléfono" are landlines** and those under **"Celular" are the ones that take WhatsApp** — that is the rule to apply for any new number.
+
+⚠️ **One unresolved conflict:** the directory lists Matriz's **951 533 6045** and **951 549 4636** under *Teléfono*, but they are published as WhatsApp and have been working that way. They were left as WhatsApp; ask the user before changing.
+
+⚠️ The directory also lists **10 celulares for Matriz** and the site shows 3. The other 7 (951 227 5121, 951 322 1154, 951 228 7621, 951 228 3683, 951 271 1683, 951 476 9740, 951 204 5998, 951 350 3587, 951 475 5306) were **not** added: 14 phone chips on one card is unreadable. Decide with the user where they belong — likely the Telemarketing section of `contacto.html`.
 
 ## Content Rules
 
@@ -170,7 +174,7 @@ General principle: for anything fiscal, legal or about deadlines, **verify with 
 
 ### Catalog content rules (RAMAR-specific reality)
 
-Nayvi Padilla (redes) reviewed the catalog in 2026-06. The surviving 96 products reflect what RAMAR **actually stocks in Oaxaca** — don't let generic steel-industry knowledge override these:
+Nayvi Padilla (redes) reviewed the catalog in 2026-06. The 96 products reflect what RAMAR **actually stocks in Oaxaca** — don't let generic steel-industry knowledge override these:
 
 - **PTR**: never use "Serie C"/"Serie R" code naming — customers ask by calibre, not code. PTR Cuadrado: cal. 11 is the main one; cal. 12, 14, 16 only in select sizes. PTR Rectangular: only cal. 11, 14, 16. All 6 m.
 - **PTR Regiopytsa**: rectangular in cal. 18, 20, 22 (the best sellers).
