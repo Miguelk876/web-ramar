@@ -203,6 +203,10 @@
         .suc-tel-fijo:hover { border-color: var(--color-blue); }
         .suc-tel-wa i { color: #25D366; }
         .suc-tel-wa:hover { border-color: #25D366; }
+        /* Los chips de teléfono son de los elementos más tocados de esta
+           página. Va después de los :hover: misma especificidad, decide
+           el orden. En celular :hover nunca se dispara. */
+        .suc-tel:active { transform: scale(0.97); transition: transform 140ms cubic-bezier(0.4, 0, 0.2, 1); }
         @media (max-width: 480px) {
             .suc-tels { gap: .45rem; }
             .suc-tel { flex: 1 1 100%; }
@@ -216,6 +220,7 @@
             text-decoration: none; transition: background .2s;
         }
         .suc-btn-map:hover { background: var(--color-yellow); color: var(--color-blue); }
+        .suc-btn-map:active { transform: scale(0.97); transition: transform 140ms cubic-bezier(0.4, 0, 0.2, 1); }
 
         .suc-badge {
             display: inline-block; background: var(--color-red); color: #fff;

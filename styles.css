@@ -4038,3 +4038,108 @@ footer {
     .faq-item summary { font-size: .95rem; padding: .9rem 1rem; }
     .faq-cuerpo { padding: 0 1rem 1.2rem; }
 }
+
+/* ══════════════════════════════════════════
+   RETROALIMENTACIÓN AL TOCAR  (:active)
+
+   El sitio se consume en celulares: :hover NUNCA se dispara ahí, así que
+   antes de esto el dedo tocaba un botón y no pasaba absolutamente nada
+   hasta que cargaba la pantalla siguiente. Se sentía como "no funcionó",
+   y la gente volvía a picar.
+
+   Reglas de esto:
+   - Solo `transform`. Nada de sombras ni colores: son propiedades que
+     obligan al navegador a recalcular y en un Android barato se nota.
+   - 140 ms. Es una respuesta, no una animación: si se ve, va mal.
+   - Va DESPUÉS de las reglas :hover de cada elemento, porque `:active` y
+     `:hover` tienen la misma especificidad y decide el orden.
+   - Los elementos que ya suben en :hover (translateY) llevan el translate
+     completo en :active, para que no se peleen los transforms.
+══════════════════════════════════════════ */
+.btn-primary:active,
+.contact-btn:active,
+.whatsapp-float:active,
+.social-link:active,
+.cat-menu-card:active,
+.project-card:active,
+.proj-link:active,
+.btn-proj-quote:active,
+.faq-cta:active,
+.faq-item summary:active,
+.cot-burbuja:active,
+.red-tab:active,
+.ce-btn:active,
+.promo-wa:active {
+    transform: scale(0.97);
+    transition: transform 140ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* .btn-primary sube 2px en :hover — se conserva el desplazamiento */
+.btn-primary:active { transform: translateY(-2px) scale(0.97); }
+
+/* ══════════════════════════════════════════
+   MOVIMIENTO REDUCIDO  (prefers-reduced-motion)
+
+   Quien tiene activado "reducir movimiento" en su teléfono lo hace por
+   mareo, vértigo o migraña. Antes de esto el sitio se lo ignoraba por
+   completo: las 11 animaciones corrían igual.
+
+   El criterio NO es apagar todo:
+   - Lo que se mueve SIN PARAR se detiene. Es lo que de verdad marea.
+   - Lo que solo aparece o cambia de estado se acorta, no se elimina:
+     sin ninguna transición la interfaz se vuelve brusca y se pierde de
+     vista qué cambió.
+══════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+
+    /* 1. Movimiento continuo: se detiene.
+          Es el que de verdad marea.
+          (No se listan .brands-track ni .video-skeleton: sus animaciones
+          existen en este archivo pero ningún HTML usa esas clases. Es CSS
+          muerto que ya venía en el repo — ver la nota en CLAUDE.md.) */
+    .tips-bg-pattern,       /* fondo que flota en la sección de tips */
+    .hero-scroll-hint,      /* flechita que brinca en el hero */
+    .tip-rotator::after {   /* barra de progreso del tip */
+        animation: none !important;
+    }
+
+    /* 2. Entradas de golpe al cargar: se quitan.
+          Los keyframes llevan el opacity:0 adentro, no en el elemento,
+          así que sin animación quedan visibles — verificado en Chromium. */
+    .hero-logo,
+    .hero-headline,
+    .hero-title,
+    .hero-sub,
+    .hero-buttons {
+        animation: none !important;
+    }
+
+    /* 3. Cambios de estado: se acortan a un tercio, no se apagan */
+    *, *::before, *::after {
+        transition-duration: 100ms !important;
+        animation-duration: 100ms !important;
+    }
+
+    /* 4. El carrusel del hero deja de deslizar y solo cambia */
+    .hero-slide { transition-duration: 100ms !important; }
+
+    /* 5. La retroalimentación al tocar se conserva: es información,
+          no decoración, y 140 ms no marea a nadie */
+    .btn-primary:active,
+    .contact-btn:active,
+    .whatsapp-float:active,
+    .social-link:active,
+    .cat-menu-card:active,
+    .project-card:active,
+    .proj-link:active,
+    .btn-proj-quote:active,
+    .faq-cta:active,
+    .faq-item summary:active,
+    .cot-burbuja:active,
+    .red-tab:active,
+    .ce-btn:active,
+    .promo-wa:active,
+    .pcard:active {
+        transition-duration: 140ms !important;
+    }
+}

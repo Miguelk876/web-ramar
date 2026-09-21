@@ -251,6 +251,14 @@
     transform: translateY(-5px);
     box-shadow: 0 12px 30px rgba(28,43,84,.13);
 }
+/* Va después de :hover a propósito: misma especificidad, decide el orden.
+   Al tocar, la tarjeta se comprime en lugar de levantarse — se lee como
+   "presionada". En celular :hover nunca se dispara, así que esto es la
+   única respuesta que recibe el dedo. */
+.pcard:active {
+    transform: scale(0.97);
+    transition: transform 140ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 .pcard-accent {
     height: 5px;
     background: var(--color-blue);
