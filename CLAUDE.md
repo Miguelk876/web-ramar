@@ -158,6 +158,42 @@ The FAQ in `contacto.html` answers "¿Facturan?". Two rules, both learned the ha
 
 General principle: for anything fiscal, legal or about deadlines, **verify with `WebSearch` before writing**, prefer describing what RAMAR *does* over what the law *says*, and still tell the user to have their contador or abogado confirm.
 
+## Performance — what was measured, and what not to re-try
+
+Measured 2026-09-21 with Chromium: 360 px viewport, Fast 3G (1.6 Mbps / 150 ms),
+CPU throttled 4×, 3 runs per page, scrolling the full page so lazy images enter
+the viewport.
+
+**CLS is 0.000 on all 8 pages.** All three runs, every page.
+
+**Do not "fix" the missing `width`/`height` attributes on `<img>`.** None of the
+24 `<img>` tags carry them, and it does not matter: the CSS already reserves the
+box for every image, so nothing can shift.
+
+| Class | What reserves the space |
+|---|---|
+| `.pcard-photo` | `height: 188px` (fixed) — covers the ~85 hotlinked supplier photos |
+| `.tip-watermark` | `260px × 260px` (fixed) |
+| `.promo-img` | `aspect-ratio: 4 / 3` |
+| `.brand-logo` | `max-width` / `max-height` |
+| Hero slides | CSS `background-image`, not `<img>` |
+
+Adding the attributes would be a neutral change: more markup to maintain, zero
+measurable gain. Per the performance-optimization skill, neutral is a revert.
+
+Caveat on the measurement: external requests (Google Fonts, Font Awesome, the
+hotlinked supplier photos) were aborted, because the egress proxy blocks them and
+they hang the run. That turns out not to weaken the conclusion — `.pcard-photo`
+has a fixed height, so those photos cannot shift anything whether they load or
+not. `.pmodal-photo` has only `max-height: 260px`, but it renders inside a modal
+the visitor opens, so any shift carries `hadRecentInput` and is excluded from CLS
+by definition.
+
+**If CLS ever needs re-measuring**, the script pattern is in the session notes:
+`PerformanceObserver` on `layout-shift` with `buffered: true`, injected via
+`addInitScript`, plus `Emulation.setCPUThrottlingRate` and
+`Network.emulateNetworkConditions` over CDP.
+
 ## Promociones (`index.html`)
 
 A `PROMOS` array inside `index.html`, rendered into `#promos-grid`. Sits between
