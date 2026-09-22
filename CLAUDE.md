@@ -506,7 +506,13 @@ Nayvi Padilla (redes) reviewed the catalog in 2026-06. The 96 products reflect w
 - **Acero maquinaria**: 1018 en redondo/hexagonal/cuadrado; 1045 y 4140 solo redondo; hexagonal hasta 1½".
 - **Bronce**: solo redondos 9¾"–10". **Latón**: solo redondos + cuadrado ¾; no solera.
 - **Cerraduras Phillips**: only the surviving models (715 AS/CL/IF/LL, 620, 625 DC, AS 625, 775, 800/CH/MAX, 850, 875, X-900/MAX). Mueble and aluminio lines were removed for low rotation — don't re-add.
-- **Bisagras PHV**: solo pulidas, no 7/8". **Jaladeras**: solo Estriada y Trenzada, aluminio, atornilladas.
+- **Bisagras PHV**: solo pulidas, no 7/8".
+- **PHV is the herraje brand** — the user: *"de donde es todo nuestro herraje y todo"*. Nine products carry `provider:'PHV'`.
+  - ⚠️ **The jaladera rule and the catalog disagree, and it is unresolved.** This file says *"Jaladeras: solo Estriada y Trenzada, aluminio, atornilladas"*, but `jaladeras-manijas-phv` lists **Chica · Estriada · Trenzada · Colonial · De lujo**, materials **acero negro · latón · cromado**, and **soldable o atornillada**. Ask the user which is right before trusting either.
+  - **`jaladera-h-phv`** was added 2026-09-22: a tubular **tipo H** entrance pull, **Ø 30 mm**, largos **450 / 650 / 1200 mm**, **satinada y negra**. The user confirmed it is PHV. Its measurements come from his own shelf labels (`HR45275` = 450 mm long × 275 mm centres, satinada; `HR120010S/N` = 1200 × 1000, satinada/negra). The **HR codes were not published** — same call as the `6651` tag, they read as RAMAR shelf labels. If they are PHV references, the user can say so and they go in.
+  - It also contradicts the "solo Estriada y Trenzada" rule, which is more reason to settle that line.
+
+⚠️ **All 8 original PHV products hotlink to `phv.com.mx`**, so the whole herrajes section depends on one external server and fails together if they block hotlinking or move the site. `phv.com.mx` **and Facebook are both blocked by the egress proxy**, so neither the images nor PHV's Facebook page can be checked or pulled from here — the user offered the Facebook page as a photo source on 2026-09-22 and it does not work for that. Ask him to open the Herrajes category and confirm whether those 8 photos still load.
 - **Lanzas**: Forjada, Romana CH/G, Barroco, Azteca, Samurai, Árabe, Contemporáneo (±protección), Flor de Liz (±protección), Galo, Gótico, Puflé 107/105. **No alfanje.**
 - **Soldadoras**: NO AXTech MIG/TIG, NO Lincoln. Sí: AXT, WF, Línea VOLT (bivoltaje). Microalambre 5 kg y 1 kg.
   - ⚠️ **"NO Lincoln" applies to the *machines* only.** The **electrodes are Lincoln** — the user said so on 2026-09-22 and `electrodo-6013`, `electrodo-7018` and `electrodo-6010` carry `provider:'Lincoln'`. Don't strip that badge thinking of the soldadora rule.
