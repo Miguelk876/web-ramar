@@ -566,6 +566,37 @@ Cloudflare (`ben.ns.cloudflare.com`, `betty.ns.cloudflare.com`). The zone holds
 a Worker route on the apex, a proxied `CNAME www → construacerosramar.mx`, and
 the `google-site-verification` TXT for Search Console — **don't delete that TXT.**
 
+### The other domain: `construacerosramar.com`
+
+The user also owns **`construacerosramar.com`**, discovered 2026-09-22. It is a
+**separate domain**, not an alias, and it **expires 11 December 2026**.
+
+**What it does today:** its nameservers are `ns1/ns2/ns3.wordpress.com` and it
+resolves to `192.0.78.24` / `.25` — Automattic. So an **old WordPress site is
+still live on it**. Anyone typing the `.com` lands on outdated content, not on
+this site. It does not appear in search results, so it is not stealing rankings,
+but it should not be serving separate content either.
+
+**The agreed plan (user's decision pending execution):** keep **`.mx` as the
+canonical site** — everything already points there, and a `.mx` ccTLD helps for
+local searches in Oaxaca — and **renew the `.com` purely to redirect it**:
+
+1. Renew before 11 Dec 2026. Letting it drop would leave a 26-year-old trade name
+   free for anyone to register.
+2. Move its DNS to Cloudflare, same as the `.mx`.
+3. Add a Redirect Rule `construacerosramar.com → construacerosramar.mx`.
+4. That also retires the old WordPress site.
+
+**Never make the `.com` canonical.** Do not put it in `canonical`, `og:url`,
+`sitemap.xml` or `robots.txt`. One stale reference survived until 2026-09-22: the
+hidden `_subject` field of the contact form in `contacto.html` read *"Nueva
+cotización desde construacerosramar.com"*. It was corrected to `.mx` and the
+whole site is now free of `.com` mentions — keep it that way.
+
+⚠️ **Two Instagram accounts exist**: `@ramar.oficial` (the one the site links)
+and `@construaceros.ramar`. The user has not said which is current. Don't change
+the social links until he does.
+
 ### Why the move — and the deploy discipline that goes with it
 
 Netlify moved to a **credits** model (Sept 2025): 300 credits/month on the free
