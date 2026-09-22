@@ -1861,7 +1861,7 @@ const PRODUCTS = [
     ], wa:'P%C3%BAas%20de%20Seguridad', photo:'assets/images/ramar-puas-seguridad-muro.jpg' },
 
   /* ── CONSUMIBLES DE SOLDADURA — PHV ── */
-  { id:'electrodo-6013', cat:'consumibles',
+  { id:'electrodo-6013', cat:'consumibles', provider:'Lincoln',
     name:'Electrodos 6013',
     tagline:'Electrodo de soldadura 6013 toda posición, arco estable y baja generación de humos.',
     svg:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 178"><rect x="40" y="84" width="160" height="10" fill="#94A3B8" rx="2"/><rect x="40" y="84" width="20" height="10" fill="#DD3B2E" rx="2"/><rect x="200" y="80" width="14" height="18" fill="#1C2B54" rx="3"/><rect x="40" y="100" width="160" height="10" fill="#94A3B8" rx="2"/><rect x="40" y="100" width="20" height="10" fill="#DD3B2E" rx="2"/><rect x="200" y="96" width="14" height="18" fill="#1C2B54" rx="3"/><rect x="40" y="116" width="160" height="10" fill="#94A3B8" rx="2"/><rect x="40" y="116" width="20" height="10" fill="#DD3B2E" rx="2"/><rect x="200" y="112" width="14" height="18" fill="#1C2B54" rx="3"/><text x="130" y="62" text-anchor="middle" fill="#1C2B54" font-family="Oswald,sans-serif" font-size="14" font-weight="700">E6013 · AWS</text><text x="130" y="160" text-anchor="middle" fill="#F08018" font-family="Oswald,sans-serif" font-size="12" font-weight="600">ELECTRODOS 6013</text></svg>`,
@@ -1875,14 +1875,24 @@ const PRODUCTS = [
       {i:'fa-lightbulb',    l:'Tip',       v:'6013 verde especial para vertical descendente — ideal en tubería'}
     ], page:'catalogo.html', wa:'Electrodos%206013', photo:'https://upload.wikimedia.org/wikipedia/commons/4/41/Arc_welding_electrodes_and_electrode_holder.triddle.jpg' },
 
-  { id:'electrodo-7018', cat:'consumibles',
+  { id:'electrodo-6010', cat:'consumibles', provider:'Lincoln',
+    name:'Electrodos 6010',
+    tagline:'Electrodo 6010 de penetración profunda.',
+    svg:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 178"><rect x="40" y="84" width="160" height="10" fill="#94A3B8" rx="2"/><rect x="40" y="84" width="20" height="10" fill="#1C2B54" rx="2"/><rect x="200" y="80" width="14" height="18" fill="#1C2B54" rx="3"/><rect x="40" y="100" width="160" height="10" fill="#94A3B8" rx="2"/><rect x="40" y="100" width="20" height="10" fill="#1C2B54" rx="2"/><rect x="200" y="96" width="14" height="18" fill="#1C2B54" rx="3"/><rect x="40" y="116" width="160" height="10" fill="#94A3B8" rx="2"/><rect x="40" y="116" width="20" height="10" fill="#1C2B54" rx="2"/><rect x="200" y="112" width="14" height="18" fill="#1C2B54" rx="3"/><text x="130" y="62" text-anchor="middle" fill="#1C2B54" font-family="Oswald,sans-serif" font-size="14" font-weight="700">E6010 · AWS</text><text x="130" y="160" text-anchor="middle" fill="#F08018" font-family="Oswald,sans-serif" font-size="12" font-weight="600">ELECTRODOS 6010</text></svg>`,
+    svgNote:'Diámetro 1/8" · Penetración profunda',
+    specs:[
+      {i:'fa-ruler',    l:'Diámetro', v:'1/8" (3.2 mm)'},
+      {i:'fa-building', l:'Usos',     v:'Tubería, acero sucio u oxidado y trabajos que piden penetración'}
+    ], wa:'Electrodos%206010' },
+
+  { id:'electrodo-7018', cat:'consumibles', provider:'Lincoln',
     name:'Electrodos 7018',
     tagline:'Electrodo bajo hidrógeno 7018 para aceros al carbón y estructuras con alta resistencia.',
     svg:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 178"><rect x="40" y="84" width="160" height="10" fill="#475569" rx="2"/><rect x="40" y="84" width="20" height="10" fill="#1C2B54" rx="2"/><rect x="200" y="80" width="14" height="18" fill="#1C2B54" rx="3"/><rect x="40" y="100" width="160" height="10" fill="#475569" rx="2"/><rect x="40" y="100" width="20" height="10" fill="#1C2B54" rx="2"/><rect x="200" y="96" width="14" height="18" fill="#1C2B54" rx="3"/><rect x="40" y="116" width="160" height="10" fill="#475569" rx="2"/><rect x="40" y="116" width="20" height="10" fill="#1C2B54" rx="2"/><rect x="200" y="112" width="14" height="18" fill="#1C2B54" rx="3"/><text x="130" y="62" text-anchor="middle" fill="#1C2B54" font-family="Oswald,sans-serif" font-size="14" font-weight="700">E7018 · BAJO H₂</text><text x="130" y="160" text-anchor="middle" fill="#F08018" font-family="Oswald,sans-serif" font-size="12" font-weight="600">ELECTRODOS 7018</text></svg>`,
-    svgNote:'1/8" · 3/32" · Bajo hidrógeno · Caja 1 kg · 5 kg · 20 kg',
+    svgNote:'1/8" · 5/32" · 3/32" · Bajo hidrógeno · Caja 1 kg · 5 kg · 20 kg',
     specs:[
       {i:'fa-list',         l:'Tipo',      v:'7018 bajo hidrógeno'},
-      {i:'fa-ruler',        l:'Diámetros', v:'1/8" (3.2 mm) · 3/32" (2.4 mm)'},
+      {i:'fa-ruler',        l:'Diámetros', v:'1/8" (3.2 mm) · 5/32" (4.0 mm) · 3/32" (2.4 mm)'},
       {i:'fa-certificate',  l:'Norma',     v:'AWS E7018 · Para aceros de alta resistencia'},
       {i:'fa-fire',         l:'Aplicación',v:'Aceros al carbón · Maquinaria pesada · Estructuras sísmicas'},
       {i:'fa-building',     l:'Usos',      v:'Columnas · Trabes · Uniones críticas · Naves industriales'},

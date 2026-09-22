@@ -492,6 +492,12 @@ Nayvi Padilla (redes) reviewed the catalog in 2026-06. The 96 products reflect w
 - **Bisagras PHV**: solo pulidas, no 7/8". **Jaladeras**: solo Estriada y Trenzada, aluminio, atornilladas.
 - **Lanzas**: Forjada, Romana CH/G, Barroco, Azteca, Samurai, Árabe, Contemporáneo (±protección), Flor de Liz (±protección), Galo, Gótico, Puflé 107/105. **No alfanje.**
 - **Soldadoras**: NO AXTech MIG/TIG, NO Lincoln. Sí: AXT, WF, Línea VOLT (bivoltaje). Microalambre 5 kg y 1 kg.
+  - ⚠️ **"NO Lincoln" applies to the *machines* only.** The **electrodes are Lincoln** — the user said so on 2026-09-22 and `electrodo-6013`, `electrodo-7018` and `electrodo-6010` carry `provider:'Lincoln'`. Don't strip that badge thinking of the soldadora rule.
+- **Electrodos** (all Lincoln), with the diameters the user gave on 2026-09-22:
+  - **6013** — 1/8" · 3/32"
+  - **7018** — 1/8" · **5/32"** · 3/32"
+  - **6010** — 1/8" only. It was **missing from the catalog** and was added that day.
+  - Note the guide's electrode section used to show a **6011** card. It was removed on 2026-09-21 for not being stocked, and that turned out right — what RAMAR carries is **6010**, a different electrode. Don't reintroduce 6011.
 - **Herramienta**: Oakland es marca de casa. Rotomartillo = SDS Oakland 800W MR-3100 c/maletín. Compresores Goni Mod. 977 y 940 con accesorios.
 - **Truper manual**: NO diablos, paletas, cinceles ni crowbar. Carretilla única: 4.5 ft³ neumática Truper 11740.
 - **Tips**: avoid over-technical language (ASTM grades, hydraulic pressures, SAE formulas) — el maestro especialista orienta en sucursal.
