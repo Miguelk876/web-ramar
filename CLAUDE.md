@@ -467,6 +467,23 @@ This extends the existing tip rule (avoid ASTM grades, hydraulic pressures, SAE
 formulas): it is not only about being too technical, it is about not explaining
 at all. **El maestro especialista orienta en sucursal.**
 
+### ⛔ No prices. Crop them out of photos.
+
+The site publishes **no prices**, on purpose — `contacto.html` answers *"¿Por qué
+no veo los precios en la página?"* with the real reason: steel moves, a published
+price would be wrong within days. Keep it that way.
+
+That extends to **photos of the shop floor**. On 2026-09-22 a counter photo of a
+Phillips handleset arrived with a **$717.66** price starburst, a neighbouring
+item's **$436.05**, and a handwritten internal code (**6651**) on an orange tag.
+The crop was tightened to leave all three out, keeping only the product and its
+packaging. Do the same every time: price tags, internal SKU tags and shelf codes
+do not go on the site.
+
+The internal code was also **not** published as a model number — it looks like a
+RAMAR shelf tag, not a Phillips reference. `phillips-gatillo` says "pregunta por
+el modelo" until the user confirms one.
+
 ### Catalog content rules (RAMAR-specific reality)
 
 Nayvi Padilla (redes) reviewed the catalog in 2026-06. The 96 products reflect what RAMAR **actually stocks in Oaxaca** — don't let generic steel-industry knowledge override these:
