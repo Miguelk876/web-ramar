@@ -402,26 +402,41 @@
     from { opacity:0; transform: scale(.92) translateY(20px); }
     to   { opacity:1; transform: scale(1)  translateY(0);     }
 }
-.pmodal-close {
+/* El botón de cerrar va dentro de una franja pegajosa de altura cero.
+   Antes era un `float: right` y por eso le quitaba unos 60 px de ancho a TODA
+   la ficha, no solo al renglón donde está. Así queda encima del contenido,
+   sigue visible al deslizar, y el texto ocupa el ancho completo. */
+.pmodal-close-wrap {
     position: sticky;
-    top: 1rem;
-    float: right;
-    margin: 1rem 1rem 0 0;
-    width: 36px;
-    height: 36px;
+    top: 0;
+    height: 0;
+    z-index: 3;
+}
+.pmodal-close {
+    position: absolute;
+    top: .7rem;
+    right: .7rem;
+    /* 44x44: el mínimo de toque del sitio. Antes eran 36 y en un teléfono
+       barato, pegado a la orilla de la pantalla, se fallaba el toque. */
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
-    background: #f1f5f9;
-    border: none;
+    /* Queda encima de la foto o del dibujo, así que lleva fondo sólido,
+       borde y sombra para que se vea sobre cualquier cosa. */
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 8px rgba(15,23,42,.14);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
-    color: #475569;
-    z-index: 3;
-    transition: background .15s;
+    font-size: 1.15rem;
+    line-height: 1;
+    color: #334155;
+    transition: background .15s, transform .12s;
 }
-.pmodal-close:hover { background: #e2e8f0; }
+.pmodal-close:hover { background: #f1f5f9; }
+.pmodal-close:active { transform: scale(.92); }
 
 .pmodal-accent { height: 6px; border-radius: 18px 18px 0 0; }
 .pmodal-accent.estructural  { background: linear-gradient(90deg,#1e40af,#3b82f6); }
@@ -849,9 +864,11 @@
     <!-- ══ MODAL ══ -->
     <div class="pmodal-overlay" id="pmodal-overlay">
         <div class="pmodal" id="pmodal">
-            <button class="pmodal-close" id="pmodal-close" aria-label="Cerrar">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
+            <div class="pmodal-close-wrap">
+                <button class="pmodal-close" id="pmodal-close" aria-label="Cerrar">
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+            </div>
             <div id="pmodal-inner"></div>
         </div>
     </div>
@@ -2299,13 +2316,18 @@ function openModal(id){
     </div>`;
 
   document.getElementById('pmodal-overlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
+  bloquearFondo();
 
   /* La dirección del navegador queda apuntando a este producto, para que el
-     vendedor la pueda copiar y mandar por WhatsApp. Se usa replaceState y no
-     el hash para no disparar hashchange, que reabriría la vista. */
+     vendedor la pueda copiar y mandar por WhatsApp.
+     Se usa pushState, no replaceState: así la ficha deja su propia entrada en
+     el historial y el botón "atrás" del teléfono la cierra en vez de sacar al
+     visitante del catálogo. pushState no dispara hashchange, así que la vista
+     no se vuelve a armar aquí. */
   modalAbierto = p.id;
-  history.replaceState(null, '', location.pathname + '#p-' + p.id);
+  if (location.hash !== '#p-' + p.id) {
+    history.pushState(null, '', location.pathname + '#p-' + p.id);
+  }
 }
 
 /* id del producto abierto, o null. Sirve para saber a dónde volver al cerrar. */
@@ -2442,11 +2464,11 @@ function pintarLista(){
 function abrirLista(){
   pintarLista();
   document.getElementById('cot-panel').classList.add('open');
-  document.body.style.overflow = 'hidden';
+  bloquearFondo();
 }
 function cerrarLista(){
   document.getElementById('cot-panel').classList.remove('open');
-  document.body.style.overflow = '';
+  soltarFondo();
 }
 
 /* Arma un solo mensaje de WhatsApp con toda la lista. */
@@ -2484,22 +2506,43 @@ function compartirProducto(id){
   }
 }
 
-function closeModal(){
+/* desdeHistorial = true cuando quien cierra es el botón "atrás" del navegador.
+   En ese caso el navegador ya cambió la dirección y volver a escribirla
+   descuadraría el historial. */
+function closeModal(desdeHistorial){
+  const estaba = modalAbierto;
   document.getElementById('pmodal-overlay').classList.remove('open');
-  document.body.style.overflow = '';
-  if (modalAbierto) {
-    modalAbierto = null;
-    const destino = (activeCat && activeCat !== 'all') ? '#' + activeCat : '';
-    history.replaceState(null, '', location.pathname + destino);
+  soltarFondo();
+  modalAbierto = null;
+  /* Si cierra el visitante (la X, el fondo, Escape) se deshace la entrada que
+     dejó openModal, para que el historial quede como antes de abrir la ficha.
+     Si el cierre ya vino de "atrás", el navegador lo hizo por su cuenta. */
+  if (estaba && !desdeHistorial && location.hash === '#p-' + estaba) {
+    history.back();
   }
 }
 
+/* El fondo se bloquea mientras hay algo encima. Se desbloquea solo cuando ya
+   no queda nada abierto: si no, cerrar la ficha soltaba el scroll aunque la
+   lista de cotización siguiera abierta. */
+function bloquearFondo(){ document.body.style.overflow = 'hidden'; }
+function soltarFondo(){
+  const ficha = document.getElementById('pmodal-overlay').classList.contains('open');
+  const lista = document.getElementById('cot-panel').classList.contains('open');
+  if (!ficha && !lista) document.body.style.overflow = '';
+}
+
 /* Events */
-document.getElementById('pmodal-close').addEventListener('click', closeModal);
+document.getElementById('pmodal-close').addEventListener('click', () => closeModal());
 document.getElementById('pmodal-overlay').addEventListener('click', e => {
   if(e.target === document.getElementById('pmodal-overlay')) closeModal();
 });
-document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Escape') return;
+  /* Escape cierra lo que esté encima: primero la lista, si no la ficha. */
+  if (document.getElementById('cot-panel').classList.contains('open')) cerrarLista();
+  else if (document.getElementById('pmodal-overlay').classList.contains('open')) closeModal();
+});
 
 function mostrarCategoria(cat) {
   activeCat = cat;
@@ -2549,13 +2592,34 @@ function aplicarHash() {
   // #p-<id>: liga directa a un producto. Se abre su categoría y luego su ficha.
   if (hash.startsWith('p-')) {
     const prod = PRODUCTS.find(x => x.id === hash.slice(2));
-    if (prod) { mostrarCategoria(prod.cat); openModal(prod.id); return; }
+    if (prod) {
+      if (activeCat !== prod.cat) mostrarCategoria(prod.cat);
+      openModal(prod.id);
+      return;
+    }
   }
-  if (validCats.includes(hash)) mostrarCategoria(hash);
+  /* La dirección ya no apunta a una ficha: si había una abierta, se cierra.
+     Es lo que pasa al tocar "atrás" en el teléfono, que es como la gente
+     cierra una ventana de estas. */
+  closeModal(true);
+  /* Si ya se está en esa categoría no se vuelve a armar la lista: eso
+     brincaba el scroll al inicio y borraba lo que el visitante buscó. */
+  if (validCats.includes(hash)) { if (activeCat !== hash) mostrarCategoria(hash); }
   else mostrarMenu();
 }
 window.addEventListener('hashchange', aplicarHash);
-if (location.hash) aplicarHash();   // categorías y ligas de producto
+if (location.hash) {
+  /* Liga directa a un producto (la que se manda por WhatsApp): antes de abrir
+     la ficha se deja la categoría como entrada previa del historial, para que
+     "atrás" cierre la ficha en lugar de sacar al visitante del sitio. */
+  const h0 = location.hash.slice(1);
+  const p0 = h0.startsWith('p-') ? PRODUCTS.find(x => x.id === h0.slice(2)) : null;
+  if (p0) {
+    history.replaceState(null, '', location.pathname + '#' + p0.cat);
+    history.pushState(null, '', location.pathname + '#p-' + p0.id);
+  }
+  aplicarHash();   // categorías y ligas de producto
+}
 
 recuperarLista();
 actualizarBurbuja();

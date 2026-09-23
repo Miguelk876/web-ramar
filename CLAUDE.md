@@ -300,6 +300,52 @@ new Meta widget on the page would.
 
 ⚠️ The directory also lists **10 celulares for Matriz** and the site shows 3. The other 7 (951 227 5121, 951 322 1154, 951 228 7621, 951 228 3683, 951 271 1683, 951 476 9740, 951 204 5998, 951 350 3587, 951 475 5306) were **not** added: 14 phone chips on one card is unreadable. Decide with the user where they belong — likely the Telemarketing section of `contacto.html`.
 
+### La ficha de producto y el botón "atrás" (corregido 2026-09-23)
+
+El usuario reportó que en el teléfono abría un producto y **no podía cerrarlo**.
+La causa no era la X: era el botón **"atrás"**, que en Android es *la* forma de
+cerrar una ventana como esa.
+
+`openModal()` usaba `history.replaceState`, así que la ficha no dejaba entrada
+propia en el historial. Al tocar "atrás" el navegador volvía a la entrada
+anterior, `hashchange` disparaba `aplicarHash()` — que cambiaba la vista de
+atrás — y **la ficha se quedaba encima**, con `body { overflow: hidden }`
+pegado. Volver a tocar "atrás" sacaba del catálogo sin cerrar nada.
+
+Cómo quedó:
+
+- `openModal()` usa **`pushState`** (solo si el hash no es ya `#p-<id>`), así la
+  ficha tiene su propia entrada.
+- `aplicarHash()` llama `closeModal(true)` en cuanto la dirección deja de
+  apuntar a un producto. El `true` significa "el cierre vino del historial": no
+  se vuelve a tocar la dirección.
+- `closeModal()` sin ese argumento (la X, el fondo, Escape) hace `history.back()`
+  para deshacer la entrada que dejó `openModal`, de modo que "atrás" y la X
+  dejan el historial igual. ⚠️ `closeModal` ya **no** se pasa directo a
+  `addEventListener` — el objeto `Event` llegaría como `desdeHistorial`.
+- Una liga directa `#p-<id>` (la que mandan por WhatsApp) inserta antes la
+  entrada de su categoría, para que "atrás" cierre la ficha en vez de sacar al
+  visitante del sitio.
+- `aplicarHash()` ya no vuelve a armar la categoría si es la que ya estaba
+  activa: eso brincaba el scroll al inicio y borraba la búsqueda.
+
+Dos arreglos que salieron en el mismo paso:
+
+- **El botón de cerrar era un `float: right`** y por eso le quitaba ~60 px de
+  ancho a **toda** la ficha, no solo al renglón donde está. Ahora va dentro de
+  `.pmodal-close-wrap`, una franja `position: sticky` de **altura cero**, con el
+  botón en `position: absolute`. Sigue visible al deslizar y el contenido usa el
+  ancho completo. Lleva fondo blanco, borde y sombra porque queda encima de la
+  foto.
+- Pasó de **36 a 44 px**, que es el mínimo de toque que este archivo ya exigía.
+- El bloqueo del fondo se centralizó en `bloquearFondo()` / `soltarFondo()`:
+  antes, cerrar la ficha soltaba el scroll aunque la lista de cotización
+  siguiera abierta. Escape ahora cierra primero la lista y si no la ficha.
+
+Verificado en Chromium con los 104 productos a 360 px y a 1280 px (la X queda
+alcanzable y sin scroll horizontal en todos), y con toques reales en Pixel 5,
+iPhone 12 y Galaxy S9+.
+
 ## Content Rules
 
 - The catalog (products) lives **ONLY** in `catalogo.html`. Never split into sub-pages, never add product listings to `index.html`. Sub-catalog files (`catalogo-comercial.html`, `catalogo-estructural.html`, `catalogo-especializado.html`, `catalogo-pintura.html`) were deleted on 2026-05-05 by user request — do not recreate them.
