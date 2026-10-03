@@ -443,6 +443,25 @@ categorías del catálogo que no aparecían en ninguna tarjeta. Pero sus
 son **criterio de taller, no dato verificado**. El usuario los tiene que
 revisar; si no le cuadran, se corrigen o se quitan.
 
+### Cloudflare Web Analytics — prendido el 2026-10-03
+
+El sitio **sí mide visitas**. Durante meses Cloudflare inyectó su beacon y la
+propia CSP lo bloqueaba: salía error en consola en cada carga y no se medía
+nada. Ahora `script-src` incluye `https://static.cloudflareinsights.com` y
+`connect-src` nombra `https://cloudflareinsights.com`.
+
+Es sin cookies, sin almacenamiento en el navegador y sin perfil del visitante.
+Mide: página, referente, país, tipo de dispositivo, navegador, sistema
+operativo y tiempo de carga. **El punto 6 del aviso de privacidad lo declara**
+y por eso el aviso pasó de 11 a 12 secciones.
+
+⚠️ La regla de siempre sigue: **si cambia lo que se mide o lo que se guarda,
+el aviso cambia en el mismo commit.**
+
+⚠️ No mide qué producto se abre. El catálogo es una sola página y la ficha se
+abre encima con `pushState`; para Web Analytics todo es una visita a
+`/catalogo`. Si alguna vez se quiere eso, es trabajo aparte.
+
 ## Content Rules
 
 - The catalog (products) lives **ONLY** in `catalogo.html`. Never split into sub-pages, never add product listings to `index.html`. Sub-catalog files (`catalogo-comercial.html`, `catalogo-estructural.html`, `catalogo-especializado.html`, `catalogo-pintura.html`) were deleted on 2026-05-05 by user request — do not recreate them.
