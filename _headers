@@ -40,6 +40,8 @@
   Cache-Control: public, max-age=0, must-revalidate
 /main.js
   Cache-Control: public, max-age=0, must-revalidate
+/cotizacion.js
+  Cache-Control: public, max-age=0, must-revalidate
 
 # HTML — siempre revalidar (despliegue rápido al hacer push)
 /*.html
