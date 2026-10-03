@@ -1301,6 +1301,38 @@ footer {
     flex-wrap: wrap;
     justify-content: center;
 }
+/* Selector de sucursal de la guía. Va en la misma barra que los filtros:
+   el visitante elige una vez y los 13 botones de WhatsApp de la página se
+   reapuntan solos. */
+.guide-sucursal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .6rem;
+    flex-wrap: wrap;
+    margin-top: .9rem;
+}
+.guide-sucursal label {
+    font-family: var(--font-body);
+    font-size: .85rem;
+    font-weight: 600;
+    color: #475569;
+}
+.guide-sucursal label i { color: var(--color-blue); }
+.guide-sucursal select {
+    min-height: 44px;
+    max-width: 100%;
+    border: 2px solid #e2e8f0;
+    border-radius: 50px;
+    padding: .45rem 1.1rem;
+    font-family: var(--font-body);
+    font-size: .88rem;
+    color: var(--color-text);
+    background: var(--color-white);
+    cursor: pointer;
+}
+.guide-sucursal select:focus { outline: none; border-color: var(--color-blue); }
+
 .filter-btn {
     padding: 0.55rem 1.4rem;
     border: 2px solid #e2e8f0;
@@ -1584,6 +1616,30 @@ footer {
     transition: all 0.2s;
 }
 .calc-wa-btn:hover { background: #1da851; transform: translateY(-2px); }
+/* Pasa la lista calculada a «Mi cotización», la misma del catálogo. */
+.calc-add-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 46px;
+    width: 100%;
+    border: none;
+    background: var(--color-yellow);
+    color: #fff;
+    padding: 0.7rem 1.5rem;
+    border-radius: 50px;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 0.7rem;
+    transition: background 0.2s, transform 0.12s;
+}
+.calc-add-btn:hover { background: #d96f12; }
+.calc-add-btn:active { transform: scale(0.97); }
+.calc-add-btn.agregado { background: #16a34a; }
+
 .unit-toggle-wrap { display: flex; flex-direction: column; gap: 0.5rem; }
 .unit-toggle { display: flex; gap: 0.5rem; flex-wrap: wrap; }
 .unit-btn {
@@ -3270,6 +3326,30 @@ footer {
     letter-spacing: 1px;
     margin: 0 0 1rem;
 }
+.electrode-diam {
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--color-yellow);
+    margin: -0.6rem 0 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+.electrode-6010 .electrode-badge { background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%); }
+.electrode-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 1rem;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-yellow);
+    text-decoration: none;
+}
+.electrode-link:hover { text-decoration: underline; }
+
 .electrode-uses { list-style: none; padding: 0; margin: 0; }
 .electrode-uses li {
     display: flex;
@@ -3850,6 +3930,9 @@ footer {
 }
 @keyframes cot-entra { from { opacity:0; transform: translateY(14px) scale(.9);} to { opacity:1; transform:none; } }
 .cot-burbuja:hover { background: #24356b; }
+/* [hidden] por sí solo no basta: la regla de arriba fija display:inline-flex
+   y gana. Sin esto la burbuja se veía con la lista vacía, marcando 0. */
+.cot-burbuja[hidden] { display: none; }
 .cot-cuenta {
     display: inline-flex; align-items: center; justify-content: center;
     min-width: 24px; height: 24px; padding: 0 .35rem;
@@ -3907,6 +3990,27 @@ footer {
     resize: vertical;
 }
 .cot-pie textarea:focus { outline: none; border-color: var(--color-blue); }
+/* Medida ya calculada que viene de la guía (32.5 m lin. · 6 tramos).
+   Va en lugar de los botones ± porque no es una cantidad que se suba a mano. */
+.cot-item-medida {
+    display: block;
+    font-family: var(--font-body);
+    font-size: .84rem; font-weight: 600;
+    color: var(--color-blue);
+    margin: .1rem 0 .15rem;
+}
+/* Selector de sucursal dentro del panel de cotización */
+.cot-pie select {
+    width: 100%; box-sizing: border-box;
+    border: 2px solid #e2e8f0; border-radius: 10px;
+    padding: .65rem .9rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-body); font-size: .93rem;
+    color: var(--color-text); background: #fff;
+    cursor: pointer;
+}
+.cot-pie select:focus { outline: none; border-color: var(--color-blue); }
+
 .cot-aviso { font-family: var(--font-body); font-size: .82rem; color: var(--color-text-light); margin: .7rem 0 1rem; line-height: 1.45; }
 .cot-enviar {
     width: 100%;

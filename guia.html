@@ -70,6 +70,13 @@
                 <button class="filter-btn" data-filter="construccion"><i class="fa-solid fa-building"></i> Construcción</button>
                 <button class="filter-btn" data-filter="muebles"><i class="fa-solid fa-chair"></i> Muebles</button>
             </div>
+            <!-- Antes los 14 botones de esta página iban al número de Matriz y
+                 ahí tenían que reenviar. Aquí el visitante elige una vez y
+                 todos los enlaces de la página se reapuntan solos. -->
+            <div class="guide-sucursal">
+                <label for="guia-sucursal-sel"><i class="fa-solid fa-store" aria-hidden="true"></i> Cotizo con:</label>
+                <select id="guia-sucursal-sel" class="sel-sucursal" onchange="cambiarSucursal(this)"></select>
+            </div>
         </div>
     </div>
 
@@ -117,8 +124,8 @@
                         <p>Para portones de más de 2.5 m de ancho usa PTR 2"×2" en el marco para evitar combadura con el peso propio.</p>
                     </div>
                     <div class="proj-actions">
-                        <a href="catalogo.html#estructural" class="proj-link">Ver PTR <i class="fa-solid fa-arrow-right"></i></a>
-                        <a href="https://wa.me/5219512283263?text=Hola%2C%20quiero%20cotizar%20materiales%20para%20un%20port%C3%B3n%20abatible" target="_blank" class="btn-proj-quote"><i class="fa-brands fa-whatsapp"></i> Cotizar</a>
+                        <a href="catalogo.html#p-ptr-c" class="proj-link">Ver PTR cuadrado <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="https://wa.me/5219512283263?text=Hola%2C%20quiero%20cotizar%20materiales%20para%20un%20port%C3%B3n%20abatible" data-wa-base="https://wa.me/WANUM?text=Hola%2C%20quiero%20cotizar%20materiales%20para%20un%20port%C3%B3n%20abatible" target="_blank" class="btn-proj-quote"><i class="fa-brands fa-whatsapp"></i> Cotizar</a>
                     </div>
                 </div>
 
@@ -156,8 +163,8 @@
                         <p>El portón corredizo pesa más que el abatible. Asegúrate de que el riel y las ruedas soporten el peso total antes de soldar el marco.</p>
                     </div>
                     <div class="proj-actions">
-                        <a href="catalogo.html#estructural" class="proj-link">Ver PTR <i class="fa-solid fa-arrow-right"></i></a>
-                        <a href="https://wa.me/5219512283263?text=Hola%2C%20quiero%20cotizar%20materiales%20para%20un%20port%C3%B3n%20corredizo" target="_blank" class="btn-proj-quote"><i class="fa-brands fa-whatsapp"></i> Cotizar</a>
+                        <a href="catalogo.html#p-rieles-portones-phv" class="proj-link">Ver riel y ruedas <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="https://wa.me/5219512283263?text=Hola%2C%20quiero%20cotizar%20materiales%20para%20un%20port%C3%B3n%20corredizo" data-wa-base="https://wa.me/WANUM?text=Hola%2C%20quiero%20cotizar%20materiales%20para%20un%20port%C3%B3n%20corredizo" target="_blank" class="btn-proj-quote"><i class="fa-brands fa-whatsapp"></i> Cotizar</a>
                     </div>
                 </div>
 
@@ -194,8 +201,8 @@
                         <p>Espacia los barrotes máximo 10 cm para seguridad. Suelda las esquinas en ángulo de 45° para mayor rigidez del marco.</p>
                     </div>
                     <div class="proj-actions">
-                        <a href="catalogo.html#estructural" class="proj-link">Ver perfiles <i class="fa-solid fa-arrow-right"></i></a>
-                        <a href="https://wa.me/5219512283263?text=Hola%2C%20quiero%20cotizar%20materiales%20para%20ventana%20de%20herrer%C3%ADa" target="_blank" class="btn-proj-quote"><i class="fa-brands fa-whatsapp"></i> Cotizar</a>
+                        <a href="catalogo.html#p-perfiles-ventana" class="proj-link">Ver perfiles de ventana <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="https://wa.me/5219512283263?text=Hola%2C%20quiero%20cotizar%20materiales%20para%20ventana%20de%20herrer%C3%ADa" data-wa-base="https://wa.me/WANUM?text=Hola%2C%20quiero%20cotizar%20materiales%20para%20ventana%20de%20herrer%C3%ADa" target="_blank" class="btn-proj-quote"><i class="fa-brands fa-whatsapp"></i> Cotizar</a>
                     </div>
                 </div>
 
@@ -237,8 +244,8 @@
                         <p>Ancla los postes con zapata de concreto de 40×40 cm y 60 cm de profundidad mínima. Separa los barrotes máximo 12 cm para seguridad.</p>
                     </div>
                     <div class="proj-actions">
-                        <a href="catalogo.html#estructural" class="proj-link">Ver PTR <i class="fa-solid fa-arrow-right"></i></a>
-                        <a href="https://wa.me/5219512283263?text=Hola%2C%20quiero%20cotizar%20materiales%20para%20una%20reja%20perimetral" target="_blank" class="btn-proj-quote"><i class="fa-brands fa-whatsapp"></i> Cotizar</a>
+                        <a href="catalogo.html#p-ptr-c" class="proj-link">Ver PTR cuadrado <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="https://wa.me/5219512283263?text=Hola%2C%20quiero%20cotizar%20materiales%20para%20una%20reja%20perimetral" data-wa-base="https://wa.me/WANUM?text=Hola%2C%20quiero%20cotizar%20materiales%20para%20una%20reja%20perimetral" target="_blank" class="btn-proj-quote"><i class="fa-brands fa-whatsapp"></i> Cotizar</a>
                     </div>
                 </div>
 
@@ -274,8 +281,8 @@
                         <p>El pasamanos redondo de 1½" es más ergonómico que el cuadrado para el agarre. Espacía los balaustres máximo 10 cm para impedir el paso de niños pequeños.</p>
                     </div>
                     <div class="proj-actions">
-                        <a href="catalogo.html#estructural" class="proj-link">Ver perfiles <i class="fa-solid fa-arrow-right"></i></a>
-                        <a href="https://wa.me/5219512283263?text=Hola%2C%20quiero%20cotizar%20materiales%20para%20un%20barandal%20de%20escalera" target="_blank" class="btn-proj-quote"><i class="fa-brands fa-whatsapp"></i> Cotizar</a>
+                        <a href="catalogo.html#p-tubos-negros" class="proj-link">Ver tubo redondo <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="https://wa.me/5219512283263?text=Hola%2C%20quiero%20cotizar%20materiales%20para%20un%20barandal%20de%20escalera" data-wa-base="https://wa.me/WANUM?text=Hola%2C%20quiero%20cotizar%20materiales%20para%20un%20barandal%20de%20escalera" target="_blank" class="btn-proj-quote"><i class="fa-brands fa-whatsapp"></i> Cotizar</a>
                     </div>
                 </div>
 
@@ -317,8 +324,8 @@
                         <p>Para losa de 10 cm con luz de 4 m, usa varilla No. 4 a cada 20 cm en ambos sentidos. Empalmes deben ser mínimo 40 diámetros (8 cm para varilla 3/8").</p>
                     </div>
                     <div class="proj-actions">
-                        <a href="catalogo.html#comercial" class="proj-link">Ver varilla <i class="fa-solid fa-arrow-right"></i></a>
-                        <a href="https://wa.me/5219512283263?text=Hola%2C%20quiero%20cotizar%20varilla%20y%20malla%20para%20losa" target="_blank" class="btn-proj-quote"><i class="fa-brands fa-whatsapp"></i> Cotizar</a>
+                        <a href="catalogo.html#p-varilla" class="proj-link">Ver varilla <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="https://wa.me/5219512283263?text=Hola%2C%20quiero%20cotizar%20varilla%20y%20malla%20para%20losa" data-wa-base="https://wa.me/WANUM?text=Hola%2C%20quiero%20cotizar%20varilla%20y%20malla%20para%20losa" target="_blank" class="btn-proj-quote"><i class="fa-brands fa-whatsapp"></i> Cotizar</a>
                     </div>
                 </div>
 
@@ -359,8 +366,8 @@
                         <p>En zonas de lluvia intensa o Costa usa Lámina Galvanizada de calibre 22 o 20 en lugar de cal. 26: el mayor espesor resiste mejor la corrosión en ambientes húmedos. Para vanos mayores de 6 m, pregunta en sucursal por el peralte de polín que te conviene.</p>
                     </div>
                     <div class="proj-actions">
-                        <a href="catalogo.html#estructural" class="proj-link">Ver IPR y Polines <i class="fa-solid fa-arrow-right"></i></a>
-                        <a href="https://wa.me/5219512283263?text=Hola%2C%20quiero%20cotizar%20materiales%20para%20techumbre%20met%C3%A1lica" target="_blank" class="btn-proj-quote"><i class="fa-brands fa-whatsapp"></i> Cotizar</a>
+                        <a href="catalogo.html#p-viga-ipr" class="proj-link">Ver viga IPR <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="https://wa.me/5219512283263?text=Hola%2C%20quiero%20cotizar%20materiales%20para%20techumbre%20met%C3%A1lica" data-wa-base="https://wa.me/WANUM?text=Hola%2C%20quiero%20cotizar%20materiales%20para%20techumbre%20met%C3%A1lica" target="_blank" class="btn-proj-quote"><i class="fa-brands fa-whatsapp"></i> Cotizar</a>
                     </div>
                 </div>
 
@@ -402,8 +409,8 @@
                         <p>Para banco de más de 1.5 m de largo agrega un travesaño central y pata al centro para evitar deflexión. La lámina cal. 14 aguanta más impacto que la 16.</p>
                     </div>
                     <div class="proj-actions">
-                        <a href="catalogo.html#estructural" class="proj-link">Ver PTR y lámina <i class="fa-solid fa-arrow-right"></i></a>
-                        <a href="https://wa.me/5219512283263?text=Hola%2C%20quiero%20cotizar%20materiales%20para%20mesa%20de%20trabajo" target="_blank" class="btn-proj-quote"><i class="fa-brands fa-whatsapp"></i> Cotizar</a>
+                        <a href="catalogo.html#p-ptr-c" class="proj-link">Ver PTR cuadrado <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="https://wa.me/5219512283263?text=Hola%2C%20quiero%20cotizar%20materiales%20para%20mesa%20de%20trabajo" data-wa-base="https://wa.me/WANUM?text=Hola%2C%20quiero%20cotizar%20materiales%20para%20mesa%20de%20trabajo" target="_blank" class="btn-proj-quote"><i class="fa-brands fa-whatsapp"></i> Cotizar</a>
                     </div>
                 </div>
 
@@ -441,8 +448,87 @@
                         <p>Si quieres repisas ajustables sin soldadura, usa ángulo ranurado con perno: puedes mover los entrepaños sin cortar nada. El ángulo 2" aguanta cargas pesadas (bultos de cemento, bobinas).</p>
                     </div>
                     <div class="proj-actions">
-                        <a href="catalogo.html#estructural" class="proj-link">Ver ángulos <i class="fa-solid fa-arrow-right"></i></a>
-                        <a href="https://wa.me/5219512283263?text=Hola%2C%20quiero%20cotizar%20materiales%20para%20anaquel%20met%C3%A1lico" target="_blank" class="btn-proj-quote"><i class="fa-brands fa-whatsapp"></i> Cotizar</a>
+                        <a href="catalogo.html#p-canal-angulo" class="proj-link">Ver ángulo L <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="https://wa.me/5219512283263?text=Hola%2C%20quiero%20cotizar%20materiales%20para%20anaquel%20met%C3%A1lico" data-wa-base="https://wa.me/WANUM?text=Hola%2C%20quiero%20cotizar%20materiales%20para%20anaquel%20met%C3%A1lico" target="_blank" class="btn-proj-quote"><i class="fa-brands fa-whatsapp"></i> Cotizar</a>
+                    </div>
+                </div>
+
+                <!-- Herrajes del portón -->
+                <div class="project-card fade-in" data-category="herreria" data-calc="herrajes-porton">
+                    <div class="proj-tag-bar">
+                        <span class="proj-tag tag-herreria"><i class="fa-solid fa-hammer"></i> Herrería</span>
+                    </div>
+                    <div class="proj-svg-wrap">
+                        <svg viewBox="0 0 160 100" width="160" height="100">
+                            <!-- Hoja -->
+                            <rect x="54" y="10" width="92" height="80" fill="none" stroke="var(--color-blue)" stroke-width="3" rx="2"/>
+                            <line x1="54" y1="37" x2="146" y2="37" stroke="var(--color-blue)" stroke-width="2"/>
+                            <line x1="54" y1="64" x2="146" y2="64" stroke="var(--color-blue)" stroke-width="2"/>
+                            <!-- Poste -->
+                            <line x1="40" y1="6" x2="40" y2="94" stroke="var(--color-blue)" stroke-width="4"/>
+                            <!-- Bisagras -->
+                            <rect x="34" y="20" width="26" height="9" rx="4" fill="var(--color-yellow)"/>
+                            <rect x="34" y="46" width="26" height="9" rx="4" fill="var(--color-yellow)"/>
+                            <rect x="34" y="72" width="26" height="9" rx="4" fill="var(--color-yellow)"/>
+                            <!-- Jaladera -->
+                            <circle cx="136" cy="50" r="5" fill="none" stroke="var(--color-red)" stroke-width="3"/>
+                        </svg>
+                    </div>
+                    <h3>Herrajes del Portón</h3>
+                    <p class="proj-desc">Lo que lleva el portón además del perfil: bisagras, cerrojo, jaladera y, si es corredizo, riel y ruedas.</p>
+                    <h4>Materiales necesarios</h4>
+                    <ul class="mat-list">
+                        <li><span class="mat-name">Bisagras PHV</span><span class="mat-use">Cuelgan la hoja del poste</span></li>
+                        <li><span class="mat-name">Cerrojos y pasadores PHV</span><span class="mat-use">Cierre del portón</span></li>
+                        <li><span class="mat-name">Jaladeras y manijas PHV</span><span class="mat-use">Para abrir desde fuera</span></li>
+                        <li><span class="mat-name">Riel y ruedas PHV</span><span class="mat-use">Solo en portón corredizo</span></li>
+                        <li><span class="mat-name">Puntas de lanza, hojas y flores</span><span class="mat-use">Remate decorativo (opcional)</span></li>
+                    </ul>
+                    <div class="proj-tip">
+                        <i class="fa-solid fa-lightbulb"></i>
+                        <p>La bisagra se escoge por el peso de la hoja, no por su medida: una hoja forrada con lámina pesa mucho más que una de barrotes del mismo tamaño.</p>
+                    </div>
+                    <div class="proj-actions">
+                        <a href="catalogo.html#p-bisagras-phv" class="proj-link">Ver bisagras <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="https://wa.me/5219512283263?text=Hola%2C%20quiero%20cotizar%20herrajes%20para%20un%20port%C3%B3n" data-wa-base="https://wa.me/WANUM?text=Hola%2C%20quiero%20cotizar%20herrajes%20para%20un%20port%C3%B3n" target="_blank" class="btn-proj-quote"><i class="fa-brands fa-whatsapp"></i> Cotizar</a>
+                    </div>
+                </div>
+
+                <!-- Chapa y cerradura -->
+                <div class="project-card fade-in" data-category="herreria">
+                    <div class="proj-tag-bar">
+                        <span class="proj-tag tag-herreria"><i class="fa-solid fa-hammer"></i> Herrería</span>
+                    </div>
+                    <div class="proj-svg-wrap">
+                        <svg viewBox="0 0 160 100" width="160" height="100">
+                            <!-- Puerta -->
+                            <rect x="34" y="8" width="92" height="84" fill="none" stroke="var(--color-blue)" stroke-width="3" rx="2"/>
+                            <line x1="34" y1="30" x2="126" y2="30" stroke="var(--color-blue)" stroke-width="2"/>
+                            <!-- Chapa -->
+                            <rect x="98" y="44" width="18" height="26" rx="3" fill="none" stroke="var(--color-red)" stroke-width="2.5"/>
+                            <circle cx="107" cy="53" r="3" fill="var(--color-red)"/>
+                            <line x1="107" y1="56" x2="107" y2="64" stroke="var(--color-red)" stroke-width="2.5"/>
+                            <!-- Perilla -->
+                            <circle cx="90" cy="57" r="6" fill="none" stroke="var(--color-yellow)" stroke-width="3"/>
+                        </svg>
+                    </div>
+                    <h3>Chapa y Cerradura para Puerta</h3>
+                    <p class="proj-desc">Lo que cierra la puerta ya hecha: chapa de perilla o de manija, cerradura de sobreponer y candado.</p>
+                    <h4>Materiales necesarios</h4>
+                    <ul class="mat-list">
+                        <li><span class="mat-name">Chapa Phillips línea residencial</span><span class="mat-use">Perilla o manija, para interior y acceso</span></li>
+                        <li><span class="mat-name">Cerradura de sobreponer Phillips</span><span class="mat-use">Se monta sobre la hoja, no dentro</span></li>
+                        <li><span class="mat-name">Candados Phillips</span><span class="mat-use">Portón, bodega y reja</span></li>
+                        <li><span class="mat-name">Bisagras Phillips</span><span class="mat-use">Para puerta de madera o metálica</span></li>
+                        <li><span class="mat-name">Topes y accesorios Phillips</span><span class="mat-use">Evitan que la hoja golpee el muro</span></li>
+                    </ul>
+                    <div class="proj-tip">
+                        <i class="fa-solid fa-lightbulb"></i>
+                        <p>En puerta de herrería la chapa se monta sobre una solera soldada al marco. Atornillada directo al PTR se afloja con el uso.</p>
+                    </div>
+                    <div class="proj-actions">
+                        <a href="catalogo.html#p-phillips-800" class="proj-link">Ver chapas <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="https://wa.me/5219512283263?text=Hola%2C%20quiero%20cotizar%20chapa%20y%20cerradura" data-wa-base="https://wa.me/WANUM?text=Hola%2C%20quiero%20cotizar%20chapa%20y%20cerradura" target="_blank" class="btn-proj-quote"><i class="fa-brands fa-whatsapp"></i> Cotizar</a>
                     </div>
                 </div>
 
@@ -493,28 +579,26 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><strong>4</strong></td><td>0.2500"</td><td>6.35 mm</td><td>Placa, lámina gruesa</td></tr>
-                            <tr><td><strong>5</strong></td><td>0.2188"</td><td>5.56 mm</td><td>Placa media</td></tr>
-                            <tr><td><strong>6</strong></td><td>0.1875"</td><td>4.76 mm</td><td>PTR pesado, placa</td></tr>
-                            <tr><td><strong>7</strong></td><td>0.1563"</td><td>3.97 mm</td><td>PTR pesado</td></tr>
-                            <tr><td><strong>8</strong></td><td>0.1250"</td><td>3.18 mm</td><td>PTR estándar, canal</td></tr>
-                            <tr><td><strong>9</strong></td><td>0.1094"</td><td>2.78 mm</td><td>PTR, ángulo estructural</td></tr>
-                            <tr><td><strong>10</strong></td><td>0.1000"</td><td>2.54 mm</td><td>PTR, polín C/Z</td></tr>
-                            <tr><td><strong>11</strong></td><td>0.0938"</td><td>2.38 mm</td><td>PTR mediano, polín</td></tr>
-                            <tr><td><strong>14</strong></td><td>0.0781"</td><td>1.98 mm</td><td>Polín avícola, PTR ligero</td></tr>
-                            <tr><td><strong>16</strong></td><td>0.0625"</td><td>1.59 mm</td><td>Polín C/Z, lámina galv.</td></tr>
-                            <tr><td><strong>18</strong></td><td>0.0500"</td><td>1.27 mm</td><td>Lámina galvanizada, tubería</td></tr>
-                            <tr><td><strong>20</strong></td><td>0.0375"</td><td>0.95 mm</td><td>Lámina galvanizada ligera</td></tr>
-                            <tr><td><strong>22</strong></td><td>0.0313"</td><td>0.79 mm</td><td>Lámina acanalada Zintro</td></tr>
-                            <tr><td><strong>24</strong></td><td>0.0250"</td><td>0.64 mm</td><td>Lámina acanalada Zintro</td></tr>
-                            <tr><td><strong>26</strong></td><td>0.0188"</td><td>0.48 mm</td><td>Lámina decorativa</td></tr>
-                            <tr><td><strong>28</strong></td><td>0.0156"</td><td>0.40 mm</td><td>Lámina muy ligera</td></tr>
-                            <tr><td><strong>30</strong></td><td>0.0125"</td><td>0.32 mm</td><td>Lámina fina</td></tr>
-                            <tr><td><strong>32</strong></td><td>0.0090"</td><td>0.23 mm</td><td>Lámina extra fina</td></tr>
+                            <tr><td><strong>8</strong></td><td>0.1644"</td><td>4.18 mm</td><td>Placa delgada, PTR pesado</td></tr>
+                            <tr><td><strong>9</strong></td><td>0.1495"</td><td>3.80 mm</td><td>PTR pesado</td></tr>
+                            <tr><td><strong>10</strong></td><td>0.1345"</td><td>3.42 mm</td><td>PTR estructural, polín C y Z</td></tr>
+                            <tr><td><strong>11</strong></td><td>0.1196"</td><td>3.04 mm</td><td>PTR mediano, polín</td></tr>
+                            <tr><td><strong>12</strong></td><td>0.1046"</td><td>2.66 mm</td><td>PTR y polín C/Z</td></tr>
+                            <tr><td><strong>13</strong></td><td>0.0897"</td><td>2.28 mm</td><td>PTR ligero</td></tr>
+                            <tr><td><strong>14</strong></td><td>0.0747"</td><td>1.90 mm</td><td>Polín avícola, PTR ligero</td></tr>
+                            <tr><td><strong>16</strong></td><td>0.0598"</td><td>1.52 mm</td><td>Polín C/Z, lámina galvanizada</td></tr>
+                            <tr><td><strong>18</strong></td><td>0.0478"</td><td>1.21 mm</td><td>Lámina galvanizada, tubería</td></tr>
+                            <tr><td><strong>20</strong></td><td>0.0359"</td><td>0.91 mm</td><td>Lámina galvanizada ligera</td></tr>
+                            <tr><td><strong>22</strong></td><td>0.0299"</td><td>0.76 mm</td><td>Lámina acanalada Zintro</td></tr>
+                            <tr><td><strong>24</strong></td><td>0.0239"</td><td>0.61 mm</td><td>Lámina acanalada Zintro</td></tr>
+                            <tr><td><strong>26</strong></td><td>0.0179"</td><td>0.45 mm</td><td>Lámina decorativa, Galvateja</td></tr>
+                            <tr><td><strong>28</strong></td><td>0.0149"</td><td>0.38 mm</td><td>Lámina muy ligera</td></tr>
+                            <tr><td><strong>30</strong></td><td>0.0120"</td><td>0.30 mm</td><td>Lámina fina</td></tr>
+                            <tr><td><strong>32</strong></td><td>0.0097"</td><td>0.25 mm</td><td>Lámina extra fina</td></tr>
                         </tbody>
                     </table>
                 </div>
-                <p class="prolamsa-note" style="margin-top:0.75rem;"><i class="fa-solid fa-circle-info"></i> MSG = Manufacturers' Standard Gauge (calibre estándar de fabricante). A mayor número de calibre, menor espesor. Factor de conversión: 1 pulgada = 25.4 mm.</p>
+                <p class="prolamsa-note" style="margin-top:0.75rem;"><i class="fa-solid fa-circle-info"></i> MSG = Manufacturers' Standard Gauge (calibre estándar de fabricante). A mayor número de calibre, menor espesor. Factor de conversión: 1 pulgada = 25.4 mm. <strong>La placa no se pide por calibre</strong>, se pide por fracción: 3/16", ¼", 3/8", ½".</p>
             </div>
 
         </div>
@@ -530,20 +614,35 @@
                     <div class="electrode-card electrode-6013">
                         <div class="electrode-badge">6013</div>
                         <p class="electrode-tag">Toda posición · Arco suave</p>
+                        <p class="electrode-diam"><i class="fa-solid fa-ruler" aria-hidden="true"></i> 3/32" · 1/8"</p>
                         <ul class="electrode-uses">
                             <li><i class="fa-solid fa-check"></i> Herrería y estructuras tubulares</li>
                             <li><i class="fa-solid fa-check"></i> Muebles, placas delgadas</li>
                             <li><i class="fa-solid fa-check"></i> Fabricación y mantenimiento</li>
                         </ul>
+                        <a href="catalogo.html#p-electrodo-6013" class="electrode-link">Ver en el catálogo <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                     <div class="electrode-card electrode-7018">
                         <div class="electrode-badge">7018</div>
                         <p class="electrode-tag">Bajo hidrógeno · Alta resistencia</p>
+                        <p class="electrode-diam"><i class="fa-solid fa-ruler" aria-hidden="true"></i> 3/32" · 1/8" · 5/32"</p>
                         <ul class="electrode-uses">
                             <li><i class="fa-solid fa-check"></i> Aceros al carbón de alta resistencia</li>
                             <li><i class="fa-solid fa-check"></i> Estructuras críticas y sísmicas</li>
                             <li><i class="fa-solid fa-check"></i> Petroquímica, embarcaciones</li>
                         </ul>
+                        <a href="catalogo.html#p-electrodo-7018" class="electrode-link">Ver en el catálogo <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    <div class="electrode-card electrode-6010">
+                        <div class="electrode-badge">6010</div>
+                        <p class="electrode-tag">Penetración profunda</p>
+                        <p class="electrode-diam"><i class="fa-solid fa-ruler" aria-hidden="true"></i> 1/8"</p>
+                        <ul class="electrode-uses">
+                            <li><i class="fa-solid fa-check"></i> Tubería</li>
+                            <li><i class="fa-solid fa-check"></i> Acero sucio u oxidado</li>
+                            <li><i class="fa-solid fa-check"></i> Trabajos que piden penetración</li>
+                        </ul>
+                        <a href="catalogo.html#p-electrodo-6010" class="electrode-link">Ver en el catálogo <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
 
@@ -567,7 +666,7 @@
                 </div>
 
                 <div class="welding-cta">
-                    <a href="https://wa.me/5219512283263?text=Hola%2C%20necesito%20asesor%C3%ADa%20sobre%20soldadora%20y%20electrodos" target="_blank" class="btn-welding-wa">
+                    <a href="https://wa.me/5219512283263?text=Hola%2C%20necesito%20asesor%C3%ADa%20sobre%20soldadora%20y%20electrodos" data-wa-base="https://wa.me/WANUM?text=Hola%2C%20necesito%20asesor%C3%ADa%20sobre%20soldadora%20y%20electrodos" target="_blank" class="btn-welding-wa">
                         <i class="fa-brands fa-whatsapp"></i> Asesoría con experto
                     </a>
                 </div>
@@ -621,6 +720,7 @@
         <span class="wa-tooltip">Cotiza por WhatsApp</span>
     </a>
 
+    <script src="cotizacion.js"></script>
     <script src="main.js"></script>
     <script>
         /* ---- Filtros de categoría ---- */
@@ -637,12 +737,39 @@
             });
         });
 
+        /* ---- Sucursal ----
+           El selector se llena desde cotizacion.js para no repetir aquí la
+           lista de los números. */
+        (function() {
+            var sel = document.getElementById('guia-sucursal-sel');
+            if (sel) sel.innerHTML = opcionesSucursalHTML();
+            aplicarSucursalEnLinks();
+        })();
+
         /* ---- Calculadora de Materiales ---- */
         function row(mat, qty, unit, bars, note, special) {
             return { mat, qty, unit, bars, note, special: !!special };
         }
 
         const CALC_PROJECTS = {
+            'herrajes-porton': {
+                name: 'Herrajes del Portón',
+                dims: [
+                    { id: 'hojas', label: 'Número de hojas',   unit: 'niveles', rotulo: 'hojas', min: 1, max: 4,   step: 1,   value: 2 },
+                    { id: 'alto',  label: 'Alto de la hoja',   unit: 'm',       min: 1.0, max: 4.0, step: 0.1, value: 2.2 }
+                ],
+                calc: function(d) {
+                    /* Regla de taller: dos bisagras por hoja, y una tercera a
+                       partir de 2.2 m de alto o cuando la hoja va forrada. */
+                    const bisagras = d.hojas * (d.alto >= 2.2 ? 3 : 2);
+                    return [
+                        row('Bisagras PHV', bisagras, 'pza.', null, d.alto >= 2.2 ? '3 por hoja: la hoja pasa de 2.2 m' : '2 por hoja'),
+                        row('Cerrojo o pasador PHV', 1, 'pza.', null, 'Cierre del portón'),
+                        row('Jaladera o manija PHV', d.hojas, 'pza.', null, 'Una por hoja'),
+                        row('Riel y ruedas PHV', 1, 'juego', null, 'Solo si el portón es corredizo'),
+                    ];
+                }
+            },
             'porton-abatible': {
                 name: 'Portón Abatible de 2 Hojas',
                 dims: [
@@ -923,7 +1050,7 @@
                         f.innerHTML = '<label>' + d.label + '</label>' +
                             '<div class="calc-dim-wrap">' +
                             '<input type="number" class="ccp-dim-input" min="0.01" step="any" value="' + toDisplay(d.value, d.unit, currentUnit) + '">' +
-                            '<span class="ccp-dim-unit">' + dispUnit(d.unit, currentUnit) + '</span></div>';
+                            '<span class="ccp-dim-unit">' + (d.rotulo || dispUnit(d.unit, currentUnit)) + '</span></div>';
                         dimsGrid.appendChild(f);
                     });
                     panel.appendChild(dimsGrid);
@@ -947,7 +1074,25 @@
                             dims[d.id] = toMetric(parseFloat(inputs[i].value) || d.value, d.unit, currentUnit);
                         });
                         var results = proj.calc(dims);
-                        var waMsg = encodeURIComponent('Hola, usé la calculadora RAMAR para *' + proj.name + '* y quiero cotizar los materiales.');
+
+                        /* Lo que el visitante tecleó, en la unidad en que lo
+                           tecleó, para que el vendedor lo lea tal cual. */
+                        var dimTxt = proj.dims.map(function(d, i) {
+                            var v = inputs[i].value || d.value;
+                            return d.label + ': ' + v + ' ' + (d.rotulo || dispUnit(d.unit, currentUnit));
+                        }).join(' · ');
+
+                        var waLineas = results.map(function(r, i) {
+                            return (i+1) + '. ' + r.mat + ' — ' + r.qty + ' ' + r.unit +
+                                   (r.bars ? ' (' + r.bars + ' pza.)' : '') +
+                                   (r.special ? ' [bajo pedido]' : '');
+                        });
+                        var waMsg = encodeURIComponent(
+                            'Hola, saqué mis medidas en la guía RAMAR y quiero cotizar.\n\n' +
+                            '*' + proj.name + '*\n' + dimTxt + '\n\n' +
+                            'Materiales estimados (ya traen 10% de desperdicio):\n' +
+                            waLineas.join('\n') +
+                            '\n\n(Enviado desde construacerosramar.mx/guia.html)');
                         var hasSpecial = results.some(function(r) { return r.special; });
                         var h = '<p class="ccp-res-title"><i class="fa-solid fa-list-check"></i> Lista estimada de materiales</p>';
                         h += '<div style="overflow-x:auto;"><table class="calc-table"><thead><tr><th>Material</th><th>Cantidad</th><th>Piezas</th></tr></thead><tbody>';
@@ -962,8 +1107,38 @@
                             h += '<div class="calc-disclaimer" style="background:#fef9ec;border-left-color:#d97706;margin-top:0.6rem;"><i class="fa-solid fa-clock" style="color:#d97706;flex-shrink:0;"></i><span><strong>Bajo pedido:</strong> no está en físico, consúltanos con anticipación.</span></div>';
                         }
                         h += '<div class="calc-disclaimer"><i class="fa-solid fa-triangle-exclamation"></i><span>Estimación con 10% de desperdicio. Verifica con un profesional.</span></div>';
-                        h += '<a href="https://wa.me/5219512283263?text=' + waMsg + '" target="_blank" class="calc-wa-btn"><i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp</a>';
+                        h += '<a href="https://wa.me/5219512283263?text=' + waMsg + '" data-wa-base="https://wa.me/WANUM?text=' + waMsg + '" target="_blank" class="calc-wa-btn"><i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp</a>';
+                        h += '<button type="button" class="calc-add-btn" data-calc-add>' +
+                             '<i class="fa-solid fa-plus"></i> <span>Agregar a mi cotización</span></button>';
                         resDiv.innerHTML = h;
+
+                        /* El enlace de WhatsApp se acaba de crear: hay que
+                           apuntarlo a la sucursal que el visitante eligió. */
+                        aplicarSucursalEnLinks();
+
+                        /* Los materiales se van a la misma lista del catálogo,
+                           para que el herrero junte PTR, electrodo y pintura
+                           en un solo mensaje. */
+                        resDiv.querySelector('[data-calc-add]').addEventListener('click', function() {
+                            var boton = this;
+                            results.forEach(function(r, i) {
+                                agregarItem({
+                                    id: 'g-' + calcKey + '-' + i,
+                                    nombre: r.mat,
+                                    detalle: proj.name + ' · ' + dimTxt,
+                                    medida: r.qty + ' ' + r.unit + (r.bars ? ' · ' + r.bars + ' pza.' : '')
+                                });
+                            });
+                            var txt = boton.querySelector('span');
+                            var antes = txt.textContent;
+                            txt.textContent = '¡Agregado a tu cotización!';
+                            boton.classList.add('agregado');
+                            setTimeout(function() {
+                                txt.textContent = antes;
+                                boton.classList.remove('agregado');
+                            }, 1800);
+                        });
+
                         resDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                     });
                 }
@@ -989,23 +1164,25 @@
         const cont = document.getElementById('calibre-explorador');
         if (!cont) return;
 
-        // Espesores tomados de la tabla de conversiones de esta misma página.
-        // Se usan solo calibres cuyo espesor baja de forma pareja conforme sube
-        // el número; los calibres 12 y 13 de la tabla no cumplen eso y están
-        // pendientes de revisar con proveedor, así que aquí no se incluyen.
+        // Espesores tomados de la tabla de conversiones de esta misma página,
+        // que es el calibre MSG real. Los calibres 12 y 13 ya entran: antes se
+        // habían dejado fuera porque el resto de la columna no era MSG y
+        // rompían la regla de "más número = más delgado".
         const CAL = [
-            { n:10, mm:2.54, pulg:'0.1000"', pieza:'ptr',    nombre:'PTR cuadrado',        uso:'PTR estructural, polín C y Z',     sens:'Estructural. Aguanta techo, carga y peso.' },
-            { n:11, mm:2.38, pulg:'0.0938"', pieza:'ptr',    nombre:'PTR cuadrado',        uso:'PTR mediano, polín — el más pedido', sens:'El de siempre para herrería y estructura.' },
-            { n:14, mm:1.98, pulg:'0.0781"', pieza:'ptr',    nombre:'PTR ligero',          uso:'Polín avícola, PTR ligero',        sens:'Firme, pero ya se siente más liviano.' },
-            { n:16, mm:1.59, pulg:'0.0625"', pieza:'ptr',    nombre:'PTR / polín',         uso:'Polín C y Z, lámina galvanizada',  sens:'Para herrería ligera, no para cargar.' },
-            { n:18, mm:1.27, pulg:'0.0500"', pieza:'lamina', nombre:'Lámina galvanizada',  uso:'Lámina galvanizada, tubería',      sens:'Se dobla con herramienta, no con la mano.' },
-            { n:20, mm:0.95, pulg:'0.0375"', pieza:'lamina', nombre:'Lámina galvanizada',  uso:'Lámina galvanizada ligera',        sens:'Ligera. Para cubiertas que no cargan.' },
-            { n:22, mm:0.79, pulg:'0.0313"', pieza:'lamina', nombre:'Lámina acanalada',    uso:'Lámina acanalada Zintro',          sens:'La de techo más común.' },
-            { n:24, mm:0.64, pulg:'0.0250"', pieza:'lamina', nombre:'Lámina acanalada',    uso:'Lámina acanalada Zintro',          sens:'Delgada. Techo de poca exigencia.' },
-            { n:26, mm:0.48, pulg:'0.0188"', pieza:'lamina', nombre:'Lámina decorativa',   uso:'Lámina decorativa, Galvateja',     sens:'Muy delgada. Decorativa, no para carga.' },
+            { n:10, mm:3.42, pulg:'0.1345"', pieza:'ptr',    nombre:'PTR cuadrado',        uso:'PTR estructural, polín C y Z',       sens:'Estructural. Aguanta techo, carga y peso.' },
+            { n:11, mm:3.04, pulg:'0.1196"', pieza:'ptr',    nombre:'PTR cuadrado',        uso:'PTR mediano, polín — el más pedido', sens:'El de siempre para herrería y estructura.' },
+            { n:12, mm:2.66, pulg:'0.1046"', pieza:'ptr',    nombre:'PTR cuadrado',        uso:'PTR y polín C/Z',                    sens:'Firme. Portón corredizo, reja perimetral.' },
+            { n:13, mm:2.28, pulg:'0.0897"', pieza:'ptr',    nombre:'PTR',                 uso:'PTR ligero',                         sens:'Entre el 12 y el 14. Menos pedido.' },
+            { n:14, mm:1.90, pulg:'0.0747"', pieza:'ptr',    nombre:'PTR ligero',          uso:'Polín avícola, PTR ligero',          sens:'Firme, pero ya se siente más liviano.' },
+            { n:16, mm:1.52, pulg:'0.0598"', pieza:'ptr',    nombre:'PTR / polín',         uso:'Polín C y Z, lámina galvanizada',    sens:'Para herrería ligera, no para cargar.' },
+            { n:18, mm:1.21, pulg:'0.0478"', pieza:'lamina', nombre:'Lámina galvanizada',  uso:'Lámina galvanizada, tubería',        sens:'Se dobla con herramienta, no con la mano.' },
+            { n:20, mm:0.91, pulg:'0.0359"', pieza:'lamina', nombre:'Lámina galvanizada',  uso:'Lámina galvanizada ligera',          sens:'Ligera. Para cubiertas que no cargan.' },
+            { n:22, mm:0.76, pulg:'0.0299"', pieza:'lamina', nombre:'Lámina acanalada',    uso:'Lámina acanalada Zintro',            sens:'La de techo más común.' },
+            { n:24, mm:0.61, pulg:'0.0239"', pieza:'lamina', nombre:'Lámina acanalada',    uso:'Lámina acanalada Zintro',            sens:'Delgada. Techo de poca exigencia.' },
+            { n:26, mm:0.45, pulg:'0.0179"', pieza:'lamina', nombre:'Lámina decorativa',   uso:'Lámina decorativa, Galvateja',       sens:'Muy delgada. Decorativa, no para carga.' },
         ];
 
-        const ESCALA = 13;          // píxeles por milímetro, igual para todos
+        const ESCALA = 11;          // píxeles por milímetro, igual para todos
         const AZUL = '#1C2B54', NARANJA = '#F08018';
 
         // PTR visto de punta: el cliente ve exactamente esto al mirar el tubo.
@@ -1051,9 +1228,10 @@
             document.getElementById('ce-espesor').textContent  = c.mm + ' mm  ·  ' + c.pulg;
             document.getElementById('ce-uso').textContent      = c.uso;
             document.getElementById('ce-sensacion').textContent = c.sens;
-            document.getElementById('ce-cta').href =
-                'https://wa.me/5219512283263?text=' +
+            const cta = document.getElementById('ce-cta');
+            cta.dataset.waBase = 'https://wa.me/WANUM?text=' +
                 encodeURIComponent('Hola, quiero cotizar: ' + c.nombre + ' calibre ' + c.n);
+            cta.href = cta.dataset.waBase.replace('WANUM', waDeSucursal());
             botones.querySelectorAll('.ce-btn').forEach((b, k) => {
                 b.classList.toggle('active', k === i);
                 b.setAttribute('aria-pressed', k === i ? 'true' : 'false');
@@ -1065,8 +1243,89 @@
             if (b) mostrar(+b.dataset.i);
         });
 
-        mostrar(2);   // arranca en calibre 14
+        mostrar(4);   // arranca en calibre 14
     })();
+    </script>
+
+    <!-- Schema.org. Se usan BreadcrumbList, ItemList y FAQPage. No se usa
+         HowTo: Google retiró ese resultado enriquecido en 2023 y hoy solo
+         agregaría peso a la página sin darle nada. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://construacerosramar.mx/" },
+            { "@type": "ListItem", "position": 2, "name": "Guía de proyectos", "item": "https://construacerosramar.mx/guia.html" }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "name": "Proyectos de herrería, construcción y muebles",
+          "description": "Qué material lleva cada proyecto: perfiles, calibres y acabados.",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1,  "name": "Portón abatible de 2 hojas" },
+            { "@type": "ListItem", "position": 2,  "name": "Portón corredizo" },
+            { "@type": "ListItem", "position": 3,  "name": "Ventana de herrería" },
+            { "@type": "ListItem", "position": 4,  "name": "Reja o barda perimetral" },
+            { "@type": "ListItem", "position": 5,  "name": "Barandal de escalera" },
+            { "@type": "ListItem", "position": 6,  "name": "Herrajes del portón" },
+            { "@type": "ListItem", "position": 7,  "name": "Chapa y cerradura para puerta" },
+            { "@type": "ListItem", "position": 8,  "name": "Losa de concreto reforzada" },
+            { "@type": "ListItem", "position": 9,  "name": "Cobertizo o techumbre metálica" },
+            { "@type": "ListItem", "position": 10, "name": "Mesa de trabajo y banco de taller" },
+            { "@type": "ListItem", "position": 11, "name": "Estante o anaquel metálico" }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿Qué PTR uso para un portón?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Para un portón abatible de hasta 2.5 m de ancho, PTR de 1½\" × 1½\" calibre 14 en el marco y los travesaños, con nervios de 1\" × 1\" por dentro. Pasando los 2.5 m de ancho conviene subir el marco a PTR de 2\" × 2\" para que no se combe con su propio peso. En portón corredizo el marco va de 2\" × 2\" calibre 12 desde el principio, porque la hoja viaja sobre el riel."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Qué significa el calibre del acero?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "El calibre indica el espesor de la pared o de la lámina, y va al revés de lo que parece: a mayor número de calibre, más delgado el material. Se usa el calibre MSG. Calibre 10 son 3.42 mm, calibre 12 son 2.66 mm, calibre 14 son 1.90 mm, calibre 18 son 1.21 mm y calibre 22 son 0.76 mm. La placa no se pide por calibre, se pide por fracción: 3/16\", ¼\", 3/8\" o ½\"."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Qué electrodo uso: 6013, 7018 o 6010?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "El 6013 es de arco suave y toda posición: herrería, estructuras tubulares, muebles y placa delgada. Se maneja en 3/32\" y 1/8\". El 7018 es bajo hidrógeno y de alta resistencia: aceros al carbón, estructuras críticas y trabajo sísmico. Se maneja en 3/32\", 1/8\" y 5/32\". El 6010 es de penetración profunda, para tubería y acero sucio u oxidado, en 1/8\"."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Qué calibre de lámina lleva un techo?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "La lámina acanalada Zintro de techo más común es calibre 22, que son 0.76 mm. El calibre 24, de 0.61 mm, se usa en techos de menor exigencia. El calibre 26, de 0.45 mm, es decorativo y no se recomienda donde haya que cargar o caminar."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Qué máquina de soldar me conviene?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "MMA, de electrodo revestido y sin gas, es la de herrería y oficio. MIG-MAG usa microalambre continuo con gas y da más velocidad, por eso se usa en producción. TIG usa tungsteno y gas argón, y es para trabajo fino y máximo control del cordón."
+              }
+            }
+          ]
+        }
+      ]
+    }
     </script>
 </body>
 </html>

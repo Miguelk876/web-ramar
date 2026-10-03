@@ -346,6 +346,103 @@ Verificado en Chromium con los 104 productos a 360 px y a 1280 px (la X queda
 alcanzable y sin scroll horizontal en todos), y con toques reales en Pixel 5,
 iPhone 12 y Galaxy S9+.
 
+### ⛔ La tabla de calibres estaba mal — corregida 2026-10-03
+
+**Toda la columna de espesores de `guia.html` era falsa**, aunque la nota al
+pie dijera "MSG = Manufacturers' Standard Gauge". No eran valores MSG: eran una
+serie de fracciones de pulgada que alguien armó a mano.
+
+| Calibre | Decía | Es |
+|---|---|---|
+| 8  | 3.18 mm | **4.18 mm** |
+| 10 | 2.54 mm | **3.42 mm** |
+| 11 | 2.38 mm | **3.04 mm** |
+| 14 | 1.98 mm | **1.90 mm** |
+| 22 | 0.79 mm | **0.76 mm** |
+
+El calibre 10 estaba **35% abajo** del real. En una página cuyo trabajo es
+decirle al cliente qué comprar, eso es lo más grave que había en el sitio.
+
+Esto además explica el pendiente que arrastrábamos: los calibres **12 y 13** se
+habían quitado "porque rompían la regla de más número = más delgado". No era
+culpa de ellos — sus valores **sí** eran los de MSG (2.66 y 2.28 mm) y chocaban
+con el resto de la columna, que no lo era.
+
+Los 16 renglones quedaron en MSG real, verificados contra tres distribuidores
+mexicanos de acero: metric.com.mx, acerostoreo.com y metafibra.com. El
+explorador interactivo usa exactamente los mismos números — **si alguna vez se
+toca uno, hay que tocar el otro**, y la prueba de navegador compara los dos.
+
+⚠️ **Pendiente de confirmar con el usuario:** MSG es el estándar de la lámina.
+Si Prolamsa o el molino que surte el PTR publican un "calibre comercial" propio
+más delgado, los renglones del PTR habría que ajustarlos a lo que de verdad
+llega a la bodega. Los valores de lámina sí están firmes.
+
+Las filas 4 a 7 se quitaron de la tabla: **la placa no se pide por calibre**,
+se pide por fracción (3/16", ¼", 3/8", ½"). Eso ahora lo dice la nota al pie.
+
+### cotizacion.js — la lista y la sucursal viven en un solo lugar
+
+Antes todo esto estaba dentro de `catalogo.html` y la guía no podía usarlo.
+Ahora `cotizacion.js` lo tiene y **las dos páginas lo cargan**. Trae las 8
+sucursales, la lista de cotización y el panel, que **se arma solo por JS**: una
+página que quiera la lista solo carga el archivo, no copia el HTML.
+
+La lista acepta dos clases de renglón:
+
+- **producto del catálogo** — lleva id y botones de ± piezas
+- **material de la guía** — trae la medida ya calculada como texto
+  (`29.5 m lin. · 5 pza.`) y por eso **no** lleva ±: no es una cantidad que se
+  suba a mano. Se vuelve a agregar reemplazando, no sumando.
+
+`catalogo.html` solo conserva el puente `agregarALista(id)`, que traduce un id
+a un renglón. ⚠️ `PRODUCTS` y `CAT_NAMES` se declaran con `const`: son globales
+de script pero **no cuelgan de `window`**. Desde `cotizacion.js` se consultan
+con `typeof`, nunca como `window.PRODUCTS`.
+
+Guarda en `sessionStorage` con la clave `ramar-cotizacion`. Ahora también mete
+nombres de material y las medidas que el visitante capturó, no solo ids: por eso
+se actualizó `aviso-privacidad.html` en el mismo commit. **Esa regla sigue en
+pie** — si cambia lo que se guarda, el aviso cambia en el mismo commit.
+
+### Los CTA de WhatsApp de la guía: data-wa-base y WANUM
+
+La guía tenía 14 enlaces con el número de Matriz escrito a mano. Ahora cada CTA
+lleva `data-wa-base="https://wa.me/WANUM?text=..."` y el selector de sucursal
+llama a `aplicarSucursalEnLinks()`, que reescribe todos de un golpe.
+
+⚠️ Un enlace creado **después** de elegir sucursal (el de la calculadora) no se
+entera solo: hay que volver a llamar `aplicarSucursalEnLinks()` al insertarlo.
+
+El del navbar y el flotante **se quedaron en el número general a propósito**:
+son idénticos en las 8 páginas y cambiarlos solo aquí descuadraría el sitio.
+
+### ⛔ `[hidden]` no gana contra un `display` de clase
+
+Segunda vez que pasa en este proyecto (la primera fue `.promos-section`). La
+burbuja "Mi cotización" **se veía marcando 0 con la lista vacía**, en la guía y
+también en el catálogo en vivo, porque `.cot-burbuja` fija `display:inline-flex`
+y eso le gana a la regla `[hidden] { display: none }` del navegador.
+
+Siempre que una clase fije `display`, hay que escribir también
+`.la-clase[hidden] { display: none; }`.
+
+### Datos estructurados de la guía
+
+`BreadcrumbList` + `ItemList` + `FAQPage`, en un solo `@graph`.
+
+**No se usó `HowTo` a propósito:** Google retiró ese resultado enriquecido en
+2023. Marcar los 11 proyectos como HowTo solo engordaría la página sin darle
+nada. Si alguien lo pide, esa es la razón.
+
+### ⚠️ Los dos proyectos nuevos traen consejos de oficio, no datos
+
+`Herrajes del Portón` y `Chapa y Cerradura` cierran el hueco de las dos
+categorías del catálogo que no aparecían en ninguna tarjeta. Pero sus
+`proj-tip` y la regla de la calculadora (3 bisagras por hoja a partir de 2.2 m)
+son **criterio de taller, no dato verificado**. El usuario los tiene que
+revisar; si no le cuadran, se corrigen o se quitan.
+
 ## Content Rules
 
 - The catalog (products) lives **ONLY** in `catalogo.html`. Never split into sub-pages, never add product listings to `index.html`. Sub-catalog files (`catalogo-comercial.html`, `catalogo-estructural.html`, `catalogo-especializado.html`, `catalogo-pintura.html`) were deleted on 2026-05-05 by user request — do not recreate them.
