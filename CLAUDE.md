@@ -167,11 +167,30 @@ mojibake, so don't go looking for one.
 
 **Facts the user confirmed in that conversation, which the copy now reflects:**
 
-- **Corte a medida = placa y piezas de perfil tubular.** For any other material
-  the customer is told to ask in the branch. This was previously an unqualified
-  "Dimensionamos el material según las necesidades exactas de tu proyecto", which
-  contradicted the catalog (Lámina Negra "no se dobla ni se corta"; tablero de
-  portones "sin corte a medida").
+- **Corte = only cutting to length. Nothing else.** Updated by the user on
+  2026-10-05, after comparing against a competitor (Nayaceros, Tepic) that
+  advertises doblez, rolado, plasma CNC, barrenado and punzonado. **RAMAR does
+  none of those.** What it does:
+  - **PTR y tubular** → **corte con disco**, al largo que pida el cliente
+    (`ptr-c`, `ptr-r`, `ptr-regiopytsa`).
+  - **Placa**, and **lámina antiderrapante** → a dedicated person at the counter
+    cuts plate of different thicknesses (`placa-acero`, `lamina-antiderrapante`).
+    Don't name or describe that person on the site.
+  - **Barras of aceros especializados** — **Cold Roll** and **barra hueca** →
+    **sierra de banda** (`acero-maquinaria`, `barra-hueca`).
+  Each of those products carries a `{l:'Corte'}` spec, and the home card
+  "Corte a Medida" lists the three. For any other material: "pregúntanos".
+  The same day, two catalog entries were found **promising services RAMAR does
+  not give** and were corrected: `ptr-regiopytsa` said *"V.A.: Corte · Doblez ·
+  Punzonado · Biselado"* and `lamina-rectangular` said *"Corte recto · Doblez ·
+  Punzonado · Rolado"* plus *"medidas a corte"*. `placa-acero`'s tip
+  *"Espesores ≥3/8" requieren oxicorte"* was replaced by the corte spec — it
+  contradicted the service and was already flagged as over-technical.
+  ⚠️ Still unconfirmed, left as they were: `arquiduela` ("corte a medida"),
+  `lamina-galvarro` ("Corte a medida") and `bronce` ("Bujes y casquillos
+  torneados a medida", which can read as a lathe service). Ask the user.
+  Lámina Negra still **no se dobla ni se corta**; tablero de portones still
+  **sin corte a medida**.
 - **Polín Z is not stocked** — only Polín C (Canal Monten). The guide's advice to
   prefer Z over C for vanos > 6 m was removed; it now says to ask in the branch.
 - **Electrode 6011 is not stocked** — the catalog carries 6013 and 7018 only. The

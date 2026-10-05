@@ -959,6 +959,7 @@ const PRODUCTS = [
       {i:'fa-ruler',     l:'Tamaños',  v:'½" hasta 6" — pregunta por la medida'},
       {i:'fa-layer-group',l:'Calibres',v:'Cal. 11 (principal) · Cal. 12, 14 y 16 en dos medidas · Largo 6 m'},
       {i:'fa-building',  l:'Usos',     v:'Portones, marcos, columnas, muebles metálicos'},
+      {i:'fa-scissors',  l:'Corte',     v:'Con disco, al largo que necesites'},
       {i:'fa-lightbulb', l:'Tip',      v:'1½" y 2" los más populares en herrería residencial'}
     ], wa:'PTR%20Cuadrado', photo:'assets/images/ramar-ptr-cuadrado-primario.jpg' },
 
@@ -971,6 +972,7 @@ const PRODUCTS = [
       {i:'fa-ruler',      l:'Tamaños',  v:'1"×½" hasta 8"×4" — pregunta por medida'},
       {i:'fa-layer-group',l:'Calibres', v:'Cal. 11 (estructuras), 14 y 16 · Largo 6 m'},
       {i:'fa-building',   l:'Usos',     v:'Estructuras, marcos de puertas y ventanas, divisiones'},
+      {i:'fa-scissors',  l:'Corte',     v:'Con disco, al largo que necesites'},
       {i:'fa-lightbulb',  l:'Tip',      v:'Cal. 11 el más utilizado en estructuras por su rigidez'}
     ], wa:'PTR%20Rectangular', photo:'assets/images/ramar-ptr-rectangular-primario.jpg' },
 
@@ -1248,7 +1250,7 @@ const PRODUCTS = [
       {i:'fa-ruler',    l:'Espesores', v:'3/16" · 1/4" · 5/16" · 3/8" · 1/2" · 3/4" · 1" · 1½" · 2"'},
       {i:'fa-expand',   l:'Formatos',  v:'4′×8′, 4′×10′, 4′×20′, 5′×10′, 5′×20′'},
       {i:'fa-building', l:'Usos',      v:'Bases de maquinaria, refuerzos, chasis pesados'},
-      {i:'fa-lightbulb',l:'Tip',       v:'Espesores ≥3/8" requieren oxicorte; usar plantilla'}
+      {i:'fa-scissors',  l:'Corte',     v:'Te la cortamos al largo que necesites'}
     ], wa:'Placa%20de%20Acero%20A-36', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Placa-de-Acero-scaled.jpg' },
 
   { id:'lamitec-elegance', cat:'comercial', provider:'',
@@ -1299,6 +1301,7 @@ const PRODUCTS = [
       {i:'fa-ruler',    l:'Diámetros', v:'D.E. 1" hasta 10" o más'},
       {i:'fa-layer-group',l:'Pared',v:'Se maneja en milímetros — la pared cambia según la medida (sin cédulas)'},
       {i:'fa-building', l:'Usos',      v:'Bujes, rodillos, pernos huecos, camisas hidráulicas'},
+      {i:'fa-scissors',  l:'Corte',     v:'Con sierra de banda, al largo que necesites'},
       {i:'fa-lightbulb',l:'Tip',       v:'Para presión hidráulica, preferir aleaciones tratadas (ST-52)'}
     ], wa:'Barra%20Hueca', photo:'assets/images/20260430_182659213_iOS.webp' },
 
@@ -1323,6 +1326,7 @@ const PRODUCTS = [
       {i:'fa-ruler',      l:'Geometrías', v:'Redondo y hexagonal · ¼" a 10"'},
       {i:'fa-certificate',l:'Grados',     v:'1018 soldable · 1045 templable · 4140 alta tensión'},
       {i:'fa-building',   l:'Usos',       v:'Flechas, cigüeñales, brocas, tornillería especial'},
+      {i:'fa-scissors',  l:'Corte',     v:'Con sierra de banda, al largo que necesites'},
       {i:'fa-lightbulb',  l:'Tip',        v:'Para soldar usar 1018; para templar usar 1045'}
     ], wa:'Acero%20Grado%20Maquinaria', photo:'assets/images/20260430_182703248_iOS.webp' },
 
@@ -1744,7 +1748,7 @@ const PRODUCTS = [
       {i:'fa-ruler-combined',l:'PTR Rectangular',v:'1"×½" hasta 8"×4" · Cal. 18, 20 y 22 (los más vendidos)'},
       {i:'fa-certificate',  l:'Norma',     v:'ASTM A-500 Gr. B · ASTM A-513'},
       {i:'fa-arrows-up-down',l:'Largo',    v:'6.00 m y 6.10 m estándar · Corte a medida disponible'},
-      {i:'fa-screwdriver',  l:'V.A.',      v:'Corte · Doblez · Punzonado · Biselado'},
+      {i:'fa-scissors',  l:'Corte',     v:'Con disco, al largo que necesites'},
       {i:'fa-lightbulb',    l:'Tip',       v:'Tiempos de entrega cortos'}
     ], page:'catalogo.html', wa:'PTR%20Estructural', photo:'https://images.pexels.com/photos/15508177/pexels-photo-15508177.jpeg' },
 
@@ -2023,6 +2027,7 @@ const PRODUCTS = [
       {i:'fa-ruler',     l:'Espesores', v:'Pregunta por el espesor'},
       {i:'fa-expand',    l:'Hoja',      v:'3′×8′ · 3′×10′ · 4′×8′ · 4′×10′'},
       {i:'fa-building',  l:'Usos',      v:'Pisos de nave, rampas, plataformas, escalones y estribos'},
+      {i:'fa-scissors',  l:'Corte',     v:'Te la cortamos al largo que necesites'},
       {i:'fa-lightbulb', l:'Tip',       v:'Si van a pasar montacargas, pide más gruesa'}
     ], wa:'L%C3%A1mina%20Antiderrapante', photo:'assets/images/ramar-lamina-antiderrapante.jpg' },
 
@@ -2091,9 +2096,8 @@ const PRODUCTS = [
     tagline:'Lámina lisa de acero en hojas rectangulares para corte, doblez y manufactura general.',
     specs:[
       {i:'fa-layer-group',l:'Calibres',    v:'14 · 16 · 18 · 20 · 22 · 24'},
-      {i:'fa-arrows-left-right',l:'Hojas', v:'0.91 × 1.83 m · 1.22 × 2.44 m · medidas a corte'},
+      {i:'fa-arrows-left-right',l:'Hojas', v:'0.91 × 1.83 m · 1.22 × 2.44 m'},
       {i:'fa-rotate',     l:'Acabados',    v:'Negra (HR) · Fría (CR) · Galvanizada'},
-      {i:'fa-screwdriver',l:'V.A.',        v:'Corte recto · Doblez · Punzonado · Rolado'},
       {i:'fa-building',   l:'Usos',        v:'Manufactura, hojalatería, ductos, cubiertas, refuerzos'},
       {i:'fa-lightbulb',  l:'Tip',         v:'Para piezas a soldar pedir HR; para acabados finos pedir CR'}
     ], page:'catalogo.html', wa:'L%C3%A1mina%20Rectangular', photo:'https://images.pexels.com/photos/12289199/pexels-photo-12289199.jpeg' }
