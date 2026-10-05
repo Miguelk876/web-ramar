@@ -186,9 +186,12 @@ mojibake, so don't go looking for one.
   Punzonado · Rolado"* plus *"medidas a corte"*. `placa-acero`'s tip
   *"Espesores ≥3/8" requieren oxicorte"* was replaced by the corte spec — it
   contradicted the service and was already flagged as over-technical.
-  ⚠️ Still unconfirmed, left as they were: `arquiduela` ("corte a medida"),
-  `lamina-galvarro` ("Corte a medida") and `bronce` ("Bujes y casquillos
-  torneados a medida", which can read as a lathe service). Ask the user.
+  **`bronce` also gets sierra de banda** — confirmed by the user the same day.
+  Its "Bujes y casquillos torneados a medida" and "Bujes pre-torneados" read
+  as a lathe service RAMAR doesn't give, and "hexagonal" contradicted the
+  solo-redondo rule; all three were removed.
+  ⚠️ Still unconfirmed, left as they were: `arquiduela` ("corte a medida") and
+  `lamina-galvarro` ("Corte a medida"). Ask the user.
   Lámina Negra still **no se dobla ni se corta**; tablero de portones still
   **sin corte a medida**.
 - **Polín Z is not stocked** — only Polín C (Canal Monten). The guide's advice to
