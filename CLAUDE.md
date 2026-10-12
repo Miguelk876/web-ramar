@@ -681,7 +681,7 @@ Nayvi Padilla (redes) reviewed the catalog in 2026-06. The 96 products reflect w
 - **Cold Rolled (`lamina-fria`)** is a redirect product — consult Aceros RAMAR.
 - **Lámina Galvanizada**: G-45 (not G-60). **Pintro**: solo color rojo. **Galvateja**: solo cal. 26 (Plus = térmica).
 - **Lozacero** (not "Losacero"/"FortaDeck"): solo cal. 22.
-- **Tablero portones**: solo modelo 170, anchos 2–10", sin corte a medida.
+- **Tablero portones** (the user just calls it *tablero*): modelo 170, **calibre 22**, sin corte a medida. Medidas the user gave on 2026-10-12: **4′×8′ pintado café**, **4′×8′ galvanizado** (the green one), **4′×6′ galvanizado**, **3′×10′ pintado café**. That replaced the old "anchos 2–10 pulgadas · Galvanizado o Negro" and a tip comparing cal. 20 vs 22 — cal. 20 is not stocked. Photo: `ramar-tablero-portones-galvanizado.jpg` (own, replaced a fortacero.com hotlink); a café crop was also made but not published.
 - **Paint is PintuMex, and paint only.** RAMAR does **NOT** sell impermeabilizantes — the `impermeabilizante` product and its `TABLE_HTML` entry were removed on 2026-09-17 by user request, along with the home tip "¿Cuánto dura el imper?" and `assets/images/tips/imper.svg`. Don't reintroduce waterproofing products, IMPERFIBRA or AQUAMAR lines under any name.
 - **Pinturas vinílicas**: solo SUPERVIN, OMAR, VINET, KOLORTEX, CH14 (sobre pedido). ESMAFLEX is rezago — never list it.
 - **Primario anticorrosivo**: solo Rojo Óxido (1L, ¼, galón, cubeta).
