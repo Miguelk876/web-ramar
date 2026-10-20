@@ -142,8 +142,11 @@ the left — not RAMAR products, and a public page should not show them.
 the caption or `alt`, and nobody may be unless the user says who they are — and
 even then, only the founder can be named. **Never place this photo next to the
 "La Mujer de Acero" paragraph** or caption it with that line: the slogan stays
-unattributed on purpose. It was held on the branch until the user confirmed
-publication.
+unattributed on purpose. The user approved publishing it **without names**
+(*"me parece perfecto cómo lo solucionaste"*) and asked to improve it if
+possible: colour was restored on canvas — per-channel levels stretch (fixes the
+faded cast), gamma 1.18 for midtone depth, saturation ×1.15. Nothing was
+retouched on the people.
 
 **Do not mention the intermediate trade name "Perfiles de Antequera"** — removed on user request; more corporate changes are expected and they don't want that history on the site. Don't explain "RAMAR" as surname initials either (see the privacy note).
 
@@ -715,9 +718,8 @@ photos (estructural, comercial, especializado, herrajes). Herramienta keeps its
 colour gradient only — its background was a Makita grinder.
 
 ⚠️ Still to confirm with the user: whether `esmalte` (photo: Esmalux SR) and
-`selladores` (photo: Sellavin) are PintuMex lines RAMAR actually stocks; and
-`bisagras-phv`, whose text says "Negras y pulidas" and lists 7/8", against the
-rule below ("solo pulidas, no 7/8"").
+`selladores` (photo: Sellavin) are PintuMex lines RAMAR actually stocks.
+(`bisagras-phv` "Negras y pulidas" was confirmed by the user the same day.)
 
 **Drawings for everything without a photo (user's request, same day):**
 *"si no tienes la imagen, crea las figuras… para que te des una silueta al menos"*.
@@ -794,7 +796,7 @@ Nayvi Padilla (redes) reviewed the catalog in 2026-06. The 96 products reflect w
 - **Acero maquinaria**: 1018 en redondo/hexagonal/cuadrado; 1045 y 4140 solo redondo; hexagonal hasta 1½".
 - **Bronce**: solo redondos 9¾"–10". **Latón**: solo redondos + cuadrado ¾; no solera.
 - **Cerraduras Phillips**: only the surviving models (715 AS/CL/IF/LL, 620, 625 DC, AS 625, 775, 800/CH/MAX, 850, 875, X-900/MAX). Mueble and aluminio lines were removed for low rotation — don't re-add.
-- **Bisagras PHV**: solo pulidas, no 7/8".
+- **Bisagras PHV**: **negras y pulidas** — the user corrected the old "solo pulidas" rule on 2026-10-20 (*"No, también negras"*); the catalog already said so. Whether **7/8"** is stocked is still unconfirmed; the catalog lists it.
 - **PHV is the herraje brand** — the user: *"de donde es todo nuestro herraje y todo"*. Nine products carry `provider:'PHV'`.
   - ✅ **Jaladeras — resolved 2026-09-22: the catalog is right, the old rule was stale.** An earlier note in this file said *"Jaladeras: solo Estriada y Trenzada, aluminio, atornilladas"*. It is **wrong** and has been removed. What RAMAR actually sells is what `jaladeras-manijas-phv` publishes: **Chica · Estriada · Trenzada · Colonial · De lujo**, in **acero negro · latón · cromado**, **soldable o atornillada** — plus `jaladera-h-phv`. Don't trim the catalog back to two types.
   - **`jaladera-h-phv`** was added 2026-09-22: a tubular **tipo H** entrance pull, **Ø 30 mm**, largos **450 / 650 / 1200 mm**, **satinada y negra**. The user confirmed it is PHV. Its measurements come from his own shelf labels (`HR45275` = 450 mm long × 275 mm centres, satinada; `HR120010S/N` = 1200 × 1000, satinada/negra). The **HR codes were not published** — same call as the `6651` tag, they read as RAMAR shelf labels. If they are PHV references, the user can say so and they go in.
