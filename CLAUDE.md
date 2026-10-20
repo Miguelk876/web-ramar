@@ -135,13 +135,15 @@ From the company's own printed history sheet, supplied by the user. `nosotros.ht
 **Historic photo (2026-10-20).** `ramar-historia-primeros-anos.jpg` sits in
 `nosotros.html` → *Nuestra historia*, as a `<figure class="history-figure">`
 after the growth / 2010 paragraph. Caption, confirmed by the user on
-2026-10-20: *"Don Félix Martínez Lázaro, nuestro fundador, en la sucursal que
-tuvimos en San Jacinto Amilpas."* The man is the founder; the other person is a
+2026-10-20: *"Don Félix Martínez Lázaro, nuestro fundador, en nuestra sucursal de
+San Jacinto Amilpas, que hoy es la sucursal Viguera."* The user rejected an
+earlier "la sucursal que tuvimos" — it read as a branch that was lost. Say it
+**became** Viguera. The man is the founder; the other person is a
 family member who is **not** named, at the user's request (*"nada más me
 menciona a mi papá"*). The family agreed to the photo being published. **No
 year** — the user doesn't remember it; don't add one.
-**San Jacinto Amilpas was a RAMAR branch that no longer exists**; the user says
-it is, in effect, today's **Viguera** branch. He called it "San Jacinto Milpas";
+**The San Jacinto Amilpas branch became today's Viguera branch** — present
+it as continuity, never as a branch that closed. He called it "San Jacinto Milpas";
 the official municipality name, *Amilpas*, is what the page uses. It is a scanned
 print: two people in the early shop, welders and power tools behind them. The
 crop removed the scan border and a stack of **beer boxes** (Montejo, León) on
