@@ -706,6 +706,20 @@ colour gradient only — its background was a Makita grinder.
 `bisagras-phv`, whose text says "Negras y pulidas" and lists 7/8", against the
 rule below ("solo pulidas, no 7/8"").
 
+**Drawings for everything without a photo (user's request, same day):**
+*"si no tienes la imagen, crea las figuras… para que te des una silueta al menos"*.
+21 products were left with neither photo nor drawing and were showing the
+*"Pide la foto por WhatsApp"* box; each now has an inline SVG silhouette in the
+house style — `viewBox="0 0 260 190"`, navy `#1C2B54` shape, `#EEF2FF` details,
+orange `#F08018` dimension lines and an Oswald caption at the bottom. They show
+**the type of piece**, never a specific brand's model, and carry no prices or
+codes. `verificar.js` reports **0 products without photo or svg**.
+⚠️ The 18 Phillips products and `compresor-goni` still have **no drawing** —
+they rely on the manufacturer's photo. If that photo fails to load, the box
+appears. Phillips models differ in form (sobreponer, embutir, manija…), so a
+generic lock drawing could show the wrong type; ask the user to confirm the
+Phillips photos load live before deciding.
+
 **Every new photo, from now on, goes through this filter.** If it is not RAMAR's
 own and not the manufacturer's photo of that exact model, it does not go in.
 
