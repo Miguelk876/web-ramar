@@ -45,6 +45,15 @@ saltárselo.
 Elige el recorte **por foto**: el encuadre se decide viendo dónde está el
 material, no aplicando el mismo corte a todas.
 
+## Fotos viejas escaneadas: mano ligera
+
+Las fotos de historia (impresiones de rollo escaneadas) se restauran **poco**:
+enderezar, recortar, niveles suaves (recorte 0.2 %), gamma ~1.03, saturación
+~1.04 y enfoque mínimo (desenfoque 0.8 px, cantidad 0.18). Con más enfoque y
+color se ven falsas — el usuario lo rechazó el 2026-10-20 (*"hazlo más
+natural"*). Antes de publicar, compara con la versión sin tocar, acercando a una
+cara.
+
 ## Peso
 
 - **Menos de 500 KB** por foto, sin excepción. El sitio se consume en celulares

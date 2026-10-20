@@ -157,12 +157,20 @@ possible: colour was restored on canvas — per-channel levels stretch (fixes th
 faded cast), gamma 1.18 for midtone depth, saturation ×1.15. Nothing was
 retouched on the people.
 
-**Second historic photo (2026-10-20).** `ramar-historia-caseta-inicios.jpg`
+**Second historic photo (2026-10-20).** `ramar-historia-caseta-natural.jpg`
 goes right after the 2000 paragraph — the one that describes *"una caseta de
 6 m² que hacía las veces de mostrador"* — with the caption *"Nuestros inicios:
 la caseta que hacía las veces de mostrador."* The scan arrived **rotated 90°**;
-it was turned upright, sharpened (unsharp mask, blur 1.4 px, amount 0.6) and
-colour-restored (levels, gamma 1.12, saturation ×1.15). It is nearly square, so
+it was turned upright and given a **light** touch: levels clipped at 0.2 %,
+gamma 1.03, saturation ×1.04, unsharp mask blur 0.8 px / amount 0.18.
+The first version (blur 1.4 px / amount 0.6, gamma 1.12, saturation ×1.15) was
+published as `ramar-historia-caseta-inicios.jpg` and the user found it ugly
+(*"está medio feo, hazlo más natural"*): hard edges round faces and hair,
+blown whites. It was replaced under a **new filename** because of the one-year
+image cache, and the old file deleted.
+⛔ **Lesson for old scanned photos: restore lightly.** Strong sharpening and
+saturation make a film print look fake. Compare against the untouched rotation
+at 100 % on a face before publishing. It is nearly square, so
 it uses `.history-figure--alta` (no 4:3 crop) to keep the roof and the people's
 feet. The source also showed a **family altar** — flowers and framed portraits
 — beside the booth; that is private and was cropped out. Several people appear,
