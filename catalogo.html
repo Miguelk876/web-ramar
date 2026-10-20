@@ -228,6 +228,14 @@
 .cat-results-bar strong { color: var(--color-blue); }
 
 /* ── product grid ── */
+.cat-nota-imagenes {
+    margin: 1.5rem auto 0;
+    max-width: 760px;
+    text-align: center;
+    font-size: .82rem;
+    line-height: 1.5;
+    color: #64748b;
+}
 .product-grid-explorer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -280,6 +288,23 @@
     justify-content: center;
     min-height: 200px;
 }
+.foto-pendiente {
+    width: 100%;
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    border: 2px dashed #cbd5e1;
+    border-radius: 10px;
+    color: #64748b;
+    font-size: .85rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 1rem;
+}
+.foto-pendiente i { font-size: 1.8rem; color: #94a3b8; }
 .pcard-thumb svg {
     width: 100%;
     max-width: 200px;
@@ -756,7 +781,7 @@
             </div>
             <div class="cat-menu-grid">
                 <button class="cat-menu-card" data-cat="estructural">
-                    <div class="cat-menu-top" style="background-image:linear-gradient(rgba(30,58,138,.55),rgba(30,64,175,.7)),url('https://www.serviacero.com/wp-content/uploads/2025/12/Viga-IPR-scaled.jpg')">
+                    <div class="cat-menu-top" style="background-image:linear-gradient(rgba(30,58,138,.55),rgba(30,64,175,.7)),url('assets/images/ramar-viga-ipr-estibada.jpg')">
                         <i class="fa-solid fa-building-columns"></i>
                         <span>Acero Estructural</span>
                     </div>
@@ -766,7 +791,7 @@
                     </div>
                 </button>
                 <button class="cat-menu-card" data-cat="comercial">
-                    <div class="cat-menu-top" style="background-image:linear-gradient(rgba(20,83,45,.55),rgba(21,128,61,.7)),url('https://www.serviacero.com/wp-content/uploads/2025/12/Lamina-Acanalada.jpg')">
+                    <div class="cat-menu-top" style="background-image:linear-gradient(rgba(20,83,45,.55),rgba(21,128,61,.7)),url('assets/images/ramar-lamina-acanalada-rack.jpg')">
                         <i class="fa-solid fa-helmet-safety"></i>
                         <span>Acero Comercial</span>
                     </div>
@@ -776,7 +801,7 @@
                     </div>
                 </button>
                 <button class="cat-menu-card" data-cat="especializado">
-                    <div class="cat-menu-top" style="background-image:linear-gradient(rgba(88,28,135,.55),rgba(126,34,206,.7)),url('https://www.serviacero.com/wp-content/uploads/2025/12/Tubo-Mecanico_Serviacero-Comercial.jpg')">
+                    <div class="cat-menu-top" style="background-image:linear-gradient(rgba(88,28,135,.55),rgba(126,34,206,.7)),url('assets/images/nylamid-rack.jpg')">
                         <i class="fa-solid fa-gear"></i>
                         <span>Acero Especializado</span>
                     </div>
@@ -796,7 +821,7 @@
                     </div>
                 </button>
                 <button class="cat-menu-card" data-cat="herramienta">
-                    <div class="cat-menu-top" style="background-image:linear-gradient(rgba(146,64,14,.55),rgba(180,83,9,.7)),url('https://www.makita.com.mx/wp-content/uploads/2018/03/GA7030_Esmeriladora_angular.jpg')">
+                    <div class="cat-menu-top" style="background-image:linear-gradient(rgba(146,64,14,.55),rgba(180,83,9,.7))">
                         <i class="fa-solid fa-screwdriver-wrench"></i>
                         <span>Herramienta</span>
                     </div>
@@ -816,7 +841,7 @@
                     </div>
                 </button>
                 <button class="cat-menu-card" data-cat="herrajes">
-                    <div class="cat-menu-top" style="background-image:linear-gradient(rgba(4,120,87,.55),rgba(15,118,110,.7)),url('https://www.phv.com.mx/images/hd/MED-FLO1.jpg');background-color:#0f766e">
+                    <div class="cat-menu-top" style="background-image:linear-gradient(rgba(4,120,87,.55),rgba(15,118,110,.7)),url('assets/images/ramar-puas-seguridad-producto.jpg');background-color:#0f766e">
                         <i class="fa-solid fa-shapes"></i>
                         <span>Herrajes</span>
                     </div>
@@ -857,6 +882,7 @@
             <div class="container">
                 <p class="cat-results-bar" id="cat-results-bar"></p>
                 <div class="product-grid-explorer" id="product-grid"></div>
+                <p class="cat-nota-imagenes"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Las fotos son de material de nuestra bodega o del fabricante de la marca que manejamos. Los dibujos son ilustrativos. Confirma medida, calibre y acabado al cotizar.</p>
             </div>
         </div>
     </section>
@@ -998,7 +1024,7 @@ const PRODUCTS = [
       {i:'fa-layer-group',l:'Espesor', v:'En fracción de pulgada (no en mm) · Largo 12.20 m'},
       {i:'fa-building',   l:'Usos',   v:'Columnas estructurales de gran sección'},
       {i:'fa-lightbulb',  l:'Tip',    v:'Norma ASTM A500; consulta espesor según tu carga'}
-    ], wa:'HSS%20Gran%20Secci%C3%B3n', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/HSS-scaled.jpg' },
+    ], wa:'HSS%20Gran%20Secci%C3%B3n' },
 
   { id:'rejilla', cat:'estructural',
     name:'Rejilla Electroforjada',
@@ -1010,7 +1036,7 @@ const PRODUCTS = [
       {i:'fa-expand',   l:'Panel',   v:'1 m × 6 m (140 kg)'},
       {i:'fa-building', l:'Usos',    v:'Pisos industriales, plataformas, rejillas de drenaje'},
       {i:'fa-lightbulb',l:'Tip',     v:'Recortar con disco abrasivo; soldar perímetro'}
-    ], wa:'Rejilla%20Electroforjada', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Rejilla-Electroforjada-de-Trafico-Ligero_Serviacero-Electroforjados-scaled.jpg' },
+    ], wa:'Rejilla%20Electroforjada' },
 
   /* ── COMERCIAL ────────────────────────────────── */
   { id:'varilla', cat:'comercial',
@@ -1024,7 +1050,7 @@ const PRODUCTS = [
       {i:'fa-certificate',l:'Grado',     v:'TA42 · TA52 · ASTM A-615 · NMX-B-506-CANACERO'},
       {i:'fa-building',   l:'Usos',      v:'Zapatas, castillos, losas, columnas'},
       {i:'fa-lightbulb',  l:'Tip',       v:'Empalmes mínimo 40 diámetros; óxido rojizo no es crítico'}
-    ], wa:'Varilla%20Corrugada%20(sobre%20pedido)', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Varilla-Corrugada-R-42-scaled.jpg' },
+    ], wa:'Varilla%20Corrugada%20(sobre%20pedido)' },
 
   { id:'alambron', cat:'comercial',
     name:'Alambrón',
@@ -1036,7 +1062,7 @@ const PRODUCTS = [
       {i:'fa-certificate',l:'Norma',     v:'NMX-B-302-CANACERO · Acero de bajo carbono'},
       {i:'fa-building',   l:'Usos',      v:'Alambre recocido, clavos, mallas, trefilado'},
       {i:'fa-lightbulb',  l:'Tip',       v:'Para malla electrosoldada se requiere alambrón calibre fino'}
-    ], wa:'Alambr%C3%B3n', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Alambron-Serviacero-Comercial.jpg' },
+    ], wa:'Alambr%C3%B3n' },
 
   { id:'lamina-acanalada', cat:'comercial',
     name:'Lámina Acanalada Galvanizada',
@@ -1060,7 +1086,7 @@ const PRODUCTS = [
       {i:'fa-ruler',    l:'Calibres',  v:'24 al 30 MSG · Ancho 3 y 4 pies'},
       {i:'fa-building', l:'Usos',      v:'Techos visibles, fachadas, canchas, naves'},
       {i:'fa-lightbulb',l:'Tip',       v:'No requiere pintura adicional; base de resina poliéster'}
-    ], wa:'L%C3%A1mina%20Prepintada', photo:'https://www.monten.mx/wp-content/uploads/2020/12/Productos-.png' },
+    ], wa:'L%C3%A1mina%20Prepintada' },
 
   { id:'lamina-teja', cat:'comercial',
     name:'Lámina Teja — Galvateja',
@@ -1085,7 +1111,7 @@ const PRODUCTS = [
       {i:'fa-expand',       l:'Formatos',     v:'4\'×8\' (1.22×2.44 m) · 4\'×10\' (1.22×3.05 m)'},
       {i:'fa-building',     l:'Usos',         v:'Placas base, refuerzos, manufactura general'},
       {i:'fa-lightbulb',    l:'Tip',          v:'Base para placas, refuerzos y corte con plasma; no requiere imprimante inmediato'}
-    ], wa:'L%C3%A1mina%20Negra', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Lamina-Caliente-scaled.jpg' },
+    ], wa:'L%C3%A1mina%20Negra' },
 
   { id:'malla', cat:'comercial',
     name:'Malla Electrosoldada',
@@ -1097,7 +1123,7 @@ const PRODUCTS = [
       {i:'fa-expand',   l:'Hoja',         v:'2.50 m × 40 m (98 kg)'},
       {i:'fa-building', l:'Usos',       v:'Losas delgadas, banquetas, firmes industriales'},
       {i:'fa-lightbulb',l:'Tip',        v:'Verificar que las cruces no tengan fracturas antes de colocar'}
-    ], wa:'Malla%20Electrosoldada', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Malla-scaled.jpg' },
+    ], wa:'Malla%20Electrosoldada' },
 
   { id:'tubo-cerquero', cat:'comercial', provider:'',
     name:'Tubo Cerquero Galvanizado',
@@ -1109,7 +1135,7 @@ const PRODUCTS = [
       {i:'fa-layer-group',l:'Cédula',    v:'Cédula 40 · Galvanizado en caliente NMX-H-077'},
       {i:'fa-building',   l:'Usos',      v:'Corrales ganaderos, cercas perimetrales, portones de campo'},
       {i:'fa-lightbulb',  l:'Tip',       v:'1½" o 2" para corrales de gran extensión; más rigidez que varilla'}
-    ], wa:'Tubo%20Cerquero%20Galvanizado', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Tubo-Mecanico_Serviacero-Comercial.jpg' },
+    ], wa:'Tubo%20Cerquero%20Galvanizado' },
 
   { id:'lamina-lata', cat:'comercial',
     name:'Lámina de Lata — Hojalata',
@@ -1142,7 +1168,7 @@ const PRODUCTS = [
       {i:'fa-expand',   l:'Formatos', v:'3′×8′, 3′×10′, 4′×8′, 4′×10′'},
       {i:'fa-building', l:'Usos',     v:'Muebles metálicos, estantería, HVAC, canalones'},
       {i:'fa-lightbulb',l:'Tip',      v:'El galvanizado resiste corrosión sin pintura adicional'}
-    ], wa:'L%C3%A1mina%20Galvanizada', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Lamina-Galvanizada-Lisa-Serviacero-Comercial.jpg' },
+    ], wa:'L%C3%A1mina%20Galvanizada' },
 
   { id:'lamina-fria', cat:'comercial',
     name:'Aceros Cold Rolled',
@@ -1154,7 +1180,7 @@ const PRODUCTS = [
       {i:'fa-expand',   l:'Formatos', v:'3′×8′, 3′×10′, 4′×8′, 4′×10′'},
       {i:'fa-building', l:'Usos',     v:'Gabinetes, estantería, carcasas, electrodomésticos'},
       {i:'fa-lightbulb',l:'Tip',      v:'Mejores tolerancias que lámina caliente; imprimante para exteriores'}
-    ], wa:'L%C3%A1mina%20Fr%C3%ADa', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Lamina-Fria-Serviacero-Comercial.jpg' },
+    ], wa:'L%C3%A1mina%20Fr%C3%ADa' },
 
   { id:'losacero', cat:'comercial',
     name:'Lozacero',
@@ -1166,7 +1192,7 @@ const PRODUCTS = [
       {i:'fa-layer-group',l:'Calibre', v:'Solo cal. 22 · Largo 6 m'},
       {i:'fa-building',  l:'Usos',     v:'Entrepiso, mezzanines, losas industriales'},
       {i:'fa-lightbulb', l:'Tip',      v:'El Lozacero 25 es el más usado en entrepisos de casa y local'}
-    ], wa:'Lozacero', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Lozacero-30-Serviacero-Comercial.jpg' },
+    ], wa:'Lozacero' },
 
   { id:'soleras', cat:'comercial',
     name:'Soleras — Pletinas A-36',
@@ -1214,7 +1240,7 @@ const PRODUCTS = [
       {i:'fa-ruler',    l:'Batientes P',v:'P-100 a P-400 · Cal. 18/20 · L=6.00 m'},
       {i:'fa-ruler',    l:'Travesaño K',v:'K-100, K-150, K-200, K-300 · Cal. 18/20 · L=6.00 m'},
       {i:'fa-lightbulb',l:'Tip',      v:'Combinar M (jamba) + P (batiente) + K (travesaño) del mismo tamaño'}
-    ], wa:'Marco%20de%20Puerta', photo:'https://www.fortacero.com/wp-content/uploads/2024/12/PMP_M_225.jpeg' },
+    ], wa:'Marco%20de%20Puerta' },
 
   { id:'perfiles-ventana', cat:'comercial', provider:'',
     name:'Perfiles para Ventana',
@@ -1239,7 +1265,7 @@ const PRODUCTS = [
       {i:'fa-arrows-up-down',l:'Largos',v:'3.05 / 4.05 / 5.05 / 6.10 m · Paq. 50 pzas'},
       {i:'fa-building', l:'Usos',    v:'Abarrotes, farmacia, papelería, taller mecánico, local de plaza, bodega, cochera y estacionamiento'},
       {i:'fa-lightbulb',l:'Tip',     v:'Requiere guías y tambor; calcular peso para dimensionar resorte'}
-    ], wa:'Cortina%20Met%C3%A1lica', photo:'https://www.fortacero.com/wp-content/uploads/2024/12/TiraCortina1.jpeg' },
+    ], wa:'Cortina%20Met%C3%A1lica' },
 
   { id:'placa-acero', cat:'comercial',
     name:'Placa de Acero A-36',
@@ -1251,7 +1277,7 @@ const PRODUCTS = [
       {i:'fa-expand',   l:'Formatos',  v:'4′×8′, 4′×10′, 4′×20′, 5′×10′, 5′×20′'},
       {i:'fa-building', l:'Usos',      v:'Bases de maquinaria, refuerzos, chasis pesados'},
       {i:'fa-scissors',  l:'Corte',     v:'Te la cortamos al largo que necesites'}
-    ], wa:'Placa%20de%20Acero%20A-36', photo:'https://www.serviacero.com/wp-content/uploads/2025/12/Placa-de-Acero-scaled.jpg' },
+    ], wa:'Placa%20de%20Acero%20A-36' },
 
   { id:'lamitec-elegance', cat:'comercial', provider:'',
     name:'Panel Elegance — Estampado Portones',
@@ -1289,7 +1315,7 @@ const PRODUCTS = [
       {i:'fa-layer-group',l:'Calibre',  v:'Cal. 20 · Espesor 0.0359″ · Largo 6.00 m'},
       {i:'fa-building',   l:'Usos',     v:'Canceles decorativos, divisiones y puertas de herrería'},
       {i:'fa-lightbulb',  l:'Tip',      v:'El modelo 171 es más ligero; usar 170 donde se requiera mayor rigidez'}
-    ], wa:'Duela%20%20170%20171', photo:'https://www.fortacero.com/wp-content/uploads/2024/12/PMP_M_225.jpeg' },
+    ], wa:'Duela%20%20170%20171' },
 
   /* ── ESPECIALIZADO ───────────────────────────── */
   { id:'barra-hueca', cat:'especializado',
@@ -1341,7 +1367,7 @@ const PRODUCTS = [
       {i:'fa-building',   l:'Usos 304',   v:'Cocinas industriales, equipo alimenticio, química, ambientes salinos'},
       {i:'fa-building',   l:'Usos 430',   v:'Cancelería decorativa, electrodomésticos, interiores secos'},
       {i:'fa-lightbulb',  l:'Tip',        v:'304 para exterior y contacto con alimentos; 430 sólo decorativo, no resiste cloruros'}
-    ], page:'catalogo.html', wa:'Acero%20Inoxidable%20304%20y%20430', photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Rods_AL_AA1050_and_AISI_304_Stainless_steel.jpg/800px-Rods_AL_AA1050_and_AISI_304_Stainless_steel.jpg' },
+    ], page:'catalogo.html', wa:'Acero%20Inoxidable%20304%20y%20430' },
 
   { id:'bronce', cat:'especializado',
     name:'Bronce',
@@ -1391,7 +1417,7 @@ const PRODUCTS = [
       {i:'fa-fire',       l:'Propiedades', v:'Alta resistencia al desgaste · Buena absorción de vibración · Frágil a impacto'},
       {i:'fa-building',   l:'Usos',        v:'Bases de máquina, contrapesos, poleas, bujes, piezas con buena lubricación'},
       {i:'fa-lightbulb',  l:'Tip',         v:'No soldable convencional — para reparar usar electrodo de níquel'}
-    ], page:'catalogo.html', wa:'Fierro%20Colado', photo:'https://images.pexels.com/photos/6804265/pexels-photo-6804265.jpeg' },
+    ], page:'catalogo.html', wa:'Fierro%20Colado' },
 
   { id:'tubo-cardan', cat:'especializado',
     name:'Tubo Cardán',
@@ -1416,7 +1442,7 @@ const PRODUCTS = [
       {i:'fa-fire',       l:'Propiedades', v:'Mayor dureza en caliente que HSS común · Filo más estable'},
       {i:'fa-building',   l:'Usos',        v:'Torneado de aceros duros, inoxidable 304/430, fundiciones y aleaciones'},
       {i:'fa-lightbulb',  l:'Tip',         v:'Afilar con piedra de óxido de aluminio fina y refrigerar — el cobalto es sensible al recocido'}
-    ], page:'catalogo.html', wa:'Buriles%20de%20Cobalto', photo:'https://upload.wikimedia.org/wikipedia/commons/a/a4/Tool_bits.jpg' },
+    ], page:'catalogo.html', wa:'Buriles%20de%20Cobalto' },
 
   { id:'buriles-calzados', cat:'consumibles',
     name:'Buriles Calzados (con Plaquita)',
@@ -1429,7 +1455,7 @@ const PRODUCTS = [
       {i:'fa-fire',       l:'Propiedades', v:'Velocidades de corte 3–5× mayores que HSS · Sin afilado, sólo cambio de plaquita'},
       {i:'fa-building',   l:'Usos',        v:'Torneado de producción · Cilindrado, refrentado, ranurado, roscado'},
       {i:'fa-lightbulb',  l:'Tip',         v:'Elegir geometría de plaquita según material (CN para acero, CC para aluminio, CCMT para inox)'}
-    ], page:'catalogo.html', wa:'Buriles%20Calzados', photo:'https://upload.wikimedia.org/wikipedia/commons/a/a2/LatheCarbideTippedTool.jpg' },
+    ], page:'catalogo.html', wa:'Buriles%20Calzados' },
 
   { id:'brocas-centro', cat:'consumibles',
     name:'Brocas de Centro',
@@ -1442,7 +1468,7 @@ const PRODUCTS = [
       {i:'fa-fire',       l:'Tipos',       v:'Tipo A (un ángulo) · Tipo B (con avellanado de protección 120°)'},
       {i:'fa-building',   l:'Usos',        v:'Punto de contrapunto en torno, guía para barrenos profundos, marcado'},
       {i:'fa-lightbulb',  l:'Tip',         v:'Usar siempre con refrigerante — son frágiles y se rompen fácil sin lubricación'}
-    ], page:'catalogo.html', wa:'Brocas%20de%20Centro', photo:'https://upload.wikimedia.org/wikipedia/commons/d/df/CenterDrills123456.jpg' },
+    ], page:'catalogo.html', wa:'Brocas%20de%20Centro' },
 
   /* ── PINTURA ─────────────────────────────────── */
   { id:'pintura-vinil', cat:'pintura', provider:'PintuMex',
@@ -1483,7 +1509,7 @@ const PRODUCTS = [
       {i:'fa-shield-halved',l:'Protección',   v:'Adherencia anticorrosiva sobre metal limpio'},
       {i:'fa-building',   l:'Usos',           v:'PTR, rejas, portones, puertas, estructuras'},
       {i:'fa-lightbulb',  l:'Tip',            v:'Usar primario compatible con el esmalte de acabado'}
-    ], wa:'Primarios%20Anticorrosivos', photo:'https://pintumex.com.mx/wp-content/uploads/Mock-Up-2025-Esmaflex-Frente-19-L.png' },
+    ], wa:'Primarios%20Anticorrosivos' },
 
   { id:'selladores', cat:'pintura', provider:'PintuMex',
     name:'Selladores y Preparación',
@@ -1508,7 +1534,7 @@ const PRODUCTS = [
       {i:'fa-bolt',      l:'Potencia', v:'750W a 2,200W · Corte, desbaste y pulido'},
       {i:'fa-certificate',l:'Marcas',  v:'Makita GA series · DeWalt DWE/DCG series'},
       {i:'fa-lightbulb', l:'Tip',      v:'4½" para corte fino; 7" para desbaste en obra pesada'}
-    ], page:'catalogo.html', wa:'Amoladora%20Angular%20Makita%20DeWalt', photo:'https://www.makita.com.mx/wp-content/uploads/2018/03/GA7030_Esmeriladora_angular.jpg' },
+    ], page:'catalogo.html', wa:'Amoladora%20Angular%20Makita%20DeWalt' },
 
   { id:'taladro', cat:'herramienta', provider:'Makita · DeWalt · Oakland',
     name:'Taladros y Rotomartillos',
@@ -1520,7 +1546,7 @@ const PRODUCTS = [
       {i:'fa-bolt',      l:'Potencia',  v:'710W–900W eléctrico · 18V/20V inalámbrico'},
       {i:'fa-certificate',l:'Marcas',   v:'Makita HP/HR series · DeWalt DWD/D25 series'},
       {i:'fa-lightbulb', l:'Tip',       v:'SDS-Plus para concreto; mandril 13mm para metal'}
-    ], page:'catalogo.html', wa:'Taladro%20Rotomartillo%20Makita%20DeWalt', photo:'https://www.makita.com.mx/wp-content/uploads/2023/03/HR2475_Rotomartillo-electro-neumatico.png' },
+    ], page:'catalogo.html', wa:'Taladro%20Rotomartillo%20Makita%20DeWalt' },
 
   { id:'cortadora-metal', cat:'herramienta', provider:'Makita · DeWalt · Oakland',
     name:'Cortadoras y Sierras',
@@ -1532,7 +1558,7 @@ const PRODUCTS = [
       {i:'fa-bolt',      l:'Potencia',v:'1,200W–2,000W · Hojas bimetálicas incluidas'},
       {i:'fa-certificate',l:'Marcas', v:'Makita LC/JR · DeWalt DW/DCS series'},
       {i:'fa-lightbulb', l:'Tip',     v:'Usar lubricante de corte en PTR y HSS para mayor vida de hoja'}
-    ], page:'catalogo.html', wa:'Cortadora%20Sierra%20Metal%20Makita%20DeWalt', photo:'https://www.makita.com.mx/wp-content/uploads/2018/03/4131_Cortadora-circular-de-metal.jpg' },
+    ], page:'catalogo.html', wa:'Cortadora%20Sierra%20Metal%20Makita%20DeWalt' },
 
   { id:'atornillador', cat:'herramienta', provider:'Makita · DeWalt',
     name:'Atornilladores de Impacto',
@@ -1544,7 +1570,7 @@ const PRODUCTS = [
       {i:'fa-battery-full',l:'Batería',v:'18V/20V Li-Ion · Carga en 30–60 min'},
       {i:'fa-certificate',l:'Marcas', v:'Makita DTD/BTD · DeWalt DCF series'},
       {i:'fa-lightbulb', l:'Tip',     v:'Para tornillería estructural usar punta de impacto; no estándar'}
-    ], page:'catalogo.html', wa:'Atornillador%20Impacto%20Makita%20DeWalt', photo:'https://www.makita.com.mx/wp-content/uploads/2023/03/DTD157_-Atornillador-de-impacto-inalambrico-3.png' },
+    ], page:'catalogo.html', wa:'Atornillador%20Impacto%20Makita%20DeWalt' },
 
   { id:'herramienta-manual', cat:'herramienta', provider:'Truper',
     name:'Herramienta Manual Truper',
@@ -1568,7 +1594,7 @@ const PRODUCTS = [
       {i:'fa-certificate',  l:'Norma',     v:'EN 12413 · ANSI B7.1'},
       {i:'fa-hammer',       l:'Material',  v:'Acero al carbón, lámina, perfiles, barras'},
       {i:'fa-lightbulb',    l:'Tip',       v:'Para corte limpio usar el disco al 90° — nunca de lado'}
-    ], page:'catalogo.html', wa:'Discos%20de%20Corte%20Metal', photo:'https://upload.wikimedia.org/wikipedia/commons/1/1c/Abrasive-Discs_41508-480x360_%285000494680%29.jpg' },
+    ], page:'catalogo.html', wa:'Discos%20de%20Corte%20Metal' },
 
   { id:'discos-corte-inox', cat:'consumibles',
     name:'Discos de Corte para Inoxidable',
@@ -1580,7 +1606,7 @@ const PRODUCTS = [
       {i:'fa-certificate',  l:'Norma',     v:'EN 12413 · Apto acero inoxidable y aluminio'},
       {i:'fa-hammer',       l:'Usos',      v:'Acero inoxidable, aluminio, tubería sanitaria'},
       {i:'fa-lightbulb',    l:'Tip',       v:'Usar disco exclusivo para inox; no intercambiar con discos de acero negro'}
-    ], page:'catalogo.html', wa:'Discos%20Corte%20Inoxidable', photo:'https://upload.wikimedia.org/wikipedia/commons/f/f1/GrindingCutOffWheelDiamond.jpg' },
+    ], page:'catalogo.html', wa:'Discos%20Corte%20Inoxidable' },
 
   { id:'rotomartillo-oakland', cat:'herramienta', provider:'Oakland',
     name:'Rotomartillo Oakland',
@@ -1592,7 +1618,7 @@ const PRODUCTS = [
       {i:'fa-arrows-spin',  l:'Modos',     v:'Rotación + martillo · Solo rotación · Solo martillo'},
       {i:'fa-weight-hanging',l:'Peso',     v:'~3.2 kg'},
       {i:'fa-lightbulb',    l:'Tip',       v:'Usar brocas para concreto con punta de carburo; lubricar vástago SDS'}
-    ], page:'catalogo.html', wa:'Rotomartillo%20Oakland', photo:'https://equiposmaher.com/cdn/shop/files/OAKTR-9013.png?v=1709935229&width=1946' },
+    ], page:'catalogo.html', wa:'Rotomartillo%20Oakland' },
 
   { id:'soldadora-oakland', cat:'herramienta', provider:'Oakland',
     name:'Soldadora Inversora Oakland',
@@ -1604,7 +1630,7 @@ const PRODUCTS = [
       {i:'fa-weight-hanging',l:'Peso',     v:'~5–7 kg — fácil transporte'},
       {i:'fa-list',         l:'Modelos',   v:'SP-130 · SP-200 · MIG-130I · MIG-200I (multiproceso)'},
       {i:'fa-lightbulb',    l:'Tip',       v:'Para electrodo 6013/7018 hasta 1/8" usar el SP-200; para hojalatería el SP-130'}
-    ], page:'catalogo.html', wa:'Soldadora%20Oakland', photo:'https://equiposmaher.com/cdn/shop/files/OAKSP-200.png' },
+    ], page:'catalogo.html', wa:'Soldadora%20Oakland' },
 
   { id:'compresor-goni', cat:'herramienta', provider:'Goni',
     name:'Compresor de Banda Goni',
@@ -1751,7 +1777,7 @@ const PRODUCTS = [
       {i:'fa-arrows-up-down',l:'Largo',    v:'6.00 m y 6.10 m estándar · Corte a medida disponible'},
       {i:'fa-scissors',  l:'Corte',     v:'Con disco, al largo que necesites'},
       {i:'fa-lightbulb',    l:'Tip',       v:'Tiempos de entrega cortos'}
-    ], page:'catalogo.html', wa:'PTR%20Estructural', photo:'https://images.pexels.com/photos/15508177/pexels-photo-15508177.jpeg' },
+    ], page:'catalogo.html', wa:'PTR%20Estructural' },
 
   { id:'bisagras-phv', cat:'herrajes', provider:'PHV',
     name:'Bisagras Tubulares PHV',
@@ -1764,7 +1790,7 @@ const PRODUCTS = [
       {i:'fa-fire',         l:'Aplicación',v:'Soldable directo a marco y hoja de acero'},
       {i:'fa-building',     l:'Usos',      v:'Ventanas metálicas · Puertas · Canceles · Portones'},
       {i:'fa-lightbulb',    l:'Tip',       v:'Usar mínimo 3 bisagras en puertas de más de 1.80 m de alto'}
-    ], page:'catalogo.html', wa:'Bisagras%20Tubulares%20PHV', photo:'https://www.phv.com.mx/images/hp/BIS-T10.jpg', photoPos:'center center' },
+    ], page:'catalogo.html', wa:'Bisagras%20Tubulares%20PHV' },
 
   { id:'cerrojos-pasadores-phv', cat:'herrajes', provider:'PHV',
     name:'Cerrojos y Pasadores PHV',
@@ -1777,7 +1803,7 @@ const PRODUCTS = [
       {i:'fa-fire',         l:'Aplicación',v:'Todos soldables al marco o hoja de acero'},
       {i:'fa-building', l:'Usos', v:'Portones · Puertas dobles · Canceles · Rejas'},
       {i:'fa-lightbulb',    l:'Tip',       v:'Cerrojo galvanizado para exteriores, negro para interiores o pintar'}
-    ], page:'catalogo.html', wa:'Cerrojos%20y%20Pasadores%20PHV', photo:'https://www.phv.com.mx/images/hp/CER-MACN.jpg', photoPos:'center center' },
+    ], page:'catalogo.html', wa:'Cerrojos%20y%20Pasadores%20PHV' },
 
   { id:'jaladeras-manijas-phv', cat:'herrajes', provider:'PHV',
     name:'Jaladeras y Manijas PHV',
@@ -1790,7 +1816,7 @@ const PRODUCTS = [
       {i:'fa-fire',         l:'Fijación',  v:'Soldable o atornillada según modelo'},
       {i:'fa-building',     l:'Usos',      v:'Puertas de herrería · Portones · Canceles · Rejas'},
       {i:'fa-lightbulb',    l:'Tip',       v:'Jaladeras coloniales dan acabado más formal a portones residenciales'}
-    ], page:'catalogo.html', wa:'Jaladeras%20y%20Manijas%20PHV', photo:'https://www.phv.com.mx/images/hp/JAL.jpg', photoPos:'center center' },
+    ], page:'catalogo.html', wa:'Jaladeras%20y%20Manijas%20PHV' },
 
   { id:'jaladera-h-phv', cat:'herrajes', provider:'PHV',
     name:'Jaladera H — Entrada Principal',
@@ -1815,7 +1841,7 @@ const PRODUCTS = [
       {i:'fa-weight-hanging',l:'Capacidad', v:'Desde 15 kg hasta 300 kg según modelo'},
       {i:'fa-building',     l:'Usos',       v:'Portones residenciales · Bodegas · Naves industriales'},
       {i:'fa-lightbulb',    l:'Tip',        v:'Calcular peso real del portón y elegir carretilla con 20% de margen'}
-    ], page:'catalogo.html', wa:'Carretillas%20y%20Rieles%20Portones%20PHV', photo:'https://www.phv.com.mx/images/hp/CAR-350.jpg', photoPos:'center center' },
+    ], page:'catalogo.html', wa:'Carretillas%20y%20Rieles%20Portones%20PHV' },
 
   /* ── HERRAJES DECORATIVOS — PHV ── */
   { id:'forja-artistica-phv', cat:'herrajes', provider:'PHV',
@@ -1829,7 +1855,7 @@ const PRODUCTS = [
       {i:'fa-palette',      l:'Acabado',   v:'Pintura negra · Acepta esmalte de cualquier color'},
       {i:'fa-building',     l:'Usos',      v:'Portones · Barandales · Rejas decorativas · Escaleras'},
       {i:'fa-lightbulb',    l:'Tip',       v:'Combinar 2-3 modelos distintos da mayor riqueza visual al portón'}
-    ], page:'catalogo.html', wa:'Forja%20Art%C3%ADstica%20PHV', photo:'https://www.phv.com.mx/images/hd/FA-A.jpg', photoPos:'center center' },
+    ], page:'catalogo.html', wa:'Forja%20Art%C3%ADstica%20PHV' },
 
   { id:'hojas-flores-phv', cat:'herrajes', provider:'PHV',
     name:'Hojas y Flores Decorativas PHV',
@@ -1842,7 +1868,7 @@ const PRODUCTS = [
       {i:'fa-fire',         l:'Fijación',  v:'Soldable o pegado con adhesivo estructural'},
       {i:'fa-building',     l:'Usos',      v:'Canceles · Portones ornamentales · Barandales · Rejas'},
       {i:'fa-lightbulb',    l:'Tip',       v:'Hojas pequeñas en módulos de 30×30 cm dan relleno económico a cancel'}
-    ], page:'catalogo.html', wa:'Hojas%20y%20Flores%20Decorativas%20PHV', photo:'https://www.phv.com.mx/images/hd/FA-HOAM.jpg', photoPos:'center center' },
+    ], page:'catalogo.html', wa:'Hojas%20y%20Flores%20Decorativas%20PHV' },
 
   { id:'medallones-nudos-phv', cat:'herrajes', provider:'PHV',
     name:'Medallones y Nudos Decorativos PHV',
@@ -1855,7 +1881,7 @@ const PRODUCTS = [
       {i:'fa-fire',         l:'Fijación',  v:'Soldable directamente al perfil'},
       {i:'fa-building',     l:'Usos',      v:'Centros de portón · Cruces de cancel · Puntos focales ornamentales'},
       {i:'fa-lightbulb',    l:'Tip',       v:'Un medallón al centro del portón multiplica el valor percibido'}
-    ], page:'catalogo.html', wa:'Medallones%20y%20Nudos%20PHV', photo:'https://www.phv.com.mx/images/hd/MED-FLO1.jpg', photoPos:'center center' },
+    ], page:'catalogo.html', wa:'Medallones%20y%20Nudos%20PHV' },
 
   { id:'puntas-lanzas-phv', cat:'herrajes', provider:'PHV',
     name:'Puntas y Lanzas',
@@ -1868,7 +1894,7 @@ const PRODUCTS = [
       {i:'fa-atom',         l:'Material',  v:'Hierro fundido · Acabado negro'},
       {i:'fa-building',     l:'Usos',      v:'Remate de rejas · Portones · Barda · Bardas con chuzos'},
       {i:'fa-lightbulb',    l:'Tip',       v:'Puntas estándar en rejas de seguridad; lanzas ornamentales en portones'}
-    ], page:'catalogo.html', wa:'Puntas%20y%20Lanzas%20PHV', photo:'https://www.phv.com.mx/images/hd/PUN-L12.jpg', photoPos:'center center' },
+    ], page:'catalogo.html', wa:'Puntas%20y%20Lanzas%20PHV' },
 
   { id:'puas-seguridad', cat:'herrajes',
     name:'Púas de Seguridad',
@@ -1895,7 +1921,7 @@ const PRODUCTS = [
       {i:'fa-fire',         l:'Aplicación',v:'Soldadura de acero al carbón · Estructuras ligeras · Herrería'},
       {i:'fa-building',     l:'Usos',      v:'Canceles · Portones · Rejas · Estructuras metálicas en general'},
       {i:'fa-lightbulb',    l:'Tip',       v:'6013 verde especial para vertical descendente — ideal en tubería'}
-    ], page:'catalogo.html', wa:'Electrodos%206013', photo:'https://upload.wikimedia.org/wikipedia/commons/4/41/Arc_welding_electrodes_and_electrode_holder.triddle.jpg' },
+    ], page:'catalogo.html', wa:'Electrodos%206013' },
 
   { id:'electrodo-6010', cat:'consumibles', provider:'Lincoln',
     name:'Electrodos 6010',
@@ -1919,7 +1945,7 @@ const PRODUCTS = [
       {i:'fa-fire',         l:'Aplicación',v:'Aceros al carbón · Maquinaria pesada · Estructuras sísmicas'},
       {i:'fa-building',     l:'Usos',      v:'Columnas · Trabes · Uniones críticas · Naves industriales'},
       {i:'fa-lightbulb',    l:'Tip',       v:'Mantener electrodos secos — almacenar en horno o bolsa sellada'}
-    ], page:'catalogo.html', wa:'Electrodos%207018', photo:'https://upload.wikimedia.org/wikipedia/commons/8/8f/Types_of_welding_electrode.jpg' },
+    ], page:'catalogo.html', wa:'Electrodos%207018' },
 
   { id:'microalambre-axt', cat:'consumibles',
     name:'Microalambre MIG (AXT)',
@@ -1932,7 +1958,7 @@ const PRODUCTS = [
       {i:'fa-fire',         l:'Proceso',   v:'MIG sin gas (flux-cored) y MIG con gas'},
       {i:'fa-building',     l:'Usos',      v:'Soldadura de acero al carbón en herrería, lámina y reparación general'},
       {i:'fa-lightbulb',    l:'Tip',       v:'Para inoxidable o aluminio pedir microalambre específico — no usar el de acero'}
-    ], page:'catalogo.html', wa:'Microalambre%20MIG%20AXT', photo:'https://upload.wikimedia.org/wikipedia/commons/0/09/Wire_electrode_CRAFTOMAT_0.6_mm_for_welding.jpg' },
+    ], page:'catalogo.html', wa:'Microalambre%20MIG%20AXT' },
 
   /* ── PRODUCTOS DEL FLYER (Oaxaca) ─────────────── */
 
@@ -1946,7 +1972,7 @@ const PRODUCTS = [
       {i:'fa-palette',    l:'Acabados',    v:'Madera natural · Nogal · Caoba · Blanco · Gris'},
       {i:'fa-building',   l:'Usos',        v:'Plafones, muros decorativos, fachadas residenciales y comerciales'},
       {i:'fa-lightbulb',  l:'Tip',         v:'Combinar 2 anchos da relieve visual; instalar con perfil de remate del mismo color'}
-    ], page:'catalogo.html', wa:'Arquiduela', photo:'https://images.pexels.com/photos/9685870/pexels-photo-9685870.jpeg' },
+    ], page:'catalogo.html', wa:'Arquiduela' },
 
   { id:'tubos-negros', cat:'estructural',
     name:'Tubos Negros (Cédula)',
@@ -1970,7 +1996,7 @@ const PRODUCTS = [
       {i:'fa-palette',    l:'Acabados',    v:'Galvanizado · Negro · Pintado'},
       {i:'fa-building',   l:'Usos',        v:'Canceles, portones, barandales y herrería ornamental residencial'},
       {i:'fa-lightbulb',  l:'Tip',         v:'Combinar tubo trenzado con piezas de forja artística para acabado clásico'}
-    ], page:'catalogo.html', wa:'Tubo%20Trenzado', photo:'https://images.pexels.com/photos/9963111/pexels-photo-9963111.jpeg' },
+    ], page:'catalogo.html', wa:'Tubo%20Trenzado' },
 
   { id:'viga-ips', cat:'estructural',
     name:'Vigas IPS',
@@ -1982,7 +2008,7 @@ const PRODUCTS = [
       {i:'fa-certificate',l:'Norma',       v:'ASTM A-36'},
       {i:'fa-building',   l:'Usos',        v:'Entrepisos, escaleras metálicas, soportes de maquinaria'},
       {i:'fa-lightbulb',  l:'Tip',         v:'Para cargas mayores y patines paralelos preferir IPR; IPS es económica para cargas medias'}
-    ], page:'catalogo.html', wa:'Vigas%20IPS', photo:'https://images.pexels.com/photos/36003962/pexels-photo-36003962.jpeg' },
+    ], page:'catalogo.html', wa:'Vigas%20IPS' },
 
   { id:'canalon-pluvial', cat:'comercial',
     name:'Canalón Pluvial',
@@ -1994,7 +2020,7 @@ const PRODUCTS = [
       {i:'fa-palette',    l:'Acabados',    v:'Galvanizado · Prepintado'},
       {i:'fa-building',   l:'Accesorios',  v:'Bajadas, codos, abrazaderas, cajas de unión'},
       {i:'fa-lightbulb',  l:'Tip',         v:'Calcular pendiente mínima 0.5% para evitar empozamientos'}
-    ], page:'catalogo.html', wa:'Canal%C3%B3n%20Pluvial', photo:'https://images.pexels.com/photos/25907259/pexels-photo-25907259.jpeg' },
+    ], page:'catalogo.html', wa:'Canal%C3%B3n%20Pluvial' },
 
   { id:'metal-desplegado', cat:'comercial',
     name:'Metal Desplegado',
@@ -2053,7 +2079,7 @@ const PRODUCTS = [
       {i:'fa-palette',    l:'Acabados',    v:'Galvanizada · Forrada en PVC verde / negro'},
       {i:'fa-building',   l:'Usos',        v:'Cercas perimetrales, canchas, escuelas, predios'},
       {i:'fa-lightbulb',  l:'Tip',         v:'Para alta seguridad usar cal. 10 con altura 2.50 m + 3 hilos de púas arriba'}
-    ], page:'catalogo.html', wa:'Malla%20Cicl%C3%B3nica', photo:'https://images.pexels.com/photos/25284622/pexels-photo-25284622.jpeg' },
+    ], page:'catalogo.html', wa:'Malla%20Cicl%C3%B3nica' },
 
   { id:'lamina-acrilica', cat:'comercial',
     name:'Lámina Acrílica',
@@ -2078,7 +2104,7 @@ const PRODUCTS = [
       {i:'fa-palette',    l:'Acabado',     v:'Galvanizada (zinc en caliente)'},
       {i:'fa-building',   l:'Usos',        v:'Techos de bodegas, casas económicas, palapas, galerones'},
       {i:'fa-lightbulb',  l:'Tip',         v:'Calibre 26 es el más vendido para casas; cal. 30 sirve para cubiertas ligeras'}
-    ], page:'catalogo.html', wa:'L%C3%A1mina%20Galvarro', photo:'https://images.pexels.com/photos/11254945/pexels-photo-11254945.jpeg' },
+    ], page:'catalogo.html', wa:'L%C3%A1mina%20Galvarro' },
 
   { id:'vaguetas', cat:'comercial',
     name:'Vaguetas',
@@ -2090,7 +2116,7 @@ const PRODUCTS = [
       {i:'fa-palette',    l:'Acabados',    v:'Negra · Galvanizada'},
       {i:'fa-building',   l:'Usos',        v:'Marcos de ventana, refuerzos de cancel, herrería ligera'},
       {i:'fa-lightbulb',  l:'Tip',         v:'Para ventanas de aluminio usar la vagueta cal. 18; para marcos pesados cal. 14'}
-    ], page:'catalogo.html', wa:'Vaguetas', photo:'https://images.pexels.com/photos/19825178/pexels-photo-19825178.jpeg' },
+    ], page:'catalogo.html', wa:'Vaguetas' },
 
   { id:'lamina-rectangular', cat:'comercial',
     name:'Lámina Rectangular (Lisa)',
@@ -2101,7 +2127,7 @@ const PRODUCTS = [
       {i:'fa-rotate',     l:'Acabados',    v:'Negra (HR) · Fría (CR) · Galvanizada'},
       {i:'fa-building',   l:'Usos',        v:'Manufactura, hojalatería, ductos, cubiertas, refuerzos'},
       {i:'fa-lightbulb',  l:'Tip',         v:'Para piezas a soldar pedir HR; para acabados finos pedir CR'}
-    ], page:'catalogo.html', wa:'L%C3%A1mina%20Rectangular', photo:'https://images.pexels.com/photos/12289199/pexels-photo-12289199.jpeg' }
+    ], page:'catalogo.html', wa:'L%C3%A1mina%20Rectangular' }
 ];
 
 /* ════════════════════════════════════════
@@ -2233,7 +2259,7 @@ function render(query = ''){
     const provBadge = p.provider ? `<span class="pcard-badge pcard-badge-prov">${p.provider}</span>` : '';
     const thumbClass = p.photo ? 'pcard-thumb pcard-thumb--photo' : 'pcard-thumb';
     const pos = p.photoPos || 'center center';
-    const thumbContent = p.photo ? `<img src="${p.photo}" alt="${p.name}" class="pcard-photo" loading="lazy" referrerpolicy="no-referrer" style="object-position:${pos}" onerror="this.onerror=null;this.src='assets/images/steel_beams_1774503028306.webp'">` : p.svg;
+    const thumbContent = p.photo ? `<img src="${p.photo}" alt="${p.name}" class="pcard-photo" loading="lazy" referrerpolicy="no-referrer" style="object-position:${pos}" onerror="fotoFallo(this,'${p.id}')">` : (p.svg || sinFoto());
     return `<div class="pcard" data-cat="${p.cat}" onclick="openModal('${p.id}')">
       <div class="pcard-accent"></div>
       <div class="${thumbClass}">${thumbContent}</div>
@@ -2245,6 +2271,23 @@ function render(query = ''){
       <div class="pcard-arrow"><i class="fa-solid fa-arrow-right"></i></div>
     </div>`;
   }).join('');
+}
+
+/* ⛔ Nunca se muestra una imagen que no sea del producto que se vende.
+   Antes, si la foto del proveedor no cargaba, se ponía en su lugar una foto
+   genérica de vigas en una obra — y eso salía en herrajes, cerraduras, en lo
+   que fuera. Un cliente puede exigir "el que sale en la foto", y Profeco le
+   daría la razón (LFPC art. 32: la publicidad debe ser veraz y no inducir a
+   error). Ahora, si no hay foto o no carga: el dibujo del producto, y si
+   tampoco hay dibujo, un recuadro que lo dice tal cual. */
+function sinFoto(){
+  return `<div class="foto-pendiente"><i class="fa-solid fa-camera" aria-hidden="true"></i><span>Pide la foto por WhatsApp</span></div>`;
+}
+function fotoFallo(img, id){
+  const p = PRODUCTS.find(x => x.id === id);
+  const caja = img.parentElement;
+  if (caja) caja.classList.remove('pcard-thumb--photo');
+  img.outerHTML = (p && p.svg) || sinFoto();
 }
 
 function openModal(id){
@@ -2262,7 +2305,7 @@ function openModal(id){
     <div class="pmodal-accent ${p.cat}"></div>
     <div class="pmodal-inner">
       <div class="pmodal-left">
-        ${p.photo ? `<img src="${p.photo}" alt="${p.name}" class="pmodal-photo" loading="lazy" referrerpolicy="no-referrer" style="object-position:${p.photoPos||'center center'}" onerror="this.onerror=null;this.src='assets/images/steel_beams_1774503028306.webp'">` : p.svg}
+        ${p.photo ? `<img src="${p.photo}" alt="${p.name}" class="pmodal-photo" loading="lazy" referrerpolicy="no-referrer" style="object-position:${p.photoPos||'center center'}" onerror="fotoFallo(this,'${p.id}')">` : (p.svg || sinFoto())}
         ${p.svgNote ? `<p class="pmodal-svg-note">${p.svgNote}</p>` : ''}
       </div>
       <div class="pmodal-right">

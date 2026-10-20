@@ -138,7 +138,7 @@ From the company's own printed history sheet, supplied by the user. `nosotros.ht
 
 ## Privacy notice — keep it accurate
 
-`aviso-privacidad.html` describes the **real** data flows of this site, not boilerplate: the contact form is processed by FormSubmit and lands in Gmail; Google Maps, the Meta page plugin, Google Fonts and Cloudflare are embedded and see the visitor's IP; the site is hosted on Cloudflare (was Netlify until 2026-09-21; section 4 of the notice was corrected in the same commit, and the notice date bumped to 2026-09-21).
+`aviso-privacidad.html` describes the **real** data flows of this site, not boilerplate: the contact form is processed by FormSubmit and lands in Gmail; Google Maps, the Meta page plugin, Google Fonts and Cloudflare are embedded and see the visitor's IP; the site is hosted on Cloudflare (was Netlify until 2026-09-21; section 4 of the notice was corrected in the same commit, and the notice date bumped to 2026-09-21). On 2026-10-20 the notice was moved onto the **2025 LFPDPPP** — see *Other legal checks* below.
 
 Two rules follow from that:
 
@@ -650,6 +650,83 @@ understand the product, not so it would ship.
 This extends the existing tip rule (avoid ASTM grades, hydraulic pressures, SAE
 formulas): it is not only about being too technical, it is about not explaining
 at all. **El maestro especialista orienta en sucursal.**
+
+### ⛔ Solo imágenes del producto que de verdad se vende — regla de Profeco (2026-10-20)
+
+The user found, on the live site, the Herrajes category showing a **generic stock
+photo of steel beams on a construction site** on every PHV product. His words:
+*"una persona puede llegar y decir, ese material yo lo vi en su página web… yo
+quiero el que sale en la imagen… Tú te debes que también guiar de todo lo que
+Profeco tenga regla."*
+
+The legal hook is **LFPC art. 32**: advertising must be truthful and must not
+induce error, and Profeco's stated position is that images must match the real
+product offered. Profeco has fined under art. 32 before.
+
+**Where that photo came from:** `catalogo.html` used
+`steel_beams_1774503028306.webp` as the `onerror` fallback for every product
+photo. `phv.com.mx` stopped serving its images to other sites, so all 8 PHV
+products fell back to it. The same file was the background of the final CTA in
+`nosotros.html` with `alt="Material RAMAR"`. **The file was deleted.** Do not
+bring back any generic fallback image.
+
+**What a product may show, in this order:**
+
+1. An **own photo** (`assets/images/ramar-*`, or the user's `*_iOS.webp`).
+2. A **manufacturer's photo of the exact brand and model RAMAR sells** —
+   Phillips models, Truper, Goni 977, Lamitec panels, PintuMex Supervin.
+3. The product's **inline SVG drawing** — clearly an illustration.
+4. Otherwise the `.foto-pendiente` box: *"Pide la foto por WhatsApp"*.
+
+`fotoFallo(img, id)` applies 3 → 4 when a photo fails to load, and `sinFoto()`
+builds the box. A note under the product grid (`.cat-nota-imagenes`) tells the
+buyer the photos are from the warehouse or the brand's manufacturer and the
+drawings are illustrative.
+
+**Removed on 2026-10-20 (49 product photos):**
+
+- **Stock photos** — 10 from Pexels, 9 from Wikipedia. None showed RAMAR's
+  material; the electrodes, for instance, were not Lincoln.
+- **Competitors' photos** — 11 from Serviacero, 3 from Fortacero, 1 from
+  monten.mx. Another distributor's product photo is not ours, and using it is
+  also a copyright exposure. `duela-prolamsa` and `marco-puerta` were even
+  sharing the **same** Fortacero image.
+- **Wrong model or a product not sold** — 4 Makita photos of specific models
+  (GA7030, DTD157, 4131, HR2475); `rotomartillo-oakland` showed the OAKTR-9013,
+  but the rule is the **MR-3100**; `soldadora-oakland` showed an OAKSP-200;
+  `primario-anticorrosivo` showed **Esmaflex**, which RAMAR does **not** sell.
+- **Dead links** — the 8 `phv.com.mx` photos.
+
+The category cards on the catalog menu had the same problem and now use own
+photos (estructural, comercial, especializado, herrajes). Herramienta keeps its
+colour gradient only — its background was a Makita grinder.
+
+⚠️ Still to confirm with the user: whether `esmalte` (photo: Esmalux SR) and
+`selladores` (photo: Sellavin) are PintuMex lines RAMAR actually stocks; and
+`bisagras-phv`, whose text says "Negras y pulidas" and lists 7/8", against the
+rule below ("solo pulidas, no 7/8"").
+
+**Every new photo, from now on, goes through this filter.** If it is not RAMAR's
+own and not the manufacturer's photo of that exact model, it does not go in.
+
+### Other legal checks done the same day
+
+- **Privacy notice (LFPDPPP).** A **new LFPDPPP** came into force on
+  **21 March 2025**; the **INAI was dissolved** and its role passed to the
+  **Secretaría Anticorrupción y Buen Gobierno**. The notice cited "su Reglamento
+  y los Lineamientos del Aviso de Privacidad" (instruments of the abrogated 2010
+  law); it now cites the 2025 law "y la demás normativa aplicable" and names the
+  Secretaría as the authority in section 12. It also asked invoice clients for
+  the full **domicilio fiscal**; CFDI 4.0 needs only the **código postal**, so it
+  now says that — consistent with the fiscal rules above. Date bumped to
+  2026-10-20. Still needs a lawyer's review.
+- **LFPC art. 76 Bis** (electronic commerce): the provider must give a physical
+  address, phone numbers and other means for complaints before the
+  transaction. The site already does, per branch in `ubicaciones.html`.
+- ⚠️ **LFPC art. 7 Bis** (show the total price) — **open question.** Research
+  found no ruling on whether a catalog that publishes no prices and sends the
+  buyer to quote by WhatsApp breaches it. The site keeps its no-price policy;
+  the user should ask a lawyer.
 
 ### ⛔ No prices. Crop them out of photos.
 
