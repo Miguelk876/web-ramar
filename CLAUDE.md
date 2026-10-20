@@ -81,7 +81,7 @@ All pages share copy-pasted `<header class="navbar">` and `<footer>` blocks. **T
   - `--color-red: #DD3B2E` (secondary accent)
   - `--font-heading: 'Oswald'`, `--font-body: 'Inter'`
 - **`main.js`** — mobile hamburger toggle + `IntersectionObserver` for `.fade-in` (with 800 ms fallback that forces `.visible` if observer doesn't fire).
-- **`assets/images/`** — local images. Files prefixed **`ramar-`** are the company's own photos, taken in the warehouse and supplied by the user; prefer them over hotlinked supplier photos whenever one covers the product. The rest of the catalog still hotlinks ~85 photos from supplier servers (see `verificar-fotos.js`).
+- **`assets/images/`** — local images. Files prefixed **`ramar-`** are the company's own photos, taken in the warehouse and supplied by the user; prefer them over hotlinked supplier photos whenever one covers the product. Since 2026-10-20 only **25** external photos remain, all from the manufacturer of the exact brand sold (see *Solo imágenes del producto que de verdad se vende*).
   - **Processing own photos:** phone shots arrive portrait at ~1.3 MB. Crop to landscape (4:3 for product cards, 16:9 for hero backgrounds), cap the long side at 1200 px / 1920 px, JPEG quality ~0.84, keeping each file under 500 KB. There is no ImageMagick, `cwebp` or PIL in this environment — resizing is done through Chromium's canvas (see the pattern in a prior session: serve the originals over the local HTTP server, load them by URL, `drawImage` a crop into a canvas, read back `toDataURL`). Loading originals as base64 data URIs fails with `EncodingError`; serve them by URL instead.
   - Remember the cache rule above: **never overwrite an image filename** — publish under a new name.
 - **`assets/images/tips/*.svg`** — 10 hand-crafted illustrations for the home tips section. `electrodos.svg` is animated (welding sparks pulse).
@@ -724,8 +724,9 @@ The category cards on the catalog menu had the same problem and now use own
 photos (estructural, comercial, especializado, herrajes). Herramienta keeps its
 colour gradient only — its background was a Makita grinder.
 
-⚠️ Still to confirm with the user: whether `esmalte` (photo: Esmalux SR) and
-`selladores` (photo: Sellavin) are PintuMex lines RAMAR actually stocks.
+⚠️ Not confirmed: whether `esmalte` (photo: Esmalux SR) and `selladores`
+(photo: Sellavin) are PintuMex lines RAMAR actually stocks. The user closed the
+topic on 2026-10-20 (*"ya deja esa parte"*); don't ask again unprompted.
 (`bisagras-phv` "Negras y pulidas" was confirmed by the user the same day.)
 
 **Drawings for everything without a photo (user's request, same day):**
@@ -823,7 +824,7 @@ Nayvi Padilla (redes) reviewed the catalog in 2026-06. The 96 products reflect w
   - **7018** — 1/8" · **5/32"** · 3/32"
   - **6010** — 1/8" only. It was **missing from the catalog** and was added that day.
   - Note the guide's electrode section used to show a **6011** card. It was removed on 2026-09-21 for not being stocked, and that turned out right — what RAMAR carries is **6010**, a different electrode. Don't reintroduce 6011.
-- **Herramienta**: Oakland es marca de casa. Rotomartillo = SDS Oakland 800W MR-3100 c/maletín. Compresores Goni Mod. 977 y 940 con accesorios.
+- **Herramienta**: **Makita, DeWalt y Oakland** — confirmed by the user on 2026-10-20 (Oakland is the house brand). The 4 Makita product photos removed that day showed *specific models*; the products now carry drawings, and the user said to leave that part as it is (*"ya deja esa parte"*) — don't put model photos back. Rotomartillo = SDS Oakland 800W MR-3100 c/maletín. Compresores Goni Mod. 977 y 940 con accesorios.
 - **Truper manual**: NO diablos, paletas, cinceles ni crowbar. Carretilla única: 4.5 ft³ neumática Truper 11740.
 - **Tips**: avoid over-technical language (ASTM grades, hydraulic pressures, SAE formulas) — el maestro especialista orienta en sucursal.
 

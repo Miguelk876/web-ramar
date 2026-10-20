@@ -68,7 +68,10 @@ Prioridad, de mejor a peor:
 
 1. **Foto propia de RAMAR** en `assets/images/ramar-*.jpg` — siempre que exista una que cubra el producto.
 2. **Dibujo SVG inline** — para perfiles y secciones. Colores de marca: relleno `#1C2B54`, cotas y texto `#F08018`, hueco `#EEF2FF`. Lleva `<text>` con el nombre abajo.
-3. **Foto hotlinkeada del proveedor** — último recurso. Se mueren solas cuando el proveedor reorganiza su sitio.
+3. **Foto del fabricante, solo de la marca y el modelo exactos que RAMAR vende** (Phillips, Truper, PintuMex…). Nunca de otro distribuidor (Serviacero, Fortacero…), nunca de bancos de imágenes (Pexels, Wikipedia), nunca de un modelo que no se vende. Si no hay foto así, va el dibujo SVG.
+
+⛔ **Regla de Profeco (2026-10-20).** El sitio solo enseña imágenes del producto que de verdad se vende: un cliente puede exigir "el que sale en la foto" (LFPC art. 32). No existe foto genérica de respaldo; si una foto no carga, `fotoFallo()` pone el dibujo o el recuadro "Pide la foto por WhatsApp". Ver CLAUDE.md, sección *Solo imágenes del producto que de verdad se vende*.
+⛔ **Precios fuera de toda foto.** Etiquetas de precio, códigos internos y personas se recortan siempre.
 
 Reglas duras:
 

@@ -9,7 +9,13 @@ Las fotos propias viven en `assets/images/` con el prefijo **`ramar-`**. Son
 mejores que las hotlinkeadas de proveedor y **se prefieren siempre** que cubran
 el producto: no se mueren cuando el proveedor reorganiza su sitio.
 
-Hoy hay 4. El resto del catálogo hotlinkea ~85 fotos de servidores ajenos.
+Al 2026-10-20 hay 26 fotos `ramar-*` más las `*_iOS.webp` del usuario. Solo quedan
+25 fotos externas, todas del fabricante de la marca exacta que se vende (Phillips,
+Truper, Goni, Lamitec, PintuMex).
+
+⛔ **Solo imágenes del producto que de verdad se vende** (regla de Profeco,
+2026-10-20): nada de fotos de otros distribuidores, de bancos de imágenes ni de
+modelos que no se manejan, y ninguna foto genérica de respaldo. Ver CLAUDE.md.
 
 ## Regla que rompe el sitio si se ignora
 
@@ -127,7 +133,7 @@ ls -l assets/images/ramar-* | awk '{printf "%s  %.0f KB\n", $9, $5/1024}'
 ## Pendientes conocidos
 
 - **8 fotos de fachada de sucursal**: no hay ninguna. Es el hueco más grande.
-- **~85 fotos hotlinkeadas** de proveedores: migrarlas a fotos propias las hace
+- **25 fotos del fabricante** (18 Phillips, PintuMex, Truper, Goni, Lamitec): migrarlas a fotos propias las hace
   inmunes a que el proveedor reorganice su sitio.
   Revisa cuáles están muertas con `node scripts/verificar-fotos.js --solo-muertas`.
 - **Herrajes PHV**: `phv.com.mx` está bloqueado a `WebFetch` y hay sospecha de
