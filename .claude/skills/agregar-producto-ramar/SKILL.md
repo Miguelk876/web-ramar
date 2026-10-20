@@ -119,7 +119,7 @@ general de la industria del acero.**
 - **Cerraduras** de mueble ni de aluminio.
 - **Lanzas**: no hay alfanje.
 - **Truper manual**: no diablos, paletas, cinceles ni crowbar.
-- **Bisagras PHV** de 7/8".
+- **Bisagras PHV** de 7/8". (Sí hay negras y pulidas.)
 
 **Restricciones de medida/calibre que suelen fallar**
 
@@ -130,7 +130,7 @@ general de la industria del acero.**
 - Vigas IPR: peraltes 6, 8, 10, 12, 14 (no 4").
 - Rejilla electroforjada: una sola medida, 1/8"×1", panel 1×6 m, 140 kg.
 - Lámina Negra: cal. 14–26. Galvanizada: G-45 (no G-60). Pintro: solo rojo. Galvateja: solo cal. 26 (Plus = térmica). Lozacero: solo cal. 22.
-- Tablero portones: solo modelo 170, anchos 2–10", sin corte a medida.
+- Tablero portones: modelo 170, **calibre 22**, sin corte a medida. Medidas 3′×6′, 3′×8′, 3′×10′, 4′×4′, 4′×6′, 4′×8′, 4′×10′ en café, galvanizado y (solo 4′×10′) negro — ver CLAUDE.md.
 - Pintura es **PintuMex y nada más que pintura**. Vinílicas: SUPERVIN, OMAR, VINET, KOLORTEX, CH14. Primario: solo Rojo Óxido.
 - Nylamid: barras hasta 8" Ø, placas ½/¾/1" de 60×60 cm, solo blanco normal.
 - Acero maquinaria: 1018 redondo/hexagonal/cuadrado; 1045 y 4140 solo redondo; hexagonal hasta 1½".

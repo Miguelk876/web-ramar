@@ -836,7 +836,7 @@
                         <span>Consumibles</span>
                     </div>
                     <div class="cat-menu-body">
-                        <p>Discos de corte · Electrodos 6013/7018 · Alambre MIG · Fundentes PHV · Austromex</p>
+                        <p>Discos de corte · Electrodos 6010/6013/7018 · Alambre MIG · Cable porta electrodo · Taquetes y pijas · Fundentes PHV · Austromex</p>
                         <span class="cat-menu-count" id="cnt-consumibles">— productos</span>
                     </div>
                 </button>
@@ -846,7 +846,7 @@
                         <span>Herrajes</span>
                     </div>
                     <div class="cat-menu-body">
-                        <p>Forja artística · Hojas y flores · Medallones · Puntas · Bisagras · Pasadores PHV</p>
+                        <p>Forja artística · Hojas y flores · Medallones · Puntas · Bisagras · Pasadores PHV · Cadena</p>
                         <span class="cat-menu-count" id="cnt-herrajes">— productos</span>
                     </div>
                 </button>
@@ -1610,6 +1610,28 @@ const PRODUCTS = [
       {i:'fa-lightbulb',    l:'Tip',       v:'Usar disco exclusivo para inox; no intercambiar con discos de acero negro'}
     ], page:'catalogo.html', wa:'Discos%20Corte%20Inoxidable' },
 
+  { id:'taquete-expansivo', cat:'consumibles',
+    name:'Taquete Expansivo',
+    tagline:'Para anclar herrería y soportes al concreto. Sin tornillo o con tornillo.',
+    svg:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 190"><rect x="58" y="34" width="34" height="96" rx="4" fill="#1C2B54"/><rect x="64" y="34" width="22" height="8" fill="#EEF2FF" opacity=".7"/><line x1="68" y1="92" x2="68" y2="128" stroke="#EEF2FF" stroke-width="2.5"/><line x1="82" y1="92" x2="82" y2="128" stroke="#EEF2FF" stroke-width="2.5"/><polygon points="58,130 92,130 86,142 64,142" fill="#1C2B54"/><text x="75" y="160" text-anchor="middle" fill="#F08018" font-family="Inter,sans-serif" font-size="8.5">SIN TORNILLO</text><polygon points="168,22 200,22 206,32 200,42 168,42 162,32" fill="#1C2B54"/><rect x="156" y="44" width="56" height="7" rx="2" fill="#94a3b8"/><rect x="170" y="52" width="28" height="70" rx="3" fill="#1C2B54"/><line x1="178" y1="88" x2="178" y2="120" stroke="#EEF2FF" stroke-width="2.5"/><line x1="190" y1="88" x2="190" y2="120" stroke="#EEF2FF" stroke-width="2.5"/><rect x="175" y="122" width="18" height="28" fill="#1C2B54"/><line x1="175" y1="126" x2="193" y2="123" stroke="#EEF2FF" stroke-width="1.5" opacity=".7"/><line x1="175" y1="131" x2="193" y2="128" stroke="#EEF2FF" stroke-width="1.5" opacity=".7"/><line x1="175" y1="136" x2="193" y2="133" stroke="#EEF2FF" stroke-width="1.5" opacity=".7"/><line x1="175" y1="141" x2="193" y2="138" stroke="#EEF2FF" stroke-width="1.5" opacity=".7"/><line x1="175" y1="146" x2="193" y2="143" stroke="#EEF2FF" stroke-width="1.5" opacity=".7"/><text x="184" y="165" text-anchor="middle" fill="#F08018" font-family="Inter,sans-serif" font-size="8.5">CON TORNILLO</text><text x="130" y="182" text-anchor="middle" fill="#F08018" font-family="Oswald,sans-serif" font-size="12" font-weight="600">TAQUETE EXPANSIVO</text></svg>`,
+    svgNote:'Sin tornillo: 3/16" a 1/2" · Con tornillo: 3/16" a 3/4"',
+    specs:[
+      {i:'fa-ruler',    l:'Sin tornillo', v:'3/16" · 1/4" · 5/16" · 3/8" · 1/2"'},
+      {i:'fa-ruler',    l:'Con tornillo', v:'De 3/16" a 3/4" — tuerca y rondana incluidas'},
+      {i:'fa-building', l:'Usos',         v:'Anclar portones, rejas, barandales, soportes y placas a concreto'}
+    ], wa:'Taquete%20Expansivo' },
+  { id:'pijas', cat:'consumibles',
+    name:'Pijas',
+    tagline:'Pija punta de broca para techar lámina, y pijas de punta normal.',
+    svg:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 190"><polygon points="62,24 88,24 94,34 88,44 62,44 56,34" fill="#1C2B54"/><rect x="52" y="44" width="46" height="6" rx="2" fill="#94a3b8"/><rect x="56" y="50" width="38" height="5" rx="2" fill="#475569"/><rect x="68" y="55" width="14" height="72" fill="#1C2B54"/><line x1="68" y1="64" x2="82" y2="60" stroke="#EEF2FF" stroke-width="1.6" opacity=".75"/><line x1="68" y1="71" x2="82" y2="67" stroke="#EEF2FF" stroke-width="1.6" opacity=".75"/><line x1="68" y1="78" x2="82" y2="74" stroke="#EEF2FF" stroke-width="1.6" opacity=".75"/><line x1="68" y1="85" x2="82" y2="81" stroke="#EEF2FF" stroke-width="1.6" opacity=".75"/><line x1="68" y1="92" x2="82" y2="88" stroke="#EEF2FF" stroke-width="1.6" opacity=".75"/><line x1="68" y1="99" x2="82" y2="95" stroke="#EEF2FF" stroke-width="1.6" opacity=".75"/><line x1="68" y1="106" x2="82" y2="102" stroke="#EEF2FF" stroke-width="1.6" opacity=".75"/><line x1="68" y1="113" x2="82" y2="109" stroke="#EEF2FF" stroke-width="1.6" opacity=".75"/><line x1="68" y1="120" x2="82" y2="116" stroke="#EEF2FF" stroke-width="1.6" opacity=".75"/><polygon points="68,127 82,127 80,142 75,150 70,142" fill="#1C2B54"/><line x1="75" y1="132" x2="75" y2="148" stroke="#EEF2FF" stroke-width="1.2"/><text x="75" y="166" text-anchor="middle" fill="#F08018" font-family="Inter,sans-serif" font-size="8.5">PUNTA DE BROCA</text><path d="M164 30 Q184 14 204 30 L204 38 L164 38 Z" fill="#1C2B54"/><line x1="176" y1="27" x2="192" y2="27" stroke="#EEF2FF" stroke-width="2.5"/><line x1="184" y1="20" x2="184" y2="34" stroke="#EEF2FF" stroke-width="2.5"/><rect x="178" y="38" width="12" height="88" fill="#1C2B54"/><line x1="178" y1="48" x2="190" y2="44" stroke="#EEF2FF" stroke-width="1.6" opacity=".75"/><line x1="178" y1="55" x2="190" y2="51" stroke="#EEF2FF" stroke-width="1.6" opacity=".75"/><line x1="178" y1="62" x2="190" y2="58" stroke="#EEF2FF" stroke-width="1.6" opacity=".75"/><line x1="178" y1="69" x2="190" y2="65" stroke="#EEF2FF" stroke-width="1.6" opacity=".75"/><line x1="178" y1="76" x2="190" y2="72" stroke="#EEF2FF" stroke-width="1.6" opacity=".75"/><line x1="178" y1="83" x2="190" y2="79" stroke="#EEF2FF" stroke-width="1.6" opacity=".75"/><line x1="178" y1="90" x2="190" y2="86" stroke="#EEF2FF" stroke-width="1.6" opacity=".75"/><line x1="178" y1="97" x2="190" y2="93" stroke="#EEF2FF" stroke-width="1.6" opacity=".75"/><line x1="178" y1="104" x2="190" y2="100" stroke="#EEF2FF" stroke-width="1.6" opacity=".75"/><line x1="178" y1="111" x2="190" y2="107" stroke="#EEF2FF" stroke-width="1.6" opacity=".75"/><line x1="178" y1="118" x2="190" y2="114" stroke="#EEF2FF" stroke-width="1.6" opacity=".75"/><polygon points="178,126 190,126 184,150" fill="#1C2B54"/><text x="184" y="166" text-anchor="middle" fill="#F08018" font-family="Inter,sans-serif" font-size="8.5">PUNTA NORMAL</text><text x="130" y="182" text-anchor="middle" fill="#F08018" font-family="Oswald,sans-serif" font-size="12" font-weight="600">PIJAS</text></svg>`,
+    svgNote:'Punta de broca: 1" a 3" · Pija blanca · Pija oro · Punta normal',
+    specs:[
+      {i:'fa-ruler',    l:'Punta de broca (para techar)', v:'1" · 1¼" · 1½" · 2" · 2½" · 3"'},
+      {i:'fa-ruler',    l:'Otras',  v:'Pija blanca · Pija oro · Punta normal — pregunta por la medida'},
+      {i:'fa-box',      l:'Venta',  v:'Por ciento'},
+      {i:'fa-building', l:'Usos',   v:'Fijar lámina de techo a Canal Monten o PTR, fachadas y cubiertas'}
+    ], wa:'Pijas' },
+
   { id:'rotomartillo-oakland', cat:'herramienta', provider:'Oakland',
     name:'Rotomartillo Oakland',
     tagline:'Rotomartillo SDS-Plus 800W para perforación en concreto, block y mampostería.',
@@ -1790,7 +1812,7 @@ const PRODUCTS = [
     svgNote:'', svg:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 196"><path d="M115 34 Q130 14 145 34 Z" fill="#1C2B54"/><rect x="115" y="32" width="30" height="58" rx="3" fill="#1C2B54"/><rect x="126" y="89" width="8" height="8" fill="#94a3b8"/><rect x="115" y="96" width="30" height="58" rx="3" fill="#1C2B54"/><rect x="121" y="38" width="5" height="46" rx="2" fill="#EEF2FF" opacity=".35"/><rect x="121" y="102" width="5" height="46" rx="2" fill="#EEF2FF" opacity=".35"/><line x1="115" y1="166" x2="145" y2="166" stroke="#F08018" stroke-width="1.5"/><line x1="115" y1="162" x2="115" y2="170" stroke="#F08018" stroke-width="1.5"/><line x1="145" y1="162" x2="145" y2="170" stroke="#F08018" stroke-width="1.5"/><text x="160" y="170" text-anchor="start" fill="#F08018" font-family="Inter,sans-serif" font-size="9" font-weight="400">Ø</text><text x="130" y="188" text-anchor="middle" fill="#F08018" font-family="Oswald,sans-serif" font-size="12" font-weight="600">BISAGRA TUBULAR SOLDABLE</text></svg>`,
     specs:[
       {i:'fa-list',         l:'Modelos',   v:'BIS-T10 Negra · BIS-T12P Pulida · BIS-PRO Proyección'},
-      {i:'fa-ruler',        l:'Diámetros', v:'3/8" · 1/2" · 5/8" · 3/4" · 7/8" · 1"'},
+      {i:'fa-ruler',        l:'Diámetros', v:'3/8" · 1/2" · 5/8" · 3/4" · 1"'},
       {i:'fa-circle-half-stroke',l:'Apertura',v:'BIS-PRO abre más de 180° · T10/T12P hasta 90°'},
       {i:'fa-fire',         l:'Aplicación',v:'Soldable directo a marco y hoja de acero'},
       {i:'fa-building',     l:'Usos',      v:'Ventanas metálicas · Puertas · Canceles · Portones'},
@@ -1914,6 +1936,14 @@ const PRODUCTS = [
     ], wa:'P%C3%BAas%20de%20Seguridad', photo:'assets/images/ramar-puas-seguridad-muro.jpg' },
 
   /* ── CONSUMIBLES DE SOLDADURA — PHV ── */
+  { id:'cadena', cat:'herrajes',
+    name:'Cadena',
+    tagline:'Cadena de acero de eslabón para portones, amarres y cercas.',
+    specs:[
+      {i:'fa-ruler',    l:'Medidas', v:'1/8" · 3/16" · 1/4" · 5/16" · 3/8"'},
+      {i:'fa-building', l:'Usos',    v:'Portones, amarres, cercas y colgar'}
+    ], wa:'Cadena', photo:'assets/images/ramar-cadena-medidas.jpg' },
+
   { id:'electrodo-6013', cat:'consumibles', provider:'Lincoln',
     name:'Electrodos 6013',
     tagline:'Electrodo de soldadura 6013 toda posición, arco estable y baja generación de humos.',
@@ -1966,6 +1996,16 @@ const PRODUCTS = [
     ], page:'catalogo.html', wa:'Microalambre%20MIG%20AXT' },
 
   /* ── PRODUCTOS DEL FLYER (Oaxaca) ─────────────── */
+
+  { id:'cable-porta-electrodo', cat:'consumibles', provider:'Argos',
+    name:'Cable Porta Electrodo',
+    tagline:'Cable para soldar: porta electrodo y tierra de la soldadora. Se vende por metro.',
+    specs:[
+      {i:'fa-ruler',    l:'Calibres', v:'#4 · #2 · 1/0 · 2/0'},
+      {i:'fa-palette',  l:'Color',    v:'Negro'},
+      {i:'fa-box',      l:'Venta',    v:'Por metro'},
+      {i:'fa-building', l:'Usos',     v:'Pinza porta electrodo y tierra de la soldadora'}
+    ], wa:'Cable%20Porta%20Electrodo', photo:'assets/images/ramar-cable-porta-electrodo.jpg' },
 
   { id:'arquiduela', cat:'comercial',
     name:'Arquiduela',
