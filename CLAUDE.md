@@ -157,6 +157,19 @@ possible: colour was restored on canvas — per-channel levels stretch (fixes th
 faded cast), gamma 1.18 for midtone depth, saturation ×1.15. Nothing was
 retouched on the people.
 
+**Second historic photo (2026-10-20).** `ramar-historia-caseta-inicios.jpg`
+goes right after the 2000 paragraph — the one that describes *"una caseta de
+6 m² que hacía las veces de mostrador"* — with the caption *"Nuestros inicios:
+la caseta que hacía las veces de mostrador."* The scan arrived **rotated 90°**;
+it was turned upright, sharpened (unsharp mask, blur 1.4 px, amount 0.6) and
+colour-restored (levels, gamma 1.12, saturation ×1.15). It is nearly square, so
+it uses `.history-figure--alta` (no 4:3 crop) to keep the roof and the people's
+feet. The source also showed a **family altar** — flowers and framed portraits
+— beside the booth; that is private and was cropped out. Several people appear,
+some of them children at the time; **nobody is named**. The caption was
+inferred from the history text (a small booth working as the counter); if the
+user says it is another place, change it.
+
 **Do not mention the intermediate trade name "Perfiles de Antequera"** — removed on user request; more corporate changes are expected and they don't want that history on the site. Don't explain "RAMAR" as surname initials either (see the privacy note).
 
 **Branches vs. the sheet — resolved 2026-09-18.** The sheet lists a **Lachigolo** branch: it is **not** a RAMAR branch and must **not** be added to `ubicaciones.html`, the sitemap or the JSON-LD. The sheet predates **Tlacolula**, which is correct as it stands (badge "Próximamente", no `openingHours` in its JSON-LD) — leave it alone.
