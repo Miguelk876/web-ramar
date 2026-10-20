@@ -646,6 +646,39 @@ edge of the reja shot). The crop was tightened to exclude them: the repository i
 public and `aviso-privacidad.html` covers visitors' data, not third parties'
 likeness. Apply the same care to every future warehouse photo.
 
+### ⛔ Before publishing any sentence, read it as the customer will (2026-10-20)
+
+The user, after a caption said *"la sucursal que tuvimos en San Jacinto
+Amilpas"*: *"Ten lógica cuando escribas algo… no puede ser que se sigan teniendo
+ese tipo de equivocaciones… Tienes que buscar la mejor manera de presentarle las
+cosas a las personas."* "La que tuvimos" reads as a branch that was **lost**; in
+fact it **became** today's Viguera branch.
+
+The mistake was not spelling, it was judgement: his words were transcribed
+instead of being turned into what a customer should read. Rules:
+
+1. **The user speaks informally, often by voice dictation.** His message is the
+   *meaning*, not the copy. Rewrite it into what the buyer should read, keeping
+   every fact. Use official names (San Jacinto **Amilpas**, not "Milpas").
+2. **Present the company in continuity and growth** — what something is and what
+   it became, never what was lost, closed, abandoned or "no longer" exists.
+3. **Don't announce what isn't sold.** If RAMAR doesn't stock something, it simply
+   doesn't appear. The `esmalte` card said *"ESMAFLEX ya no se vende — material
+   rezagado"* — it advertised a product they don't carry and called stock
+   "rezagado"; it was removed the same day.
+4. **Before writing it, ask:** could a customer read this as loss, a problem, a
+   weakness, a lecture or a promise RAMAR can't keep? If yes, rewrite. If a
+   sentence can be read two ways, pick the one that is true *and* presents the
+   company well — or ask the user.
+5. Same family as the rules on not teaching (below), no prices, and only real
+   images: the page speaks for the business to its customers.
+
+A sweep of all visible text on the 7 public pages for loss/negative framing
+("tuvimos", "ya no", "cerró", "dejamos de", "lamentablemente"…) found only the
+ESMAFLEX note. "Para 2010 ya no cabíamos en el primer local" is growth, and the
+invoicing FAQ's "no te la vamos a negar porque ya cerró el mes" reassures the
+buyer — both stay.
+
 ### ⛔ The catalog does not teach. Say what it is and what it's for — nothing else.
 
 The user was explicit on 2026-09-21, after a batch of new products came out
