@@ -132,6 +132,19 @@ From the company's own printed history sheet, supplied by the user. `nosotros.ht
 - Customers by trade: herreros, torneros, balconeros, hojalateros, carroceros, mofleros, estructuristas, constructoras, revendedores, distribuidores.
 - Slogans: "Tu Soporte de Acero", the logo line "Si de perfil lo va a realizar, que sea de Construaceros RAMAR", and **"La Mujer de Acero"** — the resilience line the user explicitly wants kept. It stays unattributed on purpose; never pair it with a name.
 
+**Historic photo (2026-10-20).** `ramar-historia-primeros-anos.jpg` sits in
+`nosotros.html` → *Nuestra historia*, as a `<figure class="history-figure">`
+after the 2000 paragraph, caption *"De nuestros primeros años."* It is a scanned
+print: two people in the early shop, welders and power tools behind them. The
+crop removed the scan border and a stack of **beer boxes** (Montejo, León) on
+the left — not RAMAR products, and a public page should not show them.
+⚠️ **Two identifiable people.** Per the privacy rules above, nobody is named in
+the caption or `alt`, and nobody may be unless the user says who they are — and
+even then, only the founder can be named. **Never place this photo next to the
+"La Mujer de Acero" paragraph** or caption it with that line: the slogan stays
+unattributed on purpose. It was held on the branch until the user confirmed
+publication.
+
 **Do not mention the intermediate trade name "Perfiles de Antequera"** — removed on user request; more corporate changes are expected and they don't want that history on the site. Don't explain "RAMAR" as surname initials either (see the privacy note).
 
 **Branches vs. the sheet — resolved 2026-09-18.** The sheet lists a **Lachigolo** branch: it is **not** a RAMAR branch and must **not** be added to `ubicaciones.html`, the sitemap or the JSON-LD. The sheet predates **Tlacolula**, which is correct as it stands (badge "Próximamente", no `openingHours` in its JSON-LD) — leave it alone.
