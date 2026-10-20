@@ -134,13 +134,20 @@ From the company's own printed history sheet, supplied by the user. `nosotros.ht
 
 **Historic photo (2026-10-20).** `ramar-historia-primeros-anos.jpg` sits in
 `nosotros.html` → *Nuestra historia*, as a `<figure class="history-figure">`
-after the 2000 paragraph, caption *"De nuestros primeros años."* It is a scanned
+after the growth / 2010 paragraph. Caption, confirmed by the user on
+2026-10-20: *"Don Félix Martínez Lázaro, nuestro fundador, en la sucursal que
+tuvimos en San Jacinto Amilpas."* The man is the founder; the other person is a
+family member who is **not** named, at the user's request (*"nada más me
+menciona a mi papá"*). The family agreed to the photo being published. **No
+year** — the user doesn't remember it; don't add one.
+**San Jacinto Amilpas was a RAMAR branch that no longer exists**; the user says
+it is, in effect, today's **Viguera** branch. He called it "San Jacinto Milpas";
+the official municipality name, *Amilpas*, is what the page uses. It is a scanned
 print: two people in the early shop, welders and power tools behind them. The
 crop removed the scan border and a stack of **beer boxes** (Montejo, León) on
 the left — not RAMAR products, and a public page should not show them.
-⚠️ **Two identifiable people.** Per the privacy rules above, nobody is named in
-the caption or `alt`, and nobody may be unless the user says who they are — and
-even then, only the founder can be named. **Never place this photo next to the
+⚠️ **Two identifiable people.** Only the founder is named, in the caption and
+the `alt`; the family member stays unnamed, as the privacy rules above require. **Never place this photo next to the
 "La Mujer de Acero" paragraph** or caption it with that line: the slogan stays
 unattributed on purpose. The user approved publishing it **without names**
 (*"me parece perfecto cómo lo solucionaste"*) and asked to improve it if
