@@ -418,6 +418,7 @@
     width: 100%;
     max-width: 860px;
     max-height: 90vh;
+    max-height: 90dvh;   /* alto real visible: en el teléfono, vh incluye la zona tapada por la barra del navegador */
     overflow-y: auto;
     position: relative;
     animation: modalIn .25s cubic-bezier(.22,1,.36,1);
@@ -462,6 +463,32 @@
 }
 .pmodal-close:hover { background: #f1f5f9; }
 .pmodal-close:active { transform: scale(.92); }
+.pmodal-cerrar-abajo { display: none; }
+@media (max-width: 780px) {
+    .pmodal-cerrar-abajo {
+        display: block;
+        position: sticky;
+        bottom: 0;
+        z-index: 3;
+        padding: .9rem 1rem calc(.7rem + env(safe-area-inset-bottom));
+        background: linear-gradient(rgba(255,255,255,0), #fff 40%);
+    }
+    .pmodal-cerrar-abajo button {
+        width: 100%;
+        min-height: 48px;
+        border-radius: 999px;
+        border: 1px solid #cbd5e1;
+        background: #fff;
+        color: var(--color-blue);
+        font-family: var(--font-body);
+        font-size: 1rem;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 4px 14px rgba(15,23,42,.12);
+    }
+    .pmodal-cerrar-abajo button:active { transform: scale(.97); }
+    .pmodal-cerrar-abajo i { margin-right: .35rem; }
+}
 
 .pmodal-accent { height: 6px; border-radius: 18px 18px 0 0; }
 .pmodal-accent.estructural  { background: linear-gradient(90deg,#1e40af,#3b82f6); }
@@ -724,7 +751,10 @@
 }
 @media (max-width: 480px)  {
     .product-grid-explorer { grid-template-columns: 1fr; }
-    .pmodal { border-radius: 14px 14px 0 0; max-height: 92vh; }
+    /* dvh = alto que de verdad se ve. Con 92vh, en iPhone y Android la ficha medía
+       más que la pantalla visible cuando la barra del navegador estaba abierta, y la
+       parte de arriba —con la X— quedaba fuera. */
+    .pmodal { border-radius: 14px 14px 0 0; max-height: 92vh; max-height: 92dvh; }
     .pmodal-overlay { align-items: flex-end; padding: 0; }
 }
     </style>
@@ -896,6 +926,10 @@
                 </button>
             </div>
             <div id="pmodal-inner"></div>
+            <!-- En el teléfono, un segundo botón de cerrar abajo, al alcance del pulgar. -->
+            <div class="pmodal-cerrar-abajo">
+                <button type="button" id="pmodal-close-abajo"><i class="fa-solid fa-xmark" aria-hidden="true"></i> Cerrar</button>
+            </div>
         </div>
     </div>
 
@@ -2470,6 +2504,7 @@ function closeModal(desdeHistorial){
 
 /* Events */
 document.getElementById('pmodal-close').addEventListener('click', () => closeModal());
+document.getElementById('pmodal-close-abajo').addEventListener('click', () => closeModal());
 document.getElementById('pmodal-overlay').addEventListener('click', e => {
   if(e.target === document.getElementById('pmodal-overlay')) closeModal();
 });

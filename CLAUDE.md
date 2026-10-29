@@ -414,6 +414,22 @@ Verificado en Chromium con los 104 productos a 360 px y a 1280 px (la X queda
 alcanzable y sin scroll horizontal en todos), y con toques reales en Pixel 5,
 iPhone 12 y Galaxy S9+.
 
+**Segundo arreglo, 2026-10-29 — la X quedaba fuera de la pantalla en iPhone.**
+El usuario mandó captura: la X se veía cortada arriba y *"debo alzar mucho para
+cerrar"*. Causa: `.pmodal { max-height: 92vh }`. En Safari y Chrome de teléfono
+`vh` mide la pantalla **sin** la barra del navegador; con la barra abierta la
+ficha era más alta que lo visible y, anclada abajo, empujaba la X fuera. Ahora es
+`92dvh` (alto que de verdad se ve), con `92vh` antes como respaldo; en escritorio
+`90dvh`. ⚠️ No volver a `vh` en nada que se ancle a la pantalla del teléfono.
+Además, en pantallas de hasta 780 px hay un **botón "Cerrar" pegado al pie de la
+ficha** (`.pmodal-cerrar-abajo`, `#pmodal-close-abajo`, 48 px, respeta
+`env(safe-area-inset-bottom)`), al alcance del pulgar. En escritorio no aparece.
+Hace lo mismo que la X: `closeModal()`, que deshace la entrada del historial.
+Probado en iPhone 12, iPhone SE, Android de 360 px y escritorio: la X y el botón
+quedan dentro de lo visible, y tocar "Cerrar" cierra, regresa a la categoría y
+suelta el scroll. (Chromium no puede simular la barra de Safari; lo que se probó
+es que el alto ya se calcula con `dvh`.)
+
 ### ⛔ La tabla de calibres estaba mal — corregida 2026-10-03
 
 **Toda la columna de espesores de `guia.html` era falsa**, aunque la nota al
