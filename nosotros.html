@@ -208,6 +208,25 @@
             display: block;
             box-shadow: 0 10px 30px rgba(28, 43, 84, 0.18);
         }
+        /* En computadora, la historia va en filas: cada foto junto a SU texto,
+           alternando lados, y el cierre (2021, "La Mujer de Acero", hoy) a todo lo
+           ancho, lejos de las fotos. Antes eran dos columnas y a la derecha solo
+           quedaba una foto chica con un hueco enorme debajo. En el teléfono, una
+           sola columna en el orden del texto. */
+        @media (min-width: 901px) {
+            .history-grid { display: block; max-width: 1100px; margin: 0 auto; }
+            .history-row {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 3.5rem;
+                align-items: center;
+                margin-bottom: 3rem;
+            }
+            .history-row .history-figure { margin: 0; }
+            .history-row--inv .history-figure { order: -1; }
+            .history-row-text > :last-child { margin-bottom: 0; }
+            .history-row .history-quote:first-child { margin-top: 0; }
+        }
         /* Fotos casi cuadradas: se respetan completas, sin recortar a 4:3. */
         .history-figure--alta img { aspect-ratio: auto; }
         .history-figure figcaption {
@@ -425,34 +444,35 @@
                         <p class="section-eyebrow dark">De dónde venimos</p>
                         <h2 class="section-title">NUESTRA <span class="text-red">HISTORIA</span></h2>
 
-                        <p>Todo empezó con la inquietud de nuestro fundador, <strong>Félix Martínez Lázaro</strong>, de emprender su propio negocio, a partir de la experiencia que había acumulado en su trayectoria laboral y con el respaldo de dos empresas que creyeron en su proyecto. Nunca lo hizo solo: desde el primer día fue un negocio de familia.</p>
+                        <div class="history-row">
+                            <div class="history-row-text">
+                            <p>Todo empezó con la inquietud de nuestro fundador, <strong>Félix Martínez Lázaro</strong>, de emprender su propio negocio, a partir de la experiencia que había acumulado en su trayectoria laboral y con el respaldo de dos empresas que creyeron en su proyecto. Nunca lo hizo solo: desde el primer día fue un negocio de familia.</p>
 
-                        <p>Abrimos el <strong>8 de agosto del 2000</strong> en Av. del Valle N°6, Col. Ex Garita, con el nombre de <strong>Perfiles San Miguel</strong>. Eran un terreno de 300 m² donde se almacenaba el material y una caseta de 6 m² que hacía las veces de mostrador. El nombre juntaba dos cosas: «Perfiles», por el material que vendíamos, y «San Miguel», por <strong>San Miguel Amatlán</strong>, la comunidad de la Sierra Juárez de donde era originario don Félix.</p>
+                            <p>Abrimos el <strong>8 de agosto del 2000</strong> en Av. del Valle N°6, Col. Ex Garita, con el nombre de <strong>Perfiles San Miguel</strong>. Eran un terreno de 300 m² donde se almacenaba el material y una caseta de 6 m² que hacía las veces de mostrador. El nombre juntaba dos cosas: «Perfiles», por el material que vendíamos, y «San Miguel», por <strong>San Miguel Amatlán</strong>, la comunidad de la Sierra Juárez de donde era originario don Félix.</p>
+                            </div>
+                            <figure class="history-figure history-figure--alta">
+                                <img src="assets/images/ramar-historia-caseta-natural.jpg" alt="Los inicios de RAMAR: una caseta con mostrador y anaqueles de producto, con personas en el mostrador" loading="lazy">
+                                <figcaption>Nuestros inicios: la caseta que hacía las veces de mostrador.</figcaption>
+                            </figure>
+                        </div>
 
-                        <figure class="history-figure history-figure--alta">
-                            <img src="assets/images/ramar-historia-caseta-natural.jpg" alt="Los inicios de RAMAR: una caseta con mostrador y anaqueles de producto, con personas en el mostrador" loading="lazy">
-                            <figcaption>Nuestros inicios: la caseta que hacía las veces de mostrador.</figcaption>
-                        </figure>
+                        <div class="history-row history-row--inv">
+                            <div class="history-row-text">
+                            <div class="history-quote">"Si de perfil lo va a realizar, que sea de Construaceros RAMAR"</div>
 
-                        <div class="history-quote">"Si de perfil lo va a realizar, que sea de Construaceros RAMAR"</div>
-
-                        <p>La confianza de los clientes, ganada a base de calidad y precio, nos obligó a crecer: más unidades de reparto y más personal para poder atender a todo el estado. Para <strong>2010</strong> ya no cabíamos en el primer local y nos mudamos a una sede más grande, sobre el Boulevard Guadalupe Hinojosa de Murat.</p>
-
-                        <figure class="history-figure">
-                            <img src="assets/images/ramar-historia-primeros-anos.jpg" alt="Félix Martínez Lázaro, fundador de RAMAR, en la sucursal de San Jacinto Amilpas, hoy sucursal Viguera, con soldadoras y herramienta eléctrica en exhibición" loading="lazy">
-                            <figcaption>Don Félix Martínez Lázaro, nuestro fundador, en nuestra sucursal de San Jacinto Amilpas, que hoy es la sucursal Viguera.</figcaption>
-                        </figure>
+                            <p>La confianza de los clientes, ganada a base de calidad y precio, nos obligó a crecer: más unidades de reparto y más personal para poder atender a todo el estado. Para <strong>2010</strong> ya no cabíamos en el primer local y nos mudamos a una sede más grande, sobre el Boulevard Guadalupe Hinojosa de Murat.</p>
+                            </div>
+                            <figure class="history-figure">
+                                <img src="assets/images/ramar-historia-primeros-anos.jpg" alt="Félix Martínez Lázaro, fundador de RAMAR, en la sucursal de San Jacinto Amilpas, hoy sucursal Viguera, con soldadoras y herramienta eléctrica en exhibición" loading="lazy">
+                                <figcaption>Don Félix Martínez Lázaro, nuestro fundador, en nuestra sucursal de San Jacinto Amilpas, que hoy es la sucursal Viguera.</figcaption>
+                            </figure>
+                        </div>
 
                         <p>En <strong>2021</strong> nació el nombre que llevamos hoy: <strong>Construaceros RAMAR</strong>, de <em>construyendo aceros</em>.</p>
 
                         <p>La solidez de RAMAR no vino solo del metal, sino del temple frente a las adversidades. Incluso en los periodos más difíciles, nuestra resiliencia —el legado vivo de <em>"La Mujer de Acero"</em>— nos permitió sostener a la familia RAMAR y ampliar como nunca nuestra capacidad de reparto.</p>
 
                         <p>Hoy manejamos un catálogo de más de <strong>5,000 productos</strong> en perfilería, aceros estructurales, láminas, aceros especiales y herrajes, y entregamos en las <strong>8 regiones del estado de Oaxaca</strong>.</p>
-                    </div>
-                    <div class="history-img-stack">
-                        <div class="img-top">
-                            <img src="assets/images/20260430_182703248_iOS.webp" alt="Productos RAMAR" loading="lazy">
-                        </div>
                     </div>
                 </div>
             </div>

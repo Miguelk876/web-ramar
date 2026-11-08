@@ -178,6 +178,21 @@ some of them children at the time; **nobody is named**. The caption was
 inferred from the history text (a small booth working as the counter); if the
 user says it is another place, change it.
 
+**History layout on desktop (2026-11-08).** The user: *"en la web de una
+computadora no se ven bien las proporciones en la sección de nosotros"*. The
+history was a two-column grid: all the text plus both historic photos in a very
+long left column, and on the right a single small photo (`20260430_182703248_iOS.webp`,
+tubes on a rack, `.history-img-stack`) with an empty gap below it. That right
+column was **removed** (the photo is still used by `acero-maquinaria` in the
+catalog). Above 900 px the history is now **rows** (`.history-row`): the 2000
+paragraphs beside the caseta photo, then the San Jacinto photo (left, via
+`.history-row--inv` + `order:-1`) beside the quote and the growth paragraph,
+then 2021 / "La Mujer de Acero" / today **full width, away from both photos**.
+A float layout was tried first and rejected: the photos overlapped vertically,
+squeezed a paragraph into a narrow strip, and put the founder's photo beside
+the "La Mujer de Acero" paragraph, which the rule above forbids. On phones the
+DOM order is unchanged: text, photo, text, photo.
+
 **Do not mention the intermediate trade name "Perfiles de Antequera"** — removed on user request; more corporate changes are expected and they don't want that history on the site. Don't explain "RAMAR" as surname initials either (see the privacy note).
 
 **Branches vs. the sheet — resolved 2026-09-18.** The sheet lists a **Lachigolo** branch: it is **not** a RAMAR branch and must **not** be added to `ubicaciones.html`, the sitemap or the JSON-LD. The sheet predates **Tlacolula**, which is correct as it stands (badge "Próximamente", no `openingHours` in its JSON-LD) — leave it alone.
