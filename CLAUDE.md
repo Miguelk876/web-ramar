@@ -129,7 +129,7 @@ From the company's own printed history sheet, supplied by the user. `nosotros.ht
 - **2021** — takes the current name, **Construaceros RAMAR**, from *construyendo aceros*. (Do not spell out the RAMAR acronym — see the privacy note above.)
 - Catalogue of **+5,000 products** across perfilería, aceros estructurales, láminas, aceros especiales, herrajes.
 - Foráneas routes: Miahuatlán, Huatulco, Mixes, Juquila, Mixteca, Peras, Teojomulco, Istmo, Valle Nacional, Zimatlán.
-- Customers by trade: herreros, torneros, balconeros, hojalateros, carroceros, mofleros, estructuristas, constructoras, revendedores, distribuidores.
+- Customers by trade, **always in this order** (the user, 2026-11-16): **balconeros, herreros, hojalateros, mofleros, carroceros, torneros, estructuristas, revendedores, distribuidores, constructoras.** *"Siempre desde abajo"* — the balconero is the best customer and goes first, *"sí o sí"*; the big buyers go last. **Never number the list and never say why it is ordered that way.** Name many trades, so the reader sees real customers. Every list on the site follows it: the `nosotros.html` hero, *Quiénes somos*, the *Nuestros clientes* chips, and the "¿Atienden a…?" FAQ in `contacto.html` (visible text **and** its FAQPage JSON-LD, which must match).
 - Slogans: "Tu Soporte de Acero", the logo line "Si de perfil lo va a realizar, que sea de Construaceros RAMAR", and **"La Mujer de Acero"** — the resilience line the user explicitly wants kept. It stays unattributed on purpose; never pair it with a name.
 
 **Historic photo (2026-10-20).** `ramar-historia-primeros-anos.jpg` sits in
@@ -197,8 +197,7 @@ DOM order is unchanged: text, photo, text, photo.
 user's decision. Three fixes:
 - **"carpinteros" removed** from the customer list. The user: *"si vendemos
   acero… ¿qué tiene que ver los demás?"* The list now names steel trades only,
-  taken from the company sheet: herreros, balconeros, hojalateros, torneros,
-  estructuristas, constructoras.
+  taken from the company sheet, in the bottom-up order set below.
 - **No unprovable absolutes.** *"materiales de la más alta calidad al mejor
   precio"* and the bullet *"Calidad Garantizada en cada producto"* went (LFPC
   art. 32 asks for provable advertising, and "mejor precio" makes no sense on a
