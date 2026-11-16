@@ -193,6 +193,23 @@ squeezed a paragraph into a narrow strip, and put the founder's photo beside
 the "La Mujer de Acero" paragraph, which the rule above forbids. On phones the
 DOM order is unchanged: text, photo, text, photo.
 
+**"Quiénes somos" section of `nosotros.html` (2026-11-16).** Kept, at the
+user's decision. Three fixes:
+- **"carpinteros" removed** from the customer list. The user: *"si vendemos
+  acero… ¿qué tiene que ver los demás?"* The list now names steel trades only,
+  taken from the company sheet: herreros, balconeros, hojalateros, torneros,
+  estructuristas, constructoras.
+- **No unprovable absolutes.** *"materiales de la más alta calidad al mejor
+  precio"* and the bullet *"Calidad Garantizada en cada producto"* went (LFPC
+  art. 32 asks for provable advertising, and "mejor precio" makes no sense on a
+  site that publishes no prices). The bullet now reads *"Marcas reconocidas:
+  Prolamsa, Lincoln, Phillips y PHV"* — brands the catalog actually carries.
+- **"Certificado de Proveedor bajo solicitud" stays.** The user confirmed RAMAR
+  issues it, depending on the supplier. Don't question or remove it.
+Sweep for off-topic trades across the site: only this one was wrong. Uses such
+as Phillips locks for wooden doors, PintuMex paint for tablaroca or a steel
+workbench for a carpentry shop are uses of products RAMAR sells — they stay.
+
 **Do not mention the intermediate trade name "Perfiles de Antequera"** — removed on user request; more corporate changes are expected and they don't want that history on the site. Don't explain "RAMAR" as surname initials either (see the privacy note).
 
 **Branches vs. the sheet — resolved 2026-09-18.** The sheet lists a **Lachigolo** branch: it is **not** a RAMAR branch and must **not** be added to `ubicaciones.html`, the sitemap or the JSON-LD. The sheet predates **Tlacolula**, which is correct as it stands (badge "Próximamente", no `openingHours` in its JSON-LD) — leave it alone.
