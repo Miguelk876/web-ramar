@@ -989,8 +989,15 @@ construacerosramar.mx"* email arrived on 2026-11-19, so the zone is active.
 Lessons: **Akky holds only the two nameservers — nothing else, ever.** Mail
 records (MX, SPF, DKIM, DMARC) go in **Cloudflare DNS**. If Google Workspace is
 adopted, its MX `smtp.google.com` replaces the Cloudflare Email Routing MX
-records in Cloudflare, not at Akky. It is still unknown who made the change; if
-nobody at RAMAR did, the Akky password should be changed and 2FA enabled.
+records in Cloudflare, not at Akky. **Cause found (2026-11-19):** a **Google Workspace** account on the domain was
+created on 2026-11-12 (security alerts reached the owner's recovery mailbox:
+2-step verification on, authenticator added). So it was RAMAR's own Workspace
+set-up, not an intrusion — the MX value was simply typed into Akky. Pending:
+for that mailbox to *receive* mail, Cloudflare must point MX to
+`smtp.google.com` (priority 1), Email Routing must be turned off (its
+route1/2/3 MX records conflict), SPF becomes `v=spf1 include:_spf.google.com
+~all`, then DKIM from Google Admin and a DMARC record. Keep the
+`google-site-verification` TXT that belongs to Search Console.
 This environment cannot query DNS (UDP and DoH are blocked) and the user
 declined to store a Cloudflare API token, so state checks rely on his
 screenshots.
