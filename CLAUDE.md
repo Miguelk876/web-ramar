@@ -892,7 +892,7 @@ Nayvi Padilla (redes) reviewed the catalog in 2026-06. The 96 products reflect w
 - **PTR**: never use "Serie C"/"Serie R" code naming — customers ask by calibre, not code. PTR Cuadrado: cal. 11 is the main one; cal. 12, 14, 16 only in select sizes. PTR Rectangular: only cal. 11, 14, 16. All 6 m.
 - **PTR Regiopytsa**: rectangular in cal. 18, 20, 22 (the best sellers).
 - **HSS**: only square 4"–12". Espesores in **fraction of inch**, never mm. No kg/m column.
-- **Vigas IPR**: peraltes 6, 8, 10, 12, 14 only (no 4").
+- **Vigas IPR**: peraltes 6, 8, 10, 12, 14 only (no 4"). **Largos 6 m y 12 m** (user, 2026-11-19); the weight table carries kg per 6 m and per 12 m piece. Only IPR — `viga-ips` was not touched.
 - **Rejilla electroforjada**: one medida only (1/8"×1", panel 1×6 m, 140 kg).
 - **Lámina HR is named "Lámina Negra"** (id stays `lamina-hr`). No "HR"/"CR"/"fría"/A-36/A572 wording. Cal. 14–26. No se dobla ni se corta.
 - **Cold Rolled (`lamina-fria`)** is a redirect product — consult Aceros RAMAR.
