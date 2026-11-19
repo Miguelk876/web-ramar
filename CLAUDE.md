@@ -942,7 +942,7 @@ Nayvi Padilla (redes) reviewed the catalog in 2026-06. The 96 products reflect w
 Dropping `www` broke Facebook and TikTok for real users (TikTok in particular does not serve the bare domain reliably). The Facebook page plugin iframe is a *bonus*, never the only content in its panel: tracking protection blocks it often, which left the panel looking empty — the "Abrir nuestro Facebook" button sits above the iframe for that reason.
 - Matriz fijo: `951 517 3157`, `951 533 6831` → `tel:` links, `fa-solid fa-phone` icon
 - Matriz fijo también: `951 533 6045`, `951 549 4636` → `tel:` links (they are **not** WhatsApp — see the resolved note above)
-- Matriz WhatsApp: **`951 228 3263`** (the quote target) **and `951 204 5998`** (added 2026-11-19 at the user's request; one of the directory's Matriz *celulares*) → `wa.me` links in the Matriz card, Contacto and the 8 footers. It is the **redes** number (the one social media uses), confirmed by the user on 2026-11-19 (*"pon el de redes, es 951-228-3263"*).
+- Matriz WhatsApp: **`951 228 3263`** (the quote target) **and `951 204 5998`** (added 2026-11-19 at the user's request; one of the directory's Matriz *celulares*; it is a saleswoman's direct line, labelled **"Ventas directas"** in the Matriz card and in Contacto — never with her name) → `wa.me` links in the Matriz card, Contacto and the 8 footers. It is the **redes** number (the one social media uses), confirmed by the user on 2026-11-19 (*"pon el de redes, es 951-228-3263"*).
 - Viguera WhatsApp `951 416 0571`/`951 228 3259`, fijo `951 229 1055` and `951 522 9549` · La Unión WhatsApp `951 272 1019`/`951 228 3269`
 
 ## Deployment
