@@ -973,6 +973,28 @@ Cloudflare (`ben.ns.cloudflare.com`, `betty.ns.cloudflare.com`). The zone holds
 a Worker route on the apex, a proxied `CNAME www → construacerosramar.mx`, and
 the `google-site-verification` TXT for Search Console — **don't delete that TXT.**
 
+### ⚠️ Incident 2026-11-18 — `smtp.google.com` entered as a nameserver at Akky
+
+Cloudflare emailed *"construacerosramar.mx stopped using its assigned
+nameservers"*: the delegation at Akky read `ben.ns.cloudflare.com`,
+**`smtp.google.com`**, `betty.ns.cloudflare.com`. `smtp.google.com` is Google
+Workspace's **MX** value, not a nameserver — someone setting up Google email put
+it in Akky's nameserver fields. Cloudflare marked the zone **"moved"** and would
+have **deleted it after 7 days** (site and Email Routing gone).
+
+Fixed by the user at Akky (only the two Cloudflare nameservers left);
+Cloudflare's *"[Confirmation] … Our network is now boosting
+construacerosramar.mx"* email arrived on 2026-11-19, so the zone is active.
+
+Lessons: **Akky holds only the two nameservers — nothing else, ever.** Mail
+records (MX, SPF, DKIM, DMARC) go in **Cloudflare DNS**. If Google Workspace is
+adopted, its MX `smtp.google.com` replaces the Cloudflare Email Routing MX
+records in Cloudflare, not at Akky. It is still unknown who made the change; if
+nobody at RAMAR did, the Akky password should be changed and 2FA enabled.
+This environment cannot query DNS (UDP and DoH are blocked) and the user
+declined to store a Cloudflare API token, so state checks rely on his
+screenshots.
+
 ### The other domain: `construacerosramar.com`
 
 The user also owns **`construacerosramar.com`**, discovered 2026-09-22. It is a
