@@ -69,7 +69,8 @@ hace con el canvas de Chromium:
 
 1. Sirve los originales por HTTP local: `python3 -m http.server 8099`
 2. Abre Chromium con Playwright
-   (`/opt/pw-browsers/chromium-1194/chrome-linux/chrome`, `--no-sandbox`)
+   (the path changes between sessions — find it with
+   `ls -d /opt/pw-browsers/chromium-*/chrome-linux*/chrome`; launch with `--no-sandbox`)
 3. Carga cada original **por URL**, no como data URI
 4. `drawImage` del recorte a un canvas del tamaño destino
 5. Lee con `canvas.toDataURL('image/jpeg', 0.84)` y guarda el archivo

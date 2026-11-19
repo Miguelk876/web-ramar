@@ -395,7 +395,7 @@ new Meta widget on the page would.
 
 **`SUCURSALES_WA` lists all 8 branches**, confirmed on 2026-09-21 against the company's printed branch directory. In that directory the numbers under **"Teléfono" are landlines** and those under **"Celular" are the ones that take WhatsApp** — that is the rule to apply for any new number.
 
-⚠️ **One unresolved conflict:** the directory lists Matriz's **951 533 6045** and **951 549 4636** under *Teléfono*, but they are published as WhatsApp and have been working that way. They were left as WhatsApp; ask the user before changing.
+✅ **Resolved 2026-11-19 — those were landlines.** The directory lists Matriz's **951 533 6045** and **951 549 4636** under *Teléfono*, and the site had published them as WhatsApp. The user: *"el número que pones para cotizar por WhatsApp de Matriz Ex Garita no tiene WhatsApp"*. Both are now **Tel. fijo** (`tel:` links) everywhere — the 8 footers, `contacto.html`, the Matriz card — and **Matriz's only WhatsApp is 951 228 3263**, also the quote target for `matriz` in `SUCURSALES_WA`. The same sweep found **Viguera's 951 229 1055** (recorded here as fijo) published as WhatsApp; it is now a `tel:` link too. **Rule: a number goes in a `wa.me` link only if it is under *Celular* in the directory or the user confirms it has WhatsApp.**
 
 ⚠️ The directory also lists **10 celulares for Matriz** and the site shows 3. The other 7 (951 227 5121, 951 322 1154, 951 228 7621, 951 228 3683, 951 271 1683, 951 476 9740, 951 204 5998, 951 350 3587, 951 475 5306) were **not** added: 14 phone chips on one card is unreadable. Decide with the user where they belong — likely the Telemarketing section of `contacto.html`.
 
@@ -941,8 +941,9 @@ Nayvi Padilla (redes) reviewed the catalog in 2026-06. The 96 products reflect w
 
 Dropping `www` broke Facebook and TikTok for real users (TikTok in particular does not serve the bare domain reliably). The Facebook page plugin iframe is a *bonus*, never the only content in its panel: tracking protection blocks it often, which left the panel looking empty — the "Abrir nuestro Facebook" button sits above the iframe for that reason.
 - Matriz fijo: `951 517 3157`, `951 533 6831` → `tel:` links, `fa-solid fa-phone` icon
-- Matriz WhatsApp: `951 533 6045`, `951 549 4636` → `wa.me` links, `fa-brands fa-whatsapp` icon
-- Viguera WhatsApp `951 416 0571`/`951 228 3259`, fijo `951 229 1055` · La Unión WhatsApp `951 272 1019`/`951 228 3269`
+- Matriz fijo también: `951 533 6045`, `951 549 4636` → `tel:` links (they are **not** WhatsApp — see the resolved note above)
+- Matriz WhatsApp: **`951 228 3263` only** → `wa.me` link
+- Viguera WhatsApp `951 416 0571`/`951 228 3259`, fijo `951 229 1055` and `951 522 9549` · La Unión WhatsApp `951 272 1019`/`951 228 3269`
 
 ## Deployment
 

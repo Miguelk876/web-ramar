@@ -17,7 +17,9 @@
    WhatsApp. Matriz canaliza cuando el visitante no elige. */
 const SUCURSALES_WA = [
   { id:'general',  nombre:'Cualquier sucursal (Matriz canaliza)', wa:'5219512283263' },
-  { id:'matriz',   nombre:'Matriz La Ex-Garita',                  wa:'5219515336045' },
+  // 951 533 6045 y 951 549 4636 son fijos de Matriz (columna "Teléfono" del
+  // directorio): no tienen WhatsApp. El WhatsApp de Matriz es el 951 228 3263.
+  { id:'matriz',   nombre:'Matriz La Ex-Garita',                  wa:'5219512283263' },
   { id:'aceros',   nombre:'Aceros Especializados',                wa:'5219512261469' },
   { id:'juquilita',nombre:'Juquilita',                            wa:'5219512261471' },
   { id:'sanisidro',nombre:'San Isidro',                           wa:'5219512283689' },
