@@ -935,6 +935,14 @@ Nayvi Padilla (redes) reviewed the catalog in 2026-06. The 96 products reflect w
 - **Truper manual**: NO diablos, paletas, cinceles ni crowbar. Carretilla única: 4.5 ft³ neumática Truper 11740.
 - **Tips**: avoid over-technical language (ASTM grades, hydraulic pressures, SAE formulas) — el maestro especialista orienta en sucursal.
 
+### Correo de ventas — `ventas@construacerosramar.mx` (2026-11-20)
+
+The user: *"agrega este correo como el principal de todo en ventas"*. It is now the email in **all 8 footers** (as a `mailto:` link), the *Correo de Ventas* item in `contacto.html`, its meta description, and the `Organization` JSON-LD in `index.html`.
+Deliberately **not** changed:
+- **The contact form still posts to `formsubmit.co/ramar.matriz@gmail.com`**, with `_cc` = ventas@. FormSubmit needs a one-time activation click from a new target address, and the domain's Google Workspace MX setup was still pending — moving the target blind could drop quotes. Once the user confirms ventas@ receives mail, the target can move (then FormSubmit will send an activation email to ventas@ on the first submission).
+- **Matriz's branch card** in `ubicaciones.html` (and its LocalBusiness JSON-LD) keeps `ramar.matriz@gmail.com` — that is the branch's own address.
+- **The privacy notice's ARCO / opt-out address** stays `ramar.matriz@gmail.com`. Section 4 now says the form also reaches ventas@ via Google Workspace; notice dated 2026-11-20.
+
 ### Phone numbers — fijo vs WhatsApp (NOT interchangeable)
 
 - Navbar + floating button: `951 228 3263` → WhatsApp `https://wa.me/5219512283263` (never `tel:`)
